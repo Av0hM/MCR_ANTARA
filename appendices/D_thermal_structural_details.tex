@@ -1,0 +1,34 @@
+
+\subsection{Thermal and Structural Supporting Analysis}\label{app:thermal-structural}
+This appendix describes the thermal model implemented in \texttt{src/simulations/thermal/ThermalSimulator.py} and the structural information available in the MCR. The thermal results are model predictions; no spacecraft-level thermal-vacuum or mechanical qualification is claimed.
+\subsubsection{Thermal Model and Spacecraft Geometry}\label{app:thermal-model}
+The simulator represents the spacecraft with seven lumped-capacitance nodes: the six external faces and an internal bus. The geometric model uses a $10\times10\times34$~cm 3U body with the long axis along $X$. Each end face has area $0.010$~m$^2$ and each long face has area $0.034$~m$^2$. Each node carries mass, specific heat, solar absorptivity, infrared emissivity and thermal conductance to the internal bus. Neighboring external faces are also coupled through a specified conductance. These values form a preliminary thermal representation, not measured properties of the final assembly.
+\begin{table}[htbp]\centering\caption{Selected thermal simulation inputs (\texttt{ThermalMissionConfig} defaults).}\label{tab:thermal-config}\begin{tabularx}{\linewidth}{Xl}\toprule Input & Code setting\\\midrule
+Initial orbit altitude / inclination & 600~km / $97.6^\circ$\\
+RAAN and eccentricity & $15^\circ$ / 0.001\\
+Spacecraft model mass & 3.0~kg\\
+Simulation duration / nominal time step & 24~h / 2~s\\
+Thermal substeps per simulation step & 10\\
+Initial temperature & 293.15~K\\
+Internal bus lumped mass / specific heat & 1.8~kg / 800~J\,kg$^{-1}$\,K$^{-1}$\\
+Face-to-face thermal conductance & 0.05~W\,K$^{-1}$\\
+Solar constant / deep-space temperature & 1361~W\,m$^{-2}$ / 2.7~K\\
+Applied temperature margin parameter & $10^\circ$C\\\bottomrule\end{tabularx}\end{table}
+\subsubsection{Thermal Balance and Numerical Method}\label{app:thermal-equations}
+For each node $i$, the model integrates a lumped heat balance of the form
+\begin{equation}\label{eq:thermal-balance}
+C_i\frac{\mathrm{d}T_i}{\mathrm{d}t}=Q_{\mathrm{solar},i}+Q_{\mathrm{albedo},i}+Q_{\mathrm{EarthIR},i}+Q_{\mathrm{internal},i}-Q_{\mathrm{radiated},i}+\sum_j G_{ij}(T_j-T_i),\qquad C_i=m_ic_i.
+\end{equation}
+The code calculates incident solar radiation, Earth albedo and infrared heating, thermal emission, internal dissipation and conduction. Solar-cell electrical conversion is included in the face heat balance. The orbit is propagated with Orekit numerical integration; the thermal equations use fourth-order Runge--Kutta integration with configurable thermal substeps. Earth albedo and infrared terms may vary with latitude in the implemented model.
+\subsubsection{Nominal, Hot and Cold Cases}\label{app:thermal-cases}
+The source defines \texttt{NOMINAL}, \texttt{HOT} and \texttt{COLD} bounding-case configurations. Nominal retains the base configuration. The HOT case places the model near perihelion, increases the end-of-life optical assumption and adds 0.5~W of bus dissipation. The COLD case uses an aphelion epoch, a lower optical assumption and 0.5~W less bus dissipation; relay and detection loads are disabled for that case. These are deliberately selected model cases, not measured flight extremes. The simulation can also use LVLH or prescribed tumbling attitude.
+The default internal heat schedule is independent of the Science DITL flight software: it includes a 1.5~W baseline bus, 0.4~W charging term, 0.8~W eclipse-heater term, a 3.0~W relay-pass increment and a 1.2~W detection-window increment with configured durations. Consequently, thermal case temperatures should not be described as arising from the exact commanded state history of \texttt{ANTARA\_Science\_Sim.py}.
+\subsubsection{Temperature Outputs and Required Comparison}\label{app:thermal-output}
+The source produces thermal telemetry, a worst-case summary CSV and plots of temperatures, orbital context and radiation contributions. The final temperature limits of the actual EPS, batteries, payload, OBC and ADCS should be compared with the extrema of the corresponding nodes for the selected bounding cases. The comparison remains open until approved case outputs and component limits are matched to the same configuration.
+\begin{table}[htbp]\centering\caption{Thermal verification items to close using run outputs and component specifications.}\label{tab:thermal-closure}\begin{tabularx}{\linewidth}{p{0.29\linewidth}XX}\toprule Item & Evidence needed & Status\\\midrule
+HOT maximum & Maximum node temperatures and applicable upper component limits & Pending reconciliation\\
+COLD minimum & Minimum node temperatures, heater assumptions and lower limits & Pending reconciliation\\
+Payload temperature stability & Detector and electronics thermal range, coupling and bias correction & Preliminary\\
+Case reproducibility & Case identifier, source revision, orbit epoch, input parameters and outputs & Required per run\\\bottomrule\end{tabularx}\end{table}
+\subsubsection{Structural Configuration and Verification}\label{app:structural-verification}
+The current MCR specifies a 3U spacecraft envelope of approximately $100\times100\times340.5$~mm, a one-fixed/two-deployable-panel configuration and a preliminary component mass table. Structural verification will require the selected structure and deployer interface specification, consolidated mass and inertia properties, solar-panel deployment design and the applicable launch mechanical environment. The provided simulation archive does not establish a completed structural finite-element, modal, vibration or shock qualification analysis. These items therefore remain planned verification work, rather than numerical results to be inserted into the report.

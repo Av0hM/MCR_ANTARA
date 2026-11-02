@@ -1,0 +1,47 @@
+% SECTION 3: Existing EPS, COMMS, payload, ADCS, OBC, body-frame and
+% ground-segment descriptions remain. These fill missing interfaces/segments.
+
+\subsection{Subsystem Interface Control Summary}\label{sec:subsystem-interfaces}
+\begin{longtable}{p{0.22\linewidth}p{0.19\linewidth}p{0.22\linewidth}p{0.26\linewidth}}
+\toprule
+From / to & Interface type & Baseline definition & Verification / open item \\
+\midrule
+\endhead
+OBC -- EPS & Power / command / housekeeping & TBD & TBD \\
+OBC -- ADCS & Command / telemetry & TBD & TBD \\
+OBC -- FPDU & Data / enable / timestamps & TBD & TBD \\
+OBC -- Radio & Command / telemetry / science & TBD & TBD \\
+\bottomrule
+\end{longtable}
+
+\subsection{Thermal Control Concept}\label{sec:thermal-architecture}
+\paragraph{Thermal interfaces and nodes.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Hot/cold environments and allowable temperature limits.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Passive control and heater strategy.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Design maturity and qualification plan.} \textbf{[TO COMPLETE:]} ...
+
+\subsection{Structure, Mechanisms and Deployment}\label{sec:structure-architecture}
+\paragraph{3U packaging and keep-out zones.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Deployable panel and antenna mechanisms.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Center of mass, inertia and deployment constraints.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Launch environment and verification approach.} \textbf{[TO COMPLETE:]} ...
+
+\subsection{Fault Detection, Isolation and Recovery Allocation}\label{sec:fdir-allocation}
+% Existing full FSM details remain in Appendix A. This is a concise mapping.
+\begin{longtable}{p{0.23\linewidth}p{0.24\linewidth}p{0.26\linewidth}p{0.16\linewidth}}
+\toprule
+Fault condition & Detection signal / threshold & Response / safe-state behavior & Owner / test \\
+\midrule
+\endhead
+Critical battery & TBD & TBD & TBD \\
+Persistent attitude-control saturation & TBD & TBD & TBD \\
+Payload fault & TBD & TBD & TBD \\
+Radio / GS communication fault & TBD & TBD & TBD \\
+\bottomrule
+\end{longtable}
+
+\subsection{Ground-Segment Link and RF Chain Definition}\label{sec:rf-chain}
+\paragraph{Frequency coordination and licensing status.} \textbf{[TO COMPLETE:]} ...
+\paragraph{RF chain and antenna matching.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Link budget at representative and worst-case elevation.} \textbf{[TO COMPLETE:]} ...
+\paragraph{Ground acceptance test plan.} \textbf{[TO COMPLETE:]} ...

@@ -1,0 +1,24 @@
+\section{Integrated Mission Feasibility}\label{sec:simulation-results}
+The ANTARA simulation work combines orbit motion, power generation and consumption, attitude control, mode transitions, SAA operations, and ground-station contacts. This section gives the main results supported by the supplied historical study files. The detailed simulation descriptions, tables, and plots are retained in Appendices~\ref{app:source-04} and~\ref{app:sim-provenance}.
+
+\subsection{Day-in-the-Life Operations}\label{sec:sim-leop}
+The reported 24-hour DITL run completes startup detumbling and repeated Detection and Relay operations. Sun Pointing occupies approximately 87.5\% of that run, with Detection occupying approximately 7.3\% and Relay approximately 1.0\%. The run includes 18 slew events. These results apply to the source run and must not be presented as the nominal-day distribution without excluding startup operations.
+
+The run reports six SAA passes, five of which support active proton science operations. The mean science-active fraction across those five passes is approximately 62.7\%. The minimum recorded battery energy is 15.15~Wh. For the simulation's 25~Wh planning capacity this is approximately 60.6\% state of charge. The uploaded 24-hour telemetry and event CSVs support the stated startup duration, contact counts, mode fractions and slews. They are based on an older mission epoch. The underlying event and telemetry statistics are documented in Appendix~\ref{app:new-evidence}.
+
+\subsection{Ground Station and Data Return}\label{sec:sim-coverage}
+The uploaded one-day contact file records two Goa contacts with a combined duration of approximately 782~s. At a nominal 15~kbps rate this corresponds to approximately 11.73~Mbit of ideal gross downlink capacity before overheads and losses. This is geometric capacity only; final link closure is pending payload data volume, coding/modulation, link losses and actual contact scheduling. Supporting analysis is in Appendix~\ref{app:orbit-rf}.
+
+\subsection{Updated RAAN Trade and Long-Duration Study}\label{sec:sim-annual}
+The latest supplied RAAN campaign evaluates seven insertion cases from $0^\circ$ to $180^\circ$ in $30^\circ$ increments, with two runs per case. Average generated power varies from approximately 9.02~W ($120^\circ$) to 11.17~W ($180^\circ$), and tabulated minimum battery SOC varies from approximately 54.4\% to 74.7\%. These are \emph{study-case outputs}, not a statement that the spacecraft can choose its insertion RAAN. Orbit classification totals are pooled across the two long-duration runs; they must not be mistaken for a one-year orbit tally. The full results, raw-count interpretation and drag-study limitations appear in Appendix~\ref{app:updated-raan}.
+
+The drag CSV gives modeled termination times of roughly 8.2--10.0~years, generally near 300~km altitude. One case ends at 334.93~km, and none models final atmospheric reentry. The five-year \emph{science/operational objective} is therefore distinct from the provisional passive-decay estimate. The campaign configuration and epoch remain to be reconciled with the approved 1 January 2029, 3~kg mission baseline.
+
+\subsection{Limitations of Current Evidence}\label{sec:sim-consolidated}
+The results in this section are simulation predictions, not hardware qualification results. The source model uses an approximate proton-flux baseline through an AP9-named interface; it does not establish a live AP9 calculation or absolute detector calibration. Thermal, structural, payload-response, and full-year integrated outputs require validation with the corresponding source settings and result files before final acceptance.
+
+\subsection{Science Coverage Studies}\label{sec:new-coverage}
+Separate grid-based studies supplied with the MCR inputs examine 4--6 month, 12--14 month, and extended-duration science-map cases. Their current cell-disposition files cover the specific modeled geographic domain rather than the entire success-criteria bounding box; the resulting fractions therefore cannot directly establish the MMSC, MSC or EMSC global coverage thresholds. The evaluated cell counts and their status are tabulated in Appendix~\ref{app:new-evidence}. The detector count rate and background assumptions remain preliminary.
+
+\subsection{Outstanding MCR Evidence}
+\paragraph{Evidence qualification.} Latest supplied simulation outputs are the provisional MCR reference. Each cited case must be tagged by its original epoch, spacecraft configuration and model assumptions; a 2029 rerun will supersede the historical-epoch studies. Available event logs support analysis of startup, contact opportunities and detector activity, but final science-enabled time and RF volume depend on the revised payload response.

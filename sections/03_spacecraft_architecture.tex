@@ -1,0 +1,33 @@
+\section{Spacecraft Architecture and Ground Segment}\label{spacecraft-architecture}
+The ANTARA spacecraft is a 3U CubeSat with the on-board computer as the main command and operations unit. The subsystem design currently uses preliminary COTS components along with the in-house scientific payload. Detailed specifications, operating estimates, and the original component tables are provided in Appendix~\ref{app:source-03}.
+
+\subsection{Electrical Power System (EPS)}\label{electrical-power-system-eps}
+The spacecraft uses one fixed solar panel on the +Z face and two panels stowed on the -Y face that deploy toward the +Z direction. The mission power studies use a 25~Wh battery planning capacity. The proposed ISISPACE ICEPS2 Type A has a manufacturer-rated 28.8~Wh battery-pack configuration; the mission simulation is assessed at 25~Wh. The original RAAN trade study reports average generated power of 11.05~W and 11.40~W for $0^\circ$ and $30^\circ$ RAAN respectively. These are study-case predictions, not a guarantee at any launch RAAN. The power studies were performed using end-of-life assumptions; their margins require acceptance against an agreed common run baseline.
+
+The EOL power simulations provide a provisional sizing basis. Solar active area, conversion losses and worst-case EOL margin must be explicitly tied to an approved simulation configuration before these results are reported as closed budgets (Appendix~\ref{app:detailed-budgets}).
+
+\subsection{Communications System (COMMS)}\label{communications-system-comms}
+The preliminary communications system uses the GomSpace NanoCom AX100 and directional and omnidirectional spacecraft antennas. The planned primary ground station is at Goa; a crossed-Yagi ground antenna is being considered. Ground-station visibility is assessed using $10^\circ$ nominal and $15^\circ$ conservative elevation masks. A secondary station is an option if the primary station cannot support the required operations.
+
+The final downlink rate and storage requirement cannot yet be fixed, because the payload packet format and science-data generation are not finalized. The original 15--18~kbps and simulator 19.2~kbps values are study assumptions, not a demonstrated data-return capacity. The ground-station contact case and data-rate calculations are described in Appendix~\ref{app:orbit-rf}.
+
+\subsection{Scientific Payload}\label{payload-subsystem}
+ANTARA carries a silicon--scintillator coincidence telescope (FPDU) for 5--100~MeV directional differential proton-flux measurement. The current Rev.~2.1 detector concept replaces the previous five-layer stopping stack with an aluminium collimator/entrance, active silicon stage, \emph{single main scintillator block}, two-sided SiPM minimum readout (four-sided readout under study), and an active rear penetration tag. Classification combines deposited energy, coincidence timing, light asymmetry and response-matrix information so that the mixed-particle LEO background is explicitly addressed. Onboard histogramming and diagnostic counters are the intended science products. The committed energy interval does not imply that 64 statistically independent energy channels have been demonstrated. SPENVIS/GRAS response modeling, radiation calibration and data-rate closure remain part of the planned PDR evidence. Appendix~\ref{app:payload-detail} gives the full revised measurement chain.
+
+\subsection{Attitude Determination and Control System (ADCS)}\label{attitude-determination-and-control-system-adcs}
+ANTARA intends to use an integrated reaction-wheel and magnetorquer attitude-control system; the earlier CMG description is superseded. The supplied TensorTech ADCS-10m databook describes a CMG-equipped unit and therefore does not confirm the intended reaction-wheel plus magnetorquer architecture. The ADCS vendor/product selection remains open. The main attitude functions are initial detumbling, Sun Pointing, payload +X pointing during SAA operations, +Y relay pointing toward the ground station, and Safe Mode recovery. Manufacturer limits and exact actuator configuration will be entered after the supplier data are reconciled with the selected model. The preliminary pointing goal remains subject to simulated and hardware verification. Mode transitions are given in Appendix~\ref{app:operational-logic}.
+
+\subsection{On-Board Computer (OBC)}\label{on-board-computer-obc}
+The source design uses the GomSpace NanoMind A3200 as the preliminary on-board computer. The OBC is responsible for mission sequencing, spacecraft state monitoring, command execution, payload control, data handling, and communications scheduling. The source document gives approximately 0.17~W as the average OBC power consumption for its stated operating conditions.
+
+\subsection{Spacecraft Coordinate System}\label{spacecraft-coordinate-system}
+The spacecraft body frame uses +X as the RAM face and payload boresight, +Y as the directional antenna face, +Z as the fixed solar-panel face, -Y as the deployable-panel packed face, -Z as the omnidirectional communications antenna face, and -X as the deployment face.
+
+\subsection{Thermal and Structural Configuration}\label{sec:thermal-architecture}
+Thermal and structural analyses are part of the MCR work, but the provided document does not yet establish qualified spacecraft temperature limits, verified mechanical modes, or completed environmental qualification. The supporting model sections are reserved in Appendix~\ref{app:thermal-structural}; their conclusions will be included here when validated results are available.
+
+\subsection{Ground Segment and Mission Operations}\label{ground-segment-mission-operations}
+The primary ground station is planned at the Goa campus, approximately $15^\circ$N, $74^\circ$E. A second station is a contingency only if the primary station cannot meet operational requirements. The ground segment provides tracking, telemetry reception, commanding, and science-data retrieval. The operational sequence uses Cold and Dark, Detumble, Sun Pointing, Detection, Relay, and Safe Mode, with Slewing as an attitude-transition state in the simulation. The full state-machine logic is given in Appendix~\ref{app:operational-logic}.
+
+\subsection{Outstanding MCR Evidence}
+\paragraph{Design maturity.} The MCR retains the reaction-wheel/magnetorquer architecture, selected solar-panel geometry and preliminary RF concept as a feasible spacecraft configuration. Detector response, finalized ADCS supplier interface, RF throughput and structural/thermal component compliance remain explicit PDR verification tasks rather than unspecified blanks.
