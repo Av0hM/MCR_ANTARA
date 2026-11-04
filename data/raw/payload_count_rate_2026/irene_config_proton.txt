@@ -1,0 +1,9 @@
+ModelType: AP9
+FluxOut: percentile, 99
+FluxType: Integral
+Energies: 0.10, 0.15, 0.22, 0.33, 0.50, 0.75, 1.10, 1.65, 2.50, 3.75, 5.60, 8.40, 11.00, 14.00, 17.00, 20.00
+InCoordSys: GDZ
+CoordSys: GDZ
+OrbitFile: C:\IreneSpectrum\grid_ephemeris.txt
+OutFile: C:\IreneSpectrum\Recalculation\Recalculation 2 final\radiation_outputs_protons_final.txt
+ModelDBDir: C:\SpaceModels\IRENE\Irene\modelData

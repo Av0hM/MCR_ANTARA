@@ -1,0 +1,71 @@
+{
+  "id": "SAA-positive-overlap-v1",
+  "coordinate_order": [
+    "longitude_deg",
+    "latitude_deg"
+  ],
+  "frame": "WGS84 geodetic",
+  "longitude_convention": "[-180,180), east-positive",
+  "vertices": [
+    [
+      -90,
+      -5
+    ],
+    [
+      -80,
+      -20
+    ],
+    [
+      -60,
+      -35
+    ],
+    [
+      -40,
+      -35
+    ],
+    [
+      -20,
+      -25
+    ],
+    [
+      -10,
+      -15
+    ],
+    [
+      -20,
+      -5
+    ],
+    [
+      -50,
+      0
+    ],
+    [
+      -70,
+      0
+    ],
+    [
+      -90,
+      -5
+    ]
+  ],
+  "source": "PDR Sims/grid_common.py:27-31 and Science SAAModel; matched against count-rate cells",
+  "cell_policy": "positive area polygon overlap in degree space; touching only excluded",
+  "grid_origin_lon_lat_deg": [
+    -180,
+    -90
+  ],
+  "resolutions_deg": [
+    5,
+    1,
+    0.5
+  ],
+  "expected_geometric_counts": [
+    92,
+    2020,
+    7940
+  ],
+  "scientific_eligibility": null,
+  "independence_definition": null,
+  "core_definition": null,
+  "note": "Geometric overlap counts only; committed tier thresholds remain in MCR section 1."
+}

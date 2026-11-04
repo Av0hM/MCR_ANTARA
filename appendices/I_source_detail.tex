@@ -68,7 +68,7 @@ Across the five proton passes
 
 \begin{itemize}
 \item
-  Average science-active fraction is approximately 62.7\%
+  Historical detection-conditional sample fraction is approximately 62.7\%; not SAA duration-weighted duty
 \item
   The lowest science-active fraction is approximately 37.9\%
 \item
@@ -95,17 +95,6 @@ The battery never approaches depletion during this run.
   Final battery energy is 24.06 Wh
 \item
   Net battery gain over the simulation is approximately 6.06 Wh
-\end{itemize}
-
-Across the five proton passes
-
-\begin{itemize}
-\item
-  Average science-active fraction is approximately 62.7\%
-\item
-  The lowest science-active fraction is approximately 37.9\%
-\item
-  Other passes generally remain between approximately 66\% and 71\%
 \end{itemize}
 
 \textbf{Operational Mode Distribution (24 hours):}
@@ -179,7 +168,7 @@ Cold \& Dark & 61 & 0.1\% \\
 \item
   18 slew events recorded in 24 hours
 \item
-  Slew angles ranged from 5.4° to 175.8°; large slews indicate some mode
+  The raw 18-event table gives a minimum slew of 0.442496° (the earlier 5.4° minimum is superseded); the reported maximum is 175.8°; large slews indicate some mode
   transitions require significant attitude manoeuvre time and should be
   factored into operational scheduling.
 \end{itemize}
@@ -188,14 +177,13 @@ Cold \& Dark & 61 & 0.1\% \\
 
 \begin{itemize}
 \item
-  Mean measured FPDU: consistently 50--70\% of AP9 model predictions
+  Historical synthetic FPDU proxy: 50--70\% of the configured AP9-named baseline, not measured detector performance or live AP9
   across all energy channels (5--100 MeV), consistent with partial SAA
   coverage and pitch-angle sampling effects.
 \item
   Mean pitch angle ranged 15.6°--77.6° across passes
 \item
-  Total counts per pass (Channel 0, lowest energy): 13,000--108,000
-  counts --- well above all mission tier statistical thresholds.
+  Withdrawn count/precision claim: the historical 13,000--108,000 values summed rates without the required time integration. They cannot establish counts or mission-tier precision.
 \end{itemize}
 
 \textbf{One-Year Extended Simulation (RAAN 180° baseline):}
@@ -206,7 +194,7 @@ Cold \& Dark & 61 & 0.1\% \\
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1282}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1282}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3269}}@{}}
-\caption{One-year integrated simulation statistics}\\
+\caption{Historical standalone campaign statistics; not verified annual integrated Science output}\\
 \toprule\noalign{}
 \textbf{Metric} & \textbf{Mean} & \textbf{Min} & \textbf{Max} & \textbf{99\% CI} \\
 Average Power (W) & 11.22 & 11.19 & 11.25 & 11.16--11.27 \\
@@ -218,7 +206,3 @@ Battery Cycles & 787 & 785 & 789 & 783--791 \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
-
-\textbf{DITL Simulation Graphs}
-
-

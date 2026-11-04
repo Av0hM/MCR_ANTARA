@@ -3,9 +3,9 @@ This appendix transcribes the four latest supplied MCR campaign CSV files: \path
 
 \subsection{RAAN trade-study summary}
 \begin{table}[htbp]\centering\footnotesize
-\caption{Latest RAAN trade matrix, as provided. SOC is expressed as a percentage of capacity; orbit counts are sums across the study runs, not annual values.}\label{tab:raan-updated}
+\caption{Latest RAAN trade matrix, as provided. SOC is expressed as a percentage of capacity; the minimum column averages run minima, not the worst sample; orbit counts are sums across the study runs, not annual values.}\label{tab:raan-updated}
 \begin{tabular}{@{}rrrrrrr@{}}\toprule
-RAAN & Power (W) & Mean SOC (\%) & Min. SOC (\%) & Life (yr) & SAA-only & GS-only\\\midrule
+RAAN & Power (W) & Mean SOC (\%) & Mean min. (\%) & Life (yr) & SAA-only & GS-only\\\midrule
 $0^\circ$ & 11.02 & 97.9 & 69.6 & 9.46 & 79,377 & 11,536 \\
 $30^\circ$ & 10.82 & 97.2 & 74.7 & 9.53 & 79,865 & 11,613 \\
 $60^\circ$ & 10.28 & 95.1 & 70.4 & 8.95 & 74,917 & 10,995 \\
@@ -14,7 +14,7 @@ $120^\circ$ & 9.02 & 88.1 & 54.4 & 8.23 & 69,267 & 10,196 \\
 $150^\circ$ & 9.50 & 92.7 & 71.6 & 8.66 & 72,819 & 10,657 \\
 $180^\circ$ & 11.17 & 98.2 & 73.4 & 8.58 & 72,103 & 10,498 \\
 \bottomrule\end{tabular}\end{table}
-The sampled RAAN set is $0^\circ,30^\circ,60^\circ,90^\circ,120^\circ,150^\circ,180^\circ$. The largest tabulated mean generated power is 11.17~W at $180^\circ$; the smallest is 9.02~W at $120^\circ$. The latter has the lowest tabulated minimum SOC (54.4\%). Consequently the current study does \emph{not} justify naming $0^\circ$ or $30^\circ$ universally optimal. The choice of RAAN is launch-dependent; a robust spacecraft must be assessed across its feasible orbital-insertion cases. The RAAN matrix does not by itself demonstrate the fully integrated power/attitude/communications performance of a final 2029 mission.
+The sampled RAAN set is $0^\circ,30^\circ,60^\circ,90^\circ,120^\circ,150^\circ,180^\circ$. The largest tabulated mean generated power is 11.17~W at $180^\circ$; the smallest is 9.02~W at $120^\circ$. The latter has the lowest mean of run-minimum SOC (54.4\%). Consequently the current study does \emph{not} justify naming $0^\circ$ or $30^\circ$ universally optimal. The choice of RAAN is launch-dependent; a robust spacecraft must be assessed across its feasible orbital-insertion cases. The RAAN matrix does not by itself demonstrate the fully integrated power/attitude/communications performance of a final 2029 mission.
 
 \subsection{Orbit-classification bookkeeping}
 The raw classification table contains 685798 rows: seven RAAN values and two recorded runs per RAAN. The entries in the RAAN trade matrix match the summed counts of \texttt{QUIET}, \texttt{ONLY\_GS}, \texttt{ONLY\_SAA} and \texttt{MIXED} orbit classes in that source file. \texttt{orbit\_number} is unique within each RAAN/run pair. Classifications are mutually exclusive for each orbit record, but the tabulated counts pool both runs and therefore must not be presented as a one-year orbit count. The modeled classifier and event geometry still require documentation before they can be used as physical detector-on SAA passes or real GS contacts.
@@ -34,7 +34,7 @@ $180^\circ$ & 8.33--8.83 & 299.9--299.9 \\
 Across the 14 records, modeled termination times span 8.23--9.99 years. Thirteen rows terminate near 300~km. The remaining $30^\circ$ record terminates at 334.93~km after approximately 9.99~years, so it cannot be counted as a completed decay-to-300-km result. This suggests an approximately 8--10-year decay timescale \emph{under these study assumptions}, not proof of the earlier five-year orbital-decay estimate. The output includes no post-300-km propagation to an atmospheric reentry condition. Atmospheric model, ballistic coefficient, starting epoch, mass, attitude-dependent area, solar activity, termination cause and parameter uncertainty require source-code provenance review. These results are preliminary and do not establish disposal compliance.
 
 \subsection{Monte Carlo statistics: scope and interpretation}
-The provided \path{mission_statistics(1).csv} corresponds numerically to the $180^\circ$ RAAN row for average power (11.17485~W), mean SOC (0.98234), minimum SOC (0.73446), cycle count (6565.43) and lifetime (8.58241~years). Its confidence intervals should not be interpreted as 99\% population coverage without verification of the statistical method and independent sample count; the raw study includes only two runs per RAAN. The power and lifetime fields represent modeled quantities, not measured solar electrical output or a verified physical lifetime.
+The provided \path{mission_statistics(1).csv} corresponds numerically to the $180^\circ$ RAAN row for average power (11.17485~W), mean SOC (0.98234), mean run-minimum SOC (0.73446), cycle count (6565.43) and lifetime (8.58241~years). Its confidence intervals should not be interpreted as 99\% population coverage without verification of the statistical method and independent sample count; the raw study includes only two runs per RAAN. The power and lifetime fields represent modeled quantities, not measured solar electrical output or a verified physical lifetime.
 
 \subsection{Design implication for the MCR}
 The operational science campaign targets a roughly five-year mission, while the newest drag study points toward a potentially longer residence time before reaching 300~km. These statements are not interchangeable. The MCR should maintain the five-year \emph{operational objective} while qualifying the uncertain passive decay and post-mission disposal timeline. Detailed DITL operations are being rerun separately; their future results should be incorporated with independent identification of date, simulation revision and model assumptions.

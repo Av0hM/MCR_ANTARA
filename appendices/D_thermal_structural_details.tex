@@ -1,6 +1,6 @@
 
 \subsection{Thermal and Structural Supporting Analysis}\label{app:thermal-structural}
-This appendix describes the thermal model implemented in \texttt{src/simulations/thermal/ThermalSimulator.py} and the structural information available in the MCR. The thermal results are model predictions; no spacecraft-level thermal-vacuum or mechanical qualification is claimed.
+This appendix describes the thermal model implemented in \path{src/simulations/thermal/ThermalSimulator.py} and the structural information available in the MCR. The thermal results are model predictions; no spacecraft-level thermal-vacuum or mechanical qualification is claimed.
 \subsubsection{Thermal Model and Spacecraft Geometry}\label{app:thermal-model}
 The simulator represents the spacecraft with seven lumped-capacitance nodes: the six external faces and an internal bus. The geometric model uses a $10\times10\times34$~cm 3U body with the long axis along $X$. Each end face has area $0.010$~m$^2$ and each long face has area $0.034$~m$^2$. Each node carries mass, specific heat, solar absorptivity, infrared emissivity and thermal conductance to the internal bus. Neighboring external faces are also coupled through a specified conductance. These values form a preliminary thermal representation, not measured properties of the final assembly.
 \begin{table}[htbp]\centering\caption{Selected thermal simulation inputs (\texttt{ThermalMissionConfig} defaults).}\label{tab:thermal-config}\begin{tabularx}{\linewidth}{Xl}\toprule Input & Code setting\\\midrule

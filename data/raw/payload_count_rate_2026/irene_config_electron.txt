@@ -1,0 +1,9 @@
+ModelType: AE9
+FluxOut: percentile, 99
+FluxType: Integral
+Energies: 0.10, 0.15, 0.25, 0.40, 0.65, 1.00, 1.50, 2.30, 3.50, 5.30, 8.00
+InCoordSys: GDZ
+CoordSys: GDZ
+OrbitFile: C:\IreneSpectrum\grid_ephemeris.txt
+OutFile: C:\IreneSpectrum\Recalculation\Recalculation 2 final\radiation_outputs_electrons_final.txt
+ModelDBDir: C:\SpaceModels\IRENE\Irene\modelData

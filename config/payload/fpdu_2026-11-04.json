@@ -1,0 +1,139 @@
+{
+  "configuration_id": "FPDU-2026-11-04",
+  "schema_version": 1,
+  "source": "Authoritative user design inputs supplied 2026-11-04; not a formally approved Rev. 2.2",
+  "narrative_specification": "appendices/B_payload_detail_visual.tex",
+  "science_requirement": {
+    "species": "proton",
+    "energy_range_mev": [
+      5,
+      100
+    ],
+    "response_status": "REQUIRES VALIDATION"
+  },
+  "geometry": {
+    "status": "CONFIRMED DESIGN INPUT",
+    "dimension_unit": "mm",
+    "main": {
+      "quantity": 5,
+      "material_dimensions": [
+        6,
+        6,
+        14
+      ],
+      "reflector": {
+        "material": "Teflon",
+        "coated_sides_per_block": 2,
+        "stated_thickness_mm": 0.11,
+        "surface_orientation": null,
+        "thickness_per_surface_or_total": null
+      }
+    },
+    "front": {
+      "quantity": 1,
+      "material_dimensions": [
+        6,
+        6,
+        2
+      ]
+    },
+    "scintillator_material": null,
+    "assembly_arrangement": null,
+    "axis_orientation": null,
+    "optical_segmentation": null,
+    "readout_channel_count": null,
+    "packaged_dimensions_mm": null,
+    "cad_icd_revision": null,
+    "active_silicon_entrance_retained": true,
+    "rear_penetration_detector_retained": true,
+    "rear_is_unconditional_veto": false
+  },
+  "optical_coupling": {
+    "status": "CONFIRMED DESIGN INPUT",
+    "material": "EJ-550 optical coupling grease",
+    "thickness_mm": null,
+    "transmission_efficiency": null,
+    "coupling_geometry": null
+  },
+  "conditional_peak_proton_rate": {
+    "status": "PRELIMINARY ESTIMATE",
+    "value": 400,
+    "unit": "Hz",
+    "incident_particles": "protons only",
+    "shielding": {
+      "material": "aluminium",
+      "thickness_um": 250,
+      "thickness_mm": 0.25
+    },
+    "geometric_factor": {
+      "value": 1,
+      "unit": "cm^2 sr"
+    },
+    "assumed_detection_efficiency": 1.0,
+    "provenance": "User-supplied; generating simulation, input spectrum and calculation not identified",
+    "generating_simulation": null,
+    "input_spectrum": null,
+    "calculation": null,
+    "epoch": null,
+    "energy_integration_limits_mev": null,
+    "verified_electronics_limit": false,
+    "all_particle_trigger_rate": false
+  },
+  "electronics": {
+    "status": "CANDIDATE ARCHITECTURE",
+    "signal_chain": [
+      "scintillator",
+      "SiPM",
+      "ASIC",
+      "ADC",
+      "microcontroller or FPGA",
+      "event classification / energy bin assignment"
+    ],
+    "asic_shaping_time_ns": 20,
+    "asic_output_to_adc_stated_interval_ns": 20,
+    "adc_interval_meaning": null,
+    "serial_latency_sum_authorized": false,
+    "coincidence_window_ns": 20,
+    "timing_resolution_ns": null,
+    "timing_jitter_ns": null,
+    "adc_acquisition_latency_ns": null,
+    "adc_conversion_latency_ns": null,
+    "digital_processing_latency_ns": null,
+    "sustained_trigger_capacity_hz": null,
+    "peak_trigger_capacity_hz": null,
+    "readout_dead_time_ns": null,
+    "dead_time_topology": null,
+    "buffer_capacity_events": null,
+    "event_loss_probability": null,
+    "adc_sampling_rate_hz": null,
+    "adc_resolution_bits": null,
+    "asic_model": null,
+    "adc_model": null,
+    "processor_model": null,
+    "trigger_architecture": null,
+    "processor_selection": {
+      "status": "CANDIDATE ARCHITECTURE",
+      "selected": null,
+      "mcu_budget_reference_ns": 250,
+      "available_coincidence_processing_budget_ns": null,
+      "required_margin_fraction": null,
+      "rule": "Prefer MCU only with available coincidence-processing budget comfortably greater than 250 ns and demonstrated engineering margin; consider FPGA if MCU cannot satisfy timing."
+    },
+    "coincidence_window_status": "CONFIRMED DESIGN INPUT",
+    "coincidence_window_source": "User follow-up 2026-11-04: current coincidence time is 20 ns; timing performance unvalidated",
+    "tentative_readout_dead_time_ns": 20,
+    "dead_time_status": "REQUIRES VALIDATION",
+    "dead_time_source": "User follow-up: also the deadtime i guess; tentative only, not a measured value"
+  },
+  "response": {
+    "status": "REQUIRES VALIDATION",
+    "qualified_response_id": null,
+    "simulation_consumer": null,
+    "legacy_five_layer_compatible": false,
+    "rev_2_1_single_block_response_transfer_validated": false,
+    "calibrated_efficiency": null,
+    "event_classifier": null,
+    "packet_format": null,
+    "payload_power_w": null
+  }
+}

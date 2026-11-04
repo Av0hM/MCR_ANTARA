@@ -1,0 +1,43 @@
+{
+  "baseline_id": "ANTARA-2029-v1",
+  "status": "CONFIRMED DESIGN INPUT",
+  "epoch_utc": "2029-01-01T00:00:00Z",
+  "spacecraft": "3U CubeSat",
+  "max_design_mass_kg": 3,
+  "altitude_km": 600,
+  "inclination_deg": 97.6,
+  "eccentricity": 0.001,
+  "raan_policy": "launch-dependent; no selected RAAN",
+  "representative_raan_deg": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180
+  ],
+  "battery_planning_wh": 25,
+  "adcs": "reaction wheels and magnetorquers",
+  "operational_objective_years": 5,
+  "science_energy_mev": [
+    5,
+    100
+  ],
+  "payload_pointer": "config/payload/current.json",
+  "environment_source_epoch_utc": "2026-01-01T00:00:00Z",
+  "environment_use": "approved preliminary planning reference",
+  "qualified_2029_campaign_manifest": null,
+  "raan_team_reference": "Team states latest RAAN campaign refers to 2029; generating epoch not independently verified",
+  "runtime_override_contract": {
+    "start_year": 2029,
+    "start_month": 1,
+    "start_day": 1,
+    "mass_kg": 3,
+    "altitude_m": 600000,
+    "inclination_deg": 97.6,
+    "eccentricity": 0.001,
+    "battery_capacity_wh": 25
+  },
+  "warning": "A baseline config is not a completed or calibrated simulation; environment/backends must be verified per run."
+}

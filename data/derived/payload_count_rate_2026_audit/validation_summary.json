@@ -1,0 +1,405 @@
+{
+  "inventory": [
+    {
+      "path": "Anisotropy proton.txt",
+      "bytes": 136233,
+      "sha256": "67c845b74885114275f866b8a65ceb5a4ef5559b05d8f52359474f10fbaac8a4"
+    },
+    {
+      "path": "Trapped electron fluxes_peak.pdf",
+      "bytes": 200865,
+      "sha256": "f4955d1778153c1fe8521b4eb0b1016999c276149d7a2a42d91ead07a8a7020a"
+    },
+    {
+      "path": "Trapped particle fluxes_peak.pdf",
+      "bytes": 191097,
+      "sha256": "76989e1bf1d3c802aaf459633acf53c1b9215aa4169abe05b542a531206d1601"
+    },
+    {
+      "path": "aniso_flux.png",
+      "bytes": 35373,
+      "sha256": "f03acaef6d11f95536fa17ca79e080718a6036becc27d0e3c9ee533179a44695"
+    },
+    {
+      "path": "count_rate_per_cell.py",
+      "bytes": 3691,
+      "sha256": "71ba163b8d3b0b25d34d07864e8e321e51e08ffda3731f8c4fa42bf7e82a213d"
+    },
+    {
+      "path": "count_rate_per_cell_mean.csv",
+      "bytes": 556658,
+      "sha256": "97831148b8976c729974cc0548c21b9807d3da4872809a342a79aee47a517be5"
+    },
+    {
+      "path": "count_rate_per_cell_peak99.csv",
+      "bytes": 578387,
+      "sha256": "a9bcc88be7ade3cbfd94297f5725f760be8a85e298ed346579671f9df509a7b8"
+    },
+    {
+      "path": "irene_config_electron.txt",
+      "bytes": 368,
+      "sha256": "2eaaacb95c58b447be9dc0f4719e60ca29e4f5859f779643d26cb59ebb0bfced"
+    },
+    {
+      "path": "irene_config_proton.txt",
+      "bytes": 400,
+      "sha256": "faa704f2fd9dcdd3d0fc13882a5d2d51c78768b13ae05a537a6086503932bc88"
+    },
+    {
+      "path": "output_csv_converter_electrons.py",
+      "bytes": 763,
+      "sha256": "9806b144f4ce9c2ac129c9cceb9e8d28ce3eaab4eb1151f821c0cd12cdc8c754"
+    },
+    {
+      "path": "output_csv_converter_protons.py",
+      "bytes": 759,
+      "sha256": "b4a2b70e765ea50b9cd0467a222458c9da0ec48688737ed50d4beb81751e8345"
+    },
+    {
+      "path": "radiation_outputs_electrons_final.txt.pct",
+      "bytes": 5,
+      "sha256": "90b53df56816c127246136d4403aba3b26cec599b2b950fb2ba78d6c1fb4e6bf"
+    },
+    {
+      "path": "radiation_outputs_electrons_final_mean_flux.csv",
+      "bytes": 1028572,
+      "sha256": "1ae362fdbf8053ce1ba18554097f81da7bdbeefafc46c1afac1cd98163db1183"
+    },
+    {
+      "path": "radiation_outputs_electrons_final_mean_flux.txt",
+      "bytes": 1689487,
+      "sha256": "cf87c2867924c613a9eef486336d228f3088cc5fbae611e5b955d6ada842c1be"
+    },
+    {
+      "path": "radiation_outputs_electrons_final_pctile_flux_99.csv",
+      "bytes": 1023452,
+      "sha256": "6a5482d32acc8a352306f40dd6c7f7c1c0416c99b0d532000b6c7e59d7e35e10"
+    },
+    {
+      "path": "radiation_outputs_electrons_final_pctile_flux_99.txt",
+      "bytes": 1689492,
+      "sha256": "cdffe70777f08381d81ca6a795098f8c9a56c22d39f209c72fa64e40c4d51798"
+    },
+    {
+      "path": "radiation_outputs_protons_final.txt.pct",
+      "bytes": 5,
+      "sha256": "90b53df56816c127246136d4403aba3b26cec599b2b950fb2ba78d6c1fb4e6bf"
+    },
+    {
+      "path": "radiation_outputs_protons_final_mean_flux.csv",
+      "bytes": 1610580,
+      "sha256": "eda99f7691a48d1c8e118903ea3d4f56b5465d3d6b703d3a51cabd44088f187a"
+    },
+    {
+      "path": "radiation_outputs_protons_final_mean_flux.ods",
+      "bytes": 1389255,
+      "sha256": "fc3f36da95039d5509162ab77397bec9f2abc0473e000b769de467a77e3dccf0"
+    },
+    {
+      "path": "radiation_outputs_protons_final_mean_flux.txt",
+      "bytes": 2285033,
+      "sha256": "a68d1e39a09f9b8fd631ebcb7dc48d138307ddd7e3c01ba3eb7515a60c32a2b2"
+    },
+    {
+      "path": "radiation_outputs_protons_final_pctile_flux_99.csv",
+      "bytes": 1610477,
+      "sha256": "4e36ff6925b981d5a5c9cd3f3718483a8b63a51a3309d6e89d9a5fc27f616a4b"
+    },
+    {
+      "path": "radiation_outputs_protons_final_pctile_flux_99.txt",
+      "bytes": 2285038,
+      "sha256": "a33f840384c3a34077f37330260ea2dc491f3699ecee647cbad8765301549da8"
+    }
+  ],
+  "cases": {
+    "mean": {
+      "conversions": {
+        "protons": {
+          "rows": 7940,
+          "energy_thresholds_mev": [
+            0.1,
+            0.15,
+            0.22,
+            0.33,
+            0.5,
+            0.75,
+            1.1,
+            1.65,
+            2.5,
+            3.75,
+            5.6,
+            8.4,
+            11.0,
+            14.0,
+            17.0,
+            20.0
+          ],
+          "raw_to_csv_exact_numeric_match": true
+        },
+        "electrons": {
+          "rows": 7940,
+          "energy_thresholds_mev": [
+            0.1,
+            0.15,
+            0.25,
+            0.4,
+            0.65,
+            1.0,
+            1.5,
+            2.3,
+            3.5,
+            5.3,
+            8.0
+          ],
+          "raw_to_csv_exact_numeric_match": true
+        }
+      },
+      "statistics": {
+        "proton_rate": {
+          "min": 0.0,
+          "max": 4510.32323011969,
+          "mean": 1643.442048347238,
+          "cos_lat_weighted_mean": 1586.0584205209448,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -30.75,
+            "lon_deg": -49.25
+          },
+          "max_csv_rounding_error": 0.004998417277874978
+        },
+        "electron_rate": {
+          "min": 0.0,
+          "max": 851744.2657443375,
+          "mean": 142890.20008211597,
+          "cos_lat_weighted_mean": 135061.7787814854,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.4999219249293674
+        },
+        "total_rate": {
+          "min": 0.0,
+          "max": 855212.3283249303,
+          "mean": 144533.6421304632,
+          "cos_lat_weighted_mean": 136647.83720200634,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.4993922066350933
+        },
+        "proton_rate_per_sr": {
+          "min": 0.0,
+          "max": 358.92011850787645,
+          "mean": 130.7809628397663,
+          "cos_lat_weighted_mean": 126.2145188292162,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -30.75,
+            "lon_deg": -49.25
+          },
+          "max_csv_rounding_error": 0.0004999302006467587
+        },
+        "electron_rate_per_sr": {
+          "min": 0.0,
+          "max": 67779.65507169411,
+          "mean": 11370.840831229354,
+          "cos_lat_weighted_mean": 10747.874857928735,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.049998446615063585
+        },
+        "total_rate_per_sr": {
+          "min": 0.0,
+          "max": 68055.63472302079,
+          "mean": 11501.621794069119,
+          "cos_lat_weighted_mean": 10874.089376757951,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.04999205668718787
+        }
+      },
+      "all_47640_rate_values_match_six_significant_digits": true
+    },
+    "peak99": {
+      "conversions": {
+        "protons": {
+          "rows": 7940,
+          "energy_thresholds_mev": [
+            0.1,
+            0.15,
+            0.22,
+            0.33,
+            0.5,
+            0.75,
+            1.1,
+            1.65,
+            2.5,
+            3.75,
+            5.6,
+            8.4,
+            11.0,
+            14.0,
+            17.0,
+            20.0
+          ],
+          "raw_to_csv_exact_numeric_match": true
+        },
+        "electrons": {
+          "rows": 7940,
+          "energy_thresholds_mev": [
+            0.1,
+            0.15,
+            0.25,
+            0.4,
+            0.65,
+            1.0,
+            1.5,
+            2.3,
+            3.5,
+            5.3,
+            8.0
+          ],
+          "raw_to_csv_exact_numeric_match": true
+        }
+      },
+      "statistics": {
+        "proton_rate": {
+          "min": 0.0,
+          "max": 12260.488804837785,
+          "mean": 4621.319322116024,
+          "cos_lat_weighted_mean": 4462.068148822927,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -30.75,
+            "lon_deg": -48.25
+          },
+          "max_csv_rounding_error": 0.049897238095582
+        },
+        "electron_rate": {
+          "min": 0.0,
+          "max": 6326159.059036601,
+          "mean": 1108586.3866434193,
+          "cos_lat_weighted_mean": 1051756.035268265,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 4.999958229949698
+        },
+        "total_rate": {
+          "min": 0.0,
+          "max": 6336530.349687528,
+          "mean": 1113207.7059655352,
+          "cos_lat_weighted_mean": 1056218.103417088,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 4.999126496957615
+        },
+        "proton_rate_per_sr": {
+          "min": 0.0,
+          "max": 975.6586990063888,
+          "mean": 367.75290686042604,
+          "cos_lat_weighted_mean": 355.0801011490358,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -30.75,
+            "lon_deg": -48.25
+          },
+          "max_csv_rounding_error": 0.0004999513199663852
+        },
+        "electron_rate_per_sr": {
+          "min": 0.0,
+          "max": 503419.7425156242,
+          "mean": 88218.50163934163,
+          "cos_lat_weighted_mean": 83696.0859698391,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.4998017737379996
+        },
+        "total_rate_per_sr": {
+          "min": 0.0,
+          "max": 504245.0636022931,
+          "mean": 88586.25454620206,
+          "cos_lat_weighted_mean": 84051.16607098813,
+          "max_cell": {
+            "datetime_mjd": 61041.0,
+            "alt_km": 600.0,
+            "lat_deg": -34.75,
+            "lon_deg": -39.25
+          },
+          "max_csv_rounding_error": 0.4999637193977833
+        }
+      },
+      "all_47640_rate_values_match_six_significant_digits": true
+    }
+  },
+  "ods": {
+    "sheets": 1,
+    "data_rows": 7940,
+    "formulas": 1,
+    "summary_cells": [
+      {
+        "row": 7942,
+        "column": 14,
+        "formula": "of:=MAX([.N1];[.N7941])",
+        "cached_value": "199.929387"
+      }
+    ],
+    "numeric_csv_match": true
+  },
+  "grid": {
+    "rows": 7940,
+    "all_six_csv_tables_same_keys_and_order": true,
+    "duplicates": 0,
+    "relative_missing_cells": 0,
+    "bounds": {
+      "datetime_mjd": [
+        61041.0,
+        61041.0
+      ],
+      "alt_km": [
+        600.0,
+        600.0
+      ],
+      "lat_deg": [
+        -34.75,
+        -0.25
+      ],
+      "lon_deg": [
+        -89.75,
+        -10.25
+      ]
+    },
+    "cell_keys_sha256": "df0bd3309e281eb6fe62ad675634bfdbee158311ec7184afa91d39b42b0dfef3",
+    "absolute_domain_completeness": "Unestablished: original grid_ephemeris.txt/domain mask absent"
+  },
+  "raw_files_unchanged": true
+}

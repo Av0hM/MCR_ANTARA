@@ -1,0 +1,38 @@
+{
+  "local_tests": {
+    "passed": 74,
+    "failed": 0,
+    "skipped": 0
+  },
+  "patched_source_tests": {
+    "passed": 4,
+    "failed": 0,
+    "original_expected_failures": 4
+  },
+  "surrounding_source_tests": {
+    "passed": 201,
+    "failed": 0,
+    "warnings": 3448,
+    "note": "Initial 13 environment failures resolved by linking existing Orekit data read-only"
+  },
+  "polygon_independent_counts": {
+    "5": 92,
+    "1": 2020,
+    "0.5": 7940
+  },
+  "protected_preexisting_files_unchanged": 38,
+  "raw_files_preserved": 22,
+  "sibling_preexisting_diff_unchanged": true,
+  "active_tex_files": 20,
+  "unresolved_explicit_references": 0,
+  "duplicate_labels": 0,
+  "overfull_boxes": 0,
+  "pdf_pages": 62,
+  "pdf_sha256": "fab9847f3646ce98cb8996c3c8152d4c6e92523fa80f44381d84a82d9736ad17",
+  "pdf_path": "output/pdf/ANTARA_MCR_APPROVED_FPDU_2026-11-04.pdf",
+  "physical_response_qualified": false,
+  "simulator_patch_applied": false,
+  "annual_or_multiyear_runs": 0,
+  "remaining_latex_warnings": "Latin Modern bold-math font substitutions and underfull justification; no clipped diagrams found in visual review",
+  "patch_apply_check": "PASS against unchanged authoritative dirty source"
+}

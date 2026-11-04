@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Logical science record, not wire encoding",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "timestamp_utc",
+    "latitude_deg",
+    "longitude_deg",
+    "altitude_km",
+    "histogram_kind",
+    "histogram",
+    "bin_edges_id",
+    "bin_edges_mev",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "FPDU-science-record-v1"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Acquisition interval start in UTC, ISO 8601 with trailing Z",
+      "pattern": "Z$"
+    },
+    "latitude_deg": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude_deg": {
+      "type": "number",
+      "minimum": -180,
+      "exclusiveMaximum": 180
+    },
+    "altitude_km": {
+      "type": "number",
+      "minimum": 0
+    },
+    "histogram_kind": {
+      "enum": [
+        "observed_counts",
+        "expected_counts"
+      ]
+    },
+    "histogram": {
+      "type": "array",
+      "minItems": 64,
+      "maxItems": 64,
+      "items": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "bin_edges_id": {
+      "const": "FPDU-log64-5-100-v1"
+    },
+    "bin_edges_mev": {
+      "const": [
+        5,
+        5.23960560463034,
+        5.4906933784147345,
+        5.753813559769708,
+        6.029542755153482,
+        6.318485202652089,
+        6.6212740961179515,
+        6.938572972762662,
+        7.271077167244768,
+        7.619515335439076,
+        7.984651051226683,
+        8.367284479804972,
+        8.76825413118452,
+        9.188438697715508,
+        9.628758979670497,
+        10.090179903103248,
+        10.573712634405641,
+        11.080416796196486,
+        11.611402789398255,
+        12.16783422659029,
+        12.750930481971075,
+        13.361969363517495,
+        14.002289913197036,
+        14.673295341369212,
+        15.376456101806877,
+        16.113313114075943,
+        16.885481140335173,
+        17.694652323956014,
+        18.542599897717043,
+        19.431182069699236,
+        20.362346095397736,
+        21.338132544973742,
+        22.360679774997898,
+        23.432228614484654,
+        24.555127275486647,
+        25.731836499010228,
+        26.964934947529112,
+        28.25712485591321,
+        29.611237953156433,
+        31.030241667880215,
+        32.51724563121182,
+        34.07550849128778,
+        35.70844505431604,
+        37.41963376784577,
+        39.21282456264389,
+        41.091947070363034,
+        43.06111923500949,
+        45.124656337082214,
+        47.28708045015879,
+        49.55313035065156,
+        51.927771902450345,
+        54.41620893920894,
+        57.023894668122956,
+        59.75654362018944,
+        62.6201441731364,
+        65.62097167446508,
+        68.76560219336321,
+        72.06092693162526,
+        75.51416732516023,
+        79.13289086918056,
+        82.9250277017519,
+        86.8988879820451,
+        91.06318010137352,
+        95.42702976692375,
+        100
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "instrument_configuration",
+        "calibration_version",
+        "response_model_version",
+        "quality_flags"
+      ],
+      "properties": {
+        "instrument_configuration": {
+          "const": "FPDU-2026-11-04-approved-v2"
+        },
+        "calibration_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "response_model_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "livetime_sec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "total_triggers": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "accepted_events": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "rejected_events": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "lost_events": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "background_counts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 64,
+          "maxItems": 64,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "saturation_events": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "dead_time_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interval_duration_sec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

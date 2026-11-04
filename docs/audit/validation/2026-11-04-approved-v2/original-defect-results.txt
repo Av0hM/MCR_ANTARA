@@ -1,0 +1,7 @@
+Original inspected source: 4 tests, 4 failures.
+Test file: patches/simulation/test_accounting_patch.py
+1. Environment returned count_rate instead of a dimensionally explicit spectral density.
+2. Full 25 Wh battery with +10 Wh request added 10 Wh of throughput.
+3. mean_run_min_soc/worst_min_soc and all-RAAN statistics preservation absent.
+4. Effective merged-bin interval metadata absent.
+Patched source: all 4 pass; see patch-tests.log. Original/patched source hashes are recorded in patches/simulation/source_identity.json.

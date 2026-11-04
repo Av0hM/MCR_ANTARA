@@ -1,7 +1,7 @@
 \subsection{Simulation Configuration and Provenance}
 \label{app:sim-provenance}
 
-This appendix records the simulation code used to support the ANTARA mission concept. The simulation scripts are organised by study under \texttt{src/simulations/}. The integrated science simulation uses a common configuration defined in \texttt{src/simulations/helper/antara\_models.py}; the standalone orbit, power, pointing, detumble, CONOPS and thermal studies have their own study-specific configurations. Their results must not be treated as outputs of one identical spacecraft model unless the input parameters have been checked.
+This appendix records the simulation code used to support the ANTARA mission concept. The simulation scripts are organised by study under \texttt{src/simulations/}. The integrated science simulation uses a common configuration defined in \path{src/simulations/helper/antara_models.py}; the standalone orbit, power, pointing, detumble, CONOPS and thermal studies have their own study-specific configurations. Their results must not be treated as outputs of one identical spacecraft model unless the input parameters have been checked.
 
 \subsubsection{Simulation Inventory}
 \label{app:sim-inventory}
@@ -126,23 +126,18 @@ For each figure or numerical conclusion adopted in the MCR, retain the following
 
 \subsubsection{Simulation Evidence Record}
 \label{app:evidence-record}
-Table~\ref{tab:evidence-record-template} is to be filled as individual simulation results are approved for the MCR. Entries are deliberately not assigned values without their actual completed output files.
+The following records distinguish approved planning inputs from verified generating epochs. Full claims and hashes are indexed in the audit reconciliation and count-rate ingestion reports.
+\begin{table}[H]\centering\small
+\caption{Current evidence identities and limits}\label{tab:evidence-record-template}
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{4cm}X@{}}\toprule
+Evidence & Identity & Acceptance limit\\\midrule
+Mission baseline & \texttt{ANTARA-2029-v1}; 2029-01-01 & Approved configuration, not completed run\\
+Radiation rate maps & MJD 61041; 600 km; AP9/AE9 mean and 99th percentile & Reproduced arithmetic; 2026 source accepted for preliminary 2029 planning\\
+RAAN study & Seven cases, two runs each; supplied CSVs & Team-accepted 2029 reference; generating epoch not independently verified\\
+Historical DITL & March 2000 source run & Historical operational example, not current payload qualification\\
+Annual Science artifact & Local file ends near day 50 & Incomplete; cannot establish annual performance\\
+Current FPDU & Approved-v2 configuration & Mechanical inputs and logical interfaces only; no qualified response\\\bottomrule
+\end{tabularx}\end{table}
 
-\begin{longtable}{p{0.23\linewidth}p{0.23\linewidth}p{0.22\linewidth}p{0.21\linewidth}}
-\caption{Approved simulation output provenance (to be completed from run artifacts).}\label{tab:evidence-record-template}\\
-\toprule
-Approved result & Source revision / run ID & Configuration and seed & Archived data / figure \\
-\midrule
-\endfirsthead
-\toprule Approved result & Source revision / run ID & Configuration and seed & Archived data / figure \\
-\midrule
-\endhead
-LEOP 24-hour DITL & Pending & Pending & Pending \\
-Nominal 24-hour DITL & Pending & Pending & Pending \\
-One-year integrated mission & Pending & Pending & Pending \\
-Orbit and RAAN trade study & Pending & Pending & Pending \\
-Power and battery trade & Pending & Pending & Pending \\
-Detumble Monte Carlo & Pending & Pending & Pending \\
-Thermal cases & Pending & Pending & Pending \\
-\bottomrule
-\end{longtable}
+\paragraph{Payload and software reconciliation.}
+The current configuration is not consumed by the legacy DITL/Geant4 response. Eleven SiPMs, removed silicon, open optics and unknown dead time require geometry-matched validation. Coincidence references are 200/250/300~ns; shaping is 20~ns. Historical outputs remain unchanged. Bounded tests validate accounting only. Tested source fixes are delivered as an unapplied patch because the authoritative simulator is outside the writable workspace.

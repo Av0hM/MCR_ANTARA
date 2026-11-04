@@ -160,8 +160,8 @@ housekeeping telemetry nominal \\
 \toprule\noalign{}
 \textbf{Parameter} & \textbf{Value} \\
 Grid resolution & 5° × 5° in geographic latitude and longitude \\
-SAA bounding box & 270°W to 10°E, 50°S to 10°N (130° × 60°) \\
-Total grid cells in bounding box & 26 × 12 = 312 cells \\
+SAA region & Approved count-rate polygon; vertices in the coverage contract \\
+Geometric polygon-overlap cells & 92; science eligibility requires validation \\
 Cell dwell time per pass & \textasciitilde74 seconds per 5° latitude band at 7.5 km/s \\
 \midrule\noalign{}
 \endhead
@@ -176,7 +176,7 @@ Cell dwell time per pass & \textasciitilde74 seconds per 5° latitude band at 7.
 \toprule\noalign{}
 \textbf{ID} & \textbf{Requirement} \\
 MM-M-01 REQUIRED & The mission shall produce a calibrated 5°×5° flux map covering at least
-70\% of grid cells within the SAA bounding box with valid measurements
+70\% of grid cells within the approved SAA polygon with valid measurements
 (≥3 independent SAA passes per cell). \\
 MM-M-02 REQUIRED & Coverage shall include the SAA flux core (centred approximately on
 310°E, 30°S) to ≥90\% even if peripheral cells fall below the 70\%
@@ -238,7 +238,7 @@ Minimum SAA passes for MSC science & ≥ 900 passes with payload operational \\
 \toprule\noalign{}
 \textbf{Parameter} & \textbf{Value} \\
 Grid resolution & 1° × 1° in geographic latitude and longitude \\
-Total grid cells in bounding box & 130 × 60 = 7,800 cells \\
+Geometric polygon-overlap cells & 2,020; science eligibility requires validation \\
 Cell dwell time per pass & 15 seconds per 1° latitude band at 7.5 km/s \\
 \midrule\noalign{}
 \endhead
@@ -253,7 +253,7 @@ Cell dwell time per pass & 15 seconds per 1° latitude band at 7.5 km/s \\
 \toprule\noalign{}
 \textbf{ID} & \textbf{Requirement} \\
 MS-M-01 REQUIRED & The mission shall produce a calibrated 1°×1° flux map covering at least
-90\% of SAA bounding box cells that contain detectable flux. \\
+90\% of approved SAA polygon cells that contain detectable flux. \\
 MS-M-02 REQUIRED & Each populated 1°×1° cell shall achieve σ\_F/F ≤ 25\% in at least the
 two lowest-energy operational channels. Requires N ≥ 16 counts per cell
 per channel. \\
@@ -311,7 +311,7 @@ Minimum SAA passes for EMSC science & ≥ 2400 passes with payload operational \
 \toprule\noalign{}
 \textbf{Parameter} & \textbf{Value} \\
 Grid resolution & 0.5° × 0.5° in geographic latitude and longitude \\
-Total grid cells in SAA bounding box & 260 × 120 = 31,200 cells \\
+Geometric polygon-overlap cells & 7,940; science eligibility requires validation \\
 Cell dwell time per pass & \textasciitilde7 seconds per 0.5° latitude band at orbital velocity \\
 \midrule\noalign{}
 \endhead
@@ -354,7 +354,7 @@ EMSC window, plus two 9--10 month sub-period maps. \\
 Mission Duration & 4--6 months & 12--14 months & 18--20 months \\
 Min SAA Passes & ≥ 150 & ≥ 900 & ≥ 2400 \\
 Spatial Resolution & 5° × 5° & 1° × 1° & 0.5° × 0.5° \\
-Map Grid Cells & 312 & 7,800 & 31,200 \\
+Geometric overlap cells & 92 & 2,020 & 7,940 \\
 SAA Coverage & ≥ 70\% (≥90\% core) & ≥ 90\% & ≥ 95\% (primary) \\
 σ\_F/F Threshold & ≤ 50\% & ≤ 25\% & ≤ 10--15\% \\
 Min Passes/Cell & ≥ 3 & ≥ 5 & ≥ 5 \\
@@ -370,3 +370,5 @@ AP9 Comparison & Basic ratio check & Full residual map (1°) & Sub-map residuals
 
 \subsection{Outstanding MCR Evidence}
 \paragraph{Science verification path.} MMSC, MSC and EMSC are retained as committed requirements. Grid-cell occupancy, detector acceptance, energy migration and systematic uncertainty must be coupled with the chosen payload response before compliance can be claimed.
+
+\paragraph{Coverage acceptance contract.} The polygon is the supplied count-rate domain, using east-positive longitude in $[-180,180)$ and positive-area cell overlap. Its geometric counts are not automatic science-success denominators. The coverage, pass, channel, precision and temporal requirements above remain committed. Eligible flux/core definitions and independent observation rules require acceptance before calculating compliance. Repeated samples in one visit are not independent passes. Counts require science-enabled exposure, qualified response/background and usable stored/downlinked products; pure Poisson thresholds alone do not establish calibrated flux precision.

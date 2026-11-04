@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Immutable approved FPDU input revision v2",
+  "const": {
+    "configuration_id": "FPDU-2026-11-04-approved-v2",
+    "status": "CONFIRMED DESIGN INPUT",
+    "supersedes": "FPDU-2026-11-04",
+    "source": "Unified master user instruction and coincidence-window clarification; not formal hardware Rev. 2.2 approval",
+    "geometry": {
+      "dimension_unit": "mm",
+      "body_frame": "+X ram-facing outward boresight; inward incident particles travel -X",
+      "main": {
+        "quantity": 5,
+        "dimensions_xyz_mm": [
+          14,
+          6,
+          6
+        ],
+        "active_length_x_mm": 70,
+        "sipms_per_block": 2,
+        "sipm_faces": [
+          "+Y",
+          "-Y"
+        ],
+        "reflector": {
+          "material": "Teflon",
+          "faces": [
+            "+Z",
+            "-Z"
+          ],
+          "thickness_per_face_mm": 0.11,
+          "coated_z_mm": 6.22
+        }
+      },
+      "front": {
+        "quantity": 1,
+        "dimensions_xyz_mm": [
+          2,
+          6,
+          6
+        ],
+        "sipm_count": 1,
+        "sipm_face": null,
+        "reflector_faces": null,
+        "intended_incident_range_mev": [
+          5.5,
+          15
+        ],
+        "role": "Energy deposition, candidate dE/dx and coincidence/classification observable; unvalidated"
+      },
+      "total_active_length_mm": 72,
+      "total_material_volume_mm3": 2592,
+      "total_sipm_count": 11,
+      "same_scintillator_material": true,
+      "scintillator_material": null,
+      "silicon_entrance_detector": false,
+      "rear_detector": "optional_unselected",
+      "optical_isolation": null,
+      "optical_isolation_candidates": [
+        "isolated",
+        "partially_coupled",
+        "common_coupling_if_feasible"
+      ],
+      "inter_block_gap_mm": null,
+      "packaged_dimensions_mm": null,
+      "cad_icd_revision": null
+    },
+    "optics": {
+      "coupling_material": "EJ-550 optical coupling grease",
+      "thickness_mm": null,
+      "coupling_area_mm2": null,
+      "sipm_model": null,
+      "crosstalk": null
+    },
+    "entrance_shielding": {
+      "material": "aluminium",
+      "thickness_um": 250,
+      "thickness_mm": 0.25,
+      "location": "front entrance only",
+      "transport_validated": false
+    },
+    "environment": {
+      "source_directory": "data/raw/payload_count_rate_2026",
+      "source_epoch_utc": "2026-01-01T00:00:00Z",
+      "mjd": 61041,
+      "altitude_km": 600,
+      "use": "Team-approved preliminary references for 2029 planning; not regenerated 2029 outputs",
+      "nominal": "mean",
+      "conservative_study": "percentile_99",
+      "flux_type": "integral_omnidirectional",
+      "flux_unit": "#/cm^2/s",
+      "geometric_factor_cm2_sr": 1,
+      "geometric_factor_status": "PRELIMINARY ESTIMATE",
+      "idealized_efficiency": 1,
+      "proton_threshold_mev": 5.5,
+      "electron_threshold_mev": 0.35,
+      "shielding_in_rate_script": false,
+      "rate_source": "data/derived/payload_count_rate_2026_audit/validation_summary.json",
+      "rounded_400_hz_superseded": true
+    },
+    "electronics": {
+      "status": "OPEN DECISION",
+      "preferred_candidate": "MCU if full architecture qualifies",
+      "processor_selected": null,
+      "architectures": [
+        "ASIC coincidence + MCU",
+        "MCU timer capture",
+        "FPGA",
+        "hybrid FPGA/MCU"
+      ],
+      "asic_shaping_time_ns": 20,
+      "coincidence_target_ns": 200,
+      "timing_allowance_min_ns": 250,
+      "preferred_timing_allowance_ns": 300,
+      "timing_allowance_interpretation": "coincidence acceptance window planning references; not processing deadlines",
+      "post_shaping_delay_ns": 20,
+      "post_shaping_delay_meaning": null,
+      "adc_conversion_latency_ns": null,
+      "digital_processing_latency_ns": null,
+      "qualified_detector_dead_time_ns": null,
+      "max_trigger_rate_hz": null,
+      "analog_channel_count": null,
+      "adc_channel_count": null,
+      "adc_sample_rate_hz": null,
+      "buffer_depth_events": null,
+      "timestamp_resolution_ns": null,
+      "timing_jitter_ns": null,
+      "processing_deadline_ns": null,
+      "energy_per_event_j": null,
+      "thermal_limit_w": null
+    },
+    "science": {
+      "species": "proton",
+      "requirement_mev": [
+        5,
+        100
+      ],
+      "histogram_bins": 64,
+      "bin_edges_id": "FPDU-log64-5-100-v1",
+      "bin_edges_mev": [
+        5,
+        5.23960560463034,
+        5.4906933784147345,
+        5.753813559769708,
+        6.029542755153482,
+        6.318485202652089,
+        6.6212740961179515,
+        6.938572972762662,
+        7.271077167244768,
+        7.619515335439076,
+        7.984651051226683,
+        8.367284479804972,
+        8.76825413118452,
+        9.188438697715508,
+        9.628758979670497,
+        10.090179903103248,
+        10.573712634405641,
+        11.080416796196486,
+        11.611402789398255,
+        12.16783422659029,
+        12.750930481971075,
+        13.361969363517495,
+        14.002289913197036,
+        14.673295341369212,
+        15.376456101806877,
+        16.113313114075943,
+        16.885481140335173,
+        17.694652323956014,
+        18.542599897717043,
+        19.431182069699236,
+        20.362346095397736,
+        21.338132544973742,
+        22.360679774997898,
+        23.432228614484654,
+        24.555127275486647,
+        25.731836499010228,
+        26.964934947529112,
+        28.25712485591321,
+        29.611237953156433,
+        31.030241667880215,
+        32.51724563121182,
+        34.07550849128778,
+        35.70844505431604,
+        37.41963376784577,
+        39.21282456264389,
+        41.091947070363034,
+        43.06111923500949,
+        45.124656337082214,
+        47.28708045015879,
+        49.55313035065156,
+        51.927771902450345,
+        54.41620893920894,
+        57.023894668122956,
+        59.75654362018944,
+        62.6201441731364,
+        65.62097167446508,
+        68.76560219336321,
+        72.06092693162526,
+        75.51416732516023,
+        79.13289086918056,
+        82.9250277017519,
+        86.8988879820451,
+        91.06318010137352,
+        95.42702976692375,
+        100
+      ],
+      "bin_edges_status": "Provisional reporting format, not calibrated independent energy channels",
+      "reconstruction_candidates": [
+        "calibrated response-matrix lookup/unfolding",
+        "trained reconstruction model"
+      ],
+      "qualified_response_id": null,
+      "calibration_id": null,
+      "encoding": null,
+      "cadence_sec": null,
+      "packet_bytes": null
+    }
+  }
+}

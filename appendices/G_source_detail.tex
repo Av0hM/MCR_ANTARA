@@ -1,50 +1,21 @@
-\section{Source Orbit and Mission Timeline Detail}\label{app:source-02}
-\noindent\textit{Historical source detail. Several numerical assumptions and design descriptions in this transcription have been superseded by Sections 1--5 and Appendix L. These tables are retained for traceability and are not the current approved mission baseline.}
-
-\noindent\textit{The following is retained from the original project draft for supporting detail and comparison. Numerical claims are preliminary unless specifically reconciled in the main text.}
-
-% decay narrative remain unchanged. Add only missing decision records.
+\section{Mission Baseline Register and Review Gates}\label{app:source-02}
+This register replaces unfilled draft tables. It records approved inputs and evidence boundaries without assigning unverified margins or project dates. Historical study configurations remain individually identified in Appendices~\ref{app:sim-provenance} and~\ref{app:updated-raan}.
 
 \subsection{Mission Design Baseline and Assumption Register}
-% TODO: Reconcile against current simulation versions; distinguish selected,
-% assumed, and pending values. Do not silently select among conflicting values.
-\begin{longtable}{p{0.25\linewidth}p{0.18\linewidth}p{0.20\linewidth}p{0.25\linewidth}}
-\toprule
-Parameter & Baseline value & Status / source & Open reconciliation \\
-\midrule
-\endhead
-Spacecraft wet mass & TBD & Preliminary & Check CAD and component budget \\
-Battery energy capacity & TBD & Preliminary & Reconcile EPS product and DITL \\
-Orbit epoch / RAAN & TBD & Trade-dependent & Specify scenario and epoch \\
-Ground-station elevation mask & TBD & Preliminary & Match contact simulations \\
-\bottomrule
-\end{longtable}
+\begin{table}[H]\centering\small
+\begin{tabularx}{\linewidth}{@{}p{3.2cm}p{4cm}X@{}}\toprule
+Parameter & Current input & Qualification\\\midrule
+Spacecraft & 3U; maximum 3.0 kg & Mass budget not closed by component subtotal\\
+Reference orbit & 2029-01-01 UTC; 600 km; $97.6^\circ$; $e\sim0.001$ & Runtime/environment identity required for each result\\
+RAAN & Launch-dependent & Representative cases are sensitivity studies, not controllable insertion choices\\
+Battery & 25 Wh planning capacity & Distinct from manufacturer pack rating\\
+ADCS & Reaction wheels and magnetorquers & Supplier/interface selection remains open\\
+Science & Proton differential flux, 5--100 MeV & MMSC/MSC/EMSC thresholds retained; detector and coverage validation required\\
+Operational objective & Approximately five years & Separate from modeled 300 km cutoff and reentry\\\bottomrule
+\end{tabularx}\end{table}
 
-\subsection{Mission-Level Design Trades and Decision Log}
-% TODO: Include only consequential choices and trace to a later results figure.
-\begin{longtable}{p{0.22\linewidth}p{0.25\linewidth}p{0.26\linewidth}p{0.17\linewidth}}
-\toprule
-Decision & Options evaluated & Selection rationale/evidence & Status \\
-\midrule
-\endhead
-Orbit / RAAN & TBD & Refer to Sec.~\ref{sec:simulation-results} & Open \\
-Solar array / EPS & TBD & TBD & Open \\
-Attitude actuation & TBD & TBD & Open \\
-Communication architecture & TBD & TBD & Open \\
-\bottomrule
-\end{longtable}
+\subsection{Mission-Level Design Trades}
+The current payload configuration is controlled by Appendix~\ref{app:payload-detail}. Radiation input dates and RAAN evidence identities are controlled by Appendix~\ref{app:evidence-record}. EPS, antenna and station studies retain their own configuration assumptions; a common spacecraft feasibility claim requires consistent loads, geometry, exposure and data products. No component selection or physics model is changed merely to reconcile a table.
 
-\subsection{Development Milestones and Review Gates}
-% TODO: Include expected PDR/CDR, qualification, launch readiness and dependencies;
-% clearly mark target dates as targets rather than commitments.
-\begin{longtable}{p{0.24\linewidth}p{0.22\linewidth}p{0.40\linewidth}}
-\toprule
-Gate & Target date / status & Exit evidence and dependencies \\
-\midrule
-\endhead
-PDR & TBD & TBD \\
-CDR & TBD & TBD \\
-Environmental qualification & TBD & TBD \\
-Flight readiness / launch integration & TBD & TBD \\
-\bottomrule
-\end{longtable}
+\subsection{Development Gates}
+PDR requires controlled payload CAD/optics, acquisition and response-validation plans, science eligibility/independence rules and closed interface ownership. CDR requires implemented and verified hardware/software against those baselines. Environmental qualification and flight readiness require documented component/assembly tests and launch interfaces. Dates and named owners require team assignment; this report does not invent schedule commitments.

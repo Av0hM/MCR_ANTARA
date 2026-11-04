@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 \input{preamble}
 \begin{document}
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \thispagestyle{empty}
 \vspace*{17mm}
@@ -16,6 +17,7 @@
 \vfill
 \end{titlepage}
 \pagenumbering{roman}
+\hypersetup{pageanchor=true}
 \tableofcontents
 \clearpage
 \listoftables
@@ -56,7 +58,7 @@
 
 % Existing source-detail and supplemental appendices retain their contents.
 \clearpage
-\noindent\textbf{Historical source-detail warning.} Appendices B--E below preserve transcribed earlier material for traceability. Where they conflict with the revised main sections and Appendix A (especially the FPDU stack), the newer baseline controls; historical figures are not current flight selections.
+\noindent\textbf{Historical material notice.} The following appendices include transcribed earlier evidence and updated baseline/closure registers. Historical design descriptions are explicitly marked; where they conflict with the revised main sections and Appendix A, the current baseline controls. Historical figures are not current flight selections.
 \input{appendices/G_source_detail}
 \clearpage
 \input{appendices/H_source_detail}

@@ -1,0 +1,175 @@
+--- a/src/simulations/ditl/ANTARA_Science_Sim.py
++++ b/src/simulations/ditl/ANTARA_Science_Sim.py
+@@ -810,8 +810,8 @@
+           pitch_angle_deg float
+           ew_factor       float
+           saa_depth       float
+-          count_rate      np.ndarray (n_channels,)  counts/s after efficiency+deadtime
+-          dark_counts     np.ndarray (n_channels,)  dark count contribution
++          spectral_rate_density_hz_per_mev np.ndarray (n_channels,)
++                          idealized differential rate; no dead-time/background correction
+           storm_time      bool
+         """
+         depth = self.saa_depth_factor(lat_deg, lon_deg)
+@@ -831,16 +831,10 @@
+         measured_flux = np.maximum(measured_flux, 0.0)
+         residual = measured_flux - ap9_flux
+ 
+-        # Detector response: apply efficiency, geometric factor, dead-time, dark counts
++        # Nodal differential spectrum: this is a density, not an integrated Hz rate.
++        # No bin widths or physical trigger topology are defined at this interface.
+         efficiency = np.array(self.config.detector_efficiency, dtype=float)
+-        geom = self.geometric_factor_cm2sr
+-        raw_rate = measured_flux * geom * efficiency   # counts / s / MeV × MeV_bin not applied here — stored as-is
+-        dead_time_suppression = 1.0 / (
+-            1.0 + np.maximum(raw_rate, 0.0) * self.config.detector_dead_time_sec
+-        )
+-        count_rate = raw_rate * dead_time_suppression
+-        dark_counts = np.full(self.n_channels, self.config.detector_dark_count_rate_hz, dtype=float)
+-        total_count_rate = count_rate + dark_counts
++        spectral_rate_density = measured_flux * self.geometric_factor_cm2sr * efficiency
+ 
+         assert float(np.all(np.isfinite(measured_flux))), "Non-finite proton flux detected"
+         assert 0.0 <= pitch_deg <= 90.0, f"Pitch angle {pitch_deg:.3f} deg out of bounds"
+@@ -852,9 +846,7 @@
+             "pitch_angle_deg": pitch_deg,
+             "ew_factor":       ew_factor,
+             "saa_depth":       depth,
+-            "count_rate":      count_rate,
+-            "dark_counts":     dark_counts,
+-            "total_count_rate": total_count_rate,
++            "spectral_rate_density_hz_per_mev": spectral_rate_density,
+             "storm_time":      storm_time,
+         }
+ 
+@@ -1143,7 +1135,10 @@
+         accepted_counts = total_count_rate * dt_sec
+         event_types = list(self.bin_event_type_map)
+ 
++        effective_bin_intervals = list(zip(self.bin_edges_mev[:-1].tolist(), self.bin_edges_mev[1:].tolist()))
+         if self.config.enable_periphery_bin_merge and region in {"periphery", "ultra-periphery"}:
++            effective_bin_intervals[0] = (float(self.bin_edges_mev[0]), float(self.bin_edges_mev[3]))
++            effective_bin_intervals[1:3] = [None, None]
+             merged_slice = slice(0, 3)
+             merged_counts = float(np.sum(accepted_counts[merged_slice]))
+             if merged_counts > 0.0:
+@@ -1211,6 +1206,7 @@
+             "livetime_fraction": mean_livetime_fraction,
+             "histogram_downlink_due": payload_snapshot_due,
+             "histogram_bytes": histogram_bytes_this_step,
++            "effective_bin_intervals_mev": effective_bin_intervals,
+             "bin_edges_mev": self.bin_edges_mev.tolist(),
+             "bin_centers_mev": self.bin_centers_mev.tolist(),
+             "bin_event_types": self.bin_event_type_map,
+--- a/src/simulations/power/ANTARA_MCR.py
++++ b/src/simulations/power/ANTARA_MCR.py
+@@ -478,7 +478,8 @@
+     "RAAN",
+     "avg_power",
+     "avg_soc",
+-    "min_soc",
++    "mean_run_min_soc",
++    "worst_min_soc",
+     "battery_cycles",
+     "lifetime_years",
+     "quiet_orbits",
+@@ -490,6 +491,8 @@
+ # ============================================================
+ # MAIN LOOP
+ # ============================================================
++
++stats_rows = []
+ 
+ for RAAN in RAAN_VALUES:
+ 
+@@ -815,9 +818,13 @@
+                 (battery_eff if power_net >= 0.0 else 1.0 / battery_eff)
+             )
+ 
+-            battery_energy += delta_energy
+-
+-            throughput_wh += abs(delta_energy)
++            accepted_delta_energy = max(
++                -battery_energy,
++                min(delta_energy, max(0.0, battery_capacity_remaining - battery_energy)),
++            )
++            battery_energy += accepted_delta_energy
++            # Curtailed solar energy and unmet load never cycle through the battery.
++            throughput_wh += abs(accepted_delta_energy)
+ 
+             cycle_count = (
+                 throughput_wh /
+@@ -992,6 +999,7 @@
+         np.mean(raan_avg_power),
+         np.mean(raan_avg_soc),
+         np.mean(raan_min_soc),
++        np.min(raan_min_soc),
+         np.mean(raan_cycles),
+         np.mean(raan_lifetime),
+         orbit_type_counter["QUIET"],
+@@ -1000,37 +1008,37 @@
+         orbit_type_counter["MIXED"]
+     ])
+ 
++    for stat in [
++        compute_statistics(
++            raan_avg_power,
++            "Average Power"
++        ),
++        compute_statistics(
++            raan_avg_soc,
++            "Average SOC"
++        ),
++        compute_statistics(
++            raan_min_soc,
++            "Minimum SOC"
++        ),
++        compute_statistics(
++            raan_cycles,
++            "Battery Cycles"
++        ),
++        compute_statistics(
++            raan_lifetime,
++            "Lifetime Years"
++        )
++    ]:
++
++        if stat is not None:
++            stat["RAAN"] = RAAN
++            stats_rows.append(stat)
++
++
+ # ============================================================
+ # FINAL STATISTICS
+ # ============================================================
+-
+-stats_rows = []
+-
+-for stat in [
+-    compute_statistics(
+-        raan_avg_power,
+-        "Average Power"
+-    ),
+-    compute_statistics(
+-        raan_avg_soc,
+-        "Average SOC"
+-    ),
+-    compute_statistics(
+-        raan_min_soc,
+-        "Minimum SOC"
+-    ),
+-    compute_statistics(
+-        raan_cycles,
+-        "Battery Cycles"
+-    ),
+-    compute_statistics(
+-        raan_lifetime,
+-        "Lifetime Years"
+-    )
+-]:
+-
+-    if stat is not None:
+-        stats_rows.append(stat)
+ 
+ stats_df = pd.DataFrame(
+     stats_rows

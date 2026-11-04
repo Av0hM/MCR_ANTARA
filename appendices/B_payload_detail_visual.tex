@@ -1,98 +1,157 @@
-\subsection{Detailed Scientific Payload: FPDU Revised Baseline}\label{app:payload-detail}
-The FPDU measures directional differential proton flux in the South Atlantic Anomaly over the mission-required 5--100~MeV interval. The current payload reference is \emph{ANTARA FPDU Payload Redesign --- Verified Baseline, Rev.~2.1} (18 September 2026), supplied with the MCR source material. It is a documented \emph{design and analysis baseline}, not flight-qualified detector performance. The earlier five-layer stopping stack in \emph{Payload\_1} is superseded; its stopping-depth and event-rate estimates must not be presented as the current instrument response.
+\subsection{Detailed Scientific Payload: Approved FPDU Concept}\label{app:payload-detail}
+The current source of truth is configuration \texttt{FPDU-2026-11-04-approved-v2}, referenced by \path{config/payload/current.json}. It supersedes the earlier same-day input snapshot and the single-block Rev.~2.1 narrative without claiming a formally released hardware revision. The mission requirement remains directional differential proton-flux measurement over 5--100~MeV. No geometry-matched detector response has yet qualified that interval.
 
-\subsubsection{Selected Concept and Design Trades}\label{app:payload-configuration}
-\begin{table}[htbp]\centering\small
-\caption{FPDU architecture and status from payload redesign Rev.~2.1}\label{tab:fpdu-design-summary}
-\begin{tabularx}{\linewidth}{@{}p{3.25cm}X p{2.55cm}@{}}\toprule
-Element & Measurement function & Design status\\\midrule
-Al entrance / collimator & Defines FOV and contributes to low-energy transmission shaping & Al thickness to be swept\\
-Active silicon entrance & $\Delta E_{\rm Si}$ and prompt charged-particle coincidence & Retained; thickness to optimize\\
-Main scintillator block & Deposited-energy/light response; replaces five separate EJ-200 stopping layers & Single-block concept\\
-SiPMs on two sides & Light collection and longitudinal optical asymmetry & Minimum configuration\\
-SiPMs on four sides & Additional asymmetry and edge rejection & Trade option\\
-Rear active detector & Tags exiting or penetrating events; not a universal veto & Required concept\\
-FPGA and histograms & Hardware coincidence, features, classification and binned science packets & Interface/electronics TBD\\\bottomrule
+\textbf{Evidence convention.} \textbf{CONFIRMED DESIGN INPUT} denotes approved construction or mission inputs; \textbf{PRELIMINARY ESTIMATE} denotes conditional planning assumptions; \textbf{MODEL PREDICTION} denotes a calculation under stated assumptions; \textbf{VALIDATED RESULT} is restricted to the tested software identity or arithmetic, not inferred hardware performance; \textbf{OPEN DECISION} denotes unresolved design choices. Detector response and hardware performance require validation.
+
+\subsubsection{Geometry, Axes and Optical Interfaces}\label{app:payload-configuration}
+\begin{table}[H]\centering\small
+\caption{Confirmed FPDU mechanical inputs; dimensions exclude packaging}\label{tab:fpdu-design-summary}
+\begin{tabularx}{\linewidth}{@{}p{3.1cm}p{4.1cm}X@{}}\toprule
+Element & Current specification & Interpretation\\\midrule
+Main scintillators & Five, each $14_X\times6_Y\times6_Z$~mm & In series along X; 70~mm active length\\
+Front scintillator & One, $2_X\times6_Y\times6_Z$~mm & Total nominal active length 72~mm\\
+Main-block SiPMs & One on each $+Y$ and $-Y$ face & Ten main sensors plus one front sensor: eleven total\\
+Main-block reflector & Teflon, 0.11~mm per $\pm Z$ face & Coated Z dimension 6.22~mm; X and Y faces not coated by default\\
+Optical coupling & EJ-550 grease & Thickness, coupling area and sensor models open\\
+Entrance shield & 250~$\mu$m = 0.25~mm Al & Front entrance only; transport not validated\\
+Silicon / rear detector & Silicon removed; rear optional & Optional rear scintillator not selected or included in dimensions\\\bottomrule
 \end{tabularx}\end{table}
 
-\subsubsection{Flight-Direction Geometry and Readout}\label{app:payload-stack}
-\begin{figure}[htbp]\centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[>=Latex,font=\sffamily\scriptsize,
- block/.style={draw=AntaraNavy,fill=AntaraPale,rounded corners=2pt,minimum width=2.45cm,minimum height=1.2cm,align=center},
- flow/.style={-{Latex[length=2mm]},very thick,draw=AntaraNavy}]
-\node[block] (ap) at (0,0) {Al collimator\\aperture / entrance};
-\node[block] (si) at (3.2,0) {Active silicon\\$\Delta E_{\rm Si}$};
-\node[block,minimum width=3cm,minimum height=1.5cm,fill=AntaraTeal!10] (sc) at (7,0) {Single scintillator\\$E_{\rm scint}$};
-\node[block] (rear) at (11.0,0) {Rear active layer\\penetration tag};
-\node[block,minimum width=2.4cm] (sipm) at (7,2) {Side SiPMs\\$Q_L,Q_R$};
-\node[block] (fpga) at (7,-2.2) {Frontend + FPGA\\trigger / response LUT};
-\node[block] (hist) at (11,-2.2) {Histograms + HK\\OBC / storage / radio};
-\draw[flow] (ap)--(si);\draw[flow] (si)--(sc);\draw[flow] (sc)--(rear);
-\draw[flow] (sipm)--(sc);\draw[flow] (sipm.south west) to[out=225,in=130] (fpga.north west);
-\draw[flow] (si.south) |- (fpga.west);\draw[flow] (sc.south)--(fpga.north);
-\draw[flow] (rear.south) |- (fpga.east);\draw[flow] (fpga)--(hist);
-\node[above=4mm of ap] {Incoming protons along spacecraft +X};
-\end{tikzpicture}}
-\caption{Updated +X/RAM FPDU concept and signal path. Blocks are functional rather than mechanically scaled. Two-side SiPM readout is the minimum; four-side readout remains a trade.}\label{fig:fpdu-stack-schematic}
+The body-frame $+X$ direction points outward along the RAM/payload boresight. Particles enter the $+X$-facing entrance and propagate inward toward $-X$. All six scintillators are intended to share one material; its selection is open. Material volume is 504~mm$^3$ per main block, 2520~mm$^3$ for five, 72~mm$^3$ for the front, and 2592~mm$^3$ = 2.592~cm$^3$ in total. These exclude gaps, coating, grease, shielding, sensors, supports and any rear element. Neither packaged length nor payload mass follows from active dimensions alone.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small,dim/.style={<->,thin}]
+\foreach \x/\n in {0/5,1.8/4,3.6/3,5.4/2,7.2/1}{
+\draw[fill=AntaraPale,draw=AntaraNavy] (\x,0) rectangle +(1.8,1.25);
+\node at (\x+.9,.62) {Block \n};}
+\draw[fill=AntaraTeal!25] (9.2,0) rectangle (9.5,1.25);
+\draw[fill=gray!40] (9.8,0) rectangle (9.87,1.25);
+\draw[->,thick] (12,.62)--(10.1,.62) node[midway,above]{inward $-X$};
+\node[align=center,font=\scriptsize] at (9.35,2) {Front\\2 mm};
+\draw (9.35,1.3)--(9.35,1.6);
+\node[align=center,font=\scriptsize] at (11,1.8) {Al entrance\\0.25 mm};
+\draw (9.84,1.25)--(10.4,1.7);
+\draw[dim] (7.2,-.35)--node[below]{14 mm}(9,-.35);
+\draw[dim] (0,-1)--node[below]{70 mm main material + 2 mm front = 72 mm active material}(9.5,-1);
+\draw[dim] (-.4,0)--node[left]{6 mm}(-.4,1.25);
+\draw[->] (0,2)--(1.1,2) node[right]{$+X$};
+\draw[->] (0,2)--(0,2.7) node[above]{$+Z$};
+\node[align=center,font=\scriptsize] at (5,2.35) {Side view from $-Y$ toward $+Y$\\Inter-block optical interfaces OPEN};
+\end{tikzpicture}
+\caption{Longitudinal concept, not a packaged CAD drawing. Shown gaps and shield thickness are schematic. Dimension sums count active material only. An optional rear detector would lie beyond Block 5 and is not included.}\label{fig:fpdu-stack-schematic}\label{app:payload-stack}
 \end{figure}
-The inherited entrance dimensions are a 10~mm aperture radius, 30~mm aperture-to-silicon spacing and 10$\times$10~mm silicon active area. For the idealized treatment in the payload redesign, the nominal half-angle is $\arctan(10/30)=18.4^\circ$ and the quoted geometric factor is $0.314\ \mathrm{cm^2\,sr}$. These are \emph{initial geometry figures}, not calibrated effective geometric factors; finite-area acceptance and particle transport must be assessed with the full GRAS geometry.
 
-\subsubsection{Mixed-Particle Event Identification}\label{app:payload-coincidence}
-Proton identification is not performed using scintillator pulse height alone. The design uses the correlated event vector
-\begin{equation}
-\mathbf{x}_{\rm evt}=\left[\Delta E_{\rm Si}, E_{\rm scint}, E_{\rm rear},Q_L,Q_R,(Q_T,Q_B),\Delta t,\mathrm{flags}\right],
-\end{equation}
-where the optional top/bottom light channels apply only to the four-sided readout trade. The Level-0 candidate trigger is a prompt coincidence
-\begin{equation}
-\mathrm{L0}=\mathrm{Si}_{\rm hit}\land\mathrm{Main}_{\rm hit}\quad\mathrm{within}\quad\Delta t_{\rm coinc}.
-\end{equation}
-The coincidence width is not frozen until the sensor and electronics timing response is measured. Rear-detector activity is stored as a penetration observable; it is \emph{not} an unconditional reject signal, because high-energy science protons may traverse the main scintillator.
-\begin{table}[htbp]\centering\small
-\caption{Classification information for a mixed LEO radiation field}\label{tab:fpdu-event-acceptance}
-\begin{tabularx}{\linewidth}{@{}p{2.5cm}X@{}}\toprule
-Population / topology & Relevant discrimination observables\\\midrule
-Accepted proton candidate & Silicon--main timing, $\Delta E_{\rm Si}$ / scintillator response, fitted proton response manifold\\
-Penetrating proton & Rear layer energy and response-matrix consistency\\
-Trapped electron & Silicon/scintillator deposition correlations; separate AE9-informed simulation\\
-Heavy ion / alpha & High deposition, front-end saturation, silicon-to-scintillator response\\
-Gamma / neutron & Scintillator-only and delayed/secondary signal patterns; simulation-required leakage\\
-Side / back entry & Collimator geometry, optical asymmetry and rear/front pattern\\\bottomrule
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small]
+\draw[fill=AntaraPale] (0,0) rectangle (3,3);
+\draw[fill=AntaraTeal!40] (0,3) rectangle (3,3.14);
+\draw[fill=AntaraTeal!40] (0,-.14) rectangle (3,0);
+\draw[fill=yellow!30] (-.12,0) rectangle (0,3);
+\draw[fill=yellow!30] (3,0) rectangle (3.12,3);
+\draw[fill=AntaraNavy!20] (-.5,.6) rectangle (-.12,2.4);
+\draw[fill=AntaraNavy!20] (3.12,.6) rectangle (3.5,2.4);
+\node[rotate=90,font=\scriptsize] at (-.31,1.5){SiPM $-Y$};
+\node[rotate=90,font=\scriptsize] at (3.31,1.5){SiPM $+Y$};
+\node at (1.5,1.5){Scintillator};
+\node[above] at (1.5,3.35){Teflon $+Z$: 0.11 mm};
+\node[below] at (1.5,-.35){Teflon $-Z$: 0.11 mm};
+\draw[<->] (4.1,0)--node[midway,sloped,above,font=\scriptsize]{Active Z: 6.00 mm}(4.1,3);
+\draw[<->] (5.2,-.14)--node[midway,sloped,above,font=\scriptsize]{Coated Z: 6.22 mm}(5.2,3.14);
+\draw[<->] (0,-1)--node[below]{6.00 mm active Y}(3,-1);
+\draw[->] (8,0)--(9,0) node[right]{$+Y$};
+\draw[->] (8,0)--(8,1) node[above]{$+Z$};
+\node[align=left,text width=3cm,font=\scriptsize] at (8.5,2.5){View from $+X$ toward $-X$.\\EJ-550 at both Y interfaces.\\Grease/sensor sizes schematic.};
+\end{tikzpicture}
+\caption{Main-block cross-section. Optical isolation between successive X faces is undecided. The front scintillator's coating and SiPM attachment face remain open; this cross-section does not prescribe them.}\label{fig:fpdu-cross-section}
+\end{figure}
+
+\textbf{OPEN DECISION: optical isolation.} Independently isolated blocks could localize deposition but require defined separators and per-block calibration. Partial longitudinal coupling introduces light sharing and cross-talk that must be measured before using multiplicity or position observables. Common coupling, if physically feasible, would require a calibrated light-sharing model and may reduce deposition localization. None is selected. Surface finish, inter-block material, EJ-550 thickness, photon collection, SiPM saturation and temperature behavior remain unqualified. No controlled current FPDU CAD/ICD was recovered.
+\FloatBarrier
+
+\subsubsection{Signal Chain and Timing Trade}\label{app:payload-electronics}\label{app:payload-timing}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small,b/.style={draw=AntaraNavy,fill=AntaraPale,rounded corners,text width=2.45cm,minimum height=1.1cm,align=center},f/.style={->,thick}]
+\node[b] (s) at (0,0){Scintillator};
+\node[b] (p) at (3.3,0){SiPM};
+\node[b] (a) at (6.6,0){ASIC\\20 ns shaping};
+\node[b] (d) at (9.9,0){ADC\\latency open};
+\node[b] (c) at (9.9,-2){MCU / FPGA\\selection open};
+\node[b] (r) at (6.6,-2){Classification\\reconstruction};
+\node[b] (h) at (3.3,-2){64-bin histogram\\quality metadata};
+\node[b] (o) at (0,-2){Storage\\downlink};
+\draw[f] (s)--node[above=10pt,font=\scriptsize]{light}(p);
+\draw[f] (p)--node[above=10pt,font=\scriptsize]{signal}(a);
+\draw[f] (a)--(d);\draw[f] (d)--(c);\draw[f] (c)--(r);\draw[f] (r)--(h);\draw[f] (h)--(o);
+\end{tikzpicture}
+\caption{Candidate signal and science-data flow. EJ-550 provides the optical interface. Eleven SiPMs do not specify eleven ADCs. Fast coincidence may occur in analog/ASIC logic while downstream processing is buffered; this architecture remains to be selected.}\label{fig:fpdu-signal-chain}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{Separate timing references and missing qualification inputs}\label{tab:fpdu-timing}
+\begin{tabularx}{\linewidth}{@{}p{4.2cm}p{2.4cm}X@{}}\toprule
+Quantity & Planning input & Interpretation\\\midrule
+ASIC shaping time & 20 ns & Pulse-shaping parameter, not coincidence or dead time\\
+Coincidence target & 200 ns & Nominal acceptance-window reference\\
+Initial timing allowance & $\geq250$ ns & Margin-inclusive window reference\\
+Preferred allowance & $\sim300$ ns & Comfortable window reference; accidental-coincidence trade required\\
+Post-shaping delay & 20 ns stated & Meaning unresolved; not assigned as ADC conversion latency\\
+ADC conversion / processing & Unknown / unknown & Datasheets, pipeline and worst-case execution measurements required\\
+Qualified detector dead time & Unknown & Shared/per-channel topology and loss model unresolved\\
+Timestamp precision / jitter & Unknown & Channel skew and discriminator/capture measurements required\\
+Maximum trigger throughput & Unknown & All-particle acceptance, burst and queue tests required\\\bottomrule
 \end{tabularx}\end{table}
 
-\subsubsection{Radiation and Transport Evidence Chain}\label{app:payload-transport}
-The redesign defines an explicit analysis chain: (1) trapped proton/electron environment with SPENVIS IRENE AE9/AP9 v1.50 for the selected orbit and 2029 epoch, (2) heavy-ion and other relevant backgrounds from suitable ion models, (3) MULASSIS one-dimensional Al/Si entrance-thickness sweep, and (4) GRAS/Geant4 full-geometry, multi-species response simulation. The present spacecraft operations model instead uses a \emph{configured AP9-named baseline} and does not execute AP9. No orbit-specific SPENVIS spectrum, low-energy cutoff thickness, particle purity or energy-dependent efficiency from the new chain has been supplied as a completed output.
+The 200/250/300~ns values are coincidence-window planning references, as clarified by the team. They are not processor execution deadlines. Widening a window changes accidental coincidences; it does not prove engineering margin. The two stated 20~ns values must not simply be summed into an end-to-end latency. No dead time is assigned from any of these values.
 
-\begin{table}[htbp]\centering\small
-\caption{Measurement-response verification matrix}\label{tab:fpdu-response-matrix}
-\begin{tabularx}{\linewidth}{@{}p{3.0cm}X p{2.55cm}@{}}\toprule
-Calculation & Required observable & Validation method\\\midrule
-Entrance transmission & $T_p(E,\theta)$ through Al and Si & MULASSIS sweep / GRAS\\
-Effective acceptance & $G_{\rm eff}(E,\mathrm{species})$ & Full-geometry GRAS\\
-Proton classification & Efficiency, purity and background leakage & Mixed-field confusion matrix\\
-Energy reconstruction & Reconstructed-versus-true energy response & GRAS / beam calibration\\
-Event throughput & Peak L0 trigger rate, dead time, saturation & SPENVIS folds + bench\\
-Data volume & Accepted histograms and diagnostic counters per period & FPGA format / operations model\\\bottomrule
+MCU is preferred only if the complete acquisition architecture demonstrates adequate timestamp precision, coincidence handling, ADC bandwidth, buffering, processing throughput and power. Compare ASIC/discriminator coincidence with MCU processing, timer/capture-assisted MCU, FPGA, and hybrid FPGA/MCU implementations. For a stated mean arrival rate $\lambda$ and service time $s$, $\lambda s<1$ is a queue-stability prerequisite, not proof of low event loss. Finite buffers and burst arrivals need explicit tests. Coincidence, ADC acquisition, service time, event loss and detector livetime remain separate quantities.
+\FloatBarrier
+
+\subsubsection{Radiation Inputs and Conditional Rate Estimates}\label{app:payload-data}
+The supplied AP9/AE9 maps are integral omnidirectional fluxes at MJD 61041 (1 January 2026), altitude 600~km. They are team-approved preliminary references for 2029 mission planning, not regenerated 2029 environment outputs. The rate conversion assumes isotropy and $G=1$~cm$^2$~sr with unit efficiency: $R=F_{\rm omni}G/(4\pi)$. It uses log--log interpolation at 5.5~MeV for protons and 0.35~MeV for electrons. The script contains no aluminium transport, actual telescope acceptance, electron rejection, optical response or dead-time model.
+
+\begin{table}[H]\centering\small
+\caption{Reproduced MODEL PREDICTIONS: idealized incident-rate proxy maxima (Hz)}\label{tab:fpdu-rates}
+\begin{tabularx}{\linewidth}{@{}lrrX@{}}\toprule
+Map & Proton & Electron & Interpretation\\\midrule
+Mean & 358.920 & 67\,779.655 & Nominal preliminary environment\\
+99th percentile & 975.659 & 503\,419.743 & Conservative study scenario, not a hard upper bound\\\bottomrule
 \end{tabularx}\end{table}
+The species maxima need not occur at the same cell. Maximum same-cell summed proxies are 68\,055.635~Hz (mean) and 504\,245.064~Hz (99th-percentile maps); the latter is not a joint 99th-percentile trigger bound. Values are independently reproduced from \path{data/raw/payload_count_rate_2026/} in the count-rate validation report. Flux-times-area proxy columns must not be confused with the columns divided by $4\pi$.
 
-\subsubsection{Energy Reconstruction and Flux Product}\label{app:payload-readout}
-Events are classified into stopping and penetrating response regions. A stopping-event estimator uses $f_{\rm stop}(\Delta E_{\rm Si},E_{\rm scint},\text{optical asymmetry})$; penetrating events also include rear-layer response. The 5--100~MeV science interval remains a committed mission requirement. The original 64-bin logarithmic reporting grid is a planning format, \emph{not a demonstrated number of independent physical energy channels}. The measured detector response dictates effective energy resolution and any required rebinning.
+\textbf{PRELIMINARY ESTIMATE, superseded rounded reference:} approximately 400~Hz assumed protons only, 250~$\mu$m (0.25~mm) aluminium shielding, geometric factor 1~cm$^2$~sr and 100\% detection efficiency. Its original generating calculation remains unidentified. The supplied per-cell rates take priority; they do not implement the stated aluminium shielding. No constant rate or electronics ceiling is imposed.
 
-For reconstructed category $j$ in a mixed incident field, the observable counts satisfy a response integral,
+The proton source grid ends at an integral threshold of 20~MeV; its above-threshold quantities are not truncated differential bins. It cannot supply a calibrated 5--100~MeV spectrum or an integral subtraction at 100~MeV. Electrons may consume front-end resources before downstream rejection. A credible maximum actual trigger rate requires geometry, transport, thresholds, mixed species and burst evidence and is not established here.
+
+\subsubsection{Reconstruction, Histogram and Telemetry Contract}\label{app:payload-coincidence}\label{app:payload-readout}
+The front scintillator is intended to respond in the proposed 5.5--15~MeV incident range and provide deposition, path-length-corrected d$E$/d$x$, and classification/coincidence observables. These functions are not calibrated incident-energy measurements. Response-matrix lookup/unfolding and a trained reconstruction model remain candidates. Evaluation must use detector observables, keeping truth energy only as the reference target. The old five-layer stopping response and silicon-based coincidence do not apply.
+
+\begin{table}[H]\centering\small
+\caption{Provisional logical science record; no final encoding or cadence}\label{tab:fpdu-telemetry}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}\toprule
+Field & Definition\\\midrule
+Timestamp & UTC ISO 8601 with explicit zone; acquisition interval/exposure retained in metadata\\
+Position & WGS84 geodetic latitude and longitude in degrees; longitude $[-180,180)$; altitude km\\
+Histogram & 64 bin values; observed counts distinguished from modeled expected counts\\
+Edges & Version \texttt{FPDU-log64-5-100-v1}; 65 logarithmic edges, 5--100~MeV; provisional reporting format\\
+Acquisition metadata & Livetime, trigger/accepted/rejected/lost totals, background estimate, saturation and dead-time flags\\
+Identity / quality & Instrument configuration, calibration and response versions, quality flags; unavailable calibration remains null\\\bottomrule
+\end{tabularx}\end{table}
+The 64 reporting bins are not 64 independently calibrated energy channels. Units and edges are defined in \path{config/science/fpdu_histogram_v1.schema.json}. Packet encoding, quantization, cadence, byte size, data rate and electronics power remain open. Counts, rates, accepted events, proton classifications and delivered records must retain distinct meanings.
+
+For directional differential flux $\Phi_s$ in cm$^{-2}$~s$^{-1}$~sr$^{-1}$~MeV$^{-1}$ and effective area $A_{j,s}$ in cm$^2$, the response contract is
 \begin{equation}
-C_j=\sum_s\int\!\int R_{j,s}(E,\Omega)\,\Phi_s(E,\Omega)\,dE\,d\Omega,
+N_j=\int\ell(t)\sum_s\int\!\int A_{j,s}(E,\Omega,t)\Phi_s(E,\Omega,t)\,dE\,d\Omega\,dt.
 \end{equation}
-where $s$ includes protons, electrons, heavier ions and secondary backgrounds. Counting uncertainty alone follows $\sigma_N/N\simeq 1/\sqrt{N}$; systematics from calibration, energy response and contamination must be added separately. MMSC, MSC and EMSC numeric targets remain committed, but their achievement is not asserted before an orbit- and response-coupled science-yield analysis.
+A geometric factor already includes the angular integral. Shared-trigger livetime, energy migration, background subtraction and calibration uncertainty require a qualified model. Geometric coverage or synthetic counting precision alone cannot establish MMSC, MSC or EMSC.
 
-\subsubsection{Trigger-Rate, Dead-Time and Downlink Closure}\label{app:payload-data}
-The historical 100~Hz and 500~kHz peak-rate figures refer to superseded or inconsistent assumptions and are \emph{not} adopted as flight design limits. Required front-end capacity follows from the incident multi-species spectra folded through the effective response. A non-paralyzable dead-time model may be tested as
-\begin{equation}
-R_{\rm obs}=\frac{R_{\rm true}}{1+R_{\rm true}\tau_{\rm dead}}.
-\end{equation}
-The FPGA should accumulate proton energy histograms together with electron-like, heavy-ion/over-range, scintillator-only, rear-only, saturation and livetime/temperature diagnostic counters. A 64-bin array of four-byte counters would be 256 bytes \emph{for counters alone}; transmission cadence, housekeeping and overhead are not frozen. Consequently the spacecraft radio rate and required contact duration remain linked to the final payload data definition.
-
-\subsubsection{Calibration, Fabrication and PDR Verification}\label{app:payload-calibration}
-The verification path begins with sensor gain, noise, bias, temperature and coincidence/timing calibration; proceeds to charged-particle energy scans for stopping and penetrating topologies; and includes electron/background discrimination and full readout-rate testing. As-built aluminium/silicon areal density, active area, scintillator dimensions, SiPM placement and rear-detector geometry must be controlled so that the ground response matches the flight GDML/GRAS geometry. The key PDR deliverables are an archived SPENVIS project, response-matrix and confusion-matrix results, the selected two-/four-side SiPM layout, a calibrated trigger/ADC/FPGA concept and an experimentally grounded data product definition.
-
-\subsubsection{Superseded Detector Configuration}\label{app:payload-history}
-The earlier \emph{Payload\_1} analysis proposed five separate EJ-200 layers downstream of the silicon detector (2, 4, 12, 22 and 30~mm) with a rear veto. The redesigned one-block telescope replaces that architecture. Those former thicknesses, stopping-limit assignments and the original fixed-rate assumptions are preserved in the supplied historical design file only and must not be interpreted as the selected MCR payload geometry.
+\subsubsection{Conditions for PDR Closure}\label{app:payload-transport}\label{app:payload-calibration}
+\begin{table}[H]\centering\small
+\caption{Remaining verification conditions}\label{tab:fpdu-response-matrix}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm}X@{}}\toprule
+Interface & Required closure evidence\\\midrule
+Mechanical / optical & Controlled CAD/ICD, material, front treatment, gaps, optical isolation, grease and SiPM placement; measured cross-talk and collection maps\\
+Transport / acceptance & Current six-scintillator geometry, entrance Al, proton 5--100~MeV and electron/species/angular scans; validate effective geometric factor\\
+Electronics & Selected channels/components, post-shaping interpretation, timing/jitter, queue/burst tests, measured dead time and loss counters\\
+Reconstruction & Independent calibration and test data, stopping/penetrating response, mixed-species confusion matrix and injected-spectrum closure\\
+Mission coupling & Science-enabled exposure, qualified channels/background, independent-observation contract and stored/downlinked records before tier acceptance\\\bottomrule
+\end{tabularx}\end{table}

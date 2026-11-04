@@ -1,0 +1,365 @@
+{
+  "note": "Self/changelog hashes omitted to avoid circular inventory; original snapshot is pre-implementation, not Git HEAD.",
+  "files": [
+    {
+      "path": "README.md",
+      "change": "modified",
+      "sha256": "ad0c12b0783b93596d076c6bc76c9188ca7af2632a442c72c0bcba2172a9b83d",
+      "reason": "Correct active structure/build instructions and link current inputs, patch and audits."
+    },
+    {
+      "path": "REVISION_NOTES_2029.md",
+      "change": "modified",
+      "sha256": "20db5c2102d1ad15031a2be7de001d13adc4694d9729223e861326ef268edbc3",
+      "reason": "Prepend current supersession while retaining prior revision notes."
+    },
+    {
+      "path": "appendices/B_payload_detail_visual.tex",
+      "change": "modified",
+      "sha256": "774ea2c2ca25c1e3f916a100b67b4b1b2f784d97cfcfff5358a03fa067cb8ebc",
+      "reason": "Current geometry, three TikZ views/flow, optics, timing, rates, telemetry and response gates."
+    },
+    {
+      "path": "appendices/C_simulation_provenance.tex",
+      "change": "modified",
+      "sha256": "825248885dffcb67658cab78ee1b18f9bedcf122588957fb0392ddc7602482cd",
+      "reason": "Replace empty evidence table and old timing with concrete source identities/limits."
+    },
+    {
+      "path": "appendices/D_thermal_structural_details.tex",
+      "change": "modified",
+      "sha256": "cbf0fb74ac849e42170442c7cf8f7bbde498c069f462c7bb9ed961c2284023fd",
+      "reason": "Line-breakable source path only; no thermal model or value changed."
+    },
+    {
+      "path": "appendices/F_orbit_rf_support.tex",
+      "change": "modified",
+      "sha256": "c2ee75cbc884bd4439a13a1ad685a94357ecefea2076521bf34c681d5f9599a6",
+      "reason": "Correct two-run pooling and polygon interpretation; wrap long path."
+    },
+    {
+      "path": "appendices/G_source_detail.tex",
+      "change": "modified",
+      "sha256": "0ffa4ec91c636790729c187307ecf10a1618799520a1980aef9e63f9c114ff20",
+      "reason": "Replace placeholder-only mission register with approved inputs and review gates."
+    },
+    {
+      "path": "appendices/H_source_detail.tex",
+      "change": "modified",
+      "sha256": "f0a56a137b5633e356000f2506f3c0f719278a2ef88ad41409daf1487b6774e4",
+      "reason": "Explicit local historical warnings for silicon/five-layer/CMG descriptions."
+    },
+    {
+      "path": "appendices/I_source_detail.tex",
+      "change": "modified",
+      "sha256": "081e687814dec89ccd609c73aaed6fed1c35ed20aa2da95afac7fe5d1c24203f",
+      "reason": "Withdraw invalid count claim, fix slew minimum and annual label, remove duplicate/empty text."
+    },
+    {
+      "path": "appendices/J_source_detail.tex",
+      "change": "modified",
+      "sha256": "65079aeb624ceb568303144207c8dc5126832d7a616322768e0af1bbc36addcf",
+      "reason": "Replace placeholder-only tables with concrete budget evidence and PDR conditions."
+    },
+    {
+      "path": "appendices/L_new_evidence.tex",
+      "change": "modified",
+      "sha256": "52f5fe9c3578a68b43c506d4cb61b3a6fa6ab67258daddd7ba7cf44b9b8632c7",
+      "reason": "Reconcile polygon domain, current payload and accepted 2029 planning references."
+    },
+    {
+      "path": "appendices/M_updated_raan_drag_study.tex",
+      "change": "modified",
+      "sha256": "289698633608bb9b77fb06d79611397b062d014d847deb576eab028ef4f809eb",
+      "reason": "Correct mean-of-run-minima labels; original numerical values retained."
+    },
+    {
+      "path": "config/mission/antara_2029.json",
+      "change": "new",
+      "sha256": "f0530731fd0634d3a45cb95e84281772d4505fd1e24b41546a960df4c4ea76a4",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/payload/README.md",
+      "change": "modified",
+      "sha256": "ec2c97441504ba87763baacdde5b4e4081084a6ec6174358adc036de82bfd239",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/payload/current.json",
+      "change": "new",
+      "sha256": "92ad7748e15021636b7a0fd5dfa344eeac44de20cde56f8d09c06ac8a2c7c34a",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/payload/fpdu_2026-11-04-approved-v2.json",
+      "change": "new",
+      "sha256": "1929d67e33ee45945f9c6cb0bbd9f27db977004a143b8c217f8cd1674168243c",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/payload/fpdu_2026-11-04-approved-v2.schema.json",
+      "change": "new",
+      "sha256": "5353376b91c32e890f11ccfeb70b33d1053f2bbd2ff5dab683ad421256ddc884",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/science/fpdu_histogram_v1.schema.json",
+      "change": "new",
+      "sha256": "054bd36f59d57797e0a5d1ab9a1cf0b48d2b656b5b038e1bb9f0fbbac92e5f39",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "config/science/saa_polygon_v1.json",
+      "change": "new",
+      "sha256": "b89111ffd01b0620c4c97025550faee9440e98cc0b49e0545173851d59e13623",
+      "reason": "Versioned current input/schema/pointer and explicit open fields; immutable older revision preserved."
+    },
+    {
+      "path": "docs/audit/2029_AUDIT_RECONCILIATION.md",
+      "change": "new",
+      "sha256": "0a345e7803ce9dbf3948f66a7ae22cbcc273269e35f44d83cba9a8105fee54d4",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/AP9_AE9_COUNT_RATE_VALIDATION.md",
+      "change": "modified",
+      "sha256": "2866537ab2818c28fd389e4ab06968de36f241295e4242c268dd373908473b5e",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/CLAIM_TRACEABILITY.md",
+      "change": "new",
+      "sha256": "01dec87f415e1f5f248f0e5a6ba4bf51e894e629df77cb58d2ff482f13ba975d",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/COUNT_RATE_EVIDENCE_INGESTION.md",
+      "change": "modified",
+      "sha256": "0d58e690f14881d20afebf7487d2193e54c0a9875ade3fb1b15201753f56549f",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/COUNT_RATE_MCR_RECOMMENDATIONS.md",
+      "change": "modified",
+      "sha256": "19ba793a5e839a6807adc03dff4655b4686f70836286101bbaab11d1cb462471",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/FPDU_APPROVED_BASELINE.md",
+      "change": "new",
+      "sha256": "5597f0b1d37a59909e90ff5b41ccaf908b26549f76aaaee1ec01fdfc733c2f03",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/FPDU_COUNT_RATE_RECONCILIATION.md",
+      "change": "new",
+      "sha256": "97e1210ea30eacbc8d3f9eec1e790252d8f27da63fb722fd7d7f7e2d09f8d1b5",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/FPDU_ELECTRONICS_TIMING_TRADE.md",
+      "change": "new",
+      "sha256": "114abff03dc03dae9ef619fbdb5466ae4340996ea3998a418e10269040209fcf",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/FPDU_GEOMETRY_VALIDATION.md",
+      "change": "new",
+      "sha256": "ed1d25c4f1731ac884246d2e8ecafbadad3b259f11e5707833f8ec88ff80f96b",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/FPDU_RESPONSE_VALIDATION_PLAN.md",
+      "change": "new",
+      "sha256": "1be26fd5538aea1dcc4840b90d3d7a0417d90d92bb501fc46110d06840aab009",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+      "change": "new",
+      "sha256": null,
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/MCR_CLAIM_AUDIT.md",
+      "change": "modified",
+      "sha256": "aee72ef592d436fb817f6695ec3c9ccd6fbae9dc3c50fbf533f7ccc5d67ee112",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/MODEL_REGISTRY.md",
+      "change": "modified",
+      "sha256": "979834a509eae5e4fd2523e95c03ea9c2fa4c313e562c27af6ed8af26480da60",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/PAYLOAD_AUDIT.md",
+      "change": "modified",
+      "sha256": "0d9ed60e083ba5fead27041fe2b7b7a354cdd1b67628ac7f1ecc4d9a0dc7f173",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/PAYLOAD_OPEN_DECISIONS.md",
+      "change": "modified",
+      "sha256": "492b610c681bcc3d36bed3c9c28ad12bcaf6d385bc087c812bc5e0fcc60d9159",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/PAYLOAD_SIMULATION_COMPATIBILITY.md",
+      "change": "modified",
+      "sha256": "e97dc7ced2eecd34fae47060d777348224b37647cc5670b34c23157a6a4d2f2b",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/PAYLOAD_UPDATE_CHANGELOG.md",
+      "change": "modified",
+      "sha256": "ecb746ef9ae8f08385281d17b9167b7f4f5cb9a3619459bf50c899031a18fdcd",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/REMAINING_OPEN_DECISIONS.md",
+      "change": "new",
+      "sha256": "1b59f4e0ca0d817f2065564c8f35df3ad8b7d60864481010291e6e70de0d048a",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/SAA_POLYGON_AND_COVERAGE_CONTRACT.md",
+      "change": "new",
+      "sha256": "05d7ee787836e205d1d0d2c8712049fa3712e35561f2c2086763667f0ff08084",
+      "reason": "Current reconciliation/validation/decision record or supersession pointer preserving prior audit."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/changed_files.json",
+      "change": "new",
+      "sha256": null,
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/latex-build.log",
+      "change": "new",
+      "sha256": "009af950d4a2275dce0d8b49a6727b11f3e492d596b59e928cead3e4b274bd14",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/local-tests.log",
+      "change": "new",
+      "sha256": "8bfff9f89298390ba16e1dce724fcd46dd298ce01e892174e2311a6e1553b61d",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/original-defect-results.txt",
+      "change": "new",
+      "sha256": "c97993df47098bde1eedbf20c225d2321e2e72f8463dfcca1d3b5d9726a7fee6",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/patch-tests.log",
+      "change": "new",
+      "sha256": "07ec3ce1b9540572902844b57ec5f467690dfccd6f12c85e02e6e4d61d0df98b",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/polygon-independent.json",
+      "change": "new",
+      "sha256": "03312503d19515caa69fc77f6aa585b582b148eca6c039d0fa10b68c42e2d514",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/simulator-surrounding-tests.log",
+      "change": "new",
+      "sha256": "9181b51e0e34de0a038e811e21894d541147fe01bd3a541eb71177c307736682",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "docs/audit/validation/2026-11-04-approved-v2/summary.json",
+      "change": "new",
+      "sha256": "0033cb13b6c2b0cb9dce15f41b6bb27df80f8a3b05907587a6588763613a3485",
+      "reason": "Persist bounded test/build/preservation evidence and change inventory."
+    },
+    {
+      "path": "main.tex",
+      "change": "modified",
+      "sha256": "79b123fab0721b88d46091586fb29269411963a8d797cdd48e0c2c6dd439dbe0",
+      "reason": "Preserve appendix structure; fix title-page PDF anchor and historical-material notice."
+    },
+    {
+      "path": "output/pdf/ANTARA_MCR_APPROVED_FPDU_2026-11-04.pdf",
+      "change": "new",
+      "sha256": "fab9847f3646ce98cb8996c3c8152d4c6e92523fa80f44381d84a82d9736ad17",
+      "reason": "New complete compiled MCR; earlier PDFs preserved."
+    },
+    {
+      "path": "patches/simulation/README.md",
+      "change": "new",
+      "sha256": "4b53a4f5b62a277b0dc7940322fa60ad69b8bdb65f779a61fc0f756a2865bf8f",
+      "reason": "Tested unapplied source correction, reproduction test, source hashes or application limits."
+    },
+    {
+      "path": "patches/simulation/approved_baseline_accounting.patch",
+      "change": "new",
+      "sha256": "e1fe0570e8e8a5ad1fb3bf1bb6eb4277c043861faded760ba565397cca37de87",
+      "reason": "Tested unapplied source correction, reproduction test, source hashes or application limits."
+    },
+    {
+      "path": "patches/simulation/source_identity.json",
+      "change": "new",
+      "sha256": "2ba66b73a0c0a4cb8d79adf0f7190e71072b5729cc7eb8203b849ea0add0529c",
+      "reason": "Tested unapplied source correction, reproduction test, source hashes or application limits."
+    },
+    {
+      "path": "patches/simulation/test_accounting_patch.py",
+      "change": "new",
+      "sha256": "fd8bb3618e5653be7a41d0bfede64f09351409ab775cee87c958c2fd005c76e2",
+      "reason": "Tested unapplied source correction, reproduction test, source hashes or application limits."
+    },
+    {
+      "path": "scripts/fpdu_contracts.py",
+      "change": "new",
+      "sha256": "330131c1d7e3d7069466c484a83afca71c158192cc95991e103caec1085922bb",
+      "reason": "Bounded unit/conservation/coverage/timing/record interfaces; no fabricated detector response."
+    },
+    {
+      "path": "scripts/validate_payload_config.py",
+      "change": "modified",
+      "sha256": "6eaedf669b8026a532074a07cf031eecaa1d044aea5828564486b2283c78ea1b",
+      "reason": "Default CLI to current pointer; explicit old file remains labeled superseded."
+    },
+    {
+      "path": "sections/01_mission_context.tex",
+      "change": "modified",
+      "sha256": "ea05e978a23a133e566172c8971b38b80588049f1a276529cdbc59bedfea4012",
+      "reason": "Replace contradictory rectangle with approved polygon; retain science thresholds."
+    },
+    {
+      "path": "sections/03_spacecraft_architecture.tex",
+      "change": "modified",
+      "sha256": "01d0e865bbc39694971ba3a49537b5774703127ede70b6b8bd56cdd56f35a593",
+      "reason": "Synchronize main-body payload geometry/timing and conditional rate statements."
+    },
+    {
+      "path": "sections/04_simulations.tex",
+      "change": "modified",
+      "sha256": "ace7014c717eeced81928c019f6666b2fac5a9ede615c687df714bbac1cfc2e1",
+      "reason": "Correct conditional-duty and mean-minimum-SOC semantics and planning-epoch qualification."
+    },
+    {
+      "path": "tests/test_fpdu_contracts.py",
+      "change": "new",
+      "sha256": "5f508234d81be53c7bc0a67bbdb7f3e2f01dd47ef7de0d88eb76bb48ede4cf89",
+      "reason": "Focused current contract regressions and explicit historical-snapshot test labeling."
+    },
+    {
+      "path": "tests/test_fpdu_record.py",
+      "change": "new",
+      "sha256": "421218996c7beea84895032960bfdb541caa504288e2074e3c396ffd75ac57b4",
+      "reason": "Focused current contract regressions and explicit historical-snapshot test labeling."
+    },
+    {
+      "path": "tests/test_payload_config.py",
+      "change": "modified",
+      "sha256": "2361fbee41d4e7a44cd0e5308472910f6a12bd32a2b0fdca714c3597da2036e6",
+      "reason": "Focused current contract regressions and explicit historical-snapshot test labeling."
+    }
+  ]
+}

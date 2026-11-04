@@ -15,14 +15,14 @@ The MMSC, MSC and EMSC grid-disposition outputs are based on different cell grid
 extended EMSC & 7940 & 4213 & 3719 & 8 \\
 \bottomrule\end{tabular}\end{table}
 
-The MMSC grid file contains 92 modeled cells and the MSC files contain 2020 cells, while the EMSC file contains 7940 cells. These domains differ from the nominal whole-SAA bounding-grid cell totals in the mission success criteria. Coverage percentages must be recalculated against an agreed common region and approved cell eligibility rules before claiming satisfaction of a whole-region target.
+The MMSC grid file contains 92 modeled cells and the MSC files contain 2020 cells, while the EMSC file contains 7940 cells. These equal the approved polygon-overlap counts at the respective resolutions. They are geometric domains, not automatically eligible science denominators. The missing tier-classification provenance, independent-observation definition and per-channel response still prevent acceptance of the labels as mission success.
 
 \begin{figure}[htbp]\centering\includegraphics[width=.78\linewidth]{media/mmsc_4mo.png}\caption{Four-month MMSC science-grid output from the supplied simulation archive; model-dependent.}\label{fig:new-mmsc}\end{figure}
 \begin{figure}[htbp]\centering\includegraphics[width=.78\linewidth]{media/msc_12mo.png}\caption{Twelve-month MSC science-grid output from the supplied simulation archive; model-dependent.}\label{fig:new-msc}\end{figure}
 \begin{figure}[htbp]\centering\includegraphics[width=.78\linewidth]{media/emsc.png}\caption{Extended science-grid classification from the supplied simulation archive; model-dependent.}\label{fig:new-emsc}\end{figure}
 
 \subsection{Radiation and detector science model}
-The supplied IRENE-related inputs, proton-spectrum output, stopping-range plots and pile-up calculations support preliminary detector analysis. They do not establish a fully calibrated telescope geometry, dead-time limit, response matrix, or actual AP9 output from the integrated Science simulator. The integrated simulator's AP9-named quantity is a configured baseline. Detector event-rate and scintillator dimensions remain open decisions.
+The supplied IRENE-related inputs, proton-spectrum output, stopping-range plots and pile-up calculations support preliminary detector analysis. They do not establish a fully calibrated telescope geometry, dead-time limit, response matrix, or actual AP9 output from the integrated Science simulator. The integrated simulator's AP9-named quantity is a configured baseline. Current scintillator dimensions are fixed in Appendix~\ref{app:payload-detail}; accepted event rates and detector response remain unqualified. The supplied 2026 AP9/AE9 grid is reproduced independently and accepted for preliminary 2029 planning with its original epoch retained.
 \begin{figure}[htbp]\centering\includegraphics[width=.75\linewidth]{media/spectrum.png}\caption{Supplied modeled SAA proton spectrum. This is a study output, not a validated detector measurement.}\label{fig:new-spectrum}\end{figure}
 
 \subsection{Ground-station and DITL source files}
@@ -34,15 +34,15 @@ The uploaded bill of materials identifies candidate ADCS, OBC, solar-array, EPS,
 \subsection{Manufacturer documentation and CAD inputs}
 Manufacturer documents were supplied for the ISISPACE ICEPS2, TensorTech integrated ADCS, GomSpace NanoMind A3200 and NanoCom AX100, 2nd Space CORE/DROP/VERSE hardware and the proposed GNSS components. CAD inputs were supplied for several candidate components. Final mechanical envelopes, actuator configurations, harness allowances and interface drawings must be checked against the actual proposed configuration before the component baselines become final.
 
-\subsection{Remaining evidence placeholders}\label{sec:new-evidence-open}
+\subsection{Remaining verification conditions}\label{sec:new-evidence-open}
 \begin{longtable}{p{0.10\linewidth}p{0.47\linewidth}p{0.34\linewidth}}\caption{Open evidence required for MCR closure}\label{tab:new-open}\\\toprule ID & Open item & Needed evidence \\
 \midrule\endfirsthead\toprule ID & Open item & Needed evidence \\
 \midrule\endhead
 O-01 & Reconcile historical SAA counter & New two-run orbit classifications are internally consistent; establish classifier geometry and event definitions \\
-O-02 & 2028/2029 epoch and RAAN-independent assessment & Updated multi-RAAN simulation configurations \\
+O-02 & 2029 campaign identity and RAAN robustness & Runtime manifests and environment timestamps for the team-accepted reference \\
 O-03 & Long-term drag and disposal & Verify new 8--10-year cutoff runs, one truncated case, and post-cutoff reentry \\
 O-04 & Solar area, efficiency, degradation and EOL margin & Approved solar/EPS report from final configuration \\
-O-05 & FPDU event rate, energy channels and geometry & Payload geometry, detector-response and pile-up validation \\
+O-05 & FPDU response and electronics & Current CAD, optical isolation, transport, timing and mixed-species trigger validation \\
 O-06 & Science-tier coverage requirements & Consistent geographic denominator, per-channel uncertainties and pass requirements \\
 O-07 & Ground station RF and data-rate closure & Final payload packets, coding, link and antenna design \\
 O-08 & Thermal and structural margins & Model outputs checked against component limits; tests planned \\
@@ -75,6 +75,8 @@ The workbook reports a total of 1536.3~g of currently entered masses, before add
 \subsection{Datasheet alignment checks}\label{sec:databook-check}
 The supplied ICEPS2 datasheet describes a 2S1P battery pack with nominal energy 28.8~Wh. The 25~Wh value remains the mission simulation planning capacity. The supplied TensorTech ADCS-10m datasheet explicitly describes a control-moment gyroscope configuration. Since ANTARA intends to use a reaction-wheel and magnetorquer integrated system, that datasheet cannot be treated as proof of the selected ADCS hardware configuration. A matching vendor model and specification must be supplied. The GNSS, radio, antenna, deployment-panel and structure datasheets are candidate mechanical/electrical references, pending interface selection.
 
-\subsection{October 2026 reporting baseline}
+\subsection{Approved 2029 Planning Baseline}
 \label{app:latest-baseline}
-The approved reference analysis epoch is 1 January 2029, and the satellite design maximum is 3.0~kg. Latest supplied simulator results are provisional until rerun with this epoch. The new FPDU Rev.~2.1 baseline is a single-scintillator-block silicon coincidence telescope; the historical five-layer design has been superseded. No SPENVIS/GRAS flight-orbit response output is yet represented as completed. The science-operations objective remains about five years; the new drag output suggests roughly 8--10 years to its modeled cutoff, subject to configuration and physical-model verification (Appendix~\ref{app:updated-raan}).
+The mission reference is 1 January 2029: 3U, maximum 3.0~kg, approximately 600~km SSO, $97.6^\circ$ inclination, eccentricity approximately 0.001, launch-dependent RAAN, 25~Wh battery planning capacity and reaction wheels with magnetorquers. The team accepts the supplied RAAN data for 2029 planning; the inspected local MCR runtime still starts in 2026, so its generating epoch remains unverified. This does not prevent use as a clearly identified preliminary reference. The supplied radiation map retains its verified 2026 source epoch.
+
+The approved FPDU has five longitudinal main blocks and one front scintillator, eleven SiPMs, no silicon entrance and optional rear detection. Optical isolation, material, calibrated response and processor selection remain open. Appendix~\ref{app:payload-detail} controls current construction and timing. Approximately five years is the operational objective; modeled decay to 300~km and subsequent reentry are separate quantities. The 8--10-year cutoff study retains its configuration and censoring limitations (Appendix~\ref{app:updated-raan}).

@@ -1,0 +1,10 @@
+{
+  "src/simulations/ditl/ANTARA_Science_Sim.py": {
+    "original_sha256": "92baa85028d79c9ebb347e5a8a5c17325c814b7ef42ad3dbefbefc3076724413",
+    "patched_sha256": "0c85c48fcfaa5b20397f7c99c1f50a1d0a2418206fb22723d60b4d052647af44"
+  },
+  "src/simulations/power/ANTARA_MCR.py": {
+    "original_sha256": "cdb98ac45806865244a275ba5c0cd40434394af26cd2ca85f9596f31f8a63fd0",
+    "patched_sha256": "8dbfbe262e51dcabfcd578b38690cd90a7982864e3f6dfbe856ed52827100f5a"
+  }
+}
