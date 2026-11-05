@@ -18,3 +18,10 @@
 - Tier-disposition generation code/manifests and complete annual output remain missing. Historical count-derived success claims are withdrawn.
 
 Prioritized sequence: apply/retest accounting patch in the authoritative workspace; integrate tested visit/checkpoint/telemetry contracts there with migration policy; resolve optics/CAD and acquisition interfaces; validate response and mixed-field timing; approve science eligibility/independence; run bounded coupled cases and timestep/restart checks; only then request authorization for long campaigns and update feasibility percentages from traceable products.
+
+
+## Safe simulator integration follow-up
+
+Production integration was rechecked and stopped at the access gate. Both source hashes still match the delivered patch prerequisites at base `51933bb902288de095f362546c73b006fe702882`; read-only `git apply --check` succeeds. The authoritative source and `.git` remain outside this session's writable roots. No branch/worktree was created, patch applied, unrelated change moved, or regression suite rerun. This is an environment-access prerequisite, not a new hardware/scientific approval request.
+
+See [integration preflight](SIMULATOR_PATCH_INTEGRATION.md) for patch checksum, dirty-source details and safe isolation procedure, and [regression disposition](SIMULATOR_REGRESSION_RESULTS.md) for historical versus deferred tests. Resume in a session with write access to the authoritative repository and its Git metadata; preserve the reviewed dirty prerequisites separately from the accounting patch. Visit/checkpoint production integration remains a separate outstanding task even after this patch applies. Next response work is bounded geometry/path-length verification, followed by material-specific transport once CAD/material decisions close.
