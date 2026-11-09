@@ -1,0 +1,54 @@
+{
+  "pdf": "output/pdf/ANTARA_MCR_CORRECTED_DITL_2026-11-09.pdf",
+  "pdf_sha256": "73b8be2acde56992f5e96fe34b14119113dfc8d8294a97abc1ae3ee58ea4b4c1",
+  "pages": 89,
+  "tests": {
+    "passed": 204,
+    "failed": 0,
+    "skipped": 3,
+    "subtests_passed": 16
+  },
+  "build_exit": 0,
+  "undefined_references": 0,
+  "overfull_boxes": 0,
+  "remaining_warnings": [
+    "font substitutions",
+    "underfull boxes",
+    "three ignored glue-shrinkage warnings in existing appendix tables"
+  ],
+  "reviewed_pages": [
+    19,
+    20,
+    25,
+    26,
+    27,
+    31,
+    32,
+    33,
+    34,
+    35,
+    37,
+    53,
+    59,
+    60,
+    61,
+    62,
+    63,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82
+  ],
+  "source_preservation": "48 corrected/superseded source hashes match inventory",
+  "requirement_statuses": {
+    "CONDITIONAL": 17,
+    "OPEN": 28,
+    "SUPPORTED": 3,
+    "NOT EVALUATED": 3
+  },
+  "simulation_runs_launched": 0,
+  "authoritative_external_simulator_modified": false,
+  "review_scope": "Migration accepted for stated recorded quantities; runtime config, interval/mode semantics and current FPDU response unqualified"
+}

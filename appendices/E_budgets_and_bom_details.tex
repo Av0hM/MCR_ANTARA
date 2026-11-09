@@ -19,7 +19,21 @@ The main MCR gives preliminary mode-power ranges, while the integrated Science c
 \begin{equation}\label{eq:energy-balance}\Delta E=\int_{t_0}^{t_1}\!\left(P_{\mathrm{charge}}(t)-P_{\mathrm{loads}}(t)\right)\,\mathrm dt.\end{equation}
 The expected mode timeline, attitude-related power, battery and storage constraints must be evaluated using the same run configuration. The absence of a brownout in a simulation is evidence about that model only.
 \subsubsection{Science Data, Storage and Downlink}\label{app:data-budget}
-The draft describes 64 histogram bins of 4 bytes each, yielding 256 bytes per histogram before packet headers, time tags, location, housekeeping or retransmission overhead. At one histogram per minute the bin payload alone is $256\times8/60\simeq34.1$~bit/s. The nominal daily data estimate in the draft is 300--400~kB/day, whereas the Science simulator's actual packet flush and mode availability depend on its separate output configuration. These values need a common packet definition before declaring storage or downlink closure.
-The Science default downlink rate is 19.2~kbps while the draft quotes 15--18~kbps. The maximum uncorrected raw contact capacity follows $D=R_{\mathrm{link}}\sum_k t_{\mathrm{contact},k}$, but usable data return must account for framing, packet losses, mission overhead, and science-data scheduling. The final RF link budget is addressed in Appendix~\ref{app:orbit-rf}.
-\subsubsection{Cost and Procurement Budget}\label{app:cost-bom}
+\label{app:science-data-budget}
+The approved preliminary link uses 19\,200 bit/s, 2400 bytes/s and 100\% science allocation during eligible Relay windows, with no arbitrary throughput derating. Science Record v3 occupies 292 bytes before radio framing. Gross capacity, modeled queued transfer and future verified application throughput remain distinct.
+
+\begin{table}[H]\centering\small
+\caption{Geometric-visit volume sensitivity; study horizon and science gating unknown}\label{tab:grid-v3-volume}
+\begin{tabular}{rrrr}\toprule Readings/visit & Records & Bytes & Ideal Relay time (s)\\\midrule
+1 & 214\,039 & 62\,499\,388 & 26\,041.412\\
+2 & 428\,078 & 124\,998\,776 & 52\,082.823\\
+3 & 642\,117 & 187\,498\,164 & 78\,124.235\\\bottomrule\end{tabular}
+\end{table}
+The supplied 7940-cell table sums to 214\,039 visits and 1\,453\,556~s geometric dwell. Its elapsed horizon is unverified; pooled dwell is not mission duration. No bytes/day normalization or annual scaling is applied. Aggregated fine-cell pass counts cannot reconstruct coarse continuous visits. This table assumes every geometric visit yields records and is not verified science production.
+
+\input{sections/corrected_ditl/budget}
+
 The initial MCR records a preliminary component cost table with most entries marked TBD. No consolidated priced procurement package is established in the supplied materials. The final bill of materials will require vendor quotations, quantities, testing and integration costs, contingency, delivery lead times and ownership of custom payload manufacturing. Until these inputs are supplied the cost budget remains preliminary.
+
+\subsubsection{Recorded Energy and Budget Boundary}
+The corrected annual telemetry integrates 50288.809 Wh solar and 30866.103 Wh load over 365 days under the left-held convention. Recorded minimum/final battery is 15.097556/24.019245 Wh. Runtime battery capacity, charging/curtailment and logger semantics remain unverified; these integrals are not an EOL reserve margin. The independent thermal heat schedule is not this electrical history.

@@ -1,0 +1,2 @@
+day,acquisition_s,saa_s,science_mode_s,contact_s,relay_s,battery_min_wh,battery_max_wh,generated_source_mb,delivered_source_mb,storage_max_source_mb
+0,758.0,2696.0,2674.0,766.0,646.0,18.003630966383007,25.0,0.00933837890625,0.0093383789062498,10.00518798828125

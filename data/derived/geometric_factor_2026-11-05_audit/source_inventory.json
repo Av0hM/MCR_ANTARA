@@ -1,0 +1,56 @@
+[
+  {
+    "path": "__pycache__/grid_common.cpython-311.pyc",
+    "size": 17643,
+    "sha256": "b687832610e86f71afbe6cb652f4418440f1df460a428d6a043c7a18842f51d2",
+    "scientific_evidence": false
+  },
+  {
+    "path": "cell_pass_counts.csv",
+    "size": 305077,
+    "sha256": "e379d5bb77f39d8f5ec72f11cc056ea02fbcf837ff2181b5481a9811f434db4b",
+    "scientific_evidence": true
+  },
+  {
+    "path": "cell_proton_count_rate_hz.npy",
+    "size": 537728,
+    "sha256": "f0176d2d903a413cad50cb1fa06c58df9aa5a3a0e2e12b77c1301559331b9af1",
+    "scientific_evidence": true
+  },
+  {
+    "path": "cell_proton_rate_heatmap.png",
+    "size": 93733,
+    "sha256": "0d7de918277f6ba2feecd4aa1c7140210bcd21d882dbb7c0adf73c54ccf2f78b",
+    "scientific_evidence": true
+  },
+  {
+    "path": "cell_proton_rates.csv",
+    "size": 25173294,
+    "sha256": "a91820e5a3e356ae4252dc191b20faadb6e2ef2af9aef41f41b87d040bafc530",
+    "scientific_evidence": true
+  },
+  {
+    "path": "cell_saa_flag.npy",
+    "size": 67328,
+    "sha256": "2a7f9c1bae62b5c7ff38a5c94ddeee68dbc4e88d3a97ca013da092e44d47e261",
+    "scientific_evidence": true
+  },
+  {
+    "path": "required_G_coarse_channels.csv",
+    "size": 1276,
+    "sha256": "eb8d1f9f25fd2b2a13f3124dcab47d12c7e80f2e417f57f4c634c919c611ea9f",
+    "scientific_evidence": true
+  },
+  {
+    "path": "required_G_fine_bins.csv",
+    "size": 18479,
+    "sha256": "ba745caa5524f09187beb70a02f6669f9fb1959a4e522e45a30c15e8864e66fe",
+    "scientific_evidence": true
+  },
+  {
+    "path": "required_geometric_factor.py",
+    "size": 11200,
+    "sha256": "eb9a0fdb18061b81de094a2028ed5a6c2fc809a593ca69fc63bcd0d33f5de468",
+    "scientific_evidence": true
+  }
+]

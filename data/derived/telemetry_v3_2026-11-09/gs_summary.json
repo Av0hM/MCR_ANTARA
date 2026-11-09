@@ -1,0 +1,31 @@
+{
+  "contacts": 820,
+  "epochs": [
+    "2000-03-01T00:00:00+00:00"
+  ],
+  "station_labels": [
+    "GS1_India"
+  ],
+  "horizon": "365-day accounting window inferred from elapsed event extent, not completion proof",
+  "duration_s": 244016.0,
+  "mean_daily_s": 668.5369863013699,
+  "minimum_daily_s": 514.0,
+  "max_daily_s": 784.0,
+  "max_intercontact_gap_s": 48458.0,
+  "first_contact_s": 34844.0,
+  "last_contact_end_s": 31526946.0,
+  "visibility_capacity_bytes": 585638400,
+  "mean_daily_visibility_capacity_bytes": 1604488.7671232878,
+  "minimum_daily_visibility_capacity_bytes": 1233600,
+  "relay_overlap_s": 178682.0,
+  "relay_capacity_bytes": 428836800,
+  "minimum_daily_relay_s": 312.0,
+  "mean_daily_relay_s": 489.53972602739725,
+  "recorded_transfer_source_mb": 3.5140838623046875,
+  "transition_chain_errors": 0,
+  "runtime_mask": "UNKNOWN; current source default 15 degrees; no second mask correction",
+  "short_contact_logs": {
+    "leop_24h": "EMPTY (one newline); not full-day evidence",
+    "no_leop_24h": "EMPTY (one newline); not full-day evidence"
+  }
+}

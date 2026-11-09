@@ -1,0 +1,514 @@
+{
+  "run_id": "corrected_no_leop_24h_a652068558",
+  "scenario": "no_leop_24h",
+  "rows": 6553,
+  "epoch": "2000-03-01T00:00:00+00:00",
+  "duration_s": 86400.0,
+  "requested_duration_s": "UNKNOWN; filename/preset intent only",
+  "expected_named_horizon_s": 86400,
+  "completeness": "COMPLETE TIMESTAMP SPAN",
+  "terminal_semantics": "Endpoint row present; no terminal_snapshot or interval_duration fields. Left-held integration excludes last row duration; producing code revision UNKNOWN.",
+  "mode_seconds": {
+    "SUN_POINTING": 81852.0,
+    "SLEWING": 980.0,
+    "DETECTION": 2674.0,
+    "RELAY": 894.0
+  },
+  "cadence_counts": {
+    "2.0": 2480,
+    "20.0": 4072
+  },
+  "missing_samples": "UNKNOWN expected adaptive schedule; no duplicate/nonmonotonic timestamps",
+  "configuration": {
+    "source_revision": "UNKNOWN",
+    "runtime_config": "UNKNOWN",
+    "raan_deg": "UNKNOWN",
+    "inclination_deg": "UNKNOWN",
+    "eccentricity": "UNKNOWN",
+    "mass_kg": "UNKNOWN",
+    "battery_capacity_wh": "UNKNOWN",
+    "solar_panel_geometry": "UNKNOWN",
+    "payload_revision": "UNKNOWN",
+    "adcs": "UNKNOWN",
+    "ground_station_coordinates": "UNKNOWN",
+    "elevation_mask_deg": "UNKNOWN",
+    "integrator": "UNKNOWN",
+    "integration_timestep": "UNKNOWN"
+  },
+  "altitude_km_range": [
+    593.0218633075049,
+    615.0685992259819
+  ],
+  "first_recorded_battery_wh": 18.003630966383007,
+  "battery_min_wh": 18.003630966383007,
+  "battery_max_wh": 25.0,
+  "final_battery_wh": 24.112456588188248,
+  "minimum_soc_pct_at_planning25Wh": 72.01452386553203,
+  "battery_underflow_rows": 0,
+  "generated_wh": 150.4027875975606,
+  "consumed_wh": 85.71927777777792,
+  "saa_s": 2696.0,
+  "acquisition_gate_s": 758.0,
+  "acquisition_in_saa_s": 758.0,
+  "detection_in_saa_s": 2662.0,
+  "contact_s": 766.0,
+  "relay_visibility_s": 646.0,
+  "link_active_s": 8.0,
+  "eclipse_s": 29342.0,
+  "gate_outside_detection_or_saa_rows": 0,
+  "link_outside_relay_visibility_rows": 0,
+  "generated_source_mb": 0.00933837890625,
+  "transferred_source_mb": 0.0093383789062498,
+  "storage_max_source_mb": 10.00518798828125,
+  "final_storage_source_mb": 10.0,
+  "histogram_bytes": 8160.0,
+  "initial_storage_source_mb": 10.0,
+  "storage_balance_max_residual_source_mb": 1.7763568394002505e-15,
+  "generation_cumulative_max_residual_source_mb": 0.0,
+  "transfer_cumulative_max_residual_source_mb": 1.9949319973733282e-16,
+  "mode_energy_wh": {
+    "SUN_POINTING": 69.70666666666666,
+    "SLEWING": 2.4251666666666685,
+    "DETECTION": 9.801777777777774,
+    "RELAY": 3.785666666666669
+  },
+  "pointing": {
+    "DETECTION": {
+      "weighted_mean_deg": 0.9795173237486742,
+      "max_deg": 1.9902795563457392
+    },
+    "SUN_POINTING": {
+      "weighted_mean_deg": 2.4073992207663246,
+      "max_deg": 4.9998356825155605
+    },
+    "RELAY": {
+      "weighted_mean_deg": 0.6213733311018543,
+      "max_deg": 58.05263844371126
+    }
+  },
+  "sampled_saa_encounters": 6,
+  "safe_entries": 0,
+  "max_relay_gap_s": 42674.0,
+  "transition_exact_match": false,
+  "telemetry_transition_count": 40,
+  "event_transition_count": 40,
+  "event_checks": {
+    "gs_contacts": {
+      "rows": 2,
+      "sum_duration_s": 766.0,
+      "duration_max_residual_s": 0.0,
+      "duplicate_intervals": 0,
+      "outside_horizon_rows": 0
+    },
+    "saa_passes": {
+      "rows": 6,
+      "sum_duration_s": 2696.0,
+      "duration_max_residual_s": 0.0,
+      "duplicate_intervals": 0,
+      "outside_horizon_rows": 0
+    },
+    "proton_passes": {
+      "rows": 6,
+      "sum_duration_s": 2696.0,
+      "duration_max_residual_s": 0.0,
+      "duplicate_intervals": 0,
+      "outside_horizon_rows": 0
+    },
+    "slew_events": {
+      "rows": 20,
+      "sum_duration_s": 1200.0,
+      "duration_max_residual_s": 0.0,
+      "duplicate_intervals": 0,
+      "outside_horizon_rows": 0
+    },
+    "detumble_events": {
+      "rows": 0,
+      "schema": "ABSENT"
+    }
+  },
+  "contacts": {
+    "count": 2,
+    "duration_s": 766.0,
+    "min_duration_s": 352.0,
+    "max_duration_s": 414.0,
+    "mean_duration_s": 383.0,
+    "max_gap_s": 42614.0,
+    "daily_min_s": 766.0,
+    "daily_mean_s": 766.0,
+    "visibility_capacity_bytes": 1838400,
+    "relay_overlap_s": 646.0,
+    "relay_capacity_bytes": 1550400,
+    "recorded_transfer_source_mb": 0.00933837890625,
+    "max_elevation_deg": 77.50467069720148,
+    "mask": "UNKNOWN; already applied by producer; no second adjustment"
+  },
+  "contact_telemetry_duration_difference_s": 0.0,
+  "contact_delivery_difference_source_mb": -1.9949319973733282e-16,
+  "payload_compatibility": "LEGACY five-channel columns plus 64-vector outputs; no matched current-six-scintillator response/calibration evidence.",
+  "array_sum_on_gate": 8831885.809371637,
+  "rate_times_forward_interval_sum_on_gate": 8831885.809372798,
+  "array_vs_rate_dt_max_residual": 450.8576143804621,
+  "acquisition_rows": 379,
+  "proton_pass_array_sum": 8831885.809371639,
+  "tiers": [
+    {
+      "tier": "MMSC",
+      "readings": 1,
+      "geometric_visits": 44,
+      "geometric_cells": 39,
+      "science_enabled_visits": 38,
+      "acquisition_segments": 83,
+      "records": 83,
+      "bytes": 24236,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 24236.0,
+      "max_daily_bytes": 24236,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "MMSC",
+      "readings": 2,
+      "geometric_visits": 44,
+      "geometric_cells": 39,
+      "science_enabled_visits": 38,
+      "acquisition_segments": 83,
+      "records": 89,
+      "bytes": 25988,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 25988.0,
+      "max_daily_bytes": 25988,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "MMSC",
+      "readings": 3,
+      "geometric_visits": 44,
+      "geometric_cells": 39,
+      "science_enabled_visits": 38,
+      "acquisition_segments": 83,
+      "records": 114,
+      "bytes": 33288,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 33288.0,
+      "max_daily_bytes": 33288,
+      "peak_one_second_records": 2
+    },
+    {
+      "tier": "MSC",
+      "readings": 1,
+      "geometric_visits": 202,
+      "geometric_cells": 195,
+      "science_enabled_visits": 118,
+      "acquisition_segments": 118,
+      "records": 118,
+      "bytes": 34456,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 34456.0,
+      "max_daily_bytes": 34456,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "MSC",
+      "readings": 2,
+      "geometric_visits": 202,
+      "geometric_cells": 195,
+      "science_enabled_visits": 118,
+      "acquisition_segments": 118,
+      "records": 236,
+      "bytes": 68912,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 68912.0,
+      "max_daily_bytes": 68912,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "MSC",
+      "readings": 3,
+      "geometric_visits": 202,
+      "geometric_cells": 195,
+      "science_enabled_visits": 118,
+      "acquisition_segments": 118,
+      "records": 354,
+      "bytes": 103368,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 103368.0,
+      "max_daily_bytes": 103368,
+      "peak_one_second_records": 2
+    },
+    {
+      "tier": "EMSC",
+      "readings": 1,
+      "geometric_visits": 387,
+      "geometric_cells": 379,
+      "science_enabled_visits": 161,
+      "acquisition_segments": 161,
+      "records": 161,
+      "bytes": 47012,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 47012.0,
+      "max_daily_bytes": 47012,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "EMSC",
+      "readings": 2,
+      "geometric_visits": 387,
+      "geometric_cells": 379,
+      "science_enabled_visits": 161,
+      "acquisition_segments": 161,
+      "records": 322,
+      "bytes": 94024,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 94024.0,
+      "max_daily_bytes": 94024,
+      "peak_one_second_records": 1
+    },
+    {
+      "tier": "EMSC",
+      "readings": 3,
+      "geometric_visits": 387,
+      "geometric_cells": 379,
+      "science_enabled_visits": 161,
+      "acquisition_segments": 161,
+      "records": 483,
+      "bytes": 141036,
+      "exposure_s": 758.0,
+      "mean_daily_bytes": 141036.0,
+      "max_daily_bytes": 141036,
+      "peak_one_second_records": 2
+    }
+  ],
+  "queues": [
+    {
+      "case": "no_leop_24h_MMSC_1",
+      "generated_bytes": 24236,
+      "transferred_bytes": 24236,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 12264,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 300.1362229102167,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 11972
+    },
+    {
+      "case": "no_leop_24h_MMSC_2",
+      "generated_bytes": 25988,
+      "transferred_bytes": 25988,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 13724,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 321.8328173374613,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 12264
+    },
+    {
+      "case": "no_leop_24h_MMSC_3",
+      "generated_bytes": 33288,
+      "transferred_bytes": 33288,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 17520,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 412.2352941176471,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 15768,
+      "minimum_bitrate_final_balance_bps": 412.24691969096676,
+      "rate_ratio_19200_to_final_balance": 46.57402901734942
+    },
+    {
+      "case": "no_leop_24h_MSC_1",
+      "generated_bytes": 34456,
+      "transferred_bytes": 34456,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 17520,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 426.6996904024768,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 16936
+    },
+    {
+      "case": "no_leop_24h_MSC_2",
+      "generated_bytes": 68912,
+      "transferred_bytes": 68912,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 35040,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 853.3993808049536,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 33872
+    },
+    {
+      "case": "no_leop_24h_MSC_3",
+      "generated_bytes": 103368,
+      "transferred_bytes": 103368,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 52560,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 1280.0990712074304,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 50808,
+      "minimum_bitrate_final_balance_bps": 1280.11072031492,
+      "rate_ratio_19200_to_final_balance": 14.998702608534213
+    },
+    {
+      "case": "no_leop_24h_EMSC_1",
+      "generated_bytes": 47012,
+      "transferred_bytes": 47012,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 23652,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 582.1919504643963,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 23360
+    },
+    {
+      "case": "no_leop_24h_EMSC_2",
+      "generated_bytes": 94024,
+      "transferred_bytes": 94024,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 47304,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 1164.3839009287926,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 46720
+    },
+    {
+      "case": "no_leop_24h_EMSC_3",
+      "generated_bytes": 141036,
+      "transferred_bytes": 141036,
+      "remaining_bytes": 0,
+      "peak_required_bytes": 70956,
+      "dropped_bytes": 0,
+      "balance_lower_bound_bps": 1746.575851393189,
+      "ram_overflow_bytes": 0,
+      "flash_overflow_bytes": 0,
+      "longest_no_service_interval_s": [
+        35192.0,
+        77866.0
+      ],
+      "generated_during_longest_gap_bytes": 70080,
+      "minimum_bitrate_final_balance_bps": 1746.5764552971727,
+      "rate_ratio_19200_to_final_balance": 10.992934172316664
+    }
+  ],
+  "outages": [
+    {
+      "case": "no_leop_24h_MMSC_3",
+      "outage_days": 1,
+      "worst_peak_bytes": 33288
+    },
+    {
+      "case": "no_leop_24h_MMSC_3",
+      "outage_days": 3,
+      "worst_peak_bytes": 33288
+    },
+    {
+      "case": "no_leop_24h_MMSC_3",
+      "outage_days": 7,
+      "worst_peak_bytes": 33288
+    },
+    {
+      "case": "no_leop_24h_MMSC_3",
+      "outage_days": "one complete contact",
+      "worst_peak_bytes": 33288
+    },
+    {
+      "case": "no_leop_24h_MSC_3",
+      "outage_days": 1,
+      "worst_peak_bytes": 103368
+    },
+    {
+      "case": "no_leop_24h_MSC_3",
+      "outage_days": 3,
+      "worst_peak_bytes": 103368
+    },
+    {
+      "case": "no_leop_24h_MSC_3",
+      "outage_days": 7,
+      "worst_peak_bytes": 103368
+    },
+    {
+      "case": "no_leop_24h_MSC_3",
+      "outage_days": "one complete contact",
+      "worst_peak_bytes": 103368
+    },
+    {
+      "case": "no_leop_24h_EMSC_3",
+      "outage_days": 1,
+      "worst_peak_bytes": 141036
+    },
+    {
+      "case": "no_leop_24h_EMSC_3",
+      "outage_days": 3,
+      "worst_peak_bytes": 141036
+    },
+    {
+      "case": "no_leop_24h_EMSC_3",
+      "outage_days": 7,
+      "worst_peak_bytes": 141036
+    },
+    {
+      "case": "no_leop_24h_EMSC_3",
+      "outage_days": "one complete contact",
+      "worst_peak_bytes": 141036
+    }
+  ],
+  "v3_scope": "Ideal sample-owned partition workload. Hardware timing, true boundary crossings and accepted counts UNKNOWN. No minimum reading duration; valid zero-count slots retained. Fragmentation may require >preferred records to preserve disjoint exposure.",
+  "event_mode_seconds": {
+    "SUN_POINTING": 81652.0,
+    "SLEWING": 1200.0,
+    "DETECTION": 2662.0,
+    "RELAY": 886.0
+  },
+  "transition_chain_errors": 0,
+  "transition_mode_sequence_match": true,
+  "transition_offset_range_s": [
+    0.0,
+    20.0
+  ],
+  "event_mode_relay_contact_overlap_s": 646.0,
+  "event_mode_relay_capacity_bytes": 1550400,
+  "sample_vs_event_mode_scope": "Both interval conventions reported; row mode changes can lag transition timestamps. Do not silently substitute event mode into row-level acquisition.",
+  "recorded_battery_increase_wh": 43.8466742213822,
+  "recorded_battery_decrease_wh": 37.737848599576964,
+  "battery_change_scope": "Adjacent recorded post-state differences only; charge efficiency/curtailment/internal battery throughput not established."
+}

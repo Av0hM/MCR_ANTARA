@@ -1,0 +1,39 @@
+
+\subsection{Detailed Engineering Budgets and Bill of Materials}\label{app:detailed-budgets}
+This appendix records the calculation method and the presently available design inputs for the spacecraft budgets. The existing itemised mass and cost tables are retained in Appendix~\ref{app:source-05}. The simulation constants below must not be substituted for component datasheet values without identification.
+\subsubsection{Component Baseline and Mass Budget}\label{app:bom-baseline}
+The original draft lists the integrated ADCS, OBC, one body-mounted panel, deployable solar panels, EPS and battery, CubeSat structure, radio, directional and omnidirectional antennas, GNSS receiver and antenna, deployment interface and custom payload. Payload and some mechanism masses and several prices remain unfilled. Because the original component list is not yet a reconciled assembly-level budget, a total wet mass and center of gravity cannot be certified from it.
+\begin{equation}\label{eq:mass-budget}m_{\mathrm{total}}=\sum_i n_i m_i+m_{\mathrm{harness}}+m_{\mathrm{mechanisms}}+m_{\mathrm{contingency}}.\end{equation}
+For each entry, record quantity, unit mass, selected or proposed part number, data source and whether the quantity is measured, quoted or estimated. The 4.0~kg mass used in the annual RAAN campaign and orbital-decay standalone study differs from the 3.0~kg integrated DITL and thermal defaults. Neither should be silently reported as an as-built mass.
+\subsubsection{Solar Generation and EPS Budget}\label{app:eps-analysis}
+The standalone annual RAAN study \texttt{power/ANTARA\_MCR.py} uses one fixed and two deployed solar panels with fixed area 0.030~m$^2$, deployed area 0.030~m$^2$ per wing, cell efficiency 0.28 and a system efficiency factor 0.513. It assumes 8.0~W constant load and a 25~Wh battery. The separate 24-hour \texttt{ANTARA\_FINAL\_POWERGEN.py} instead uses a 0.021~m$^2$ fixed panel, two 0.018065~m$^2$ wings, 0.30 cell efficiency, 0.72675 system factor, nadir-pointing attitude and a $97.4^\circ$ inclined orbit. Those studies are different configurations, and their output values are not interchangeable.
+For an illuminated panel the basic generation calculation is
+\begin{equation}\label{eq:solar-generation}P_{\mathrm{array}}=S\,\eta_{\mathrm{cell}}\,\eta_{\mathrm{system}}\sum_k A_k\max(0,\hat{n}_k\cdot\hat{s})\,f_{\mathrm{deg},k},\end{equation}
+where $S$ is incident solar irradiance, $A_k$ is the panel area, $\hat n_k$ and $\hat s$ are the panel normal and Sun direction, and $f_{\mathrm{deg},k}$ is a model degradation factor where applied. Some source studies use independently tracking wings instead of the common attitude cosine, so their specific implementation must be cited.
+\subsubsection{Battery Sizing and Depth of Discharge}\label{app:battery-trades}
+The analytical \texttt{power/TradeCase.py} compares capacities of 10, 15, 20, 25 and 30~Wh with a fixed 97-minute period, 8~W load and a precomputed eclipse-fraction table. Its eclipse discharge estimate is
+\begin{equation}\label{eq:tradecase-dod}\mathrm{DoD}=\frac{P_{\mathrm{load}}\,f_{\mathrm{eclipse}}\,T_{\mathrm{orbit}}}{E_{\mathrm{battery}}}.\end{equation}
+The companion state-of-charge illustration uses 10-second steps and an assumed sunlight recharge margin of 1.3~W above the load. The study's hardcoded cycle-life figures are assumptions, not a demonstrated battery qualification. The integrated DITL uses a 25~Wh planning capacity, while the MCR also names an ICEPS2 Type A product with a 22.5~Wh specification and another table refers to 28.8~Wh. Final energy margin must be recalculated using the selected battery's usable beginning- and end-of-life capacity.
+\subsubsection{Mode-Resolved Electrical Loads}\label{app:mode-power}
+The main MCR gives preliminary mode-power ranges, while the integrated Science code defines its own component-specific loads, including OBC 0.8~W, EPS 1.2~W, payload 10~W and radio TX 12~W. These code inputs should not be mistaken for measured flight hardware loads. For each mode, the detailed budget should sum simultaneous loads and distinguish peak power from time-averaged energy:
+\begin{equation}\label{eq:energy-balance}\Delta E=\int_{t_0}^{t_1}\!\left(P_{\mathrm{charge}}(t)-P_{\mathrm{loads}}(t)\right)\,\mathrm dt.\end{equation}
+The expected mode timeline, attitude-related power, battery and storage constraints must be evaluated using the same run configuration. The absence of a brownout in a simulation is evidence about that model only.
+\subsubsection{Science Data, Storage and Downlink}\label{app:data-budget}
+\label{app:science-data-budget}
+The approved preliminary link uses 19\,200 bit/s, 2400 bytes/s and 100\% science allocation during eligible Relay windows, with no arbitrary throughput derating. Science Record v3 occupies 292 bytes before radio framing. Gross capacity, modeled queued transfer and future verified application throughput remain distinct.
+
+\begin{table}[H]\centering\small
+\caption{Geometric-visit volume sensitivity; study horizon and science gating unknown}\label{tab:grid-v3-volume}
+\begin{tabular}{rrrr}\toprule Readings/visit & Records & Bytes & Ideal Relay time (s)\\\midrule
+1 & 214\,039 & 62\,499\,388 & 26\,041.412\\
+2 & 428\,078 & 124\,998\,776 & 52\,082.823\\
+3 & 642\,117 & 187\,498\,164 & 78\,124.235\\\bottomrule\end{tabular}
+\end{table}
+The supplied 7940-cell table sums to 214\,039 visits and 1\,453\,556~s geometric dwell. Its elapsed horizon is unverified; pooled dwell is not mission duration. No bytes/day normalization or annual scaling is applied. Aggregated fine-cell pass counts cannot reconstruct coarse continuous visits. This table assumes every geometric visit yields records and is not verified science production.
+
+\input{sections/corrected_ditl/budget}
+
+The initial MCR records a preliminary component cost table with most entries marked TBD. No consolidated priced procurement package is established in the supplied materials. The final bill of materials will require vendor quotations, quantities, testing and integration costs, contingency, delivery lead times and ownership of custom payload manufacturing. Until these inputs are supplied the cost budget remains preliminary.
+
+\subsubsection{Recorded Energy and Budget Boundary}
+The corrected annual telemetry integrates 50288.809 Wh solar and 30866.103 Wh load over 365 days under the left-held convention. Recorded minimum/final battery is 15.097556/24.019245 Wh. Runtime battery capacity, charging/curtailment and logger semantics remain unverified; these integrals are not an EOL reserve margin. The independent thermal heat schedule is not this electrical history.

@@ -1,0 +1,28 @@
+{
+  "classification": "SENSITIVITY ONLY: runtime manifests unavailable",
+  "common_timestamp_rows": 5958,
+  "max_coordinate_absolute_differences": {
+    "lat_deg": 8.195339518124456e-08,
+    "lon_deg": 6.090984996376392e-07,
+    "alt_km": 1.6608908026682911e-07
+  },
+  "unknown_parameters": [
+    "RAAN",
+    "inclination",
+    "mass",
+    "payload response revision",
+    "integrator",
+    "mask",
+    "battery capacity",
+    "control parameters"
+  ],
+  "cadence_day_s": [
+    2,
+    20
+  ],
+  "cadence_annual_s": [
+    2,
+    50,
+    60
+  ]
+}

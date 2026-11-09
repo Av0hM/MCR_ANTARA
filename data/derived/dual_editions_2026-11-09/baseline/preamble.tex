@@ -1,0 +1,117 @@
+% ANTARA MCR LaTeX style.
+% Edit typography here; content lives in sections/ and appendices/.
+% Compiler: XeLaTeX
+
+% Page and fonts
+\usepackage[a4paper,margin=21mm,headheight=16pt,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Noto Serif}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+\usepackage{unicode-math}
+\setmathfont{latinmodern-math.otf}
+\usepackage{newunicodechar}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+
+% Figures and visual appendices (A and B)
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+% Tables and lists
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+% Placement, typography, and document utilities
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{needspace}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% ANTARA palette
+\definecolor{AntaraNavy}{HTML}{14324D}
+\definecolor{AntaraTeal}{HTML}{007C83}
+\definecolor{AntaraGrey}{HTML}{657587}
+\definecolor{AntaraPale}{HTML}{F1F5F7}
+\hypersetup{colorlinks=true,linkcolor=AntaraNavy,citecolor=AntaraTeal,urlcolor=AntaraTeal,pdftitle={Project ANTARA - Mission Concept Review},pdfauthor={Project ANTARA}}
+
+% Paragraphs and contents
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.075}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\setlist[itemize]{topsep=3pt,itemsep=2pt,leftmargin=1.6em}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,leftmargin=1.9em}
+
+% Table defaults
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{9pt}
+\AtBeginEnvironment{longtable}{\footnotesize\RaggedRight}
+
+% Captions and headings
+\captionsetup{font=small,labelfont={bf,color=AntaraNavy},textfont={color=AntaraGrey},skip=6pt}
+\titleformat{\section}{\sffamily\Large\bfseries\color{AntaraNavy}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\sffamily\large\bfseries\color{AntaraNavy}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\sffamily\normalsize\bfseries\color{AntaraTeal}}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{15pt}{9pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{10pt}{4pt}
+
+% Running header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\color{AntaraGrey} PROJECT ANTARA}
+\fancyhead[R]{\footnotesize\sffamily\color{AntaraGrey} MCR | WORKING DRAFT}
+\fancyfoot[L]{\footnotesize\sffamily\color{AntaraGrey} Source transcription | Technical review pending}
+\fancyfoot[R]{\footnotesize\sffamily\color{AntaraGrey} \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Compatibility helpers for existing generated LaTeX content
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\makeatother
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\real}[1]{#1}
+
+% Leave source claims unchanged; record engineering corrections in REVISION_NOTES.md.
+
+
+% Heading level used for Appendix A.1--A.6 and their nested paragraphs.
+\titleformat{\paragraph}[runin]{\sffamily\normalsize\bfseries\color{AntaraTeal}}{\theparagraph}{0.6em}{}
+\titlespacing*{\paragraph}{0pt}{9pt}{0.8em}
+
+% Explicit unresolved engineering-evidence placeholders.
+\newcommand{\MCRpending}[2]{%
+  \par\smallskip\noindent
+  \begingroup\setlength{\fboxsep}{7pt}%
+  \fcolorbox{AntaraTeal}{AntaraPale}{%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+      \small\textbf{\textcolor{AntaraNavy}{PENDING: #1}}\par\smallskip
+      #2
+    \end{minipage}%
+  }\endgroup\par\smallskip
+}

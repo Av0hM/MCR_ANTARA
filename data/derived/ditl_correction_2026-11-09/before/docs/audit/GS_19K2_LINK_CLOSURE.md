@@ -1,0 +1,15 @@
+# Idealized 19.2 kbps MCR transfer opportunity
+
+The preliminary communications assessment assumes an ideal gross downlink rate of 19.2 kbps during eligible ground-station relay windows, without an arbitrary throughput derating. This establishes an upper-bound modeled data-transfer opportunity rather than verified application-layer throughput. Detailed RF link-budget closure, protocol overhead, retransmission effects, and achievable net science-data throughput are deferred to PDR.
+
+Candidate gross rate = modeled available science rate =19200 bit/s; science allocation100%;2400 bytes/s. Per eligible interval capacity=floor(19200×duration/8). No 80% or other arbitrary reduction is used. Runtime visibility already embodies its mask. The current candidate simulator includes sqrt(sin elevation) and pointing/link gates; its historical transferred columns are retained unchanged. The new budget does not reuse that elevation throughput reduction. It is a separate approved ideal-capacity analysis, not a deployed simulator change.
+
+Visibility-only 585638400 bytes is an upper ceiling. Associated event-log Relay intersection yields428836800 bytes; this is the applicable schedule-based upper opportunity in that artifact group, not measured application delivery. Daily minimum Relay opportunity is748800 bytes; mean is1174895.342466 bytes. Contact overhead, antenna acquisition performance and physical link reliability are not demonstrated. The full rate is applied during each eligible interval, limited only by queued bytes.
+
+The separate partial telemetry yields32772s of visibility∩Relay and78652800 bytes ideal capacity; its recorded link-active flag sums only4s and actual transfer credit0.004928588867 source MB. The 3.514083862305 source MB annual-event total and partial telemetry are not interchangeable. MB/MiB inconsistency prevents claiming byte-exact historic application delivery.
+
+PDR closes actual AX100 bitrate/configuration; modulation/coding; EIRP and antenna gain; pointing/polarization; path/atmospheric/implementation losses; receiver sensitivity and Eb/N0; margin; frame/packet overhead; FEC/error detection; retransmissions/loss; ground modem compatibility; net application throughput; housekeeping/command allocations. No manufacturer performance or link margin is invented.
+
+Aggregate D×8/T_relay is only a necessary data-balance rate bound. The bounded queue also searches the lowest constant bitrate clearing the fixture by its observed horizon, including arrivals/contact fragmentation. These unusually small rates describe near-disabled legacy acquisition, not a mission radio-sizing recommendation. Mission closure requires matched current acquisition and contact traces; no margin from separate epochs is qualified.
+Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification.
+

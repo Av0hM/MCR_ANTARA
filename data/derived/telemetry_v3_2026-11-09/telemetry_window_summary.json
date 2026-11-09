@@ -1,0 +1,13 @@
+{
+  "rows": 1861462,
+  "horizon_s": 4320020.0,
+  "epoch": "UNKNOWN for telemetry; not inherited from conflicting events",
+  "gate_s": 342.0,
+  "visibility_s": 36754.0,
+  "relay_visibility_s": 32772.0,
+  "relay_capacity_bytes": 78652800,
+  "recorded_link_active_s": 4.0,
+  "timing_policy": "Equal ideal subdivisions; hardware boundaries unverified. No minimum exposure or count threshold.",
+  "geometric_boundary": "Sample-owned cells; exact crossing times unavailable; exposure conserved across intervals.",
+  "sustainable_rate_bps": "NOT established by incomplete mixed-source artifacts"
+}

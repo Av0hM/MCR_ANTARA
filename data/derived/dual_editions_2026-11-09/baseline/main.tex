@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{17mm}
+{\sffamily\bfseries\color{AntaraTeal}\large BITS PILANI | GOA CAMPUS\par}
+\vspace{34mm}
+{\sffamily\bfseries\color{AntaraNavy}\fontsize{35}{40}\selectfont PROJECT\\[2mm] ANTARA\par}
+\vspace{11mm}
+{\sffamily\Large Mission Concept Review\par}
+\vspace{8mm}
+\noindent\color{AntaraTeal}\rule{0.85\textwidth}{1.6pt}\par\color{black}
+\vspace{14mm}
+{\large 3U CubeSat for In-Situ Characterization of the\\South Atlantic Anomaly Radiation Environment\par}
+\vfill
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\clearpage
+\listoftables
+\listoffigures
+\clearpage
+\pagenumbering{arabic}
+\input{sections/01_mission_context}
+\clearpage
+\input{sections/02_mission_overview}
+\clearpage
+\input{sections/03_spacecraft_architecture}
+\clearpage
+\input{sections/04_simulations}
+\clearpage
+\input{sections/05_feasibility_and_budgets}
+
+% ==============================
+% APPENDICES
+% ==============================
+
+\clearpage
+\appendix
+
+% Appendix A combines the six technical-support sections.
+\section{Detailed Technical Supporting Analysis}
+\label{app:technical-support}
+\input{appendices/A_operational_logic_visual}
+\clearpage
+\input{appendices/B_payload_detail_visual}
+\clearpage
+\input{appendices/C_simulation_provenance}
+\clearpage
+\input{appendices/D_thermal_structural_details}
+\clearpage
+\input{appendices/E_budgets_and_bom_details}
+\clearpage
+\input{appendices/F_orbit_rf_support}
+
+% Existing source-detail and supplemental appendices retain their contents.
+\clearpage
+\noindent\textbf{Historical material notice.} The following appendices include transcribed earlier evidence and updated baseline/closure registers. Historical design descriptions are explicitly marked; where they conflict with the revised main sections and Appendix A, the current baseline controls. Historical figures are not current flight selections.
+\input{appendices/G_source_detail}
+\clearpage
+\input{appendices/H_source_detail}
+\clearpage
+\input{appendices/I_source_detail}
+\clearpage
+\input{appendices/J_source_detail}
+\clearpage
+\input{appendices/K_integrated_ditl_detail}
+\clearpage
+\input{appendices/L_new_evidence}
+\clearpage
+\input{appendices/M_updated_raan_drag_study}
+
+\end{document}

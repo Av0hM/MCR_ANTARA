@@ -1,0 +1,161 @@
+\subsection{Simulation Configuration and Provenance}
+\label{app:sim-provenance}
+
+This appendix records the simulation code used to support the ANTARA mission concept. The simulation scripts are organised by study under \texttt{src/simulations/}. The integrated science simulation uses a common configuration defined in \path{src/simulations/helper/antara_models.py}; the standalone orbit, power, pointing, detumble, CONOPS and thermal studies have their own study-specific configurations. Their results must not be treated as outputs of one identical spacecraft model unless the input parameters have been checked.
+
+\subsubsection{Simulation Inventory}
+\label{app:sim-inventory}
+\begin{longtable}{p{0.20\linewidth}p{0.43\linewidth}p{0.28\linewidth}}
+\caption{Simulation source files and principal applications.}\label{tab:simulation-source-inventory}\\
+\toprule
+Study & Python entrypoint(s) & Intended evidence \\
+\midrule
+\endfirsthead
+\toprule Study & Python entrypoint(s) & Intended evidence \\
+\midrule
+\endhead
+Integrated science and DITL & \texttt{ditl/ANTARA\_Science\_Sim.py}; \texttt{ditl/scenarios.py}; \texttt{ditl/compare\_scenarios.py} & Mission modes, power, attitude, SAA science opportunities and ground contact \\
+Orbital decay & \texttt{orbit/ANTARA\_drag\_finalconfig.py}; \texttt{orbit/ANTARA\_drag\_study.py} & Orbital decay and lifetime studies \\
+Power & \texttt{power/ANTARA\_MCR.py}; \texttt{power/ANTARA\_avg.py}; \texttt{power/ANTARA\_FINAL\_POWERGEN.py}; \texttt{power/TradeCase.py} & Power-generation and battery trade studies \\
+Pointing & \texttt{pointing/ANTARA\_pointing\_budget.py} & Ground-station pointing geometry \\
+Detumble & \texttt{detumble/leop\_detumble\_mc.py}; \texttt{detumble/analyze\_detumble\_mc.py} & Initial-rate reduction and Monte Carlo statistics \\
+CONOPS & \texttt{conops/ANTARA\_conops.py} & SAA and station encounter analysis \\
+Thermal & \texttt{thermal/ThermalSimulator.py} & Lumped-parameter temperature studies \\
+Shared support & \texttt{helper/antara\_models.py}; \texttt{helper/fsm\_spec.py}; \texttt{helper/telemetry\_metrics.py}; other \texttt{helper/} modules & Configuration, attitude models, FSM rules and telemetry processing \\
+Historical & \texttt{legacy/ANTARA\_Master.py} & Superseded simulation; not a current baseline \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Integrated Simulation Baseline}
+\label{app:integrated-sim-baseline}
+The values in Table~\ref{tab:science-model-defaults} are the defaults in \texttt{MissionConfig} supplied with the reviewed source archive. These are simulation inputs, not final hardware qualifications or independent performance measurements. A command-line override or a run-specific configuration can change them.
+
+\begin{longtable}{p{0.47\linewidth}p{0.29\linewidth}p{0.16\linewidth}}
+\caption{Selected integrated simulation configuration defaults.}\label{tab:science-model-defaults}\\
+\toprule Parameter & Code-defined value & Unit \\
+\midrule
+\endfirsthead
+\toprule Parameter & Code-defined value & Unit \\
+\midrule
+\endhead
+Initial orbital altitude & 600 & km \\
+Inclination & 97.6 & degrees \\
+Eccentricity & 0.001 & --- \\
+RAAN & 15 & degrees \\
+Initial spacecraft mass & 3.0 & kg \\
+Drag coefficient & 2.2 & --- \\
+SRP coefficient & 1.8 & --- \\
+Simulation start date & 1 March 2000 & UTC calendar date \\
+Nominal fine time step & 2 & s \\
+Coarse time step & 20 & s \\
+Battery planning capacity & 25 & Wh \\
+Initial stored battery energy & 18 & Wh \\
+EPS charge efficiency & 0.88 & --- \\
+Solar temperature derating & 0.88 & --- \\
+Maximum solar generation parameter & 22 & W \\
+OBC load parameter & 0.8 & W \\
+EPS load parameter & 1.2 & W \\
+Payload load parameter & 10 & W \\
+Radio transmit load parameter & 12 & W \\
+ADCS idle and slew loads & 0.8 / 4.5 & W \\
+Radio downlink rate & 0.0192 & Mbit/s \\
+Primary ground-station location & $15^\circ$ N, $74^\circ$ E & coordinates \\
+Ground-station altitude & 70 & m \\
+Ground-station elevation mask & 15 & degrees \\
+Random seed & 42 & --- \\
+\bottomrule
+\end{longtable}
+
+The integrated model also defines power thresholds for entering and exiting low-power conditions, attitude-pointing limits, detection and relay minimum durations, a maximum wheel-saturation hold, and fault/recovery debounce settings. The exact configuration used for a reported run must be retained with that run, rather than inferred only from current defaults.
+
+\subsubsection{Integrated DITL Scenarios}
+\label{app:ditl-scenarios}
+The three standard presets are defined in \texttt{ditl/scenarios.py} and shown in Table~\ref{tab:science-scenario-presets}. The two 24-hour cases separate the startup sequence from nominal operations; the one-year preset includes startup.
+
+\begin{table}[htbp]
+\centering
+\caption{Integrated Science simulator presets.}
+\label{tab:science-scenario-presets}
+\begin{tabularx}{\linewidth}{l r X}
+\toprule
+Preset & Duration & Starting condition \\
+\midrule
+\texttt{leop\_24h} & 24 h & Includes cold-start and detumble sequencing \\
+\texttt{no\_leop\_24h} & 24 h & Skips LEOP and starts in Sun Pointing \\
+\texttt{leop\_1yr} & 8,760 h & Includes LEOP; uses multirate integration with a configured 20 s coarse step \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Configuration precedence in the source is explicit command-line options, followed by scenario preset, followed by the global defaults. In particular, the RAAN and battery capacity are configuration fields and are not exposed as direct \texttt{--raan-deg} or \texttt{--battery-wh} command-line options in the documented Science entrypoint.
+
+\subsubsection{Numerical and Physics Models}
+\label{app:physics-assumptions}
+The integrated simulator uses Orekit numerical orbit propagation and includes gravitational perturbations, an atmospheric drag model and solar radiation pressure. The source imports the Holmes--Featherstone gravity-field model and the DTM2000 and NRLMSISE-00 atmospheric models. The model and options active in a particular run must be established from the saved configuration and executed code path.
+
+The integrated model uses scalar-first quaternions, $[w,x,y,z]$, for body-to-inertial attitude transformations. The spacecraft body axes are defined with $+X$ along the payload boresight, $+Y$ toward the relay antenna and $+Z$ along the fixed solar-panel face. The simulation includes finite slews and pointing-settlement checks; an attitude command does not produce an instantaneous orientation change.
+
+The magnetic-field implementation supports the configured dipole option and an IGRF backend through \texttt{ppigrf}. If the optional IGRF package is unavailable, the documented IGRF path warns and falls back to a centred dipole. This fallback is not equivalent to an IGRF-based result and must be recorded when used.
+
+The proton environment model applies SAA spatial variation, magnetic pitch-angle dependence, east--west asymmetry, storm scaling and detector response to a configured baseline spectrum. Although a legacy interface and some telemetry keys use the name \texttt{ap9}, the present source does \emph{not} execute a live AP9 calculation. Consequently, simulator flux values must not be represented as independently generated AP9 predictions or validated in-orbit measurements. The simulator's detector counts are modeled expected counts, rather than a calibrated hardware measurement campaign.
+
+\subsubsection{Time Accounting and Data Outputs}
+\label{app:data-reproduction}
+The Science simulator writes scenario-tagged CSV files under \texttt{results/science/}, including telemetry, SAA passes, ground-station contacts, mode transitions, slew events, detumble events, rejected transitions and proton passes. Figures are written under \texttt{figures/science/} when plot generation is enabled.
+
+Newer source telemetry distinguishes the row observation time, \texttt{time\_sec}, from the integrated interval end, \texttt{state\_time\_sec}. \texttt{interval\_duration\_sec} records the elapsed integration interval. Those interval columns are absent from the corrected exports. This audit uses successive recorded timestamps, assigns no duration after the endpoint, and retains timing-semantic uncertainty. In the newer source, the final terminal snapshot has zero duration. Time-averaged quantities and mode occupancy must therefore be weighted by the interval durations rather than the number of CSV rows. Plot sampling is for display only; extrema and scientific statistics should be calculated from complete telemetry and validated summary outputs.
+
+The simulator supports trusted, versioned checkpoints and resumable execution. Checkpoints and their linked science-event archives must be retained together. A resume record does not by itself establish that the entire intended scenario completed correctly.
+
+\subsubsection{Supporting Study Differences}
+\label{app:study-differences}
+The standalone scripts should be treated as supporting studies rather than interchangeable implementations of the integrated Science scenario. In particular:
+\begin{itemize}
+\item The standalone pointing-budget study uses its own nadir-pointing and antenna-boresight assumptions; these must be compared with the integrated $+Y$ relay antenna geometry before a result is used as the spacecraft relay pointing budget.
+\item Standalone solar-power and battery studies contain their own panel and operating assumptions, which must be reconciled with the integrated Science configuration.
+\item Detumble Monte Carlo trials are useful for testing the controller over initial conditions, but do not automatically demonstrate integrated EPS, payload and ground-station operation.
+\item The thermal model is a separate lumped-parameter study, not a temperature field directly solved within every Science simulator step.
+\item The historical \texttt{ANTARA\_Master.py} is superseded and should not be used as the current simulation baseline.
+\end{itemize}
+
+\subsubsection{Verification Status and Known Limits}
+\label{app:model-limits}
+The supplied repository's \texttt{docs/CURRENT\_STATUS.md} records a 414-test software regression run during Phase 3B and matching one-hour Science baseline outputs. These are repository-reported verification results; they have not been independently reproduced in preparing this appendix. The same record states that a 60-hour annual-preset run does not establish completion or validation of the full one-year scenario. It also identifies the absence of live AP9 calculation and the superseded status of the Master implementation.
+
+For each figure or numerical conclusion adopted in the MCR, retain the following alongside the output: source revision or commit, scenario name, complete run configuration, RNG seed where applicable, simulator start date, run duration and completion status, numerical step controls, output path, and any modifications to the baseline model. Without these details, a plotted quantity cannot be reliably associated with a particular spacecraft design configuration.
+
+\subsubsection{Simulation Evidence Record}
+\label{app:evidence-record}
+The following records distinguish approved planning inputs from verified generating epochs. Full claims and hashes are indexed in the audit reconciliation and count-rate ingestion reports.
+\begin{table}[H]\centering\small
+\caption{Current evidence identities and limits}\label{tab:evidence-record-template}
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{4cm}X@{}}\toprule
+Evidence & Identity & Acceptance limit\\\midrule
+Mission baseline & \texttt{ANTARA-2029-v1}; 2029-01-01 & Approved configuration, not completed run\\
+Radiation rate maps & MJD 61041; 600 km; AP9/AE9 mean and 99th percentile & Reproduced arithmetic; 2026 source accepted for preliminary 2029 planning\\
+RAAN study & Seven cases, two runs each; supplied CSVs & Team-accepted 2029 reference; generating epoch not independently verified\\
+Historical DITL & March 2000 source run & Historical operational example, not current payload qualification\\
+Corrected Science exports & Two 24 h and one 365-day timestamp spans; March 2000 & Runtime source/configuration and mode semantics unresolved\\
+Required-$G$ study & 7940 cells; 65 integral thresholds; supplied dwell & Tables reproduced; source epoch, percentile and exposure duration unverified\\
+Current FPDU & Approved-v2 configuration & Mechanical inputs and logical interfaces only; no qualified response\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Payload and software reconciliation.}
+The current configuration is not consumed by the legacy DITL/Geant4 response. Eleven SiPMs, removed silicon, open optics and unknown dead time require geometry-matched validation. Coincidence references are 200/250/300~ns; shaping is 20~ns. Historical outputs remain unchanged. Bounded tests validate accounting only. Tested source fixes are delivered as an unapplied patch because the authoritative simulator is outside the writable workspace.
+
+\subsubsection{New Operational, Thermal and Detumble Evidence}\label{app:new-run-identities}
+Corrected Science authority is controlled by \path{evidence/science-ditl/run_registry.json}; prior Science manifests are superseded. Independent study manifests remain under \path{evidence/science-ditl/manifests/}, \path{evidence/thermal/manifests/} and \path{evidence/detumble/manifests/}. Current external source hashes are candidate references only; no generating commit or runtime manifest was supplied. Command-line duration overrides cannot be recovered from preset names.
+\begin{table}[H]\centering\small
+\caption{Observed evidence completeness; no expensive simulation rerun}\label{tab:new-run-completeness}
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{3.1cm}X@{}}\toprule
+Evidence & Observed span & Acceptance boundary\\\midrule
+Corrected LEOP / No-LEOP & 7696 / 6553 rows; 0--86400 s & Complete timestamp spans; runtime configuration unknown\\
+Corrected annual telemetry & 1434872 rows; 0--31536000 s & Complete365-day timestamp span; interval semantics conditional\\
+Corrected annual events & 2000-03-01 epoch & Contact/data totals reconcile; mode/slew definitions require closure\\
+Thermal & 43\,201 labels; 0--24~h; 2~s & One history; no separate HOT/COLD cases; initial-state timing unresolved\\
+Detumble & 50\,000 summary rows & Historical inputs incompatible with current source; censor times/seed absent\\\bottomrule
+\end{tabularx}\end{table}
+Current candidate orbit and thermal integrators are DP853 and RK4 respectively, but defaults cannot establish the producing solver settings. The thermal heat schedule is independent of DITL. Passing local accounting tests establishes parsing, interval weighting and summary arithmetic only; it does not validate current hardware response or a common 2029 run.
+
+\paragraph{Science-record and communications revision.}
+Science Record v3 and the full 19.2~kbps capacity analysis are new MCR reference interfaces, not outputs of the historical simulator. Source hashes and exact per-contact/tier calculations are under \path{data/derived/ditl_correction_2026-11-09/}; the generating scripts read originals without changing them. The grid-study horizon remains unknown, annual contacts retain their 2000 epoch, and corrected telemetry spans365days; the old partial artifact is superseded. The 292-byte reference supersedes older unencoded record-size assumptions without modifying detector physics, scientific thresholds or original transfers.

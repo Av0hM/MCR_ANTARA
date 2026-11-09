@@ -1,0 +1,42 @@
+% Generated from config/requirements/section3_feasibility_v1.json.
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Mission Feasibility Requirements: Electrical Power System (EPS)}\label{tab:fr-eps}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-EPS-FR-001}\mbox{ANT-EPS-}\newline\mbox{FR-001} & The EPS shall sustain the scheduled mission loads with the 25 Wh planning battery across representative launch-dependent RAAN and eclipse cases, without an accumulating energy deficit. & Energy / life & RAAN averages and partial DITL do not establish worst-case balance. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-EPS-FR-002}\mbox{ANT-EPS-}\newline\mbox{FR-002} & The EPS shall keep battery energy within selected-cell operating and depth-of-discharge limits during startup, science, Relay and Safe Mode. Numerical SOC/DoD limits remain OPEN DERIVED REQUIREMENTS. & Battery safety & Partial telemetry minimum 15.21520 Wh; supplier limits not allocated. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-EPS-FR-003}\mbox{ANT-EPS-}\newline\mbox{FR-003} & The EPS shall supply simultaneous and transient load demand within bus voltage, current and ripple allocations, including payload acquisition, radio transmit and actuator peaks. These limits remain OPEN DERIVED REQUIREMENTS. & Power interfaces & Mode loads exist; qualified peaks and bus limits absent. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\ContinuedFloat\captionsetup{list=no}
+\caption{Mission Feasibility Requirements: Electrical Power System (EPS) (continued)}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-EPS-FR-004}\mbox{ANT-EPS-}\newline\mbox{FR-004} & The EPS shall generate the allocated Sun-Pointing energy using the fixed +Z panel and two deployed panels, with illumination, pointing and conversion losses explicitly accounted for. & Array / ADCS & Configuration defined; generating and deployed-area identities differ. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-EPS-FR-005}\mbox{ANT-EPS-}\newline\mbox{FR-005} & The EPS shall reserve energy for detumble, safe-state survival and recovery until the next usable generation opportunity; maximum recovery duration and energy reserve remain OPEN DERIVED REQUIREMENTS. & Startup / safety & One 2460 s event; 1.49289 Wh detumble load in partial telemetry. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-EPS-FR-006}\mbox{ANT-EPS-}\newline\mbox{FR-006} & The EPS shall maintain the mission energy allocation through the approximately five-year operations objective using traceable EOL degradation and cycling assumptions. & EOL / lifetime & EOL study inputs exist; average generation is not an EOL margin. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
+\paragraph{Feasibility assessment.} The fixed/deployable array and battery architecture provide a defined basis for energy analysis, not a closed energy margin. The 25 Wh planning value is not a permissible depth-of-discharge limit. Startup reserve, bus peaks and worst-RAAN/EOL depletion require allocations at concept level; component aging and transient qualification follow at PDR.

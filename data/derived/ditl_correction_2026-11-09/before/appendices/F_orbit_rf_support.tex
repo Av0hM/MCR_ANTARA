@@ -1,0 +1,42 @@
+
+\subsection{Orbit, Coverage and Communications Supporting Analysis}\label{app:orbit-rf}
+\subsubsection{Orbit Propagation and Orbital Lifetime}\label{app:orbit-support}
+The mission baseline is a near-circular 600~km Sun-synchronous orbit at $97.6^\circ$ inclination. The supporting simulation source contains several separate orbit models rather than a single uniform propagator. The annual \texttt{power/ANTARA\_MCR.py} campaign runs 365-day numerical propagation across RAAN $0^\circ,30^\circ,\ldots,180^\circ$ with two Monte Carlo realizations each, 300-second reporting steps, 4.0~kg spacecraft mass and $97.4^\circ$ inclination. Its force model includes gravity, DTM2000 atmospheric drag, solar radiation pressure and third-body perturbations. Its SAA and ground-station encounter classifiers are simplified geographic boxes.
+The dedicated \texttt{orbit/ANTARA\_drag\_finalconfig.py} assumes a 4.0~kg spacecraft, $C_D=2.2$, projected area 0.076799~m$^2$ multiplied by a 1.5 tumbling factor, 98$^\circ$ inclination, and the January 2000 space-weather reference. It uses DTM2000, an RK4 step of 60 seconds and samples altitude daily. It computes duration from 500--600~km initial altitudes until crossing a \emph{450~km study cutoff}; this is not an end-to-end calculation of atmospheric reentry or post-mission disposal compliance.
+\begin{table}[htbp]\centering\caption{Principal standalone orbital-study differences.}\label{tab:orbit-study-comparison}\begin{tabularx}{\linewidth}{p{0.28\linewidth}XX}\toprule Study & Key configuration & Principal limitation\\\midrule
+Annual RAAN campaign & 365 days, 7 RAAN cases, 2 runs each; 4~kg, $97.4^\circ$ & Simplified SAA/GS regions; run assumptions differ from DITL\\
+Final-configuration decay & 500--600~km, DTM2000, 4~kg, 450~km cutoff & No propagation from cutoff to physical reentry\\
+Analytical CONOPS & 30 days, Eckstein--Hechler, 60~s step & Rectangular station region, not actual elevation visibility\\
+Pointing budget & One-day Keplerian orbit, $97.4^\circ$, RAAN $0^\circ$ & +Z antenna body axis, unlike nominal +Y relay\\\bottomrule\end{tabularx}\end{table}
+The newer two-run-per-RAAN drag data to a nominal 300~km cutoff are separately reported in Appendix~\ref{app:updated-raan}. They do not retroactively change the definitions or parameters of the earlier 450~km study.
+A full disposal assessment must use the applicable mission and regulatory requirements, a defined physical end criterion, atmosphere/solar-activity uncertainty, and the final deployed spacecraft configuration. One-year altitude remaining above 550~km does not by itself demonstrate compliance.
+\subsubsection{SAA Boundaries and Science Coverage}\label{app:saa-support}
+The fast CONOPS and annual campaign use the simplified SAA geographic region $-50^\circ\leq\mathrm{latitude}\leq0^\circ$ and $-90^\circ\leq\mathrm{longitude}\leq40^\circ$. This differs from the science mapping region stated elsewhere in the report. The current science region is the supplied count-rate polygon, not this historical rectangular proxy.
+The 30-day \texttt{conops/ANTARA\_conops.py} tool uses an Eckstein--Hechler J2-perturbed orbit, 60-second samples and a rectangular Goa region defined by latitude 0--20$^\circ$ and longitude 60--80$^\circ$. It logs eclipse and orbit classifications but does not compute true topocentric elevation. A SAA-box event, an SAA crossing, a unique orbit and an operational detector pass are different quantities and must not be described by the same count. The legacy total above 8,000 ``SAA-only orbits'' pools two annual runs. The recovered raw records reproduce that sum; it is not a single-spacecraft one-year revolution count. Classifier geometry remains approximate.
+The integrated Science simulation instead maintains contact/pass histories and counts accepted detector events and science flushes. Its present proton-flux baseline is not a live AP9 solution; any predicted science precision must retain that limitation.
+\subsubsection{Ground Station Visibility and Pointing}\label{app:gs-support}
+The primary Goa station is approximately at $15^\circ$N, $74^\circ$E. The integrated Science default uses 70~m station altitude and a $15^\circ$ elevation mask. The separate \path{pointing/ANTARA_pointing_budget.py} uses 30~m altitude and a $10^\circ$ elevation mask for a one-day Keplerian case. Its antenna boresight is +Z in a nadir-pointing attitude; Science defines the relay antenna on +Y and slews to a moving ground-station line of sight. Results from the former must not be used to claim validated +Y relay acquisition in the latter.
+The Science code supports a second station when configured. Among simultaneously visible stations it selects the greatest elevation above each station's own mask, with primary-site tie-breaking. This is a modeled selection policy, not evidence that a second station has been selected or constructed.
+\subsubsection{Communications Link and Verification}\label{app:rf-link}
+The preliminary communications assessment assumes an ideal gross downlink rate of 19.2 kbps during eligible ground-station relay windows, without an arbitrary throughput derating. This establishes an upper-bound modeled data-transfer opportunity rather than verified application-layer throughput. Detailed RF link-budget closure, protocol overhead, retransmission effects, and achievable net science-data throughput are deferred to PDR.
+
+The MCR candidate is the AX100 concept, not a verified device-rate selection. PDR must close supported bitrate/configuration, modulation/coding, EIRP/gains, pointing/polarization, path/atmospheric/implementation losses, sensitivity and $E_b/N_0$, link margin, framing, FEC, loss/retransmission, modem compatibility and housekeeping/command allocations. The existing elevation-dependent simulator transfer proxy is historical; it is not applied to the new full-rate capacity calculation.
+
+\begin{table}[H]\centering\small
+\caption{Historical contacts: full 19.2~kbps ideal capacity with no second mask adjustment}\label{tab:gs-v3-capacity}
+\begin{tabular}{lrr}\toprule Window definition & Duration (s) & Capacity (bytes)\\\midrule
+All 820 visibility contacts & 244\,016 & 585\,638\,400\\
+Associated event-log Relay overlap & 178\,682 & 428\,836\,800\\
+Minimum daily visibility & 514 & 1\,233\,600\\
+Minimum daily Relay overlap & 312 & 748\,800\\\bottomrule\end{tabular}
+\end{table}
+Contact timestamps identify an epoch of 2000-03-01 UTC. Over the explicit 365-day accounting window, mean visibility is 668.536986 seconds per day; maximum intercontact gap is 48\,458~s. The exporter labels the station GS1\_India. Candidate source defaults describe Goa with a 15$^\circ$ mask, but runtime RAAN, station and mask identity are unverified; these defaults are not a generating manifest. No 10$^\circ$/15$^\circ$ conversion is inferred. The short 24h-named contact files are empty and do not establish full-day availability.
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{data/derived/telemetry_v3_2026-11-09/historical_capacity.png}
+\caption{Historical event-window capacity; visibility and Relay-intersected opportunities are separate. No matching v3 generation or verified 2029 contact campaign is supplied.}\label{fig:gs-v3-capacity}
+\end{figure}
+Per-contact AOS/LOS, Relay overlap, ideal capacities and original transfer credit are reproduced in \path{data/derived/telemetry_v3_2026-11-09/historical_contacts.csv}. Historical queue/backlog/unused capacity remain unknown without matched production; the partial telemetry's queue is a separate diagnostic. Actual delivery of identified science records requires packet and ground-reception evidence.
+
+\begin{equation}\label{eq:rf-link-budget}P_{\mathrm{rx,dBm}}=P_{\mathrm{tx,dBm}}+G_{\mathrm{tx,dBi}}+G_{\mathrm{rx,dBi}}-L_{\mathrm{path,dB}}-L_{\mathrm{other,dB}}.\end{equation}
+The final system verification should include antenna impedance matching, S-parameter characterization, antenna gain/pattern or accepted equivalent evidence, RF-chain gain and noise figure, end-to-end receive testing at the intended frequency, and downlink throughput under realistic contact conditions. No numerical link margin is claimed without the corresponding hardware and test inputs.

@@ -9,3 +9,7 @@ Current geometry: five 14×6×6 mm (X,Y,Z) main blocks in series, 2×6×6 mm fro
 ASIC shaping 20 ns; coincidence window planning references 200/250/300 ns; separately stated post-shaping delay 20 ns has unqualified meaning. ADC latency, digital latency, detector dead time and maximum trigger rate remain null. Null never means zero. No qualified detector response or old five-layer transfer is supplied.
 
 The approved mission input is `config/mission/antara_2029.json`. The AP9/AE9 raw source epoch remains 2026-01-01 despite use as a 2029 planning reference. The rate script does not model the newly specified 250 µm front aluminium. No final encoding, packet size, data cadence or physical response is inferred from the 64-bin logical telemetry schema.
+
+## Science-record reference update (2026-11-09)
+
+The immutable approved-v2 payload snapshot retains its original null encoding/packet/cadence fields. The current **MCR logical encoding** is separately versioned in `../science/science_record_v3.json`:292 bytes before radio framing, with a visit-based reading policy and no arbitrary minimum duration. This supersedes the earlier unencoded logical-record assumption, not the mechanical revision or a final radio-packet format. Hardware cadence, metadata budget and detector response remain unqualified. See `docs/audit/SCIENCE_RECORD_V3.md`.

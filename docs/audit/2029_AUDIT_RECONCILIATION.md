@@ -1,3 +1,15 @@
+# Corrected DITL authority — 2026-11-09
+
+This current correction supersedes all earlier Science/DITL-dependent statistics and evidence statuses below. Earlier entries are retained as historical audit history, not active numerical claims. Independent physics/design/RAAN/thermal/detumble findings are unaffected. Current sources: `CORRECTED_DITL_RUN_VALIDATION.md`, `DITL_CORRECTION_IMPACT_MATRIX.md`, `STORAGE_BACKLOG_VALIDATION.md`, and `evidence/science-ditl/run_registry.json`.
+
+All three corrected timestamp spans are complete (86400/86400/31536000 s), epoch2000-03-01. Annual acquisition247258 s; minimum recorded battery15.097556 Wh; full ideal Relay428836800 bytes; preferred EMSC v3 slot volume46637364 bytes; nominal peak75336 bytes; seven-day outage peak1010028 bytes. Runtime config and transition/slew semantics remain unresolved. No2029 calibration or qualified science success follows.
+
+Current requirement status totals: {'CONDITIONAL': 17, 'OPEN': 28, 'SUPPORTED': 3, 'NOT EVALUATED': 3}. ANT-OBC-FR-002 is CONDITIONAL (outage spill needed); ANT-GSO-FR-003 is CONDITIONAL (coverage corrected, logger/source closure open), replacing its earlier NOT MET truncation rationale. Full updated register: `SUBSYSTEM_REQUIREMENT_TRACEABILITY.md`.
+
+---
+
+## Prior audit history (DITL-dependent entries superseded)
+
 # 2029 audit reconciliation
 
 Authority: unified master instruction, 2026-11-04. The local MCR checkout is the report repository. `../ANTARA_CODES-main` is the authoritative simulation source; its AGENTS.md selects Science DITL and excludes Master from further development. No current FPDU custom CAD/ICD or geometry-matched response was recovered.

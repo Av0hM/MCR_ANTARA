@@ -1,0 +1,46 @@
+case,outage,peak_required_bytes
+MMSC_1,one missed eligible relay window,11972
+MMSC_1,one missed complete visibility contact (all Relay fragments),11972
+MMSC_1,"1 calendar day(s), worst start day",11972
+MMSC_1,"3 calendar day(s), worst start day",11972
+MMSC_1,"7 calendar day(s), worst start day",11972
+MMSC_2,one missed eligible relay window,13432
+MMSC_2,one missed complete visibility contact (all Relay fragments),13432
+MMSC_2,"1 calendar day(s), worst start day",13432
+MMSC_2,"3 calendar day(s), worst start day",13432
+MMSC_2,"7 calendar day(s), worst start day",13432
+MMSC_3,one missed eligible relay window,16644
+MMSC_3,one missed complete visibility contact (all Relay fragments),16644
+MMSC_3,"1 calendar day(s), worst start day",16644
+MMSC_3,"3 calendar day(s), worst start day",16644
+MMSC_3,"7 calendar day(s), worst start day",16644
+MSC_1,one missed eligible relay window,16936
+MSC_1,one missed complete visibility contact (all Relay fragments),16936
+MSC_1,"1 calendar day(s), worst start day",16936
+MSC_1,"3 calendar day(s), worst start day",16936
+MSC_1,"7 calendar day(s), worst start day",16936
+MSC_2,one missed eligible relay window,33872
+MSC_2,one missed complete visibility contact (all Relay fragments),33872
+MSC_2,"1 calendar day(s), worst start day",33872
+MSC_2,"3 calendar day(s), worst start day",33872
+MSC_2,"7 calendar day(s), worst start day",33872
+MSC_3,one missed eligible relay window,50808
+MSC_3,one missed complete visibility contact (all Relay fragments),50808
+MSC_3,"1 calendar day(s), worst start day",50808
+MSC_3,"3 calendar day(s), worst start day",50808
+MSC_3,"7 calendar day(s), worst start day",50808
+EMSC_1,one missed eligible relay window,22484
+EMSC_1,one missed complete visibility contact (all Relay fragments),22484
+EMSC_1,"1 calendar day(s), worst start day",22484
+EMSC_1,"3 calendar day(s), worst start day",22484
+EMSC_1,"7 calendar day(s), worst start day",22484
+EMSC_2,one missed eligible relay window,44968
+EMSC_2,one missed complete visibility contact (all Relay fragments),44968
+EMSC_2,"1 calendar day(s), worst start day",44968
+EMSC_2,"3 calendar day(s), worst start day",44968
+EMSC_2,"7 calendar day(s), worst start day",44968
+EMSC_3,one missed eligible relay window,67452
+EMSC_3,one missed complete visibility contact (all Relay fragments),67452
+EMSC_3,"1 calendar day(s), worst start day",67452
+EMSC_3,"3 calendar day(s), worst start day",67452
+EMSC_3,"7 calendar day(s), worst start day",67452

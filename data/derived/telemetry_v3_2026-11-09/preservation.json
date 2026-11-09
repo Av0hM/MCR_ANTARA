@@ -1,0 +1,22 @@
+{
+  "original_simulation_files_unchanged": 48,
+  "geometric_factor_files_unchanged": 9,
+  "protected_prior_files_unchanged": [
+    "sections/02_mission_overview.tex",
+    "sections/01_mission_context.tex",
+    "appendices/D_thermal_structural_details.tex",
+    "appendices/A_operational_logic_visual.tex",
+    "appendices/M_updated_raan_drag_study.tex",
+    "config/science/fpdu_histogram_v1.schema.json",
+    "config/science/saa_polygon_v1.json",
+    "config/mission/antara_2029.json",
+    "config/payload/fpdu_2026-11-04.json",
+    "config/payload/current.json",
+    "config/payload/fpdu_2026-11-04-approved-v2.schema.json",
+    "config/payload/fpdu_2026-11-04.schema.json",
+    "config/payload/fpdu_2026-11-04-approved-v2.json",
+    "main.pdf"
+  ],
+  "external_simulator_written": false,
+  "expensive_simulations_run": false
+}

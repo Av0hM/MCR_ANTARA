@@ -1,0 +1,40 @@
+{
+  "cells": 7940,
+  "visits": 214039,
+  "geometric_dwell_s": 1453556.0,
+  "horizon": "UNKNOWN",
+  "bytes_per_reading": 292,
+  "volume": [
+    {
+      "readings": 1,
+      "records": 214039,
+      "bytes": 62499388,
+      "MiB": 59.604061126708984,
+      "uint16_bytes_unapproved": 35102396,
+      "ideal_required_relay_seconds": 26041.411666666667,
+      "exceeds_128MiB_without_delivery": false,
+      "capacity_shortfall_bytes_without_delivery": 0
+    },
+    {
+      "readings": 2,
+      "records": 428078,
+      "bytes": 124998776,
+      "MiB": 119.20812225341797,
+      "uint16_bytes_unapproved": 70204792,
+      "ideal_required_relay_seconds": 52082.823333333334,
+      "exceeds_128MiB_without_delivery": false,
+      "capacity_shortfall_bytes_without_delivery": 0
+    },
+    {
+      "readings": 3,
+      "records": 642117,
+      "bytes": 187498164,
+      "MiB": 178.81218338012695,
+      "uint16_bytes_unapproved": 105307188,
+      "ideal_required_relay_seconds": 78124.235,
+      "exceeds_128MiB_without_delivery": true,
+      "capacity_shortfall_bytes_without_delivery": 53280436
+    }
+  ],
+  "coarsening": "Visit counts cannot be summed to obtain unique 1 or 5 degree visits without trajectory chronology."
+}

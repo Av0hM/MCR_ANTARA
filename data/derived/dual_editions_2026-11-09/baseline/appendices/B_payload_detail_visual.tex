@@ -1,0 +1,213 @@
+\subsection{Detailed Scientific Payload: Approved FPDU Concept}\label{app:payload-detail}
+The current source of truth is configuration \texttt{FPDU-2026-11-04-approved-v2}, referenced by \path{config/payload/current.json}. It supersedes the earlier same-day input snapshot and the single-block Rev.~2.1 narrative without claiming a formally released hardware revision. The mission requirement remains directional differential proton-flux measurement over 5--100~MeV. No geometry-matched detector response has yet qualified that interval.
+
+\textbf{Evidence convention.} \textbf{CONFIRMED DESIGN INPUT} denotes approved construction or mission inputs; \textbf{PRELIMINARY ESTIMATE} denotes conditional planning assumptions; \textbf{MODEL PREDICTION} denotes a calculation under stated assumptions; \textbf{VALIDATED RESULT} is restricted to the tested software identity or arithmetic, not inferred hardware performance; \textbf{OPEN DECISION} denotes unresolved design choices. Detector response and hardware performance require validation.
+
+\subsubsection{Geometry, Axes and Optical Interfaces}\label{app:payload-configuration}
+\begin{table}[H]\centering\small
+\caption{Confirmed FPDU mechanical inputs; dimensions exclude packaging}\label{tab:fpdu-design-summary}
+\begin{tabularx}{\linewidth}{@{}p{3.1cm}p{4.1cm}X@{}}\toprule
+Element & Current specification & Interpretation\\\midrule
+Main scintillators & Five, each $14_X\times6_Y\times6_Z$~mm & In series along X; 70~mm active length\\
+Front scintillator & One, $2_X\times6_Y\times6_Z$~mm & Total nominal active length 72~mm\\
+Main-block SiPMs & One on each $+Y$ and $-Y$ face & Ten main sensors plus one front sensor: eleven total\\
+Main-block reflector & Teflon, 0.11~mm per $\pm Z$ face & Coated Z dimension 6.22~mm; X and Y faces not coated by default\\
+Optical coupling & EJ-550 grease & Thickness, coupling area and sensor models open\\
+Entrance shield & 250~$\mu$m = 0.25~mm Al & Front entrance only; transport not validated\\
+Silicon / rear detector & Silicon removed; rear optional & Optional rear scintillator not selected or included in dimensions\\\bottomrule
+\end{tabularx}\end{table}
+
+The body-frame $+X$ direction points outward along the RAM/payload boresight. Particles enter the $+X$-facing entrance and propagate inward toward $-X$. All six scintillators are intended to share one material; its selection is open. Material volume is 504~mm$^3$ per main block, 2520~mm$^3$ for five, 72~mm$^3$ for the front, and 2592~mm$^3$ = 2.592~cm$^3$ in total. These exclude gaps, coating, grease, shielding, sensors, supports and any rear element. Neither packaged length nor payload mass follows from active dimensions alone.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small,dim/.style={<->,thin}]
+\foreach \x/\n in {0/5,1.8/4,3.6/3,5.4/2,7.2/1}{
+\draw[fill=AntaraPale,draw=AntaraNavy] (\x,0) rectangle +(1.8,1.25);
+\node at (\x+.9,.62) {Block \n};}
+\draw[fill=AntaraTeal!25] (9.2,0) rectangle (9.5,1.25);
+\draw[fill=gray!40] (9.8,0) rectangle (9.87,1.25);
+\draw[->,thick] (12,.62)--(10.1,.62) node[midway,above]{inward $-X$};
+\node[align=center,font=\scriptsize] at (9.35,2) {Front\\2 mm};
+\draw (9.35,1.3)--(9.35,1.6);
+\node[align=center,font=\scriptsize] at (11,1.8) {Al entrance\\0.25 mm};
+\draw (9.84,1.25)--(10.4,1.7);
+\draw[dim] (7.2,-.35)--node[below]{14 mm}(9,-.35);
+\draw[dim] (0,-1)--node[below]{70 mm main material + 2 mm front = 72 mm active material}(9.5,-1);
+\draw[dim] (-.4,0)--node[left]{6 mm}(-.4,1.25);
+\draw[->] (0,2)--(1.1,2) node[right]{$+X$};
+\draw[->] (0,2)--(0,2.7) node[above]{$+Z$};
+\node[align=center,font=\scriptsize] at (5,2.35) {Side view from $-Y$ toward $+Y$\\Inter-block optical interfaces OPEN};
+\end{tikzpicture}
+\caption{Longitudinal concept, not a packaged CAD drawing. Shown gaps and shield thickness are schematic. Dimension sums count active material only. An optional rear detector would lie beyond Block 5 and is not included.}\label{fig:fpdu-stack-schematic}\label{app:payload-stack}
+\end{figure}
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small]
+\draw[fill=AntaraPale] (0,0) rectangle (3,3);
+\draw[fill=AntaraTeal!40] (0,3) rectangle (3,3.14);
+\draw[fill=AntaraTeal!40] (0,-.14) rectangle (3,0);
+\draw[fill=yellow!30] (-.12,0) rectangle (0,3);
+\draw[fill=yellow!30] (3,0) rectangle (3.12,3);
+\draw[fill=AntaraNavy!20] (-.5,.6) rectangle (-.12,2.4);
+\draw[fill=AntaraNavy!20] (3.12,.6) rectangle (3.5,2.4);
+\node[rotate=90,font=\scriptsize] at (-.31,1.5){SiPM $-Y$};
+\node[rotate=90,font=\scriptsize] at (3.31,1.5){SiPM $+Y$};
+\node at (1.5,1.5){Scintillator};
+\node[above] at (1.5,3.35){Teflon $+Z$: 0.11 mm};
+\node[below] at (1.5,-.35){Teflon $-Z$: 0.11 mm};
+\draw[<->] (4.1,0)--node[midway,sloped,above,font=\scriptsize]{Active Z: 6.00 mm}(4.1,3);
+\draw[<->] (5.2,-.14)--node[midway,sloped,above,font=\scriptsize]{Coated Z: 6.22 mm}(5.2,3.14);
+\draw[<->] (0,-1)--node[below]{6.00 mm active Y}(3,-1);
+\draw[->] (8,0)--(9,0) node[right]{$+Y$};
+\draw[->] (8,0)--(8,1) node[above]{$+Z$};
+\node[align=left,text width=3cm,font=\scriptsize] at (8.5,2.5){View from $+X$ toward $-X$.\\EJ-550 at both Y interfaces.\\Grease/sensor sizes schematic.};
+\end{tikzpicture}
+\caption{Main-block cross-section. Optical isolation between successive X faces is undecided. The front scintillator's coating and SiPM attachment face remain open; this cross-section does not prescribe them.}\label{fig:fpdu-cross-section}
+\end{figure}
+
+\textbf{OPEN DECISION: optical isolation.} Independently isolated blocks could localize deposition but require defined separators and per-block calibration. Partial longitudinal coupling introduces light sharing and cross-talk that must be measured before using multiplicity or position observables. Common coupling, if physically feasible, would require a calibrated light-sharing model and may reduce deposition localization. None is selected. Surface finish, inter-block material, EJ-550 thickness, photon collection, SiPM saturation and temperature behavior remain unqualified. No controlled current FPDU CAD/ICD was recovered.
+\FloatBarrier
+
+\subsubsection{Signal Chain and Timing Trade}\label{app:payload-electronics}\label{app:payload-timing}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,font=\sffamily\small,b/.style={draw=AntaraNavy,fill=AntaraPale,rounded corners,text width=2.45cm,minimum height=1.1cm,align=center},f/.style={->,thick}]
+\node[b] (s) at (0,0){Scintillator};
+\node[b] (p) at (3.3,0){SiPM};
+\node[b] (a) at (6.6,0){ASIC\\20 ns shaping};
+\node[b] (d) at (9.9,0){ADC\\latency open};
+\node[b] (c) at (9.9,-2){MCU / FPGA\\selection open};
+\node[b] (r) at (6.6,-2){Classification\\reconstruction};
+\node[b] (h) at (3.3,-2){64-bin histogram\\quality metadata};
+\node[b] (o) at (0,-2){Storage\\downlink};
+\draw[f] (s)--node[above=10pt,font=\scriptsize]{light}(p);
+\draw[f] (p)--node[above=10pt,font=\scriptsize]{signal}(a);
+\draw[f] (a)--(d);\draw[f] (d)--(c);\draw[f] (c)--(r);\draw[f] (r)--(h);\draw[f] (h)--(o);
+\end{tikzpicture}
+\caption{Candidate signal and science-data flow. EJ-550 provides the optical interface. Eleven SiPMs do not specify eleven ADCs. Fast coincidence may occur in analog/ASIC logic while downstream processing is buffered; this architecture remains to be selected.}\label{fig:fpdu-signal-chain}
+\end{figure}
+
+\begin{table}[H]\centering\small
+\caption{Separate timing references and missing qualification inputs}\label{tab:fpdu-timing}
+\begin{tabularx}{\linewidth}{@{}p{4.2cm}p{2.4cm}X@{}}\toprule
+Quantity & Planning input & Interpretation\\\midrule
+ASIC shaping time & 20 ns & Pulse-shaping parameter, not coincidence or dead time\\
+Coincidence target & 200 ns & Nominal acceptance-window reference\\
+Initial timing allowance & $\geq250$ ns & Margin-inclusive window reference\\
+Preferred allowance & $\sim300$ ns & Comfortable window reference; accidental-coincidence trade required\\
+Post-shaping delay & 20 ns stated & Meaning unresolved; not assigned as ADC conversion latency\\
+ADC conversion / processing & Unknown / unknown & Datasheets, pipeline and worst-case execution measurements required\\
+Qualified detector dead time & Unknown & Shared/per-channel topology and loss model unresolved\\
+Timestamp precision / jitter & Unknown & Channel skew and discriminator/capture measurements required\\
+Maximum trigger throughput & Unknown & All-particle acceptance, burst and queue tests required\\\bottomrule
+\end{tabularx}\end{table}
+
+The 200/250/300~ns values are coincidence-window planning references, as clarified by the team. They are not processor execution deadlines. Widening a window changes accidental coincidences; it does not prove engineering margin. The two stated 20~ns values must not simply be summed into an end-to-end latency. No dead time is assigned from any of these values.
+
+MCU is preferred only if the complete acquisition architecture demonstrates adequate timestamp precision, coincidence handling, ADC bandwidth, buffering, processing throughput and power. Compare ASIC/discriminator coincidence with MCU processing, timer/capture-assisted MCU, FPGA, and hybrid FPGA/MCU implementations. For a stated mean arrival rate $\lambda$ and service time $s$, $\lambda s<1$ is a queue-stability prerequisite, not proof of low event loss. Finite buffers and burst arrivals need explicit tests. Coincidence, ADC acquisition, service time, event loss and detector livetime remain separate quantities.
+\FloatBarrier
+
+\subsubsection{Radiation Inputs and Conditional Rate Estimates}\label{app:payload-data}
+The supplied AP9/AE9 maps are integral omnidirectional fluxes at MJD 61041 (1 January 2026), altitude 600~km. They are team-approved preliminary references for 2029 mission planning, not regenerated 2029 environment outputs. The rate conversion assumes isotropy and $G=1$~cm$^2$~sr with unit efficiency: $R=F_{\rm omni}G/(4\pi)$. It uses log--log interpolation at 5.5~MeV for protons and 0.35~MeV for electrons. The script contains no aluminium transport, actual telescope acceptance, electron rejection, optical response or dead-time model.
+
+\begin{table}[H]\centering\small
+\caption{Reproduced MODEL PREDICTIONS: idealized incident-rate proxy maxima (Hz)}\label{tab:fpdu-rates}
+\begin{tabularx}{\linewidth}{@{}lrrX@{}}\toprule
+Map & Proton & Electron & Interpretation\\\midrule
+Mean & 358.920 & 67\,779.655 & Nominal preliminary environment\\
+99th percentile & 975.659 & 503\,419.743 & Conservative study scenario, not a hard upper bound\\\bottomrule
+\end{tabularx}\end{table}
+The species maxima need not occur at the same cell. Maximum same-cell summed proxies are 68\,055.635~Hz (mean) and 504\,245.064~Hz (99th-percentile maps); the latter is not a joint 99th-percentile trigger bound. Values are independently reproduced from \path{data/raw/payload_count_rate_2026/} in the count-rate validation report. Flux-times-area proxy columns must not be confused with the columns divided by $4\pi$.
+
+\textbf{PRELIMINARY ESTIMATE, superseded rounded reference:} approximately 400~Hz assumed protons only, 250~$\mu$m (0.25~mm) aluminium shielding, geometric factor 1~cm$^2$~sr and 100\% detection efficiency. Its original generating calculation remains unidentified. The supplied per-cell rates take priority; they do not implement the stated aluminium shielding. No constant rate or electronics ceiling is imposed.
+
+The proton source grid ends at an integral threshold of 20~MeV; its above-threshold quantities are not truncated differential bins. It cannot supply a calibrated 5--100~MeV spectrum or an integral subtraction at 100~MeV. Electrons may consume front-end resources before downstream rejection. A credible maximum actual trigger rate requires geometry, transport, thresholds, mixed species and burst evidence and is not established here.
+
+\subsubsection{Reconstruction, Histogram and Telemetry Contract}\label{app:payload-coincidence}\label{app:payload-readout}
+The front scintillator is intended to respond in the proposed 5.5--15~MeV incident range and provide deposition, path-length-corrected d$E$/d$x$, and classification/coincidence observables. These functions are not calibrated incident-energy measurements. Response-matrix lookup/unfolding and a trained reconstruction model remain candidates. Evaluation must use detector observables, keeping truth energy only as the reference target. The old five-layer stopping response and silicon-based coincidence do not apply.
+
+\begin{table}[H]\centering\small
+\caption{Science Record v3: 292-byte uncompressed reference, excluding radio framing}\label{tab:fpdu-telemetry}
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}rX@{}}\toprule
+Field & Bytes & Reference encoding\\\midrule
+Entry / exit timestamps & 16 & Two uint64 microsecond POSIX UTC values since 1970-01-01; half-open interval\\
+Latitude / longitude & 8 & Two signed int32, degrees $\times10^7$; midpoint WGS84 geodetic position\\
+Altitude & 4 & Signed int32 millimetres above WGS84 ellipsoid\\
+64 histogram bins & 256 & uint32 integer counts, provisional 5--100~MeV reporting edges\\
+Sequence & 4 & uint32; reboot/wrap epoch in session manifest\\
+Combined status & 2 & uint16 mode and six subsystem-health pairs\\
+CRC16 & 2 & CRC-16/IBM-3740 over preceding 290 bytes\\\midrule
+Total & 292 & Little endian, no padding; no radio overhead included\\\bottomrule
+\end{tabularx}\end{table}
+The reference definition is \path{config/science/science_record_v3.json}. Version, bin-edge ID \texttt{FPDU-log64-5-100-v1}, calibration/response/configuration identity and time correlation are mandatory linked session metadata, not hidden extra bytes in the record. Actual livetime, losses, background and quality details require linked interval metadata whose size remains unbudgeted. The 64 bins are not 64 independently calibrated channels. Fractional modeled expectations are not valid uint32 measured counts.
+
+CRC polynomial is 0x1021, initial value 0xFFFF, nonreflected, final XOR zero; CRC bytes are little endian. The reference check for ``123456789'' is 0x29B1. UTC leap seconds are not representable in POSIX time; split/flag affected acquisitions and retain clock correlation. Encoding resolution is not clock or navigation accuracy. No final radio packet size or throughput qualification is implied.
+
+\begin{table}[H]\centering\small
+\caption{Combined 16-bit mode and health codebook}\label{tab:status-v3}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.6cm}X@{}}\toprule
+Bits & Meaning\\\midrule
+0--3 & 0 Cold/Dark; 1 Detumble; 2 Sun Pointing; 3 Detection; 4 Relay; 5 Slewing; 6 Safe; 7--14 reserved; 15 unknown\\
+4--5 / 6--7 / 8--9 & OBC / EPS / ADCS health\\
+10--11 / 12--13 / 14--15 & COMMS / payload / other-thermal health\\
+Each health pair & 00 nominal; 01 degraded; 10 fault; 11 unknown\\\bottomrule
+\end{tabularx}\end{table}
+These new serialization codes map the actual FSM names, not pre-existing numeric telemetry values. Unknown health must not default to nominal. Detailed diagnostics are separate; this marker cannot replace calibrated exposure or background information.
+
+\paragraph{Reading validity and accumulation.}
+Prefer three readings per eligible geographic cell visit, with two or one when available timing permits; no valid exposure means no record. No arbitrary minimum duration or count threshold is imposed. Each reading has its own positive, nonoverlapping interval, geographic attribution and valid acquisition state. Split at cell/mode boundaries and shutdown; do not bridge off periods. Valid zero-count records are retained. Realizable boundaries depend on timer resolution, readout latency and uninterrupted counter handoff, all still unqualified. A short interval can be a valid record without achieving a mission precision target.
+
+For an ideal zero-background Poisson diagnostic, accumulated fractional counting uncertainty is $1/\sqrt{\sum_i N_i}$, not an average of individual fractional errors. Background, livetime and reconstruction uncertainty remain necessary. Zero-count exposures contribute to inference and must not be discarded. Splitting a visit preserves total exposure and counts and does not create independent orbital passages. Approved MMSC/MSC/EMSC requirements are unchanged. The offline reference partitions closed acquisition segments; the flight scheduler and event-buffer/counter-bank design require PDR verification.
+
+For directional differential flux $\Phi_s$ in cm$^{-2}$~s$^{-1}$~sr$^{-1}$~MeV$^{-1}$ and effective area $A_{j,s}$ in cm$^2$, the response contract is
+\begin{equation}
+N_j=\int\ell(t)\sum_s\int\!\int A_{j,s}(E,\Omega,t)\Phi_s(E,\Omega,t)\,dE\,d\Omega\,dt.
+\end{equation}
+A geometric factor already includes the angular integral. Shared-trigger livetime, energy migration, background subtraction and calibration uncertainty require a qualified model. Geometric coverage or synthetic counting precision alone cannot establish MMSC, MSC or EMSC.
+
+\subsubsection{Geometric-Factor Requirement from Cell Counts}\label{app:required-g}
+\textbf{MODEL PREDICTION; arithmetic independently reproduced.}
+The supplied geometric-factor study asks how much ideal proton acceptance is needed to reach a counting-only precision target in each cell. It uses 7940 unique 0.5$^\circ$ polygon-overlap cells, integral-spectrum differences and supplied cell dwell times of 98--294~s. The dwell file matches an archive labelled ``18-Month Simulation'', but the executed configuration and duration are missing. Nearby source defaults to three days and cannot explain the accumulated table. No mission-duration scaling is applied. The radiation table is AP9-labelled; its actual mean/percentile setting, epoch and 65-threshold source run remain unverified. It is distinct from the verified 2026 AP9/AE9 maps above.
+
+Under isotropy, unit efficiency and a scalar geometric factor,
+\begin{equation}
+R_{u,c,b}=\frac{F_c(>E_{b,\mathrm{lo}})-F_c(>E_{b,\mathrm{hi}})}{4\pi},\qquad
+N_{c,b}=R_{u,c,b}G\epsilon T_c,\qquad
+G_{\mathrm{req},c,b}=\frac{1}{\sigma^2R_{u,c,b}\epsilon T_c}.
+\end{equation}
+Here $F$ is omnidirectional integral flux in cm$^{-2}$~s$^{-1}$, $R_u$ is rate per unit $G$ in s$^{-1}$/(cm$^2$~sr), $T$ is supplied dwell in seconds, and $G$ is in cm$^2$~sr. No extra energy width or angular integral is applied. The expected-count targets for $\sigma=10,15,25,50\%$ are 100, 44.44, 16 and 4; these are not total reconstructed-flux uncertainties or guarantees on realized counts.
+
+\begin{table}[H]\centering\small
+\caption{Reproduced required $G_{95}$ for each separately selected cell population; $\epsilon=1$, cutoff 5.4~MeV, supplied dwell. All $G$ values are cm$^2$~sr.}\label{tab:required-g}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Band (MeV) & Cells & 10\% & 15\% & 25\% & 50\%\\\midrule
+5.4--10 & 7596 & 0.364535 & 0.162016 & 0.058326 & 0.014581\\
+10--20 & 7177 & 0.413303 & 0.183690 & 0.066129 & 0.016532\\
+20--40 & 7052 & 0.500042 & 0.222241 & 0.080007 & 0.020002\\
+40--100 & 7144 & 0.360776 & 0.160345 & 0.057724 & 0.014431\\\bottomrule
+\end{tabular}\end{table}
+
+Each band selects cells with rate at least 1\% of its own peak and takes the linearly interpolated 95th percentile of their required $G$. This resembles one ingredient of EM-M-02, but does not establish its mission-peak eligibility definition or joint channel coverage. At the hypothetical $G=0.3$~cm$^2$~sr, the 10\% counting-target coverages are 93.55, 92.25, 89.66 and 93.25\% of these respective populations. All four meet the 25\% expected-count target in their selected cells. These are not mission-success percentages.
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{media/geometric_factor_requirements.png}
+\caption{Independent reproduction of the required-$G$ study. Fine intervals require more acceptance for the same counting precision than broad bands; each interval has its own eligible-cell population. This is a count requirement, not an achievable or measured FPDU response.}\label{fig:required-g-binning}
+\end{figure}
+The input has 65 thresholds over 5--100~MeV, giving 64 intervals. The 5.4~MeV cutoff removes the first and truncates the second, leaving 63 intervals. Their 10\% $G_{95}$ values span 3.9284--10.3301~cm$^2$~sr, compared with 0.3608--0.5000 for the broad bands. Neither is evidence for 64 resolved channels. The provisional 64-bin telemetry retains its separate 5--100~MeV definition; merging reporting bins does not establish the required energy resolution.
+
+\paragraph{Required versus achievable acceptance.}
+An ideal unrestricted one-sided 6~mm square aperture has $G=\pi A=1.13097$~cm$^2$~sr. Two equal aligned planes separated by 2~mm, 4.8~mm or 72~mm give approximately 0.61907, 0.29743 or 0.0024885~cm$^2$~sr, respectively. These are hypothetical straight-track acceptance conditions: no collimator, material or all-block coincidence rule is selected. Crossing both ends of a gap-free aligned 72~mm assembly implies crossing every block, but early-stopping or side-exiting particles need different acceptance logic. The supplied optional model assigns on-axis stopping depths using illustrative EJ-200 and a simplified CSDA approximation; it omits angular transport, scattering, straggling and qualified triggers. It cannot establish the actual energy-dependent effective $G$. Its coarse quadrature also overestimates the artificial 0.2~mm separation case by about 3.6\%.
+
+\paragraph{Cutoff, exposure and PDR conditions.}
+The default 5.4~MeV cutoff is a hard study assumption, not aluminium transport. The optional source approximation instead derives about 5.95~MeV for 250~$\mu$m Al; neither value is a validated transmission threshold. Changing only the counting cutoff to 5.5~MeV increases first-band $G_{95}(10\%)$ to 0.380454~cm$^2$~sr (4.37\%), with 7588 selected cells. The committed 5--100~MeV requirement is unchanged. Required $G$ scales inversely with effective efficiency and verified exposure; no duration extrapolation is justified by the current manifest gap. Background subtraction, livetime, reconstruction covariance, independent passages, temporal maps and stored/downlinked records must be validated before tier acceptance. Source hashes, reproduced tables and tests are indexed in \path{docs/audit/GEOMETRIC_FACTOR_NUMERICAL_VALIDATION.md}.
+
+\subsubsection{Conditions for PDR Closure}\label{app:payload-transport}\label{app:payload-calibration}
+\begin{table}[H]\centering\small
+\caption{Remaining verification conditions}\label{tab:fpdu-response-matrix}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm}X@{}}\toprule
+Interface & Required closure evidence\\\midrule
+Mechanical / optical & Controlled CAD/ICD, material, front treatment, gaps, optical isolation, grease and SiPM placement; measured cross-talk and collection maps\\
+Transport / acceptance & Current six-scintillator geometry, entrance Al, proton 5--100~MeV and electron/species/angular scans; validate effective geometric factor\\
+Electronics & Selected channels/components, post-shaping interpretation, timing/jitter, queue/burst tests, measured dead time and loss counters\\
+Reconstruction & Independent calibration and test data, stopping/penetrating response, mixed-species confusion matrix and injected-spectrum closure\\
+Mission coupling & Science-enabled exposure, qualified channels/background, independent-observation contract and stored/downlinked records before tier acceptance\\\bottomrule
+\end{tabularx}\end{table}

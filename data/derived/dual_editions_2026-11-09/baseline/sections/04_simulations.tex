@@ -1,0 +1,12 @@
+\section{Integrated Mission Feasibility}\label{sec:simulation-results}
+The ANTARA simulation work combines orbit motion, power generation and consumption, attitude control, mode transitions, SAA operations, and ground-station contacts. This section gives the main results supported by the supplied historical study files. The detailed simulation descriptions, tables, and plots are retained in Appendices~\ref{app:source-04} and~\ref{app:sim-provenance}.
+
+\input{sections/corrected_ditl/operations}
+
+\subsection{Updated RAAN Trade and Long-Duration Study}\label{sec:sim-annual}
+The latest supplied RAAN campaign evaluates seven insertion cases from $0^\circ$ to $180^\circ$ in $30^\circ$ increments, with two runs per case. Average generated power varies from approximately 9.02~W ($120^\circ$) to 11.17~W ($180^\circ$), and tabulated mean of run-minimum battery SOC varies from approximately 54.4\% to 74.7\%. These are \emph{study-case outputs}, not a statement that the spacecraft can choose its insertion RAAN. Orbit classification totals are pooled across the two long-duration runs; they must not be mistaken for a one-year orbit tally. The full results, raw-count interpretation and drag-study limitations appear in Appendix~\ref{app:updated-raan}.
+
+The drag CSV gives modeled termination times of roughly 8.2--10.0~years, generally near 300~km altitude. One case ends at 334.93~km, and none models final atmospheric reentry. The five-year \emph{science/operational objective} is therefore distinct from the provisional passive-decay estimate. The campaign configuration and epoch remain to be reconciled with the approved 1 January 2029, 3~kg mission baseline.
+
+\subsection{Limitations of Current Evidence}\label{sec:sim-consolidated}
+The corrected datasets replace the previous incomplete/incorrect Science exports. Full timestamp spans, matching contact durations and native data balances are established; exact producing source, runtime configuration, interval semantics and transition/slew reconciliation remain open. Legacy expected counts do not qualify current FPDU response, geographic eligibility, independent observations or science-tier success. The 2000 source epoch is retained. Independent RAAN, geometric-factor, radiation, thermal and detumble studies retain their own provenance and limitations; their assumptions are not pooled into one unconditional margin.

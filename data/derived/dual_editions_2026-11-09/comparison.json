@@ -1,0 +1,130 @@
+{
+  "checks": {
+    "requirements_matches_previous_pdf_except_edition_label": true,
+    "default_matches_requirements": true,
+    "sections_1_2_compiled_text_equal": true,
+    "sections_4_through_appendices_compiled_text_equal": true,
+    "requirements_captions_present": true,
+    "narrative_has_no_requirement_captions": true,
+    "narrative_has_no_formal_requirement_ids": true,
+    "requirements_all_register_numeric_lexemes_in_compiled_section3": true,
+    "narrative_all_register_numeric_lexemes_in_compiled_section3": true,
+    "embedded_raster_assets_identical": true,
+    "requirements_no_overflow_or_reference_errors": true,
+    "narrative_no_overflow_or_reference_errors": true,
+    "default_no_overflow_or_reference_errors": true
+  },
+  "page_counts": {
+    "requirements": 91,
+    "narrative": 83,
+    "default": 91,
+    "baseline": 91
+  },
+  "section_start_pdf_pages": {
+    "requirements": {
+      "1": 10,
+      "3": 18,
+      "4": 33
+    },
+    "narrative": {
+      "1": 9,
+      "3": 17,
+      "4": 25
+    }
+  },
+  "required_numeric_lexemes": [
+    "0.36",
+    "0.5",
+    "0.50",
+    "1",
+    "1.528000",
+    "1.9",
+    "10",
+    "100",
+    "1010028",
+    "12",
+    "128",
+    "14",
+    "14.061",
+    "15",
+    "15.097556",
+    "150",
+    "1536.3",
+    "16",
+    "16133",
+    "18",
+    "19200",
+    "2",
+    "20",
+    "200",
+    "21.159",
+    "2400",
+    "2460",
+    "25",
+    "250",
+    "256",
+    "292",
+    "3",
+    "3.0",
+    "300",
+    "30866.103",
+    "31.704",
+    "32",
+    "365",
+    "4",
+    "4.9",
+    "400",
+    "428836800",
+    "46637364",
+    "48458",
+    "5",
+    "5.4",
+    "5.5",
+    "50",
+    "50000",
+    "50288.809",
+    "512",
+    "6",
+    "64",
+    "70",
+    "75336",
+    "804",
+    "9",
+    "90",
+    "900",
+    "92",
+    "95"
+  ],
+  "missing_numeric_lexemes": {
+    "requirements": [],
+    "narrative": []
+  },
+  "embedded_raster_objects": {
+    "requirements": 35,
+    "narrative": 35
+  },
+  "pdfs": {
+    "requirements": {
+      "path": "/tmp/antara-dual/requirements/main_requirements.pdf",
+      "sha256": "a902ba9b0f31aec9b70691c7eff9287a566574f40290823addf782eb8e6f7e1e"
+    },
+    "narrative": {
+      "path": "/tmp/antara-dual/narrative/main_narrative.pdf",
+      "sha256": "d40e2c913a5a975a1b2310fa0705819116cc4a268f5e07a86269ffe2cc4079e0"
+    },
+    "default": {
+      "path": "/tmp/antara-dual/default/main.pdf",
+      "sha256": "2ad398f3a6756b4129b9836275f68178515bd54a57cb0ba2c412c083f7553ef7"
+    },
+    "baseline": {
+      "path": "/home/sammo/Desktop/Projects/MCR_ANTARA/output/pdf/ANTARA_MCR_OPERATIONAL_ASSUMPTIONS_2026-11-09.pdf",
+      "sha256": "932193866748740ae25c0e1ef2b2045faa8b963ec5b7ba824f746a9e9c37cbc6"
+    }
+  },
+  "log_errors": {
+    "requirements": [],
+    "narrative": [],
+    "default": []
+  },
+  "normalization": "Remove running header/footer and whitespace; shared body comparisons additionally ignore table caption/reference numbers. No scientific values are normalized."
+}

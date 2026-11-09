@@ -24,11 +24,23 @@ The code calculates incident solar radiation, Earth albedo and infrared heating,
 The source defines \texttt{NOMINAL}, \texttt{HOT} and \texttt{COLD} bounding-case configurations. Nominal retains the base configuration. The HOT case places the model near perihelion, increases the end-of-life optical assumption and adds 0.5~W of bus dissipation. The COLD case uses an aphelion epoch, a lower optical assumption and 0.5~W less bus dissipation; relay and detection loads are disabled for that case. These are deliberately selected model cases, not measured flight extremes. The simulation can also use LVLH or prescribed tumbling attitude.
 The default internal heat schedule is independent of the Science DITL flight software: it includes a 1.5~W baseline bus, 0.4~W charging term, 0.8~W eclipse-heater term, a 3.0~W relay-pass increment and a 1.2~W detection-window increment with configured durations. Consequently, thermal case temperatures should not be described as arising from the exact commanded state history of \texttt{ANTARA\_Science\_Sim.py}.
 \subsubsection{Temperature Outputs and Required Comparison}\label{app:thermal-output}
-The source produces thermal telemetry, a worst-case summary CSV and plots of temperatures, orbital context and radiation contributions. The final temperature limits of the actual EPS, batteries, payload, OBC and ADCS should be compared with the extrema of the corresponding nodes for the selected bounding cases. The comparison remains open until approved case outputs and component limits are matched to the same configuration.
-\begin{table}[htbp]\centering\caption{Thermal verification items to close using run outputs and component specifications.}\label{tab:thermal-closure}\begin{tabularx}{\linewidth}{p{0.29\linewidth}XX}\toprule Item & Evidence needed & Status\\\midrule
-HOT maximum & Maximum node temperatures and applicable upper component limits & Pending reconciliation\\
-COLD minimum & Minimum node temperatures, heater assumptions and lower limits & Pending reconciliation\\
-Payload temperature stability & Detector and electronics thermal range, coupling and bias correction & Preliminary\\
-Case reproducibility & Case identifier, source revision, orbit epoch, input parameters and outputs & Required per run\\\bottomrule\end{tabularx}\end{table}
+The supplied history contains 43\,201 unique time labels from 0 to 24~h. Kelvin/Celsius pairs and all summary extrema/timestamps reproduce independently. Table~\ref{tab:thermal-observed} reports the recorded envelope. Time-weighted means use trapezoidal integration over labels, without adding an interval beyond 24~h. Nonuniform first logged temperatures differ from the candidate 293.15~K initialization; the exact generating source and possible state-label offset require reconciliation.
+\begin{table}[H]\centering\small
+\caption{Single-history node statistics; degrees Celsius. No component compliance margin is established.}\label{tab:thermal-observed}
+\begin{tabular}{@{}lrrr@{}}\toprule Node & Minimum & Maximum & Time-weighted mean\\\midrule
++X & -20.775 & 19.914 & -8.907\\
+-X & -17.220 & 26.911 & -5.480\\
++Y & -15.865 & 19.951 & -9.507\\
+-Y & -25.958 & 31.239 & -7.625\\
++Z & -22.401 & 29.601 & 0.718\\
+-Z & -23.301 & 19.919 & -16.552\\
+Internal & -14.061 & 21.159 & -6.048\\\bottomrule
+\end{tabular}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/thermal/figures/validated_history.png}
+\caption{Supplied single thermal history and independent synthetic heat schedule, 1.9--4.9~W. Model predictions; actual case epoch, component mapping and DITL coupling are unverified.}\label{fig:thermal-history}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=.85\linewidth]{evidence/thermal/figures/validated_envelope.png}
+\caption{Reproduced minima, maxima and weighted means from the same history. The summary's hot/cold names do not establish separate bounding-case runs.}\label{fig:thermal-envelope}\end{figure}
+The largest simultaneous external-face spread is 31.704$^\circ$C; this is a lumped-node temperature difference, not structural stress. The summary's $\pm10^\circ$C columns are arithmetic allowances. No selected-component temperature limits are supplied, so time outside qualified limits and compliance margins are unknown. Separate bounding-case manifests, timestep/energy-balance convergence, node-component mapping, heater control, coupled dissipated-power histories and thermal-vacuum correlation remain required.
+
 \subsubsection{Structural Configuration and Verification}\label{app:structural-verification}
 The current MCR specifies a 3U spacecraft envelope of approximately $100\times100\times340.5$~mm, a one-fixed/two-deployable-panel configuration and a preliminary component mass table. Structural verification will require the selected structure and deployer interface specification, consolidated mass and inertia properties, solar-panel deployment design and the applicable launch mechanical environment. The provided simulation archive does not establish a completed structural finite-element, modal, vibration or shock qualification analysis. These items therefore remain planned verification work, rather than numerical results to be inserted into the report.

@@ -1,0 +1,471 @@
+\section{Source Subsystem Detail and Tables}\label{app:source-03}
+\noindent\textit{Historical source detail. Several numerical assumptions and design descriptions in this transcription have been superseded by Sections 1--5 and Appendix L. These tables are retained for traceability and are not the current approved mission baseline.}
+
+\noindent\textit{The following is retained from the original project draft for supporting detail and comparison. Numerical claims are preliminary unless specifically reconciled in the main text.}
+
+The ANTARA spacecraft architecture has been developed as a modular,
+scalable, and mission-oriented CubeSat platform optimised for scientific
+radiation measurements withi n the South Atlantic Anomaly. The
+spacecraft follows a centralised avionics architecture in which the
+On-Board Computer (OBC) functions as the primary command. The
+communications subsystem, Payload Subsystem and ADCS subsystem work on
+the basis of the instantaneous mode. Following is the spacecraft system
+architecture.
+
+\subsection{System Architecture Overview}
+
+The ANTARA spacecraft is a \textbf{3U CubeSat}, conforming to the
+standard 3U form factor of 100 × 100 × 340.5 mm as defined by the
+CubeSat Design Specification (CDS) within the standard 3U mass
+allowance. Compliance with the applicable CDS revision, including
+deployer-imposed mass, center-of-gravity, and rail/standoff constraints,
+will be formally verified once a launch integrator and deployer are
+selected.
+
+The five primary spacecraft subsystems integrated around a centralised
+avionics architecture are: On-Board Computer (OBC), Electrical Power
+System (EPS), Attitude Determination and Control System (ADCS),
+Communications System (COMMS), and Scientific Payload.
+
+\subsubsection{Electrical Power System (EPS)}
+
+The Electrical Power Subsystem is responsible for generating, storing,
+and distributing electrical power to all spacecraft loads. The COTS
+model we have taken for the simulation is the ISISPACE ICEPS2 Type A
+compact EPS, which includes an integrated 2-cell battery pack,
+autonomous battery heating, I2C communication, up to 6 output voltage
+domains, and protection features including overcurrent and
+reverse-current protection.
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
+\caption{ICEPS2 Type A parameters}\\
+\toprule\noalign{}
+\textbf{Parameter} & \textbf{Preliminary Requirement} \\
+Mass & 184 ± 5 g \\
+Volume & 96 × 92 × 26.45 mm \\
+Energy storage & 22.5 Wh (Type A specification) \\
+Operating temperature & −20°C to +70°C \\
+Interfaces & I2C housekeeping/control \\
+Voltage domains & Regulated 3.3 V, 5 V, unregulated bus; up to 6 output domains \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+Note: The mission simulation uses a 25 Wh battery model as a
+conservative planning estimate. The final power budget must be
+reconciled against the ICEPS2 Type A 22.5 Wh specification at PDR.
+
+\textbf{Mode Power Estimates:}
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2543}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4837}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2620}}@{}}
+\caption{Spacecraft operating-mode power estimates}\\
+\toprule\noalign{}
+\textbf{Mode} & \textbf{Active Components} & \textbf{Estimated Power (W)} \\
+Cold \& Dark Boot & EPS + OBC & 0.8 \\
+Detumbling & EPS + OBC + ADCS MTQs & 3--6 \\
+Safe Mode & EPS + OBC + Radio RX & 1--2 \\
+Sun-Pointing & EPS + OBC + ADCS & 2--3 \\
+Detection Mode & EPS + OBC + Payload + ADCS & 6--9 \\
+Relay Mode & EPS + OBC + Radio TX + ADCS & 4--7 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1940}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2587}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3035}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2438}}@{}}
+\caption{Preliminary subsystem electrical power budget}\\
+\toprule\noalign{}
+\textbf{Subsystem} & \textbf{Idle / Standby (W)} & \textbf{Nominal (W)} & \textbf{Peak (W)} \\
+EPS & -0.093 & 0 & 0 \\
+Battery & - & charging capacity(28.8Wh) & - \\
+OBC & - & -0.17 & -0.9 \\
+Radio & -0.15 (rx) & -2.64 (tx) & -3 (TX max) \\
+Unidirectional antenna & -0.04 & -0.06 & -2 (Deployment) \\
+ADCS & -0.8 & -2.6 & -4.5 \\
+Payload
+
+(Assumed) & - & -3.0 & -5.0 \\
+Solar Panels & - & 11.5W & 22W \\
+GNSS Navigation & -0.21W & -0.255W & -0.39W \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+*Payload data is yet to be obtained, Worse case scenarios for each state
+is taken
+
+\subsubsection{Communications System (COMMS)}
+
+The Communications System provides the spacecraft's interface with the
+ground segment and supports telemetry transmission etc. The COTS model
+we have taken for the simulation is the GomSpace NanoCom AX100 radio
+system working on two antenna systems: GomSpace ANT430 omnidirectional
+antenna and ISIS UHF dipole antenna.
+
+The primary ground station is planned for \textbf{Goa, India}.
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5957}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4043}}@{}}
+\caption{Goa ground station assumptions}\\
+\toprule\noalign{}
+\textbf{Parameter} & \textbf{Value} \\
+Latitude & 15°N \\
+Longitude & 74°E \\
+Altitude & 70 m \\
+Elevation mask & 15° \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+Simulation predicts an average of \textbf{two contacts per day}, with
+durations of approximately \textbf{368 s} and \textbf{414 s}. The
+maximum elevations are approximately \textbf{38.5°} and \textbf{77.5°},
+providing roughly \textbf{780 s of total daily contact time}.
+
+Although our simulations currently have one ground station, we aim to
+have more ground stations for receiving purposes.
+
+\textbf{Communications Concept}
+
+ANTARA uses a \textbf{Relay Mode} architecture, with communications
+restricted to ground-station contact periods. During Relay Mode, the
+spacecraft performs:
+
+\begin{itemize}
+\item
+  Telemetry transmission
+\item
+  Science-data downlink
+\item
+  Command reception
+\item
+  Operational synchronisation
+\end{itemize}
+
+\textbf{Downlink Architecture}
+
+The baseline downlink rate is \textbf{15--18 kbps (historical, superseded by the ideal 19.2 kbps MCR assumption)}.
+
+The scientific payload does not transmit individual proton events.
+Instead, the onboard FPGA accumulates events into \textbf{64-bin
+spatial-energy histograms}. Each histogram contains:
+
+64×4=256 bytes
+
+At one update per minute, the science data rate is approximately:
+
+(256×8)/60≈34 bps
+
+This corresponds to an estimated \textbf{300--400 KB/day (historical estimate, superseded by the v3 sensitivity analysis)} of science
+data.
+
+With two daily contacts totalling approximately \textbf{780 s}, a 15
+kbps link provides:
+
+15,000×780≈11.7 Mbit
+
+Thus, the available capacity provides approximately a 4× margin over the
+expected science-data volume, allowing for housekeeping, operational
+logs, attitude data, protocol overhead, and retransmissions.
+
+The \textbf{9.6 kbps} value used in earlier analysis is superseded by
+the architecture-driven \textbf{15--18 kbps (historical, superseded by the ideal 19.2 kbps MCR assumption) baseline}.
+
+\subsubsection{Historical Payload Subsystem}
+\noindent\textbf{Superseded architecture.} The silicon entrance, five-layer stopping telescope, rear veto, EJ-200 selection and calibrated-bin language below are historical only. Current construction and response limitations are in Appendix~\ref{app:payload-detail}.
+
+\textbf{Overview}
+
+The payload is a \textbf{Flux Particle Detector Unit (FPDU)}: a compact
+proton spectrometer using a silicon ΔE front detector followed by a
+5-layer EJ-200 plastic scintillator stack, read out by SiPMs, with a
+rear veto layer. It measures trapped protons from \textbf{5--100 MeV} in
+\textbf{64 log-spaced energy bins} at Sun-synchronous orbit
+(\textasciitilde600 km)
+
+\textbf{Physical Stack --- Dimensions Along Boresight}
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6147}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1341}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2512}}@{}}
+\caption{FPDU telescope physical-stack dimensions}\\
+\toprule\noalign{}
+\textbf{Component} & \textbf{Thickness} & \textbf{Notes} \\
+Aperture tube + structure & 30 mm & Sets θ\_max = 18.4° \\
+Si wafer & 1 mm & Active detector \\
+Si mount + PCB & 3 mm & Carrier board \\
+ &  &  \\
+L1 + SiPM + coupling & 4 mm & Scintillator** + SiPM package \\
+L2 + SiPM + coupling & 6 mm &  \\
+L3 + SiPM + coupling & 14 mm &  \\
+L4 + SiPM + coupling & 24 mm &  \\
+L5 + SiPM + coupling & 32 mm &  \\
+Rear veto + SiPM & 4 mm &  \\
+Optical isolation gaps & \textasciitilde3 mm & Black wrap between layers \\
+Readout electronics board & 15 mm & FPGA, ADCs, shaping, bias \\
+Structural margin & 5 mm &  \\
+\textbf{Total} & \textbf{\textasciitilde141 mm} & Fits in 2U payload volume \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\textbf{**All these calculations are done assuming EJ200 plastic
+scintillator and is subject to change.}
+
+\textbf{Dead Time and Livetime}
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5398}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4602}}@{}}
+\caption{FPDU dead-time and livetime assumptions}\\
+\toprule\noalign{}
+\textbf{Parameter} & \textbf{Value} \\
+\textbf{Dead time per event} & \textbf{\textasciitilde250 ns (shaping + ADC readout)} \\
+\textbf{Peak total event rate (SAA core)} & \textbf{\textasciitilde100 Hz} \\
+\textbf{Dead time fraction at peak flux} & \textbf{12.5\%} \\
+\textbf{Livetime fraction at peak flux} & \textbf{87.5\%} \\
+\textbf{Dead time at SAA periphery} & \textbf{\textless{} 0.1\% (negligible)} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\subsubsection{Historical Attitude Determination and Control System (ADCS)}
+\noindent\textbf{Superseded selection.} The CMG description below is not the current reaction-wheel and magnetorquer concept.
+
+Attitude Determination and Control System(ADCS) continuously processes
+sensor data to calculate the spacecraft\textquotesingle s exact position
+relative to external reference points. The COTS model we have taken for
+the simulation is TensorTech ADCS - 10m - D. The model uses a
+comprehensive suite of components: one ADCS-Main Control Board
+(ADCS-MCB), four TensorFSS-15M Fine Sun Sensors, and one integrated
+Control Moment Gyroscope (CMG) model.
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4566}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5434}}@{}}
+\caption{TensorTech ADCS-10m-D preliminary characteristics}\\
+\toprule\noalign{}
+\textbf{Characteristic} & \textbf{Value} \\
+Pointing Knowledge & 0.3 degree (general)
+
+3-100 arcseconds (with startracker) \\
+Pointing Accuracy & 0.4 degree \\
+Power consumption & 0.8W (idle)
+
+2.6W (nominal)
+
+4.5W (Max) \\
+Mass & 450g \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\textbf{Control Modes and Algorithms}
+
+\textbf{Detumbling.} Following deployment, the ADCS executes a two-stage
+control law: an initial B-dot magnetic detumble to reduce high angular
+rates acquired during deployment, followed by reaction-wheel damping to
+bring the spacecraft to a stable, low-rate condition suitable for Sun
+Pointing Mode entry.
+
+Simulation results show detumble completing in approximately 2,460
+seconds from initial body rates of {[}6.0, −5.5, 4.5{]} °/s. No hard
+detumble timeout is currently defined.
+
+\textbf{Sun Pointing.} The ADCS orients the spacecraft +Z face toward
+the Sun to maximize solar-array power generation, using reaction wheels
+for fine pointing and magnetorquers for momentum dumping.
+
+\textbf{Detection Mode Pointing.} During SAA traversal, the ADCS aligns
+the +X axis (payload boresight) with the spacecraft velocity vector to
+support directional proton flux measurement and East-West asymmetry
+analysis. Simulation results show a mean attitude error of approximately
+2°, against a threshold of ≤5° and a goal of ≤2°.
+
+\textbf{Relay Mode Pointing.} The ADCS points the +Y face (directional
+relay antenna) toward the ground station to optimize downlink signal
+strength during scheduled contacts.
+
+\textbf{Slewing.} Mode transitions between Sun Pointing, Detection, and
+Relay require dedicated slew maneuvers. The 24-hour DITL simulation
+recorded 18 slew events with slew angles ranging from 5.4° to 175.8°;
+large-angle slews were identified as consuming non-negligible time and
+should be factored into mission scheduling and duty-cycle analysis.
+
+\textbf{Saturation Handling.} Reaction wheel momentum saturation is
+managed through magnetorquer-based momentum unloading. If saturation
+persists beyond a defined hold timeout and pointing diverges, the FSM
+commands a transition to Safe Mode as a fault-protection response, this
+is the second-highest-priority transition in the mode state machine
+after critical battery conditions
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4760}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5240}}@{}}
+\caption{ADCS simulation performance summary}\\
+\toprule\noalign{}
+\textbf{Metric} & \textbf{Requirement / Result} \\
+Detumble completion & \textasciitilde2,460 s from {[}6.0, −5.5, 4.5{]} °/s \\
+Detection Mode pointing error & \textless2° \\
+Slew events (24-hr sim) & 18 \\
+Slew angle range & 5.4°--175.8° \\
+Momentum management & Magnetorquer unloading + Safe Mode fallback \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+Pointing Budget summary:
+
+Ground station contact pointing budget analysis is being mentioned. The
+result is for a simulation taken to Propagate 1-day Keplerian orbit
+(analytical, no perturbations) with nadir-pointing attitude, computes
+off-boresight angle between +Z body axis (antenna boresight) and ground
+station LOS vector during passes above 10° elevation mask. Outputs pass
+statistics and off-boresight angle plots.
+
+
+\subsubsection{On-Board Computer (OBC)}
+
+The On-Board Computer is the central computational and
+operational-control unit of the ANTARA spacecraft. The COTS model we
+have taken for the simulation is GomSpace Nanomind A3200.
+
+\textbf{Purpose}
+
+The OBC serves as the spacecraft's primary operational-management system
+and continuously monitors spacecraft status while coordinating all major
+mission activities.
+
+At 3.3V bus channel, The OBC can run on various clock speeds from 8 -
+32MHz depending on the state of the CubeSat with an average power
+consumption of 0.17W
+
+\textbf{Functional Responsibilities}
+
+The ANTARA OBC performs mission sequencing, state monitoring, command
+execution, health monitoring, payload control, data-storage management,
+and communications scheduling. Payload control is closely integrated
+with orbit propagation, ADCS orientation, SAA traversal prediction, and
+spacecraft power availability, enabling synchronised science operations
+during South Atlantic Anomaly crossings.
+
+\textbf{Flight Software Philosophy}
+
+ANTARA uses a state-machine-based flight software architecture designed
+to maximise reliability, deterministic behaviour, operational
+predictability, fault containment, and verification simplicity. Each
+operational mode corresponds to a defined spacecraft state. State
+transitions occur only when predefined operational conditions are
+satisfied, such as battery thresholds, spacecraft attitude stability,
+payload readiness, and subsystem health. The state-machine architecture
+simplifies mission simulation, operational verification, fault
+diagnosis, and long-duration autonomous operations.
+
+
+\subsection{Spacecraft Coordinate System}
+
+A spacecraft-fixed body-frame coordinate system is used throughout
+ANTARA mission operations. The body-frame definition is designed around
+payload operational geometry, solar-panel placement, communications
+requirements, and CubeSat deployment constraints.
+
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1538}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8462}}@{}}
+\caption{Spacecraft body-frame configuration}\\
+\toprule\noalign{}
+\textbf{Axis} & \textbf{Function} \\
++X & RAM face / payload boresight --- primary payload pointing direction
+during Detection Mode \\
++Y & Directional relay antenna face (nominally nadir-pointing in default
+hold; pointed to ground station during Relay Mode) \\
++Z & Fixed solar panel face (pointed toward Sun during Sun Pointing Mode) \\
+-Y & Deployable solar panel packed face \\
+-Z & Omnidirectional communications antenna face (Safe Mode / beacon
+transmission) \\
+-X & PPOD deployment face \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+
+\subsection{Ground Segment \& Mission Operations}
+
+\textbf{Ground Station Hardware}
+
+Primary ground station: Goa, India (15°N, 74°E, 70 m altitude, 15°
+elevation mask).
+
+Hardware baseline:
+
+\begin{itemize}
+\item
+  \textbf{Antenna:} UHF Yagi or crossed-Yagi on an az-el tracking mount,
+  matched to the NanoCom AX100 downlink band
+\item
+  \textbf{RF front-end:} transceiver/SDR compatible with AX100
+  modulation, LNA at the antenna feed to minimize cable-loss impact on
+  receive sensitivity
+\item
+  \textbf{Backup/contingency station:} none currently defined, remains
+  an open item.
+\end{itemize}
+
+Secondary Ground Station: We are yet to determine secondary ground
+stations. An ideal ground station would be at a polar location to
+accommodate for the SSO orbit. A temporary simulation was taken for
+Svalbard (78°N, 15°E, 50 m altitude, 5° elevation mask).
+
+\begin{quote}
+\textbf{Ground Station Software}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Orbit propagation \& tracking:} TLE-driven antenna pointing;
+  TLEs refreshed at minimum daily from CelesTrak/Space-Track, more
+  frequently in the days immediately following deployment when orbit
+  uncertainty is highest
+\item
+  \textbf{Pass prediction:} AOS/LOS scheduling consistent with the
+  two-contacts-per-day, \textasciitilde780 s total daily contact time
+\item
+  \textbf{Command uplink interface:} command construction, queuing, and
+  uplink receipt confirmation
+\end{itemize}
+
+\begin{itemize}
+\item
+  Documented shift handover: spacecraft state, open anomalies, and
+  next-pass command queue passed between operators
+\end{itemize}
+
+

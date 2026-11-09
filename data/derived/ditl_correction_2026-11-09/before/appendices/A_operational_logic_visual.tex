@@ -1,0 +1,93 @@
+\subsection{Detailed Operational Mode Transition Logic}\label{app:operational-logic}
+The ANTARA concept of operations uses explicit spacecraft modes, bounded transition guards and a safety override. Figures~\ref{fig:op-transition-diagram} and~\ref{fig:op-mode-priorities} show the normal mission sequence and supervisory logic. The exact software thresholds are configuration-controlled simulation parameters, rather than independently qualified flight-software settings.
+
+\subsubsection{Operational Modes and Attitude Targets}\label{app:op-logic-summary}
+\begin{table}[htbp]\centering\footnotesize
+\caption{Mode functions and commanding intent}\label{tab:op-mode-summary}
+\begin{tabularx}{\linewidth}{@{}p{1.85cm}p{3.05cm}X@{}}\toprule
+Mode & Attitude/control goal & Subsystem behavior and exit condition\\\midrule
+Cold \& Dark & Deployment initialization; no operational pointing & Minimal EPS/OBC; initialize health monitoring and release startup delay; then Detumble.\\
+Detumble & Reduce body rates using magnetic control & EPS/OBC/ADCS active; exit when rate and stability guard pass; otherwise remain or enter Safe on faults.\\
+Sun Pointing & +Z solar face directed toward Sun & Default power-recovery and power-positive standby; permit scheduled SAA science or contact after safety guards.\\
+Science / Detection & +X payload boresight aligned with required science pointing & Read out FPDU during a permitted SAA opportunity; account for payload warm-up, slew and available energy.\\
+Relay / Downlink & +Y directional antenna aimed toward selected ground station & Radio TX/RX and queued-data transfer during usable elevation window; recover normal pointing after contact.\\
+Passive / Eclipse & Preserve previous attitude during eclipse & Minimize active Sun-search maneuvers; resume Sun pointing or the applicable scheduled activity when illumination and guards permit.\\
+Slewing & Move between required attitude targets & Temporary ADCS phase; next operational mode begins after reorientation/settling; abort on fault or low power.\\
+Safe & Survival, battery conservation and anomaly handling & Suspend nonessential loads; maintain health, available communications and recovery control. Re-enter nominal path only after recovery guards.\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsubsection{Nominal Startup and Science/Relay Sequence}\label{app:op-logic-diagram}
+\begin{figure}[htbp]\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[>=Latex,font=\sffamily\scriptsize,
+ state/.style={draw=AntaraNavy,fill=AntaraPale,rounded corners=2pt,minimum width=2.6cm,minimum height=0.95cm,align=center},
+ task/.style={state,draw=AntaraTeal,fill=AntaraTeal!7},
+ flow/.style={-{Latex[length=2mm]},thick,draw=AntaraNavy}]
+\node[state] (cold) at (0,0) {Cold \& Dark\\Boot / health};
+\node[state] (det) at (3.5,0) {Detumble\\$|\boldsymbol\omega|\to\omega_{\rm lim}$};
+\node[task] (sun) at (7.0,0) {Sun Pointing\\+Z toward Sun};
+\node[state] (slew) at (10.55,0) {Slewing\\Target / settle};
+\node[task] (science) at (13.95,1.05) {Science\\SAA / +X boresight};
+\node[task] (relay) at (13.95,-1.05) {Relay\\GS / +Y antenna};
+\node[state] (pass) at (7,-2.25) {Passive / Eclipse\\Hold last attitude};
+\draw[flow] (cold)--node[above]{boot timer}(det);
+\draw[flow] (det)--node[above]{rate stable}(sun);
+\draw[flow] (sun)--node[above]{eligible window}(slew);
+\draw[flow] (slew.east) -| (science.west);
+\draw[flow] (slew.east) -| (relay.west);
+\draw[flow] (science.north) -- ++(0,1) -| node[pos=.72,above]{task ends} (sun.north);
+\draw[flow] (relay.south) -- ++(0,-2) -| node[pos=.72,below]{contact ends} (sun.south);
+\draw[flow] (sun.south)--node[right]{eclipse}(pass.north);
+\draw[flow] (pass.west) -| node[pos=.25,below]{sunlit / eligible} ([xshift=-5mm]sun.west);
+\end{tikzpicture}}
+\caption{Information-bearing functional flow of the planned mission sequence. Windows and guards come from the mission scheduler. The schematic does not assert that every transition is immediate; slew and settling times are accounted for separately.}\label{fig:op-transition-diagram}
+\end{figure}
+
+\subsubsection{Supervisory Priority and Safety Overrides}\label{app:op-logic-priority}
+\begin{figure}[htbp]\centering
+\resizebox{.94\linewidth}{!}{%
+\begin{tikzpicture}[>=Latex,font=\sffamily\scriptsize,
+ node/.style={draw=AntaraNavy,rounded corners=2pt,fill=AntaraPale,minimum height=9mm,text width=3cm,align=center},
+ arr/.style={-{Latex[length=2mm]},thick}]
+\node[node] (schedule) at (0,0) {Requested task\\Science / Relay / Sun};
+\node[node] (guard) at (4,0) {Survival \& resource guards\\battery / thermal / ADCS};
+\node[node,draw=AntaraTeal] (grant) at (8,1.25) {Permit task\\slew then execute};
+\node[node,draw=red!65!black,fill=red!5] (safe) at (8,-1.25) {Safe override\\shed loads / recover};
+\node[node] (resume) at (12,-1.25) {Stable again?\\Detumble or Sun Pointing};
+\draw[arr] (schedule)--(guard);
+\draw[arr] (guard)--node[above,sloped]{guards pass}(grant);
+\draw[arr,dashed] (guard)--node[below,sloped]{critical condition}(safe);
+\draw[arr] (safe)--node[above]{recovery}(resume);
+\draw[arr] (resume.north) |- (grant.east);
+\end{tikzpicture}}
+\caption{Supervisory decision logic: survival constraints override scheduled science and downlink. Recovery transitions depend on the fault and attitude state; this is a mission-level policy, not an assertion of finalized flight code.}\label{fig:op-mode-priorities}
+\end{figure}
+
+\subsubsection{Transition and Guard Matrix}\label{app:op-logic-matrix}
+\begin{longtable}{@{}p{2.25cm}p{2.55cm}p{6.9cm}@{}}
+\caption{Required operational transitions and relevant checks}\label{tab:op-transition-matrix}\\\toprule
+From & To & Guard / interpretation\\\midrule\endfirsthead\toprule From & To & Guard / interpretation\\\midrule\endhead
+Cold \& Dark & Detumble & Boot/commissioning delay complete, EPS and OBC alive.\\
+Detumble & Sun Pointing & Body rate falls below accepted rate threshold and attitude solution remains stable.\\
+Sun Pointing & Slewing $\to$ Science & SAA opportunity exists, safe battery reserve and payload readiness; +X boresight target feasible.\\
+Sun Pointing & Slewing $\to$ Relay & Ground contact above selected mask, queued data or command requirement, sufficient energy; +Y antenna acquisition.\\
+Science & Sun Pointing / Relay & SAA window ends or a higher-priority valid contact is scheduled; use Slewing as needed.\\
+Relay & Sun Pointing / Science & Contact ends, queue complete or higher-priority science becomes available; attitude guard applies.\\
+Sun Pointing & Passive / Eclipse & Eclipse begins; passively retain last attitude rather than repeatedly Sun-searching.\\
+Passive / Eclipse & Sun Pointing & Sun visibility returns and recovery/scheduling permits active pointing.\\
+Any operational mode & Safe & Critical battery, ADCS, thermal or spacecraft health condition supersedes nominal task.\\
+Safe & Detumble / Sun Pointing & Fault clearance and recovery guards satisfied; select Detumble if rates require stabilization.\\
+Slewing & Scheduled target / Safe & Target within pointing/settling tolerance or slew interruption on fault/resource guard.\\\bottomrule\end{longtable}
+
+\subsubsection{Timing, Power and Science Opportunity Accounting}\label{app:op-logic-accounting}
+A useful SAA crossing is not automatically a valid measurement window. The data-taking interval is the portion of the crossing for which the payload is enabled, pointing has settled, coincidence acquisition is active and no resource/safety override applies. Equivalently,
+\begin{equation}
+T_{\rm science,usable}=\int_{t_0}^{t_1}\mathbf{1}_{\rm SAA}\,\mathbf{1}_{\rm payload}\,\mathbf{1}_{\rm pointing}\,\mathbf{1}_{\rm health}\,dt.
+\end{equation}
+The integrated logs distinguish transitions, slews, SAA passages, accepted proton events and ground-station contacts. The current one-year provisional output reports 2,346 SAA-passage records and 820 primary-station contact records. These are \emph{event-log counts for the supplied historical-epoch run}, not unique orbital revolutions or verified 2029 yields. A 2,460-second startup detumble event is observed in that run. These values are to be reconciled with the approved 2029 run before final MCR exit.
+
+\subsubsection{Implementation Boundary}\label{app:op-logic-note}
+The mode architecture, fault-preemption policy, Sun-pointing fallback and science/relay sequencing are MCR-level decisions. Exact battery-voltage thresholds, rate limits, thermal recovery timers, attitude-control gains, antenna acquisition tolerances and software task deadlines belong to the controlled ADCS/OBC configuration and must be verified at PDR. This section intentionally describes the complete concept and its verification boundary without claiming an untested flight implementation.
+
+\subsubsection{Observed Startup Evidence}\label{app:startup-evidence}
+The adopted annual-labelled event export reports Cold/Dark followed by a 2460~s detumble, with initial rates $(6,-5.5,4.5)$~deg/s and accelerations $(0.12,-0.015,0.08)$~deg/s$^2$. This is one modeled acquisition, not a verified tip-off distribution. The corresponding telemetry/event exports do not reconcile over their shared horizon, so event timing cannot qualify every mode guard or recovery path. The functional diagrams retain intended logic; source identities, time conventions and bounded transition tests must close before claiming integrated control validation. The short 24h-named files are excluded from the MCR comparison.

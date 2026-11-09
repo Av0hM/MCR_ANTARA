@@ -151,3 +151,121 @@ The following inventory compares against the pre-implementation file-hash snapsh
 | `tests/test_payload_config.py` | modified | Focused current contract regressions and explicit historical-snapshot test labeling. |
 
 Machine-readable hashes: `validation/2026-11-04-approved-v2/changed_files.json`. Test/build totals and final PDF hash: `validation/2026-11-04-approved-v2/summary.json`.
+
+
+## Simulation-evidence integration — 2026-11-09 (latest scope)
+
+The user's final direction excludes incomplete 24h-labelled scenarios from the MCR comparison. Operational evidence uses only `leop_1yr`, explicitly incomplete at 4,320,020 seconds; its separate nearly year-long event exports are inconsistent even over the shared horizon. One-hour analysis and figures remain audit-only, not adopted report results. Thermal and detumble remain separate studies. No new simulation campaign or external simulator edit was performed.
+
+### Phase outcomes
+
+| Phase | Result and remaining limit |
+|---|---|
+| 0 inventory | 48 original files hashed and preserved; producing commits/runtime manifests remain unknown. Candidate current source hashes are references, not provenance proof. |
+| 1 scenario comparison | Both 24h-labelled files contain one hour; calculations retained for audit, comparison excluded at user direction. |
+| 2 integrated science | Continuous annual-labelled telemetry audited through day 50 + 20 s, no terminal snapshot. Rate/count sums and storage balance checked; legacy detector predictions do not qualify current FPDU. Event exports conflict. |
+| 3 thermal | Seven-node 24h-labelled history reproduced; summary hot/cold columns are extrema of this same history. No independent hot/cold campaigns or selected-component margins established. |
+| 4 detumble | 16,133/50,000 reported convergences; 33,867 infinite completion values preserved. Nonzero initial acceleration conflicts with current source; historical model identity unresolved. |
+| 5 consistency | No combined unconditional feasibility margin; source epochs, independent thermal loads and obsolete detector response remain explicit. |
+| 6–7 MCR/graphics | Existing sections 3–5 and appendices A.1/A.3/A.4/A.5/F updated, geometric-factor results and A.1–A.6 hierarchy preserved. Reproducible figures and provenance added. |
+| 8 verification | 136 tests passed, 3 skipped, 16 subtests passed; complete 71-page XeLaTeX build. Changed tables/figures visually inspected. No overfull boxes or undefined references; font substitutions and underfull justification remain. |
+
+### Exact commands and results
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/validate_simulation_evidence.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python -c 'from scripts.validate_simulation_evidence import write_comparisons; write_comparisons()'
+MPLCONFIGDIR=/tmp/antara-evidence-20261109/mpl PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/plot_simulation_evidence.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python -m pytest -q -p no:cacheprovider tests
+latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=/tmp/antara-evidence-20261109/latex main.tex
+git diff --check
+```
+
+The outdir preserves the pre-existing dirty root `main.pdf`. The final PDF is `output/pdf/ANTARA_MCR_SIMULATION_EVIDENCE_2026-11-09.pdf`; previous approved/geometric-factor PDFs remain unchanged. Test/build logs and final PDF hash are in `evidence/science-ditl/validation/`. Three skips concern optional historical-model source availability; no skips are represented as passes. Initial CSV-vector parsing was corrected to accept recorded whitespace-separated numeric arrays without evaluation; the final suite passes.
+
+### Exact file scope
+
+The complete machine-readable file list is `evidence/science-ditl/validation/changed_files.json`, including derived CSV/JSON/PNG artifacts. Source edits: README; sections 03/04/05; appendices A/C/D/E/K/L; claim traceability/open-decisions/this changelog; two analysis/plot scripts; one test module; six new evidence audits. Original raw files and original figures are excluded from the changed-file list. Pre-existing edits to section 01, appendix B, root PDF and geometric-factor artifacts were preserved. Git metadata was not changed.
+
+### Review disposition
+
+The report supports a conditional concept discussion, not closure of annual operational feasibility, current-FPDU science success, thermal compliance or ADCS reliability. Blocking evidence gaps are reconciled annual telemetry/event provenance and current detector response. PDR work includes selected thermal component limits, integrated heat schedules, reproducible detumble initial conditions/controller/timeout, packet/link accounting and hardware tests. Full paired 24h runs are no longer a prerequisite for this scoped integration.
+
+
+## Telemetry v3 / science memory / full19.2kbps — 2026-11-09
+
+Completed the scoped reference codec, source-identified data-budget analysis, conditional queue/memory trade and MCR update. Exact phase/file/command record: `TELEMETRY_MCR_CHANGELOG.md`; source hashes and ledgers: `data/derived/telemetry_v3_2026-11-09/`.173 tests passed,3 skipped,16subtests passed;74-page XeLaTeX PDF visually reviewed with zero overfull boxes/undefined references. No arbitrary minimum reading duration/count or link derating. Valid zero-count records retained. Annual visibility585638400bytes is separate from Relay opportunity428836800bytes and actual historical transfer; dates remain2000. No full-year simulation or external source modification.128MiB is conditional rolling storage, not enough to archive the187498164-byte three-reading grid sensitivity without delivery. Detailed RF qualification and sustained current-FPDU generation remain open.
+
+## Section 3 subsystem feasibility requirements — 2026-11-09
+
+### Discovery, implementation and reconciliation
+
+Preserved the nine active Section 3 headings and all original technical paragraphs. Added nine requirement-table groups and subsystem feasibility assessments, backed by one versioned register containing 51 unique obligations. SDM/deployables remain under the existing thermal/structural heading; frames/time/ICD remain under the existing coordinate-system heading. No mission criteria, appendices, physical models, source datasets or simulator outputs were changed. Existing uncommitted work and root `main.pdf` were preserved; Git metadata was not changed.
+
+Statuses: 4 SUPPORTED within limited model/software/documented-interface scope, 15 CONDITIONAL, 28 OPEN, 3 NOT EVALUATED, 1 NOT MET. The not-met item is the completeness/consistency obligation for supplied annual evidence, not a spacecraft performance failure. Thirty-two register rows flag concept-level closure gaps. The MSC all-operational-channel versus summary ≥4-channel wording remains explicitly unresolved without weakening either statement.
+
+### Verification and presentation
+
+Twelve new bounded tests cover traceability, unique IDs, preserved original prose/headings and baseline hashes, evidence paths, scoped status claims and unchanged mission constraints. Full regression: **185 passed, 3 skipped, 16 subtests passed**. Skips concern optional historical-source availability. No simulation campaign was run.
+
+The complete **87-page** PDF was compiled with XeLaTeX/latexmk. All new Section 3 table pages (PDF pages 19–32), plus the opening page 18, were visually inspected. Continued table blocks use readable 10-point text and retain one table number per subsystem group. No overfull boxes, missing characters or undefined cross-references were reported. Existing font substitutions, underfull boxes and three ignored glue-shrinkage warnings in appendix longtables remain; these are not reported as a warning-free build.
+
+Exact commands:
+
+```sh
+python3 scripts/render_section3_requirements.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python -m pytest -q -p no:cacheprovider tests
+latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=/tmp/antara-section3/latex main.tex
+pdftotext -layout /tmp/antara-section3/latex/main.pdf /tmp/antara-section3/main.txt
+pdftoppm -f 18 -l 32 -scale-to 1100 -png /tmp/antara-section3/latex/main.pdf /tmp/antara-section3/final
+git diff --check
+```
+
+### Exact file scope and disposition
+
+`data/derived/section3_requirements_2026-11-09/changed_files.json` lists every task file. The register, generator, nine LaTeX inputs, Section 3 source, twelve-test module and three new audit documents are the substantive implementation. Claim traceability, remaining decisions, this changelog and README are updated. Baseline snapshots, test/build logs and verification manifest accompany the new PDF at `output/pdf/ANTARA_MCR_SECTION3_REQUIREMENTS_2026-11-09.pdf`; older PDFs remain intact.
+
+Concept-level blockers include current-FPDU response/effective acceptance and mixed-species throughput, science eligibility/independence, matched sustained data return, worst-case energy/reserve allocations, pointing/control authority, component thermal limits, complete mass and launch interfaces. PDR verification includes hardware timing, calibrated response, RF/net throughput, reset-safe storage, thermal correlation and structural/deployment tests. The report supports a conditional concept-review discussion, not unconditional subsystem compliance or mission-success closure.
+
+## Authoritative DITL corrective migration — 2026-11-09
+
+This entry supersedes earlier Science/DITL-dependent numerical findings and statuses in this changelog. Earlier records are retained as audit history. No original raw input, prior derived output or prior PDF was overwritten.
+
+| Phase | Result / changed scope | Remaining uncertainty |
+|---|---|---|
+| 0–1 discovery | Found24CSV files in `evidence/new-science-ditl/`; inventoried headers, rows, timestamps, sizes and hashes; captured pre-edit dependency lines and snapshots. | No source/runtime manifest supplied. |
+| 2 supersession | Added run registry, old-raw supersession notices and fail-loud guards on old analysis/plot entrypoints. | Old artifacts remain historical, not active evidence. |
+| 3 validation | Day files reach86400s; annual31536000s; epoch2000-03-01; no duplicate/nonmonotonic timestamps. | Full timestamp span does not qualify unknown integrator, RAAN, hardware or interval semantics. |
+| 4–6 recomputation | Recomputed all three runs; daily/annual mode, exposure, energy, battery, event, native data and contact results; regenerated8figures. | Annual telemetry15161 mode changes vs16283transition records; Slewing definitions differ. |
+| 7 budgets | Time-aligned1/2/3-reading tier sensitivities, contact ledgers, queues, missed-contact and1/3/7-day outages, bitrate search. | Actual detector/timing/boundary and RF/net-throughput qualification remain open. |
+| 8 dependencies | Old/new metric and figure migration maps; all annual event files are byte-identical, annual telemetry differs. | Independent grid/thermal/detumble/RAAN limitations are preserved. |
+| 9–11 report/requirements | Corrected Sections3–5, A.1/A.3/A.5/A.6/F, source-detail archive and evidence appendix; revised11requirements' evidence. | OBC queue and annual evidence requirements are CONDITIONAL. |
+| 12 tests |204passed,3skipped,16subtests passed; prior4-supported expectation failed after evidence reassessment and was corrected to the explicit3supported IDs. | Skips concern optional historical source availability; no hardware validation implied. |
+| 13–15 build/review | Complete XeLaTeX build and visual inspection; exact final hash/pages/files recorded in verification manifest. | Existing font/underfull/glue-shrinkage warnings remain; no overfull boxes or undefined cross-references. |
+
+### Quantitative correction
+
+Annual acquisition gate changes342→247258s; recorded minimum battery15.21520→15.097556Wh; native science generation0.00492859→3.514083862sourceMB. The corrected annual visibility remains244016s over820contacts; Relay overlap remains178682s, or428836800ideal bytes. Those repeated values were independently recomputed from corrected-source files, not copied as authority. Preferred EMSC v3 volume changes67452→46637364bytes, nominal queue67452→75336bytes; the worst-start seven-day outage requires1010028bytes. The old unchanged-outage result is invalidated. The3-day outage already exceeds256KiB RAM.128MiB is a candidate nonvolatile allocation for this workload before reserves;16GB is optional. No current-FPDU science-success percentage is established.
+
+### Commands and reproducibility
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/validate_corrected_ditl.py --inventory
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/validate_corrected_ditl.py --run leop_24h
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/validate_corrected_ditl.py --run no_leop_24h
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/validate_corrected_ditl.py --run leop_1yr
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/reconcile_corrected_ditl_events.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/complete_corrected_ditl_budget.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/render_corrected_ditl_report.py
+MPLCONFIGDIR=/tmp/ditl-correction-mpl PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python scripts/plot_corrected_ditl.py
+python3 scripts/render_section3_requirements.py
+PYTHONDONTWRITEBYTECODE=1 /home/sammo/miniconda3/envs/orekit_env/bin/python -m pytest -q -p no:cacheprovider tests
+latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=/tmp/ditl-correction/latex main.tex
+git diff --check
+```
+
+The annual command is CSV postprocessing only; no spacecraft simulation is launched. All numerical tables use full telemetry resolution; figure samples are display-only. The new epoch/configuration and timing distinctions are not silently normalized. The renderer regenerates core audit tables; signed-off interpretations and correction history are maintained in Markdown. Exact file scope, source preservation check, logs, figures and final PDF identity are in `data/derived/ditl_correction_2026-11-09/`. The old root PDF and all previous published snapshots remain intact.
+
+## 2026-11-09 — A.1.2/A.1.3 operational interpretation
+
+Expanded nominal startup/science/relay sequencing and supervisory fault/recovery prose at the user's request. Six explicitly proposed assumptions follow A.1.3, with evidence limits and verification needs. The 120 + 2460 = 2580 s startup reference is event-defined and not a flight deadline. Existing headings/diagrams are retained, with label-placement fixes. No raw data, simulator, mission threshold or hardware configuration changed. See `OPERATIONAL_SEQUENCE_ASSUMPTIONS.md` for exact file scope and verification. New reviewed PDF: `output/pdf/ANTARA_MCR_OPERATIONAL_ASSUMPTIONS_2026-11-09.pdf`; previous PDFs preserved.

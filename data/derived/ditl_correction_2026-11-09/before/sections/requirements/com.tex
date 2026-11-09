@@ -1,0 +1,40 @@
+% Generated from config/requirements/section3_feasibility_v1.json.
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Mission Feasibility Requirements: Communications System (COMMS)}\label{tab:fr-com}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-COM-FR-001}\mbox{ANT-COM-}\newline\mbox{FR-001} & The communications planning budget shall use 19200 bit/s (2400 bytes/s), 100\% science allocation and no arbitrary derating during eligible visibility-intersect-Relay windows. & MCR link budget & 428836800 bytes in historical Relay overlap; arithmetic reproduced. \emph{Verify:} Analysis. & S\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-COM-FR-002}\mbox{ANT-COM-}\newline\mbox{FR-002} & The communications schedule shall return the generated science workload within the accepted retention/outage envelope, with bounded backlog and no unaccounted science loss. The sustained workload/envelope remain OPEN DERIVED REQUIREMENTS. & Data balance & Grid horizon unknown; partial v3 queue is a separate fixture. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-COM-FR-003}\mbox{ANT-COM-}\newline\mbox{FR-003} & The communications interface shall support BITS Goa with a traceable station, frequency/modem and elevation-mask configuration; capacity shall use the producing mask exactly once. & Ground interface & Historical station label GS1\_India; actual mask/RAAN unverified. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\ContinuedFloat\captionsetup{list=no}
+\caption{Mission Feasibility Requirements: Communications System (COMMS) (continued)}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-COM-FR-004}\mbox{ANT-COM-}\newline\mbox{FR-004} & The communications protocol shall detect corrupted or missing records and resume interrupted transfers with identifiable sequence, acknowledgement and duplicate handling. & Transfer integrity & v3 CRC/sequence tested; packet reception and retry protocol absent. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-COM-FR-005}\mbox{ANT-COM-}\newline\mbox{FR-005} & The communications design shall close RF link and net science-throughput budgets for the selected hardware and operational geometry before claiming physical data-return compliance. & PDR RF closure & No qualified link margin or application throughput. \emph{Verify:} Analysis + hardware test. & NE\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
+\paragraph{Feasibility assessment.} Histogram-based return and scheduled Relay are consistent with the current architecture. Full-rate capacity arithmetic is model-supported; sustained generation, matched contact identity and the outage envelope remain prerequisites to concept-level data balance. Physical link margin, protocol behavior and net throughput require PDR verification.

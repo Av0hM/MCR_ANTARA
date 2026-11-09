@@ -103,7 +103,7 @@ The proton environment model applies SAA spatial variation, magnetic pitch-angle
 \label{app:data-reproduction}
 The Science simulator writes scenario-tagged CSV files under \texttt{results/science/}, including telemetry, SAA passes, ground-station contacts, mode transitions, slew events, detumble events, rejected transitions and proton passes. Figures are written under \texttt{figures/science/} when plot generation is enabled.
 
-Telemetry distinguishes the row observation time, \texttt{time\_sec}, from the integrated interval end, \texttt{state\_time\_sec}. \texttt{interval\_duration\_sec} records the elapsed integration interval. The final terminal snapshot has zero duration. Time-averaged quantities and mode occupancy must therefore be weighted by the interval durations rather than the number of CSV rows. Plot sampling is for display only; extrema and scientific statistics should be calculated from complete telemetry and validated summary outputs.
+Newer source telemetry distinguishes the row observation time, \texttt{time\_sec}, from the integrated interval end, \texttt{state\_time\_sec}. \texttt{interval\_duration\_sec} records the elapsed integration interval. Those interval columns are absent from the corrected exports. This audit uses successive recorded timestamps, assigns no duration after the endpoint, and retains timing-semantic uncertainty. In the newer source, the final terminal snapshot has zero duration. Time-averaged quantities and mode occupancy must therefore be weighted by the interval durations rather than the number of CSV rows. Plot sampling is for display only; extrema and scientific statistics should be calculated from complete telemetry and validated summary outputs.
 
 The simulator supports trusted, versioned checkpoints and resumable execution. Checkpoints and their linked science-event archives must be retained together. A resume record does not by itself establish that the entire intended scenario completed correctly.
 
@@ -135,9 +135,27 @@ Mission baseline & \texttt{ANTARA-2029-v1}; 2029-01-01 & Approved configuration,
 Radiation rate maps & MJD 61041; 600 km; AP9/AE9 mean and 99th percentile & Reproduced arithmetic; 2026 source accepted for preliminary 2029 planning\\
 RAAN study & Seven cases, two runs each; supplied CSVs & Team-accepted 2029 reference; generating epoch not independently verified\\
 Historical DITL & March 2000 source run & Historical operational example, not current payload qualification\\
-Annual Science artifact & Local file ends near day 50 & Incomplete; cannot establish annual performance\\
+Corrected Science exports & Two 24 h and one 365-day timestamp spans; March 2000 & Runtime source/configuration and mode semantics unresolved\\
+Required-$G$ study & 7940 cells; 65 integral thresholds; supplied dwell & Tables reproduced; source epoch, percentile and exposure duration unverified\\
 Current FPDU & Approved-v2 configuration & Mechanical inputs and logical interfaces only; no qualified response\\\bottomrule
 \end{tabularx}\end{table}
 
 \paragraph{Payload and software reconciliation.}
 The current configuration is not consumed by the legacy DITL/Geant4 response. Eleven SiPMs, removed silicon, open optics and unknown dead time require geometry-matched validation. Coincidence references are 200/250/300~ns; shaping is 20~ns. Historical outputs remain unchanged. Bounded tests validate accounting only. Tested source fixes are delivered as an unapplied patch because the authoritative simulator is outside the writable workspace.
+
+\subsubsection{New Operational, Thermal and Detumble Evidence}\label{app:new-run-identities}
+Corrected Science authority is controlled by \path{evidence/science-ditl/run_registry.json}; prior Science manifests are superseded. Independent study manifests remain under \path{evidence/science-ditl/manifests/}, \path{evidence/thermal/manifests/} and \path{evidence/detumble/manifests/}. Current external source hashes are candidate references only; no generating commit or runtime manifest was supplied. Command-line duration overrides cannot be recovered from preset names.
+\begin{table}[H]\centering\small
+\caption{Observed evidence completeness; no expensive simulation rerun}\label{tab:new-run-completeness}
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{3.1cm}X@{}}\toprule
+Evidence & Observed span & Acceptance boundary\\\midrule
+Corrected LEOP / No-LEOP & 7696 / 6553 rows; 0--86400 s & Complete timestamp spans; runtime configuration unknown\\
+Corrected annual telemetry & 1434872 rows; 0--31536000 s & Complete365-day timestamp span; interval semantics conditional\\
+Corrected annual events & 2000-03-01 epoch & Contact/data totals reconcile; mode/slew definitions require closure\\
+Thermal & 43\,201 labels; 0--24~h; 2~s & One history; no separate HOT/COLD cases; initial-state timing unresolved\\
+Detumble & 50\,000 summary rows & Historical inputs incompatible with current source; censor times/seed absent\\\bottomrule
+\end{tabularx}\end{table}
+Current candidate orbit and thermal integrators are DP853 and RK4 respectively, but defaults cannot establish the producing solver settings. The thermal heat schedule is independent of DITL. Passing local accounting tests establishes parsing, interval weighting and summary arithmetic only; it does not validate current hardware response or a common 2029 run.
+
+\paragraph{Science-record and communications revision.}
+Science Record v3 and the full 19.2~kbps capacity analysis are new MCR reference interfaces, not outputs of the historical simulator. Source hashes and exact per-contact/tier calculations are under \path{data/derived/ditl_correction_2026-11-09/}; the generating scripts read originals without changing them. The grid-study horizon remains unknown, annual contacts retain their 2000 epoch, and corrected telemetry spans365days; the old partial artifact is superseded. The 292-byte reference supersedes older unencoded record-size assumptions without modifying detector physics, scientific thresholds or original transfers.

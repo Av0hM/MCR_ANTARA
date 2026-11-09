@@ -1,0 +1,816 @@
+[
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_telemetry.csv",
+    "sha256": "8363c5901b5f46df36c3287a054e0c93923ca2ea78d9f8beb87f3e3b8f956a85",
+    "bytes": 7603039,
+    "rows": 7696,
+    "columns": [
+      "time_sec",
+      "mode",
+      "lat_deg",
+      "lon_deg",
+      "alt_km",
+      "battery_wh",
+      "solar_w",
+      "load_w",
+      "in_sunlight",
+      "in_saa",
+      "gs_visible",
+      "wheel_mom_x",
+      "wheel_mom_y",
+      "wheel_mom_z",
+      "slew_angle_deg",
+      "in_eclipse",
+      "storage_mb",
+      "science_data_mb",
+      "downlinked_mb",
+      "sun_visible",
+      "sun_incidence_angle_deg",
+      "sun_pointing_error_deg",
+      "relay_pointing_error_deg",
+      "gs_off_boresight_deg",
+      "payload_pointing_error_deg",
+      "attitude_error_deg",
+      "pointing_budget_violated_frozen",
+      "cumulative_science_generated_mb",
+      "cumulative_downlinked_mb",
+      "net_storage_delta_mb",
+      "saturation_hold_active",
+      "combined_fault_active",
+      "in_low_power",
+      "in_critical_recovery",
+      "post_safe_recovery_hold_active",
+      "active_attitude_target",
+      "attitude_hold_reason",
+      "sun_submode",
+      "science_generation_enabled",
+      "relay_link_active",
+      "payload_power_state",
+      "payload_alignment_cosine",
+      "relay_alignment_cosine",
+      "payload_boresight_inertial",
+      "velocity_unit_vector",
+      "relay_boresight_vector",
+      "gs_los_vector",
+      "illumination_fraction",
+      "pitch_angle_deg",
+      "ew_factor",
+      "science_region",
+      "science_cell_id",
+      "science_cell_n_cell",
+      "science_cell_sigma_fraction",
+      "science_event_type",
+      "science_livetime_fraction",
+      "science_histogram_downlink_due",
+      "science_histogram_bytes",
+      "science_saa_state_at_sample",
+      "science_measured_flux",
+      "science_ap9_flux",
+      "science_total_count_rate",
+      "science_counts_per_bin",
+      "science_sigma_fraction",
+      "fpdu_ch0",
+      "fpdu_ch1",
+      "fpdu_ch2",
+      "fpdu_ch3",
+      "fpdu_ch4",
+      "ap9_ch0",
+      "ap9_ch1",
+      "ap9_ch2",
+      "ap9_ch3",
+      "ap9_ch4",
+      "count_rate_ch0",
+      "count_rate_ch1",
+      "count_rate_ch2",
+      "count_rate_ch3",
+      "count_rate_ch4",
+      "saa_depth_factor",
+      "storm_time",
+      "panel_deployed",
+      "rejected_transition_count"
+    ],
+    "first_timestamps": {
+      "time_sec": "0.0"
+    },
+    "last_timestamps": {
+      "time_sec": "86400.0"
+    },
+    "kind": "telemetry"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_mode_transitions.csv",
+    "sha256": "e17dc5a340319f8e85a984226ce8a1a7880558b01b17f68998851beb5db5db2a",
+    "bytes": 3098,
+    "rows": 42,
+    "columns": [
+      "time_sec",
+      "from_mode",
+      "to_mode",
+      "reason"
+    ],
+    "first_timestamps": {
+      "time_sec": "120.0"
+    },
+    "last_timestamps": {
+      "time_sec": "84266.0"
+    },
+    "kind": "mode_transitions"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_saa_passes.csv",
+    "sha256": "00e315da31105e681a395f44dd3db4a9dd44c1f55a69b0e5c2f0e325b8e2382d",
+    "bytes": 1134,
+    "rows": 6,
+    "columns": [
+      "entry_time",
+      "entry_time_sec",
+      "entry_lat_deg",
+      "entry_lon_deg",
+      "data_collected_mb",
+      "exit_time",
+      "exit_time_sec",
+      "exit_lat_deg",
+      "exit_lon_deg",
+      "dwell_sec"
+    ],
+    "first_timestamps": {
+      "entry_time": "2000-03-01T04:02:40.000Z",
+      "entry_time_sec": "14560.0",
+      "exit_time": "2000-03-01T04:09:48.000Z",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time": "2000-03-01T19:11:32.000Z",
+      "entry_time_sec": "69092.0",
+      "exit_time": "2000-03-01T19:19:08.000Z",
+      "exit_time_sec": "69548.0"
+    },
+    "kind": "saa_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_proton_passes.csv",
+    "sha256": "db18822b19cafa18ed073e02fdeb7f082d7cf3530bf592b23e8dbb3d4838279f",
+    "bytes": 31507,
+    "rows": 6,
+    "columns": [
+      "pass_index",
+      "entry_time_sec",
+      "exit_time_sec",
+      "dwell_sec",
+      "n_steps",
+      "n_science_steps",
+      "science_fraction",
+      "mean_pitch_angle_deg",
+      "std_pitch_angle_deg",
+      "mean_ew_factor",
+      "mean_livetime_fraction",
+      "mean_measured_flux",
+      "mean_ap9_flux",
+      "mean_sigma_fraction",
+      "total_counts_per_bin",
+      "cell_ids",
+      "event_types",
+      "region_histogram"
+    ],
+    "first_timestamps": {
+      "entry_time_sec": "14560.0",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time_sec": "69092.0",
+      "exit_time_sec": "69548.0"
+    },
+    "kind": "proton_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_gs_contacts.csv",
+    "sha256": "7574fc13a1c7e1037163802f0106306c5c1dedc0ed592827b13724d3779f9837",
+    "bytes": 324,
+    "rows": 2,
+    "columns": [
+      "aos_time",
+      "aos_time_sec",
+      "max_el_deg",
+      "downlinked_mb",
+      "los_time",
+      "los_time_sec",
+      "duration_sec",
+      "station"
+    ],
+    "first_timestamps": {
+      "aos_time": "2000-03-01T09:40:40.000Z",
+      "aos_time_sec": "34840.0",
+      "los_time": "2000-03-01T09:46:32.000Z",
+      "los_time_sec": "35192.0"
+    },
+    "last_timestamps": {
+      "aos_time": "2000-03-01T21:36:46.000Z",
+      "aos_time_sec": "77806.0",
+      "los_time": "2000-03-01T21:43:40.000Z",
+      "los_time_sec": "78220.0"
+    },
+    "kind": "gs_contacts"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_slew_events.csv",
+    "sha256": "40bb24fe6fec4c5d1e3b638c0b6ca65f5ebb40782d5fcd667dc3c1187be3dc92",
+    "bytes": 1371,
+    "rows": 20,
+    "columns": [
+      "start_time_sec",
+      "end_time_sec",
+      "from_mode",
+      "target_mode",
+      "angle_deg",
+      "estimated_duration_sec",
+      "duration_sec"
+    ],
+    "first_timestamps": {
+      "start_time_sec": "14510.0",
+      "end_time_sec": "14570.0"
+    },
+    "last_timestamps": {
+      "start_time_sec": "84206.0",
+      "end_time_sec": "84266.0"
+    },
+    "kind": "slew_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_detumble_events.csv",
+    "sha256": "06fbe4ad701d603e66663e2d971edee8142bf6829c05670b9ed9b920d13e9d16",
+    "bytes": 441,
+    "rows": 1,
+    "columns": [
+      "time_sec",
+      "start_time_sec",
+      "end_time_sec",
+      "duration_sec",
+      "from_mode",
+      "to_mode",
+      "target_attitude_label",
+      "goal",
+      "initial_body_rate_x_deg_sec",
+      "initial_body_rate_y_deg_sec",
+      "initial_body_rate_z_deg_sec",
+      "initial_body_accel_x_deg_sec2",
+      "initial_body_accel_y_deg_sec2",
+      "initial_body_accel_z_deg_sec2"
+    ],
+    "first_timestamps": {
+      "time_sec": "120.0",
+      "start_time_sec": "120.0",
+      "end_time_sec": "2580.0"
+    },
+    "last_timestamps": {
+      "time_sec": "120.0",
+      "start_time_sec": "120.0",
+      "end_time_sec": "2580.0"
+    },
+    "kind": "detumble_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_24h_ANTARA_Science_rejected_transitions.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1,
+    "rows": 0,
+    "columns": [],
+    "first_timestamps": {},
+    "last_timestamps": {},
+    "kind": "rejected_transitions"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_telemetry.csv",
+    "sha256": "a652068558a96c200ca9e84c7a88bcd9ade869a945b019848bb4179c6c287585",
+    "bytes": 6771073,
+    "rows": 6553,
+    "columns": [
+      "time_sec",
+      "mode",
+      "lat_deg",
+      "lon_deg",
+      "alt_km",
+      "battery_wh",
+      "solar_w",
+      "load_w",
+      "in_sunlight",
+      "in_saa",
+      "gs_visible",
+      "wheel_mom_x",
+      "wheel_mom_y",
+      "wheel_mom_z",
+      "slew_angle_deg",
+      "in_eclipse",
+      "storage_mb",
+      "science_data_mb",
+      "downlinked_mb",
+      "sun_visible",
+      "sun_incidence_angle_deg",
+      "sun_pointing_error_deg",
+      "relay_pointing_error_deg",
+      "gs_off_boresight_deg",
+      "payload_pointing_error_deg",
+      "attitude_error_deg",
+      "pointing_budget_violated_frozen",
+      "cumulative_science_generated_mb",
+      "cumulative_downlinked_mb",
+      "net_storage_delta_mb",
+      "saturation_hold_active",
+      "combined_fault_active",
+      "in_low_power",
+      "in_critical_recovery",
+      "post_safe_recovery_hold_active",
+      "active_attitude_target",
+      "attitude_hold_reason",
+      "sun_submode",
+      "science_generation_enabled",
+      "relay_link_active",
+      "payload_power_state",
+      "payload_alignment_cosine",
+      "relay_alignment_cosine",
+      "payload_boresight_inertial",
+      "velocity_unit_vector",
+      "relay_boresight_vector",
+      "gs_los_vector",
+      "illumination_fraction",
+      "pitch_angle_deg",
+      "ew_factor",
+      "science_region",
+      "science_cell_id",
+      "science_cell_n_cell",
+      "science_cell_sigma_fraction",
+      "science_event_type",
+      "science_livetime_fraction",
+      "science_histogram_downlink_due",
+      "science_histogram_bytes",
+      "science_saa_state_at_sample",
+      "science_measured_flux",
+      "science_ap9_flux",
+      "science_total_count_rate",
+      "science_counts_per_bin",
+      "science_sigma_fraction",
+      "fpdu_ch0",
+      "fpdu_ch1",
+      "fpdu_ch2",
+      "fpdu_ch3",
+      "fpdu_ch4",
+      "ap9_ch0",
+      "ap9_ch1",
+      "ap9_ch2",
+      "ap9_ch3",
+      "ap9_ch4",
+      "count_rate_ch0",
+      "count_rate_ch1",
+      "count_rate_ch2",
+      "count_rate_ch3",
+      "count_rate_ch4",
+      "saa_depth_factor",
+      "storm_time",
+      "panel_deployed",
+      "rejected_transition_count"
+    ],
+    "first_timestamps": {
+      "time_sec": "0.0"
+    },
+    "last_timestamps": {
+      "time_sec": "86400.0"
+    },
+    "kind": "telemetry"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_mode_transitions.csv",
+    "sha256": "9f85cb30d1299e9254e0b467b2556e09897980069923223eb66d4e95eb4e1650",
+    "bytes": 2970,
+    "rows": 40,
+    "columns": [
+      "time_sec",
+      "from_mode",
+      "to_mode",
+      "reason"
+    ],
+    "first_timestamps": {
+      "time_sec": "14512.0"
+    },
+    "last_timestamps": {
+      "time_sec": "84266.0"
+    },
+    "kind": "mode_transitions"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_saa_passes.csv",
+    "sha256": "289e2d814f8f23579e1ca6f44dbf515098fb041e03a29967913c7bb1eb3d3415",
+    "bytes": 1132,
+    "rows": 6,
+    "columns": [
+      "entry_time",
+      "entry_time_sec",
+      "entry_lat_deg",
+      "entry_lon_deg",
+      "data_collected_mb",
+      "exit_time",
+      "exit_time_sec",
+      "exit_lat_deg",
+      "exit_lon_deg",
+      "dwell_sec"
+    ],
+    "first_timestamps": {
+      "entry_time": "2000-03-01T04:02:40.000Z",
+      "entry_time_sec": "14560.0",
+      "exit_time": "2000-03-01T04:09:48.000Z",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time": "2000-03-01T19:11:32.000Z",
+      "entry_time_sec": "69092.0",
+      "exit_time": "2000-03-01T19:19:08.000Z",
+      "exit_time_sec": "69548.0"
+    },
+    "kind": "saa_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_proton_passes.csv",
+    "sha256": "78165c6400db2b85b52b3306ba257ffa60083f31a40aa8819c44babc9c133bb0",
+    "bytes": 30668,
+    "rows": 6,
+    "columns": [
+      "pass_index",
+      "entry_time_sec",
+      "exit_time_sec",
+      "dwell_sec",
+      "n_steps",
+      "n_science_steps",
+      "science_fraction",
+      "mean_pitch_angle_deg",
+      "std_pitch_angle_deg",
+      "mean_ew_factor",
+      "mean_livetime_fraction",
+      "mean_measured_flux",
+      "mean_ap9_flux",
+      "mean_sigma_fraction",
+      "total_counts_per_bin",
+      "cell_ids",
+      "event_types",
+      "region_histogram"
+    ],
+    "first_timestamps": {
+      "entry_time_sec": "14560.0",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time_sec": "69092.0",
+      "exit_time_sec": "69548.0"
+    },
+    "kind": "proton_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_gs_contacts.csv",
+    "sha256": "64cd1094631abc3b7c6ec8a0f4a235a87358d6e2e5b8bd2c78eabf26087b500c",
+    "bytes": 322,
+    "rows": 2,
+    "columns": [
+      "aos_time",
+      "aos_time_sec",
+      "max_el_deg",
+      "downlinked_mb",
+      "los_time",
+      "los_time_sec",
+      "duration_sec",
+      "station"
+    ],
+    "first_timestamps": {
+      "aos_time": "2000-03-01T09:40:40.000Z",
+      "aos_time_sec": "34840.0",
+      "los_time": "2000-03-01T09:46:32.000Z",
+      "los_time_sec": "35192.0"
+    },
+    "last_timestamps": {
+      "aos_time": "2000-03-01T21:36:46.000Z",
+      "aos_time_sec": "77806.0",
+      "los_time": "2000-03-01T21:43:40.000Z",
+      "los_time_sec": "78220.0"
+    },
+    "kind": "gs_contacts"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_slew_events.csv",
+    "sha256": "ef0d3e310ebb0b9358e3970624aec55acc97e492f53616af2106667334660483",
+    "bytes": 1370,
+    "rows": 20,
+    "columns": [
+      "start_time_sec",
+      "end_time_sec",
+      "from_mode",
+      "target_mode",
+      "angle_deg",
+      "estimated_duration_sec",
+      "duration_sec"
+    ],
+    "first_timestamps": {
+      "start_time_sec": "14512.0",
+      "end_time_sec": "14572.0"
+    },
+    "last_timestamps": {
+      "start_time_sec": "84206.0",
+      "end_time_sec": "84266.0"
+    },
+    "kind": "slew_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_detumble_events.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1,
+    "rows": 0,
+    "columns": [],
+    "first_timestamps": {},
+    "last_timestamps": {},
+    "kind": "detumble_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/no_leop_24h_ANTARA_Science_rejected_transitions.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1,
+    "rows": 0,
+    "columns": [],
+    "first_timestamps": {},
+    "last_timestamps": {},
+    "kind": "rejected_transitions"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_telemetry.csv",
+    "sha256": "015cfb89b1d2a563494bc70c88c8a3a2fd040d66224a3b2fbc46c5287c86182e",
+    "bytes": 1673705738,
+    "rows": 1434872,
+    "columns": [
+      "time_sec",
+      "mode",
+      "lat_deg",
+      "lon_deg",
+      "alt_km",
+      "battery_wh",
+      "solar_w",
+      "load_w",
+      "in_sunlight",
+      "in_saa",
+      "gs_visible",
+      "wheel_mom_x",
+      "wheel_mom_y",
+      "wheel_mom_z",
+      "slew_angle_deg",
+      "in_eclipse",
+      "storage_mb",
+      "science_data_mb",
+      "downlinked_mb",
+      "sun_visible",
+      "sun_incidence_angle_deg",
+      "sun_pointing_error_deg",
+      "relay_pointing_error_deg",
+      "gs_off_boresight_deg",
+      "payload_pointing_error_deg",
+      "attitude_error_deg",
+      "pointing_budget_violated_frozen",
+      "cumulative_science_generated_mb",
+      "cumulative_downlinked_mb",
+      "net_storage_delta_mb",
+      "saturation_hold_active",
+      "combined_fault_active",
+      "in_low_power",
+      "in_critical_recovery",
+      "post_safe_recovery_hold_active",
+      "active_attitude_target",
+      "attitude_hold_reason",
+      "sun_submode",
+      "science_generation_enabled",
+      "relay_link_active",
+      "payload_power_state",
+      "payload_alignment_cosine",
+      "relay_alignment_cosine",
+      "payload_boresight_inertial",
+      "velocity_unit_vector",
+      "relay_boresight_vector",
+      "gs_los_vector",
+      "illumination_fraction",
+      "pitch_angle_deg",
+      "ew_factor",
+      "science_region",
+      "science_cell_id",
+      "science_cell_n_cell",
+      "science_cell_sigma_fraction",
+      "science_event_type",
+      "science_livetime_fraction",
+      "science_histogram_downlink_due",
+      "science_histogram_bytes",
+      "science_saa_state_at_sample",
+      "science_measured_flux",
+      "science_ap9_flux",
+      "science_total_count_rate",
+      "science_counts_per_bin",
+      "science_sigma_fraction",
+      "fpdu_ch0",
+      "fpdu_ch1",
+      "fpdu_ch2",
+      "fpdu_ch3",
+      "fpdu_ch4",
+      "ap9_ch0",
+      "ap9_ch1",
+      "ap9_ch2",
+      "ap9_ch3",
+      "ap9_ch4",
+      "count_rate_ch0",
+      "count_rate_ch1",
+      "count_rate_ch2",
+      "count_rate_ch3",
+      "count_rate_ch4",
+      "saa_depth_factor",
+      "storm_time",
+      "panel_deployed",
+      "rejected_transition_count"
+    ],
+    "first_timestamps": {
+      "time_sec": "0.0"
+    },
+    "last_timestamps": {
+      "time_sec": "31536000.0"
+    },
+    "kind": "telemetry"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_mode_transitions.csv",
+    "sha256": "dcf3cd00b1e32f90b11a191ebd28d1008fc1f007355ccd28ce41545d70bdf7e7",
+    "bytes": 1228659,
+    "rows": 16283,
+    "columns": [
+      "time_sec",
+      "from_mode",
+      "to_mode",
+      "reason"
+    ],
+    "first_timestamps": {
+      "time_sec": "120.0"
+    },
+    "last_timestamps": {
+      "time_sec": "31533008.0"
+    },
+    "kind": "mode_transitions"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_saa_passes.csv",
+    "sha256": "d4ac1da955d2516d10d94c448904cbd05c076d4d2b78bdbe9bd9e236432625c6",
+    "bytes": 403039,
+    "rows": 2346,
+    "columns": [
+      "entry_time",
+      "entry_time_sec",
+      "entry_lat_deg",
+      "entry_lon_deg",
+      "data_collected_mb",
+      "exit_time",
+      "exit_time_sec",
+      "exit_lat_deg",
+      "exit_lon_deg",
+      "dwell_sec"
+    ],
+    "first_timestamps": {
+      "entry_time": "2000-03-01T04:03:02.000Z",
+      "entry_time_sec": "14582.0",
+      "exit_time": "2000-03-01T04:09:48.000Z",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time": "2001-02-28T18:59:08.000Z",
+      "entry_time_sec": "31517948.0",
+      "exit_time": "2001-02-28T19:05:06.000Z",
+      "exit_time_sec": "31518306.0"
+    },
+    "kind": "saa_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_proton_passes.csv",
+    "sha256": "ed4d1ea73e0c8255ff305b3f9300578c5d92ed2f18bfac974f665ab5c6b63ea2",
+    "bytes": 11759096,
+    "rows": 2298,
+    "columns": [
+      "pass_index",
+      "entry_time_sec",
+      "exit_time_sec",
+      "dwell_sec",
+      "n_steps",
+      "n_science_steps",
+      "science_fraction",
+      "mean_pitch_angle_deg",
+      "std_pitch_angle_deg",
+      "mean_ew_factor",
+      "mean_livetime_fraction",
+      "mean_measured_flux",
+      "mean_ap9_flux",
+      "mean_sigma_fraction",
+      "total_counts_per_bin",
+      "cell_ids",
+      "event_types",
+      "region_histogram"
+    ],
+    "first_timestamps": {
+      "entry_time_sec": "14582.0",
+      "exit_time_sec": "14988.0"
+    },
+    "last_timestamps": {
+      "entry_time_sec": "31517948.0",
+      "exit_time_sec": "31518306.0"
+    },
+    "kind": "proton_passes"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_gs_contacts.csv",
+    "sha256": "83603a40e7626c6572a3c9a02aee78b731d7c73fb3b44fd7623000b7f89d688a",
+    "bytes": 100382,
+    "rows": 820,
+    "columns": [
+      "aos_time",
+      "aos_time_sec",
+      "max_el_deg",
+      "downlinked_mb",
+      "los_time",
+      "los_time_sec",
+      "duration_sec",
+      "station"
+    ],
+    "first_timestamps": {
+      "aos_time": "2000-03-01T09:40:44.000Z",
+      "aos_time_sec": "34844.0",
+      "los_time": "2000-03-01T09:46:32.000Z",
+      "los_time_sec": "35192.0"
+    },
+    "last_timestamps": {
+      "aos_time": "2001-02-28T21:23:08.000Z",
+      "aos_time_sec": "31526588.0",
+      "los_time": "2001-02-28T21:29:06.000Z",
+      "los_time_sec": "31526946.0"
+    },
+    "kind": "gs_contacts"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_slew_events.csv",
+    "sha256": "58f1603f8dcbd7e68162ba54548446b94ecdf11dbb807851279984c463de2458",
+    "bytes": 543786,
+    "rows": 7928,
+    "columns": [
+      "start_time_sec",
+      "end_time_sec",
+      "from_mode",
+      "target_mode",
+      "angle_deg",
+      "estimated_duration_sec",
+      "duration_sec"
+    ],
+    "first_timestamps": {
+      "start_time_sec": "14522.0",
+      "end_time_sec": "14592.0"
+    },
+    "last_timestamps": {
+      "start_time_sec": "31532948.0",
+      "end_time_sec": "31533008.0"
+    },
+    "kind": "slew_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_detumble_events.csv",
+    "sha256": "06fbe4ad701d603e66663e2d971edee8142bf6829c05670b9ed9b920d13e9d16",
+    "bytes": 441,
+    "rows": 1,
+    "columns": [
+      "time_sec",
+      "start_time_sec",
+      "end_time_sec",
+      "duration_sec",
+      "from_mode",
+      "to_mode",
+      "target_attitude_label",
+      "goal",
+      "initial_body_rate_x_deg_sec",
+      "initial_body_rate_y_deg_sec",
+      "initial_body_rate_z_deg_sec",
+      "initial_body_accel_x_deg_sec2",
+      "initial_body_accel_y_deg_sec2",
+      "initial_body_accel_z_deg_sec2"
+    ],
+    "first_timestamps": {
+      "time_sec": "120.0",
+      "start_time_sec": "120.0",
+      "end_time_sec": "2580.0"
+    },
+    "last_timestamps": {
+      "time_sec": "120.0",
+      "start_time_sec": "120.0",
+      "end_time_sec": "2580.0"
+    },
+    "kind": "detumble_events"
+  },
+  {
+    "path": "evidence/new-science-ditl/leop_1yr_ANTARA_Science_rejected_transitions.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1,
+    "rows": 0,
+    "columns": [],
+    "first_timestamps": {},
+    "last_timestamps": {},
+    "kind": "rejected_transitions"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "base_commit": "23170a89a9b47265bb2bb8dcd97a10ffe7eb9bfd",
+  "requirements": 51,
+  "statuses": {
+    "CONDITIONAL": 15,
+    "OPEN": 28,
+    "SUPPORTED": 4,
+    "NOT EVALUATED": 3,
+    "NOT MET": 1
+  },
+  "tests": {
+    "passed": 185,
+    "skipped": 3,
+    "subtests_passed": 16
+  },
+  "pdf": "output/pdf/ANTARA_MCR_SECTION3_REQUIREMENTS_2026-11-09.pdf",
+  "pdf_sha256": "77c7a30afb424edbf576d8407cdd1456483a8c6b0abdeb43b878a7c3e40743cd",
+  "pdf_pages": 87,
+  "visually_reviewed_pdf_pages": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "preservation_check": {
+    "baseline_files": 39,
+    "only_changed_baseline_file": [
+      "sections/03_spacecraft_architecture.tex"
+    ]
+  },
+  "build_exit_code": 0,
+  "overfull_boxes": 0,
+  "undefined_cross_references": 0,
+  "remaining_warnings": [
+    "font substitutions",
+    "underfull boxes",
+    "3 ignored glue-shrinkage warnings in appendix longtables"
+  ],
+  "simulation_campaigns_run": 0,
+  "external_simulator_modified": false,
+  "git_diff_check_exit_code": 0
+}

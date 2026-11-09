@@ -1,0 +1,6 @@
+{
+  "evidence/science-ditl/figures/partial_annual_mode_exposure.png": "corrected_20261109_annual_modes_cumulative.png",
+  "evidence/science-ditl/figures/partial_annual_storage.png": "corrected_20261109_annual_native_data.png",
+  "data/derived/telemetry_v3_2026-11-09/bounded_queue.png": "corrected_20261109_annual_v3_queue.png",
+  "data/derived/telemetry_v3_2026-11-09/historical_capacity.png": "corrected_20261109_annual_exposure_battery_contacts.png"
+}

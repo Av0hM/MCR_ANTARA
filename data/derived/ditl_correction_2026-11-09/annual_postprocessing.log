@@ -1,0 +1,3 @@
+/home/sammo/Desktop/Projects/MCR_ANTARA/scripts/validate_corrected_ditl.py:102: DtypeWarning: Columns (54) have mixed types. Specify dtype option on import or set low_memory=False.
+  f=pd.read_csv(paths['telemetry'],usecols=scalars);t=f.time_sec.to_numpy(float)
+leop_1yr {'duration_s': 31536000.0, 'epoch': '2000-03-01T00:00:00+00:00', 'mode_seconds': {'COLD_AND_DARK': 122.0, 'DETUMBLE': 2460.0, 'SUN_POINTING': 29660918.0, 'SLEWING': 375688.0, 'DETECTION': 894054.0, 'RELAY': 269876.0, 'SAFE': 332882.0}, 'saa_s': 881882.0, 'acquisition_gate_s': 247258.0, 'battery_min_wh': 15.097555555555564, 'generated_source_mb': 3.5140838623046875, 'transferred_source_mb': 3.5140838623046124, 'array_vs_rate_dt_max_residual': 450.991680096117}

@@ -1,0 +1,3 @@
+start_s,end_s,capacity_bytes,queue_before_bytes,transferred_bytes,queue_after_bytes,unused_capacity_bytes
+34900.0,35192.0,700800,35040,35040,0,665760
+77866.0,78220.0,849600,33872,33872,0,815728

@@ -1,0 +1,23 @@
+\section{Engineering Closure and PDR Entry Conditions}\label{app:source-05}
+The MCR establishes a conditional concept and an explicit verification path. The former placeholder-only tables in this appendix are replaced by the evidence dispositions below. No subsystem is assigned a technology-readiness level or margin without a documented basis.
+
+\subsection{Budget Evidence and Limits}
+\begin{table}[H]\centering\small
+\begin{tabularx}{\linewidth}{@{}p{3cm}p{4cm}X@{}}\toprule
+Budget & Current evidence & Closure condition\\\midrule
+Mass & 3.0 kg design maximum; 1536.3 g in supplied component entries & Add payload, harness, interfaces and verified quantities; Appendix~\ref{sec:bom-from-upload}\\
+Battery & 25 Wh simulation planning capacity & Common load/array configuration and accepted-energy throughput; Appendix~\ref{app:detailed-budgets}\\
+Power & RAAN-dependent preliminary predictions & Current electronics load and EOL conditions; no closed FPDU power budget\\
+Science / downlink & Provisional 64-bin logical record & Encoding, cadence, loss/quality metadata, storage and scheduled link throughput\\
+Payload packaging & 72 mm active length, 2.592 cm$^3$ scintillator & Controlled CAD including gaps, coating, sensors, shield and housing\\
+Procurement & Candidate component evidence only & Selected part numbers, interface compatibility and quotations\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsection{Verification and Maturation}
+Payload qualification requires geometry-matched transport, optics and mixed-species calibration; selected electronics must demonstrate timing, throughput, buffering and measured dead time. Software tests establish accounting only. Integrated acceptance requires runtime/environment manifests, consistent exposure, complete horizons and verified data delivery. Accepted 2026 radiation and RAAN references retain their original identities.
+
+\subsection{Open Decisions and Review Gates}
+Payload material, optical isolation, front treatment, optional rear detector, sensor/ASIC/ADC mapping and MCU/FPGA selection remain open. Science owners must approve eligibility, independence and uncertainty definitions while retaining the committed MMSC/MSC/EMSC thresholds. Assignment of named owners and dates belongs to the project review; none is fabricated here. The repository's remaining-decisions register lists the evidence needed for each closure.
+
+\subsection{MCR Exit and PDR Entry}
+The MCR establishes a concept, reproducible idealized rate calculations and tested accounting, not calibrated payload performance or mission success. PDR requires controlled interfaces, acquisition timing/throughput evidence, a response campaign and science-coverage acceptance rules. Apply and retest the delivered source patch before new coupled predictions. Long campaigns require separate authorization after bounded verification.

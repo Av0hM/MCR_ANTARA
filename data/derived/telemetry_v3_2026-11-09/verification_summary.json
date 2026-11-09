@@ -1,0 +1,30 @@
+{
+  "tests_passed": 173,
+  "tests_failed": 0,
+  "tests_skipped": 3,
+  "subtests_passed": 16,
+  "new_test_cases": 37,
+  "build_exit_code": 0,
+  "pdf_pages": 74,
+  "overfull_boxes": 0,
+  "undefined_references": false,
+  "multiply_defined_labels": false,
+  "font_substitution_warning": true,
+  "underfull_boxes": 130,
+  "pdf_sha256": "a54d0ab6f7039306b2b522b65a94fb5b206f748798165acf05a1597e80bfa254",
+  "visually_reviewed_pages": [
+    17,
+    21,
+    22,
+    25,
+    32,
+    33,
+    46,
+    47,
+    49,
+    50,
+    67
+  ],
+  "scope": "Reference codec, arithmetic and idealized record-slot queues; no physical/hardware qualification",
+  "simulations_run": false
+}

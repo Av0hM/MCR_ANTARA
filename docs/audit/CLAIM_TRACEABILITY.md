@@ -1,3 +1,15 @@
+# Corrected DITL authority — 2026-11-09
+
+This current correction supersedes all earlier Science/DITL-dependent statistics and evidence statuses below. Earlier entries are retained as historical audit history, not active numerical claims. Independent physics/design/RAAN/thermal/detumble findings are unaffected. Current sources: `CORRECTED_DITL_RUN_VALIDATION.md`, `DITL_CORRECTION_IMPACT_MATRIX.md`, `STORAGE_BACKLOG_VALIDATION.md`, and `evidence/science-ditl/run_registry.json`.
+
+All three corrected timestamp spans are complete (86400/86400/31536000 s), epoch2000-03-01. Annual acquisition247258 s; minimum recorded battery15.097556 Wh; full ideal Relay428836800 bytes; preferred EMSC v3 slot volume46637364 bytes; nominal peak75336 bytes; seven-day outage peak1010028 bytes. Runtime config and transition/slew semantics remain unresolved. No2029 calibration or qualified science success follows.
+
+Current requirement status totals: {'CONDITIONAL': 17, 'OPEN': 28, 'SUPPORTED': 3, 'NOT EVALUATED': 3}. ANT-OBC-FR-002 is CONDITIONAL (outage spill needed); ANT-GSO-FR-003 is CONDITIONAL (coverage corrected, logger/source closure open), replacing its earlier NOT MET truncation rationale. Full updated register: `SUBSYSTEM_REQUIREMENT_TRACEABILITY.md`.
+
+---
+
+## Prior audit history (DITL-dependent entries superseded)
+
 # Numerical claim-to-source traceability and supersession
 
 The detailed historical artifact graph remains in `DATA_PROVENANCE.md`. The following controls newly accepted or corrected MCR claims; labels apply only to the stated scope.
@@ -43,3 +55,61 @@ The detailed historical artifact graph remains in `DATA_PROVENANCE.md`. The foll
 | CMG selection / placeholder-only closure tables | Current RW+MTQ; concrete evidence/verification gates replace blanks |
 
 Historical source files, raw outputs and immutable configuration snapshots remain preserved. Current narrative warnings prevent their reuse as approved performance.
+
+## Geometric-factor evidence integration (2026-11-06)
+
+| Claim | Actual source / independent check | Qualification |
+|---|---|---|
+| 7,940 matching 0.5° overlap cells | New `cell_proton_rates.csv`, `cell_pass_counts.csv`; strict key sets and polygon intersection in `scripts/validate_geometric_factor.py` | Geometric domain, not mission science denominator |
+| 98–294 s cell dwell, pooled 1,453,556 s | Supplied dwell CSV; byte-identical archived `18-Month Simulation` member | Actual duration, scaling, RAAN and runtime epoch unverified |
+| Integral rate is flux/(4π), G=1 | All 65 flux/rate column pairs; max absolute difference 5.69e-14 | Isotropic unit-G proxy, no qualified detector acceptance |
+| Four coarse G95(10%) values 0.364535/0.413303/0.500042/0.360776 | Independently reproduced `data/derived/geometric_factor_2026-11-05_audit/required_G_coarse_channels.csv` | ε=1, cutoff5.4, supplied dwell, per-band1%-peak eligibility |
+| Fine G95(10%) 3.9284–10.3301 | Reproduced `required_G_fine_bins.csv` | 65 input thresholds,64 original intervals,63 after cutoff; not calibrated channels |
+| Two 6 mm square planes 72 mm apart: G=0.002488494 | Independent overlap quadrature, `ideal_square_geometry.csv`; convergence and ray tests | Ideal all-through straight tracks; not actual effective G |
+| 5.5 MeV cutoff first-band G95=0.380453683 | `cutoff_5p5_coarse.csv` | 4.3668% sensitivity; altered bin selection included, not validated shielding |
+| Optional source Al cutoff≈5.952391 MeV | Supplied `energy_from_range(0.025*2.699,'Al')` | Simplified unvalidated CSDA, not adopted flight threshold |
+| Updated MCR equation/table/figure | Appendix A.2.5, `tab:required-g`, `fig:required-g-binning`; five GEOMETRIC_FACTOR audit reports | Conditional arithmetic only; no tier pass percentage |
+
+Superseded interpretations: 63 intervals equal 64 calibrated channels; directory label proves an 18-month runtime; 95th percentile proves EMSC; G=0.3 is achieved by the payload; optional EJ-200 is selected; a 5.4 MeV hard cutoff validates 250 µm Al transmission. These interpretations are explicitly rejected, without altering original evidence or committed requirements. The verified 2026 date of the older AP9/AE9 archive does not establish the epoch of this new 65-threshold table.
+
+## Integrated evidence ingestion — 2026-11-09
+
+| Claim | Source and verification | Boundary |
+|---|---|---|
+| Both24h-named exports span3600s with terminal snapshots | `evidence/science_ditl/raw/{leop_24h,no_leop_24h}_ANTARA_Science_telemetry.csv`; strict endpoint/interval checks | Complete1h outputs, not24h |
+| LEOP2460s detumble; recorded minimum15.209249672Wh | Telemetry duration weights and detumble event; `evidence/science-ditl/validation/leop_24h_summary.json` | One event; mode boundaries disagree2s with event log |
+| No-LEOP minimum18.003630966Wh, final19.570485039Wh | Corresponding telemetry/summary | First state is post-step;25Wh SOC reference declared |
+| No SAA/acquisition/contact/data during either hour | Boolean gates, incremental data and blank event exports | No daily science-duty or capacity inference |
+| Annual telemetry covers4,320,020s, no terminal |1,861,462 telemetry rows, streamed interval sum | Incomplete; event exports inconsistent even after horizon filtering |
+| Annual events origin2000-03-01 UTC | Absolute event timestamp minus elapsed time | Does not establish unknown one-hour/thermal epochs or compatible annual telemetry |
+| Internal thermal−14.060918…21.159372°C | All43,201 thermal rows; K/C and summary time/extrema verification | Single-history model prediction, no hardware limits |
+| Summary hot/cold columns are same-history extrema | `evidence/thermal/validation/node_statistics.csv` matches all seven source rows | ±10°C arithmetic allowances are not compliance margins |
+| Detumble16,133/50,000 reported success; median951.5s among successful rows | `evidence/detumble/raw/detumble_mc_summary.csv`; strict norms/censoring checks | Historical inputs incompatible with current source; independence/timeout unknown |
+|136 passed,3 skipped,16 subtests | `evidence/science-ditl/validation/tests.log` | Accounting tests, not physical qualification or production simulator integration |
+
+Earlier 24-hour six-pass/two-contact/62.7% examples remain historical and distinct. No missing23hours, annual endpoint, thermal bounding case, convergence history or qualified FPDU measurement was synthesized. New MCR claims are in Sections3.4/3.7/4/5 and AppendicesA.1/A.3/A.4/A.5/F; the geometric-factor results and approved mission requirements are preserved.
+
+**Final adoption decision:** one-hour arithmetic above is preserved for audit only; the user directed its exclusion from the MCR comparison. The final report adopts only annual-labelled telemetry/event evidence for operations, with their incompatibility explicit, alongside independent thermal and historical detumble evidence. The annual mode/exposure figure derives from `leop_1yr_summary.json`; no full-year completion is asserted.
+
+
+## Science Record v3 and ideal 19.2 kbps budget — 2026-11-09
+
+| Current claim | Exact source / calculation | Boundary |
+|---|---|---|
+| 292-byte reference record; uint16 alternative164 | `config/science/science_record_v3.json`; struct size/CRC tests | Excludes radio framing and linked metadata; not flight qualification |
+| No minimum duration; retain zero counts; prefer3/2/1 | User's acquisition-time clarification; `SCIENCE_RECORD_V3.md` | Timing boundaries remain hardware-dependent; precision/tier success separate |
+| 214039 visits,1453556s;62499388/124998776/187498164bytes | Original `cell_pass_counts.csv`; `grid_sensitivity.json` | Horizon unknown; geometric sensitivity, no daily/annual scaling |
+| 820contacts244016s; minimum514s/day;gap48458s | Original annual GS CSV, exact AOS/LOS and daily integration; `historical_contacts.csv` | 2000-03-01 epoch; runtime mask/RAAN unknown |
+| Visibility585638400bytes; Relay428836800bytes | 19200/8 ×244016s and178682s respectively; `gs_summary.json` | Full-rate modeled opportunity; no arbitrary derating; not delivered data |
+| 57/174/231 preferred record slots | `tier_generation.csv`; sampled partial telemetry gate342s | Ideal timing partition; current FPDU counts not generated |
+| 256KiB holds897 records;128MiB459649 | Integer division by292; `memory.json` | Science-only allocation before metadata, not total hardware memory |
+| Maximum bounded EMSC queue67452bytes | `EMSC_3_releases.csv`, `EMSC_3_queue.csv`, `bounded_backlog.json` | Startup-concentrated legacy gate; not sustained mission storage closure |
+
+Superseded active claims: 15–18kbps planning baseline; unencoded/unknown logical record byte size; arbitrary throughput derating; assumed300–400kB/day as current production. Historical originals remain intact and marked. Existing independent payload/orbit/thermal evidence is unchanged. Full protocol/link loss and net science throughput qualification is explicitly deferred to PDR.
+
+
+## Section 3 feasibility flowdown — 2026-11-09
+
+The centralized `config/requirements/section3_feasibility_v1.json` and `SUBSYSTEM_REQUIREMENT_TRACEABILITY.md` now trace51child obligations to unchanged Section1 mission IDs, approved interfaces and bounded evidence. All9existing Section3 headings retain their original prose and gain a requirements table/assessment. Status totals:4SUPPORTED(scope-limited),15CONDITIONAL,28OPEN,1NOT MET(evidence completeness),3NOT EVALUATED. No supported status implies whole-subsystem or hardware qualification.
+
+The numerical parent criteria remain byte-for-byte unchanged. The MSC comparison table's≥4channels versus detailed all-operational wording is an explicit OPEN issue, not silently resolved. Concept blockers and PDR verification are separated in `MCR_FEASIBILITY_GAPS.md`. Generator and regression checks protect exact texts, IDs, sources and unchanged prior mission/configuration evidence.

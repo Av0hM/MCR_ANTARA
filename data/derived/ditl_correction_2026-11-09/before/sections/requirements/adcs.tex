@@ -1,0 +1,42 @@
+% Generated from config/requirements/section3_feasibility_v1.json.
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Mission Feasibility Requirements: Attitude Determination and Control System (ADCS)}\label{tab:fr-adcs}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-ADCS-FR-001}\mbox{ANT-ADCS-}\newline\mbox{FR-001} & The ADCS shall detumble and acquire a safe Sun-Pointing state from the accepted deployment attitude/rate envelope within the EPS startup allocation; envelope, deadline and reliability target remain OPEN DERIVED REQUIREMENTS. & Startup acquisition & One 2460 s event; historical 16133/50000 successes are source-incompatible. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-ADCS-FR-002}\mbox{ANT-ADCS-}\newline\mbox{FR-002} & The ADCS shall maintain payload +X science and +Y Relay boresights within allocated acceptance/link pointing-error envelopes during valid acquisition/transfer. Numeric error and jitter allocations remain OPEN DERIVED REQUIREMENTS. & Science / Relay pointing & No geometry-matched acceptance or selected-antenna error allocation. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-ADCS-FR-003}\mbox{ANT-ADCS-}\newline\mbox{FR-003} & The ADCS shall hold Sun Pointing and perform recovery/Safe Mode attitudes within the EPS generation and thermal allocations. Numeric attitude limits remain OPEN DERIVED REQUIREMENTS. & Survival pointing & Mode concept defined; common pointing-energy/thermal limits not closed. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\ContinuedFloat\captionsetup{list=no}
+\caption{Mission Feasibility Requirements: Attitude Determination and Control System (ADCS) (continued)}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-ADCS-FR-004}\mbox{ANT-ADCS-}\newline\mbox{FR-004} & The ADCS shall complete and settle science/Relay slews before their qualified windows and keep transition overhead within the mission exposure/data-return allocation. Deadline and settling limits remain OPEN DERIVED REQUIREMENTS. & Slew timing & Partial telemetry/event slew totals disagree; one-day-labelled files span1 h. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-ADCS-FR-005}\mbox{ANT-ADCS-}\newline\mbox{FR-005} & The ADCS shall keep wheel momentum and torque within selected actuator limits and unload using magnetorquers against the declared disturbance envelope. Numerical authority/margin allocations remain OPEN DERIVED REQUIREMENTS. & Actuator authority & Hardware/field coupling unqualified; zero archived wheel momentum is not proof. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-ADCS-FR-006}\mbox{ANT-ADCS-}\newline\mbox{FR-006} & The ADCS shall report acquisition, saturation and pointing faults to the mode controller and enforce safe guards before declaring science/Relay readiness. & Mode reliability & FSM exists; historical boundary/SAFE timing discrepancies remain. \emph{Verify:} Simulation + hardware-in-loop. & C\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
+\paragraph{Feasibility assessment.} Reaction wheels plus magnetorquers address controlled pointing and momentum unloading without reviving the CMG selection. The single startup event and incompatible Monte Carlo summary do not establish a detumble reliability. Initial-condition, pointing, torque and timing allocations must be justified at concept level; representative closed-loop and hardware-in-loop validation then belongs to PDR.

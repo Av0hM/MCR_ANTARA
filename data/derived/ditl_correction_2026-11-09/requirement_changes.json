@@ -1,0 +1,123 @@
+[
+  {
+    "id": "ANT-EPS-FR-001",
+    "old_status": "CONDITIONAL",
+    "new_status": "CONDITIONAL",
+    "old_evidence": "RAAN averages and partial DITL do not establish worst-case balance.",
+    "new_evidence": "Corrected annual solar/load integrals are 50288.809/30866.103 Wh; runtime and EOL identity unresolved.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-EPS-FR-002",
+    "old_status": "OPEN",
+    "new_status": "OPEN",
+    "old_evidence": "Partial telemetry minimum 15.21520 Wh; supplier limits not allocated.",
+    "new_evidence": "Corrected annual minimum 15.097556 Wh; actual capacity and supplier limits unknown.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-EPS-FR-005",
+    "old_status": "OPEN",
+    "new_status": "OPEN",
+    "old_evidence": "One 2460 s event; 1.49289 Wh detumble load in partial telemetry.",
+    "new_evidence": "One 2460 s detumble event; left-held load integral 1.528000 Wh; reserve not allocated.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-COM-FR-001",
+    "old_status": "SUPPORTED",
+    "new_status": "SUPPORTED",
+    "old_evidence": "428836800 bytes in historical Relay overlap; arithmetic reproduced.",
+    "new_evidence": "Corrected annual Relay opportunity 428836800 bytes; full-rate arithmetic reproduced.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-COM-FR-002",
+    "old_status": "CONDITIONAL",
+    "new_status": "CONDITIONAL",
+    "old_evidence": "Grid horizon unknown; partial v3 queue is a separate fixture.",
+    "new_evidence": "Corrected annual EMSC slot sensitivity:46637364 bytes; nominal peak75336 bytes; response/timing open.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-ADCS-FR-004",
+    "old_status": "OPEN",
+    "new_status": "OPEN",
+    "old_evidence": "Partial telemetry/event slew totals disagree; one-day-labelled files span1 h.",
+    "new_evidence": "Complete day/year timestamp spans; telemetry/transition/slew duration definitions disagree.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-OBC-FR-002",
+    "old_status": "SUPPORTED",
+    "new_status": "CONDITIONAL",
+    "old_evidence": "256 KiB candidate holds 897 records; bounded queue tests pass.",
+    "new_evidence": "Corrected annual nominal EMSC peak75336 bytes; seven-day outage1010028 bytes exceeds256KiB RAM.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-OBC-FR-003",
+    "old_status": "CONDITIONAL",
+    "new_status": "CONDITIONAL",
+    "old_evidence": "128 MiB cannot archive 187498164-byte grid sensitivity without delivery;16 GB is optional.",
+    "new_evidence": "Corrected annual seven-day EMSC outage peak1010028 bytes;128MiB exceeds it before reserves.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-GSO-FR-001",
+    "old_status": "OPEN",
+    "new_status": "OPEN",
+    "old_evidence": "No complete compatible annual current-payload campaign; one-hour files excluded.",
+    "new_evidence": "Corrected annual timestamp span complete; legacy response and source configuration not qualified.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-GSO-FR-003",
+    "old_status": "NOT MET",
+    "new_status": "CONDITIONAL",
+    "old_evidence": "Annual telemetry ends50 days + 20 s; event exports disagree over shared horizon.",
+    "new_evidence": "Corrected telemetry spans365days; contact/native data totals reconcile; mode/slew semantics unresolved.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  },
+  {
+    "id": "ANT-GSO-FR-004",
+    "old_status": "OPEN",
+    "new_status": "OPEN",
+    "old_evidence": "Historical13.461 h visibility gap; no station availability/recovery service commitment.",
+    "new_evidence": "Corrected longest intercontact gap48458s; actual station outage commitment unknown.",
+    "source": [
+      "data/derived/ditl_correction_2026-11-09/leop_1yr_summary.json",
+      "docs/audit/CORRECTED_DITL_RUN_VALIDATION.md"
+    ]
+  }
+]

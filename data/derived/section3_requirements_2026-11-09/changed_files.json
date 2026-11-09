@@ -1,0 +1,122 @@
+{
+  "scope": "Exact files created or modified by Section 3 task; prior workspace changes excluded.",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "dd9d257e172cb76b947d6dfc8eec024a7786480f3a7bd04ea6ca0d7250e58207"
+    },
+    {
+      "path": "sections/03_spacecraft_architecture.tex",
+      "sha256": "793a170799b434de1a9cd5ee6c854ab4c7a397a0242ddc2d2b5ee502ea136982"
+    },
+    {
+      "path": "config/requirements/section3_feasibility_v1.json",
+      "sha256": "6e79c56e843f7af85f9750a4c00fdf515cd32377d7d321ec7ed4d64a1c83592d"
+    },
+    {
+      "path": "scripts/render_section3_requirements.py",
+      "sha256": "debf75ed70a1f086b2c62d1e25b32227bb453584fa973e487e47544d6ba66167"
+    },
+    {
+      "path": "tests/test_section3_requirements.py",
+      "sha256": "e56caacc8e2c677a40b59a1c41881ac5ed2f22090fcecb7d1ccaf5d9b0732f03"
+    },
+    {
+      "path": "sections/requirements/adcs.tex",
+      "sha256": "d35de56dbaead30ad18f1e0e516b93e06f91aa57e3c0eca98f50ba3bfba4789c"
+    },
+    {
+      "path": "sections/requirements/com.tex",
+      "sha256": "371db4bbca1999e3c56911d8d50ee7f777e0745e33510be058b0c643994ebee2"
+    },
+    {
+      "path": "sections/requirements/eps.tex",
+      "sha256": "e5f755ae411e0ebcae61afb78875b5ad51253fd6f9c51036070971f8e8c559e1"
+    },
+    {
+      "path": "sections/requirements/gso.tex",
+      "sha256": "3bdc8cab709eb7dc787d28498790e7584c8470ed152a47e8d4d94f43da84fbc8"
+    },
+    {
+      "path": "sections/requirements/int.tex",
+      "sha256": "2c7c2624d1fe47a5d27f730b8dcefa6b3f17cf9cd66d0fc7f6602ee32fe29dbb"
+    },
+    {
+      "path": "sections/requirements/obc.tex",
+      "sha256": "ee99cb44da830400f9281673f4dc1f7452b84e31ff0c409a8be61aa250e56934"
+    },
+    {
+      "path": "sections/requirements/pld.tex",
+      "sha256": "689d8effa2922d8bedea7163f33f3caf2b83be9c202a4b6a92c786b2c883082c"
+    },
+    {
+      "path": "sections/requirements/sys.tex",
+      "sha256": "64e6c6dded1111cfd6d6c7faf8be54a71e1d23bac91c7b5004bf9eb9baddf761"
+    },
+    {
+      "path": "sections/requirements/thermal_structural.tex",
+      "sha256": "991ba4a67e98dab6d8b6d47f656b297aaec22a187f1b17e9c41c5a9128aaad1e"
+    },
+    {
+      "path": "docs/audit/SECTION3_SUBSYSTEM_REQUIREMENTS.md",
+      "sha256": "2671fc2d92b4c77095c7047518675d03e03d83288ddc969d2f48a9c88822130b"
+    },
+    {
+      "path": "docs/audit/SUBSYSTEM_REQUIREMENT_TRACEABILITY.md",
+      "sha256": "a45914e1267a8f2656092052826572dd78582e5474db6b686583cd5a0ad0ee7c"
+    },
+    {
+      "path": "docs/audit/MCR_FEASIBILITY_GAPS.md",
+      "sha256": "127455de68c41518e78dc449e88b59d735d1ed037d6eed33b307aef813281f21"
+    },
+    {
+      "path": "docs/audit/CLAIM_TRACEABILITY.md",
+      "sha256": "fdaa0f6bb22aa9936bcd54ded1ed7d65812627d518acdbdab1b688e039d8ef9e"
+    },
+    {
+      "path": "docs/audit/REMAINING_OPEN_DECISIONS.md",
+      "sha256": "26e2ffdadcab8bb5d5197eaccf4ff081cb3b3a6cedeaa7beb766371c8906a359"
+    },
+    {
+      "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+      "sha256": "f2eb12f0ab384201836eafbdcb2b0b45b37bcb6420535875119fc104f674a545"
+    },
+    {
+      "path": "output/pdf/ANTARA_MCR_SECTION3_REQUIREMENTS_2026-11-09.pdf",
+      "sha256": "77c7a30afb424edbf576d8407cdd1456483a8c6b0abdeb43b878a7c3e40743cd"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/base_commit.txt",
+      "sha256": "5d4f11db823f68bbf4d8ec24f527aa5bf449d24880b58ff3cbb85435b9cca31d"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/baseline_hashes.json",
+      "sha256": "9bbbc85d74431b3372939ff898f160f87a0e3e444a15bfba2f5bcef7c5ac483d"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/build.log",
+      "sha256": "0645b186f77d9c5c014e66f0aa50942d2b6f128061b10d8186700547482ae706"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/git_before.txt",
+      "sha256": "89825f129f162a148517d257c98c78eb29a12b6ff080da4cafd862d97c75f3be"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/latex.log",
+      "sha256": "71d920193a928a695f5c55bab4023877a4ec96aaf71d3db57c840b491fa80f78"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/section3_before.tex",
+      "sha256": "53011e3df11b9372e65c15ec443032966b87b1c477fe5d11d2eeb4a9e5c9409f"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/tests.log",
+      "sha256": "d97bf3f165208b3a7a2cb870ddd317e1259a367584125ff0be07bbfc6ddda0e7"
+    },
+    {
+      "path": "data/derived/section3_requirements_2026-11-09/verification_summary.json",
+      "sha256": "5e6edef98f8579160ba8bab12929143df29a364980e58c88c740e95b66c84046"
+    }
+  ],
+  "self": "data/derived/section3_requirements_2026-11-09/changed_files.json"
+}

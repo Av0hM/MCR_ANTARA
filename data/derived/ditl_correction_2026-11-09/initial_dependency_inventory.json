@@ -1,0 +1,457 @@
+[
+  {
+    "path": "sections/04_simulations.tex",
+    "line": 5,
+    "text": "The operational evidence adopted here is the supplied \\texttt{leop\\_1yr} artifact group. The short 24h-named exports are excluded from the comparison at the team's direction. The annual-labelled telemetry contains 1\\,861\\,462 continuous records accounting for 4\\,320\\,020~s (50 days plus 20~s), with no terminal snapshot. Its separate event exports extend nearly 365 days but disagree with telemetry even over their shared window. Neither artifact establishes a reconciled, completed annual simulation."
+  },
+  {
+    "path": "sections/04_simulations.tex",
+    "line": 11,
+    "text": "Accounted interval duration (s) & 4320020\\\\"
+  },
+  {
+    "path": "sections/04_simulations.tex",
+    "line": 22,
+    "text": "\\begin{figure}[H]\\centering\\includegraphics[width=\\linewidth]{evidence/science-ditl/figures/partial_annual_mode_exposure.png}"
+  },
+  {
+    "path": "sections/04_simulations.tex",
+    "line": 27,
+    "text": "The new v3 scheduler diagnostic reuses only the 342~s sampled acquisition gate, retaining valid zero-count opportunities in its policy. Preferred three-reading partitions give 57/174/231 record slots at 5$^\\circ$/1$^\\circ$/0.5$^\\circ$, or 16\\,644/50\\,808/67\\,452 bytes. These are ideal partition sensitivities on legacy gates, not emitted packets or current-FPDU measurements. Exact cell crossings, actual timing boundaries and detector response remain unverified; the low partial-run average must not be extrapolated to nominal science operations."
+  },
+  {
+    "path": "sections/04_simulations.tex",
+    "line": 32,
+    "text": "At the approved full 19.2~kbps, visibility alone gives 585\\,638\\,400 bytes. Intersecting contacts with the associated event-log Relay mode gives 178\\,682~s and \\textbf{428\\,836\\,800 bytes} ideal science-transfer opportunity. Minimum daily Relay overlap is 312~s, or 748\\,800 bytes. This schedule-based upper opportunity is distinct from the original 3.514084 source-labelled MB transfer credit. Framing, losses and net-throughput qualification are deferred to PDR; no arbitrary throughput derating is applied at MCR."
+  },
+  {
+    "path": "sections/05_feasibility_and_budgets.tex",
+    "line": 30,
+    "text": "The 292-byte v3 reference and three-reading preference define a concrete data interface without changing science requirements. Full 19.2~kbps Relay-intersected historical opportunity is 428\\,836\\,800 bytes, but its epoch/configuration cannot be matched to the grid study's 187\\,498\\,164-byte three-reading sensitivity. No unconditional mission data balance follows from comparing those totals. The bounded legacy-gate fixture fits a 256~KiB dedicated science queue; 128~MiB remains a preliminary rolling-storage allocation, and cannot retain the entire three-reading grid sample without delivery. Hardware memory, metadata, sustained acquisition and outage envelope remain closure conditions. RF qualification and net application throughput are PDR tasks; no arbitrary usable-link reduction is applied at MCR."
+  },
+  {
+    "path": "sections/requirements/com.tex",
+    "line": 12,
+    "text": "\\phantomsection\\label{req:ANT-COM-FR-001}\\mbox{ANT-COM-}\\newline\\mbox{FR-001} & The communications planning budget shall use 19200 bit/s (2400 bytes/s), 100\\% science allocation and no arbitrary derating during eligible visibility-intersect-Relay windows. & MCR link budget & 428836800 bytes in historical Relay overlap; arithmetic reproduced. \\emph{Verify:} Analysis. & S\\\\"
+  },
+  {
+    "path": "sections/requirements/obc.tex",
+    "line": 14,
+    "text": "\\phantomsection\\label{req:ANT-OBC-FR-002}\\mbox{ANT-OBC-}\\newline\\mbox{FR-002} & The OBC reference queue shall retain the 67452-byte preferred EMSC workload of the documented bounded fixture without loss; the sustained mission queue shall be sized independently from verified production/outage traces. & Queue RAM & 256 KiB candidate holds 897 records; bounded queue tests pass. \\emph{Verify:} Analysis + software test. & S\\\\"
+  },
+  {
+    "path": "sections/requirements/gso.tex",
+    "line": 16,
+    "text": "\\phantomsection\\label{req:ANT-GSO-FR-003}\\mbox{ANT-GSO-}\\newline\\mbox{FR-003} & Operations verification shall use complete, time-aligned telemetry, contact and transfer records for every claimed mission-window data-return result. & Evidence integrity & Annual telemetry ends50 days + 20 s; event exports disagree over shared horizon. \\emph{Verify:} Inspection + analysis. & NM\\\\"
+  },
+  {
+    "path": "appendices/C_simulation_provenance.tex",
+    "line": 147,
+    "text": "Original hashes and per-group JSON manifests are under \\path{evidence/science-ditl/manifests/}, \\path{evidence/thermal/manifests/} and \\path{evidence/detumble/manifests/}. Current external source hashes are candidate references only; no generating commit or runtime manifest was supplied. Command-line duration overrides cannot be recovered from preset names."
+  },
+  {
+    "path": "appendices/C_simulation_provenance.tex",
+    "line": 153,
+    "text": "Annual telemetry & 1\\,861\\,462 rows; 4\\,320\\,020~s & Continuous 2/20~s intervals; no terminal; incomplete\\\\"
+  },
+  {
+    "path": "appendices/C_simulation_provenance.tex",
+    "line": 161,
+    "text": "Science Record v3 and the full 19.2~kbps capacity analysis are new MCR reference interfaces, not outputs of the historical simulator. Source hashes and exact per-contact/tier calculations are under \\path{data/derived/telemetry_v3_2026-11-09/}; the generating scripts read originals without changing them. The grid-study horizon remains unknown, annual contacts retain their 2000 epoch, and partial telemetry remains a distinct incomplete artifact. The 292-byte reference supersedes older unencoded record-size assumptions without modifying detector physics, scientific thresholds or original transfers."
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 13,
+    "text": "At the team's direction, the short 24h-named exports are excluded from the operational comparison. Only the \\texttt{leop\\_1yr} group is used here. Its telemetry is incomplete at 50 days plus 20~s; its event exports reach nearly 365 days but are not a matching completion record. Table~\\ref{tab:annual-ditl} summarizes telemetry contents. Exact hashes and separate artifact manifests prevent those series being pooled into an apparently complete run. The model's recorded minimum battery is 15.21520~Wh (60.8608\\% of the 25~Wh planning reference); this is not an annual worst-case bound."
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 16,
+    "text": "For the incomplete annual telemetry, total accounted time is 4\\,320\\,020~s; geometric SAA time is 130\\,664~s; Detection-labelled SAA time is 1246~s; acquisition-gate time is 342~s. Thus model acquisition/SAA is $342/130664=0.26174\\%$, not the historical detection-conditional 62.7\\% fraction. Accepted physical detector exposure, reconstructed proton measurements and delivered current-FPDU records remain unqualified. Repeated time samples are not independent passages."
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 21,
+    "text": "\\begin{figure}[H]\\centering\\includegraphics[width=.9\\linewidth]{evidence/science-ditl/figures/partial_annual_storage.png}"
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 22,
+    "text": "\\caption{Telemetry-only storage and cumulative transfer in the incomplete annual-labelled artifact. Event exports disagree even within this horizon and are excluded from these curves.}\\label{fig:partial-storage}\\end{figure}"
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 25,
+    "text": "\\caption{Overlap consistency check, through 4\\,320\\,020~s; outputs are not accepted as one reconciled run.}\\label{tab:annual-overlap}"
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 43,
+    "text": "The new reference calculation uses only recorded visibility intersect Relay for service, at the full 19.2~kbps and initially empty science queue. Ideal reading exits generate record slots; no actual integer detector counts are fabricated. The preferred MMSC/MSC/EMSC cases generate and transfer 16\\,644/50\\,808/67\\,452 bytes respectively, with zero final backlog in this incomplete trace. Maximum queues equal these totals before delivery. The historical initial 10 source-MB store is not silently included as new v3 science."
+  },
+  {
+    "path": "appendices/K_integrated_ditl_detail.tex",
+    "line": 46,
+    "text": "\\includegraphics[width=\\linewidth]{data/derived/telemetry_v3_2026-11-09/bounded_queue.png}"
+  },
+  {
+    "path": "appendices/E_budgets_and_bom_details.tex",
+    "line": 39,
+    "text": "EMSC & 0.5$^\\circ$ & 77 & 231 & 67\\,452 & 1349.034\\\\\\bottomrule\\end{tabular}"
+  },
+  {
+    "path": "appendices/E_budgets_and_bom_details.tex",
+    "line": 52,
+    "text": "The bounded EMSC fixture peaks at 67\\,452 bytes and clears at the full modeled rate; 256~KiB is therefore a preliminary science-queue allocation, not a qualified worst-case OBC requirement. The illustrative 804-byte assembly-plus-double-bank working payload is additional to the queue and excludes RTOS, stack, DMA, reconstruction and other subsystems. Minimum hardware RAM remains unclosed."
+  },
+  {
+    "path": "appendices/E_budgets_and_bom_details.tex",
+    "line": 61,
+    "text": "The incomplete annual-labelled telemetry integrates 10\\,808.465~Wh recorded solar and 8847.621~Wh load over 50 days plus 20~s. Its detumble-labelled intervals integrate 1.49289~Wh load. These are telemetry-only totals, not annual energy margins: charging/curtailment semantics and incompatible event exports remain unresolved. Minimum recorded battery is 15.21520~Wh; final battery is 25~Wh. The thermal 1.9--4.9~W synthetic heat schedule is not this electrical load history. No combined EPS/thermal margin or full-year energy sufficiency is inferred."
+  },
+  {
+    "path": "appendices/F_orbit_rf_support.tex",
+    "line": 29,
+    "text": "Associated event-log Relay overlap & 178\\,682 & 428\\,836\\,800\\\\"
+  },
+  {
+    "path": "appendices/F_orbit_rf_support.tex",
+    "line": 36,
+    "text": "\\includegraphics[width=\\linewidth]{data/derived/telemetry_v3_2026-11-09/historical_capacity.png}"
+  },
+  {
+    "path": "appendices/F_orbit_rf_support.tex",
+    "line": 39,
+    "text": "Per-contact AOS/LOS, Relay overlap, ideal capacities and original transfer credit are reproduced in \\path{data/derived/telemetry_v3_2026-11-09/historical_contacts.csv}. Historical queue/backlog/unused capacity remain unknown without matched production; the partial telemetry's queue is a separate diagnostic. Actual delivery of identified science records requires packet and ground-reception evidence."
+  },
+  {
+    "path": "docs/audit/GS_PASS_CAPACITY_VALIDATION.md",
+    "line": 3,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/GS_PASS_CAPACITY_VALIDATION.md",
+    "line": 19,
+    "text": "| Eligible Relay ideal capacity | 428836800 bytes |"
+  },
+  {
+    "path": "docs/audit/SCIENCE_RECORD_V3.md",
+    "line": 40,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/STORAGE_BACKLOG_VALIDATION.md",
+    "line": 3,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/STORAGE_BACKLOG_VALIDATION.md",
+    "line": 17,
+    "text": "| EMSC_3 | 67452 | 67452 | 0 | 67452 | 16.480000000318398 |"
+  },
+  {
+    "path": "docs/audit/STORAGE_BACKLOG_VALIDATION.md",
+    "line": 21,
+    "text": "The largest partial-telemetry Relay gap is48456s; generation during that specific gap is zero. The worst queue occurs before earlier delivery, not during the largest geometric gap. Removing one eligible service window or a worst-start1/3/7-day outage leaves the preferred EMSC peak67452bytes because all fixture generation already precedes delivery. This behavior cannot characterize continuing operational science. The annual contact table lacks matching generation; its queue values remain UNKNOWN."
+  },
+  {
+    "path": "docs/audit/OBC_RAM_FLASH_SIZING.md",
+    "line": 12,
+    "text": "The preferred EMSC bounded diagnostic requires67452 bytes/231 record slots before delivery. MMSC16644 bytes/57 slots; MSC50808 bytes/174 slots. This is the smallest payload queue demonstrated by these fixtures only, not a qualified worst-case memory requirement. 256KiB is a preliminary science-queue engineering allocation; working buffers must be added outside that queue, not counted twice. Total OBC RAM remains unknown until FSW, reconstruction, DMA and other subsystem budgets are included. Component memory capacity has not been verified here."
+  },
+  {
+    "path": "docs/audit/OBC_RAM_FLASH_SIZING.md",
+    "line": 19,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+    "line": 82,
+    "text": "Appendix A.2 now contains a dimensioned longitudinal assembly, correctly oriented YZ cross-section, optical interfaces and signal/data-flow diagram; geometry, timing, rate and telemetry tables carry source/qualification context. Section3 uses the same baseline. Section1 adopts the approved polygon while retaining all quantitative science thresholds. Sections4 and source appendices distinguish conditional samples, pooled orbits, mean run-minimum SOC, invalid historical rate sums and incomplete annual evidence. Historical silicon/CMG designs are explicitly labeled. Empty draft tables/heading were replaced by concrete registers and PDR gates."
+  },
+  {
+    "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+    "line": 184,
+    "text": "The outdir preserves the pre-existing dirty root `main.pdf`. The final PDF is `output/pdf/ANTARA_MCR_SIMULATION_EVIDENCE_2026-11-09.pdf`; previous approved/geometric-factor PDFs remain unchanged. Test/build logs and final PDF hash are in `evidence/science-ditl/validation/`. Three skips concern optional historical-model source availability; no skips are represented as passes. Initial CSV-vector parsing was corrected to accept recorded whitespace-separated numeric arrays without evaluation; the final suite passes."
+  },
+  {
+    "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+    "line": 188,
+    "text": "The complete machine-readable file list is `evidence/science-ditl/validation/changed_files.json`, including derived CSV/JSON/PNG artifacts. Source edits: README; sections 03/04/05; appendices A/C/D/E/K/L; claim traceability/open-decisions/this changelog; two analysis/plot scripts; one test module; six new evidence audits. Original raw files and original figures are excluded from the changed-file list. Pre-existing edits to section 01, appendix B, root PDF and geometric-factor artifacts were preserved. Git metadata was not changed."
+  },
+  {
+    "path": "docs/audit/IMPLEMENTATION_CHANGELOG.md",
+    "line": 197,
+    "text": "Completed the scoped reference codec, source-identified data-budget analysis, conditional queue/memory trade and MCR update. Exact phase/file/command record: `TELEMETRY_MCR_CHANGELOG.md`; source hashes and ledgers: `data/derived/telemetry_v3_2026-11-09/`.173 tests passed,3 skipped,16subtests passed;74-page XeLaTeX PDF visually reviewed with zero overfull boxes/undefined references. No arbitrary minimum reading duration/count or link derating. Valid zero-count records retained. Annual visibility585638400bytes is separate from Relay opportunity428836800bytes and actual historical transfer; dates remain2000. No full-year simulation or external source modification.128MiB is conditional rolling storage, not enough to archive the187498164-byte three-reading grid sensitivity without delivery. Detailed RF qualification and sustained current-FPDU generation remain open."
+  },
+  {
+    "path": "docs/audit/CLAIM_TRACEABILITY.md",
+    "line": 67,
+    "text": "| Both24h-named exports span3600s with terminal snapshots | `evidence/science_ditl/raw/{leop_24h,no_leop_24h}_ANTARA_Science_telemetry.csv`; strict endpoint/interval checks | Complete1h outputs, not24h |"
+  },
+  {
+    "path": "docs/audit/CLAIM_TRACEABILITY.md",
+    "line": 68,
+    "text": "| LEOP2460s detumble; recorded minimum15.209249672Wh | Telemetry duration weights and detumble event; `evidence/science-ditl/validation/leop_24h_summary.json` | One event; mode boundaries disagree2s with event log |"
+  },
+  {
+    "path": "docs/audit/CLAIM_TRACEABILITY.md",
+    "line": 76,
+    "text": "|136 passed,3 skipped,16 subtests | `evidence/science-ditl/validation/tests.log` | Accounting tests, not physical qualification or production simulator integration |"
+  },
+  {
+    "path": "docs/audit/CLAIM_TRACEABILITY.md",
+    "line": 91,
+    "text": "| Visibility585638400bytes; Relay428836800bytes | 19200/8 \u00d7244016s and178682s respectively; `gs_summary.json` | Full-rate modeled opportunity; no arbitrary derating; not delivered data |"
+  },
+  {
+    "path": "docs/audit/CLAIM_TRACEABILITY.md",
+    "line": 94,
+    "text": "| Maximum bounded EMSC queue67452bytes | `EMSC_3_releases.csv`, `EMSC_3_queue.csv`, `bounded_backlog.json` | Startup-concentrated legacy gate; not sustained mission storage closure |"
+  },
+  {
+    "path": "docs/audit/GS_19K2_LINK_CLOSURE.md",
+    "line": 7,
+    "text": "Visibility-only 585638400 bytes is an upper ceiling. Associated event-log Relay intersection yields428836800 bytes; this is the applicable schedule-based upper opportunity in that artifact group, not measured application delivery. Daily minimum Relay opportunity is748800 bytes; mean is1174895.342466 bytes. Contact overhead, antenna acquisition performance and physical link reliability are not demonstrated. The full rate is applied during each eligible interval, limited only by queued bytes."
+  },
+  {
+    "path": "docs/audit/GS_19K2_LINK_CLOSURE.md",
+    "line": 14,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/MCR_CLAIM_AUDIT.md",
+    "line": 25,
+    "text": "| C04 | I_source_detail.tex:21\u201323,201\u2013216 | completed year-long integrated simulation; 11.22 W/.987 SOC/787 cycles | Numbers trace to old standalone annual RAAN power stats, not integrated Science. Local leop_1yr file is only ~50 days and incomplete; this does not exclude other runs, but supplied proof is inadequate. |"
+  },
+  {
+    "path": "docs/audit/REPOSITORY_MAP.md",
+    "line": 29,
+    "text": "`S` HEAD is `51933bb902288de095f362546c73b006fe702882`, **with pre-existing modifications** to `src/simulations/helper/antara_models.py`, `pointing/ANTARA_pointing_budget.py`, and `power/ANTARA_MCR.py`. Untracked build/figure/package/scratch directories also pre-existed. Those edits were preserved. In particular, current shared RAAN is 30\u00b0 rather than committed 15\u00b0, and the MCR script is 3650 days/3 kg/97.6\u00b0 rather than committed 365 days/4 kg/97.4\u00b0. A commit ID alone does not identify these runs."
+  },
+  {
+    "path": "docs/audit/MCR_FEASIBILITY_GAPS.md",
+    "line": 24,
+    "text": "- ANT-OBC-FR-002:67452-byte bounded fixture queue, not sustained science or total OBC RAM sizing."
+  },
+  {
+    "path": "docs/audit/MCR_FEASIBILITY_GAPS.md",
+    "line": 29,
+    "text": "ANT-GSO-FR-003 is NOT MET by the supplied annual artifact group: telemetry stops at50days+20s without a terminal snapshot and the longer event exports disagree over the shared interval. This is a failed completeness/alignment acceptance condition; it is not proof that the spacecraft cannot operate for a year."
+  },
+  {
+    "path": "docs/audit/DATA_PROVENANCE.md",
+    "line": 76,
+    "text": "- `S:results/science/leop_1yr_ANTARA_Science_telemetry.csv` endpoint inspection: last `time_sec=4320000`, `state_time_sec=4320020`, `interval_duration_sec=20`. This is about 50 days, not a 365-day completed run, and is not a terminal observation. No assertion is made that no other annual run exists."
+  },
+  {
+    "path": "docs/audit/SIMULATOR_PATCH_INTEGRATION.md",
+    "line": 49,
+    "text": "- MCR power study: duration365\u21923650days, inclination97.4\u00b0\u219297.6\u00b0, mass4\u21923kg."
+  },
+  {
+    "path": "docs/audit/MODEL_REGISTRY.md",
+    "line": 21,
+    "text": "| Latest MCR campaign candidate | 2026-01-01; 3650 days cap | 3 kg, 97.6\u00b0, 600 km, e=.001; RAAN 0:30:180\u00b0, 2 draws each; 300 s samples; 300 km cutoff | S:src/simulations/power/ANTARA_MCR.py:96\u2013136,537; output copies match but exact producing revision/seed unestablished |"
+  },
+  {
+    "path": "docs/audit/SIMULATION_EVIDENCE_INGESTION.md",
+    "line": 7,
+    "text": "48 original supplied artifacts (1,551,767,598 bytes) were read and SHA-256 inventoried before analysis. Full paths, sizes and hashes: `evidence/science-ditl/manifests/original_inventory.json`. This includes 24 Science CSVs, 12 Science figures, two thermal CSVs/four figures and one detumble CSV/five figures. Original `evidence/science_ditl/` paths are retained; the canonical `science-ditl/` directory contains manifests, derived validation and figures, with a raw-path index. No original is moved or rewritten. Unprefixed Science figures have no matching raw run manifest and remain unadopted historical images."
+  },
+  {
+    "path": "docs/audit/SIMULATION_EVIDENCE_INGESTION.md",
+    "line": 17,
+    "text": "| leop_1yr telemetry | 0\u20134,320,020 s accounted intervals;1,861,462 rows; no terminal | Incomplete annual-labelled artifact; ~50days |"
+  },
+  {
+    "path": "docs/audit/TELEMETRY_MCR_CHANGELOG.md",
+    "line": 17,
+    "text": "| 6 |585638400 visibility bytes;428836800 Relay-overlap bytes | Actual transfer3.514084 sourceMB remains separate |"
+  },
+  {
+    "path": "docs/audit/TELEMETRY_MCR_CHANGELOG.md",
+    "line": 19,
+    "text": "| 8 | Time-aligned record-slot queues clear; preferred peak16644/50808/67452bytes; outages tested | Near-disabled legacy acquisition does not establish sustained production |"
+  },
+  {
+    "path": "docs/audit/TELEMETRY_MCR_CHANGELOG.md",
+    "line": 40,
+    "text": "The isolated LaTeX outdir preserves pre-existing root PDF/intermediate modifications. Final PDF: `output/pdf/ANTARA_MCR_TELEMETRY_V3_2026-11-09.pdf`. The prior simulation-evidence PDF remains unchanged (71pages). Test logs, build logs, source inventory, preservation check, verification summary and exact changed-file list are in `data/derived/telemetry_v3_2026-11-09/`. Three skips are optional legacy-model tests, not new codec failures.37new tests cover codec/CRC/status, zero/short exposures, aggregation, fragments, overflow, contacts/units, Relay-only queues, outages and provenance. Original48simulation files and9geometric-factor files are SHA-256 unchanged. Existing mission/payload configs and rootPDF remain unchanged. No Git mutation, external simulator edit, expensive simulation or hardware choice was performed."
+  },
+  {
+    "path": "docs/audit/TELEMETRY_MCR_CHANGELOG.md",
+    "line": 78,
+    "text": "All derived files are enumerated individually in `data/derived/telemetry_v3_2026-11-09/changed_files.json`; these include9release ledgers,9per-service queue ledgers,3tier segment tables, per-contact/daily capacities, outage and memory tables, source/verification manifests and two figures. This list distinguishes this task from preserved pre-existing geometric-factor and thermal work."
+  },
+  {
+    "path": "docs/audit/SUBSYSTEM_REQUIREMENT_TRACEABILITY.md",
+    "line": 115,
+    "text": "- **Existing evidence:** 428836800 bytes in historical Relay overlap; arithmetic reproduced."
+  },
+  {
+    "path": "docs/audit/SUBSYSTEM_REQUIREMENT_TRACEABILITY.md",
+    "line": 500,
+    "text": "The OBC reference queue shall retain the 67452-byte preferred EMSC workload of the documented bounded fixture without loss; the sustained mission queue shall be sized independently from verified production/outage traces."
+  },
+  {
+    "path": "docs/audit/SUBSYSTEM_REQUIREMENT_TRACEABILITY.md",
+    "line": 829,
+    "text": "- **Existing evidence:** Annual telemetry ends50 days + 20 s; event exports disagree over shared horizon."
+  },
+  {
+    "path": "docs/audit/LEOP_VS_NO_LEOP_24H_VALIDATION.md",
+    "line": 49,
+    "text": "Figures: `one_hour_operations.png`, `one_hour_power_pointing.png`, `one_hour_occupancy_energy.png` under `evidence/science-ditl/figures/`. They use the verified60-minute duration, common axes and explicit model labels. No decorative zero-exposure/contact chart is added."
+  },
+  {
+    "path": "docs/audit/TIER_RECORD_GENERATION.md",
+    "line": 3,
+    "text": "Reproduction: `scripts/validate_telemetry_budget.py`, `scripts/complete_telemetry_budget.py`; derived artifacts and SHA-256 source inventory under `data/derived/telemetry_v3_2026-11-09/`. Original inputs preserved. No simulation campaign or external simulator modification. Arithmetic validation is not instrument qualification."
+  },
+  {
+    "path": "docs/audit/TIER_RECORD_GENERATION.md",
+    "line": 19,
+    "text": "1,861,462 contiguous sampled intervals span 50 days +20 s. Its epoch is unknown; conflicting absolute event exports are not used to timestamp it. Gate conditions use the recorded science-generation flag, which is checked against Detection and in-SAA. Cells use global edges anchored at latitude \u221290/longitude \u2212180, wrapping longitude; each sample owns its interval. Exact crossings between samples are unobserved, so this is sampled-cell attribution, not qualified geographical record validity. The current FPDU response is not simulated."
+  },
+  {
+    "path": "docs/audit/TIER_RECORD_GENERATION.md",
+    "line": 31,
+    "text": "| EMSC | 18951 | 77 | 77 | 3 | 231 | 67452 | 1349.033754473359 | 67452 | 2 |"
+  },
+  {
+    "path": "scripts/validate_simulation_evidence.py",
+    "line": 8,
+    "text": "SCI=ROOT/'evidence/science_ditl/raw'"
+  },
+  {
+    "path": "scripts/validate_simulation_evidence.py",
+    "line": 9,
+    "text": "OUT=ROOT/'evidence/science-ditl/validation'"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 14,
+    "text": "REG=ROOT/'evidence/science-ditl/run_registry.json'"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 40,
+    "text": "   p=ROOT/'evidence/new-science-ditl'/f'{scenario}_ANTARA_Science_{kind}.csv'"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 52,
+    "text": "  runs.append(dict(run_id=runid,scenario=scenario,source_directory='evidence/new-science-ditl',files=ff,epoch='UNKNOWN pending cross-file check',duration_s=float(ff[0]['last_timestamps']['time_sec']),configuration_identity='UNKNOWN: no runtime manifest supplied',status='CORRECTED AUTHORITATIVE CANDIDATE',authoritative_for_report=True,supersedes=['superseded_'+scenario],limitations='Authority is scoped to verified recorded quantities, not recovered physical configuration.'))"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 54,
+    "text": "  for p in sorted((ROOT/'evidence/science_ditl/raw').glob(scenario+'_*.csv')):old.append(dict(path=str(p.relative_to(ROOT)),sha256=sha(p)))"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 60,
+    "text": " needles=['science_ditl','science-ditl','telemetry_v3_2026-11-09','50 days','50days','4320020','4\\\\,320\\\\,020','67452','67\\\\,452','428836800','428\\\\,836\\\\,800','incomplete annual','incomplete trace']"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 67,
+    "text": " lines=['# Corrected DITL evidence inventory','', 'Candidate folder: `evidence/new-science-ditl/`. Original files remain untouched. Exact headers, timestamp extrema, byte sizes and SHA-256 hashes: `data/derived/ditl_correction_2026-11-09/inventory.json`. No producing code or runtime manifest was supplied. Full identity is not inferred from current design.','', '| Scenario/file | Rows | Bytes | SHA-256 |','|---|---:|---:|---|']"
+  },
+  {
+    "path": "scripts/validate_corrected_ditl.py",
+    "line": 69,
+    "text": " lines+=['','Registry: `evidence/science-ditl/run_registry.json`. All three telemetry files span zero to their named horizons; source/state semantics and cross-file consistency still require validation. Empty one-byte event files have no schema and establish no positive event evidence. Initial downstream references are captured before edits in `initial_dependency_inventory.json`.']"
+  },
+  {
+    "path": "scripts/complete_telemetry_budget.py",
+    "line": 5,
+    "text": "D=Path(__file__).resolve().parents[1]/'data/derived/telemetry_v3_2026-11-09'"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 17,
+    "text": "    data=[pd.read_csv(ROOT/f'evidence/science_ditl/raw/{r}_ANTARA_Science_telemetry.csv') for r in runs]"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 18,
+    "text": "    sums=[json.loads((ROOT/f'evidence/science-ditl/validation/{r}_summary.json').read_text()) for r in runs]"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 26,
+    "text": "    save(fig,'science-ditl','one_hour_operations')"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 32,
+    "text": "    save(fig,'science-ditl','one_hour_power_pointing')"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 41,
+    "text": "    save(fig,'science-ditl','one_hour_occupancy_energy')"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 42,
+    "text": "    annual=json.loads((ROOT/'evidence/science-ditl/validation/leop_1yr_summary.json').read_text())"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 52,
+    "text": "    fig.suptitle('leop_1yr telemetry only: incomplete at 50 days + 20 s; event exports inconsistent',fontsize=10)"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 53,
+    "text": "    save(fig,'science-ditl','partial_annual_mode_exposure')"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 54,
+    "text": "    a=pd.read_csv(ROOT/'evidence/science-ditl/validation/leop_1yr_plot_samples.csv')"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 58,
+    "text": "    fig.suptitle('Incomplete annual-labelled telemetry: 50 days + 20 s; inconsistent with event exports',fontsize=10)"
+  },
+  {
+    "path": "scripts/plot_simulation_evidence.py",
+    "line": 59,
+    "text": "    save(fig,'science-ditl','partial_annual_storage')"
+  },
+  {
+    "path": "scripts/validate_telemetry_budget.py",
+    "line": 9,
+    "text": "OUT=ROOT/'data/derived/telemetry_v3_2026-11-09'"
+  },
+  {
+    "path": "scripts/validate_telemetry_budget.py",
+    "line": 10,
+    "text": "RAW=ROOT/'evidence/science_ditl/raw'"
+  },
+  {
+    "path": "scripts/plot_telemetry_budget.py",
+    "line": 7,
+    "text": "D=Path(__file__).resolve().parents[1]/'data/derived/telemetry_v3_2026-11-09'"
+  },
+  {
+    "path": "config/requirements/section3_feasibility_v1.json",
+    "line": 148,
+    "text": "      \"evidence\": \"428836800 bytes in historical Relay overlap; arithmetic reproduced.\","
+  },
+  {
+    "path": "config/requirements/section3_feasibility_v1.json",
+    "line": 656,
+    "text": "      \"requirement\": \"The OBC reference queue shall retain the 67452-byte preferred EMSC workload of the documented bounded fixture without loss; the sustained mission queue shall be sized independently from verified production/outage traces.\","
+  },
+  {
+    "path": "config/requirements/section3_feasibility_v1.json",
+    "line": 1094,
+    "text": "      \"evidence\": \"Annual telemetry ends50 days + 20 s; event exports disagree over shared horizon.\","
+  }
+]

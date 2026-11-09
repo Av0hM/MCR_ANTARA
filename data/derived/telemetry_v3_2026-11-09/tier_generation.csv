@@ -1,0 +1,10 @@
+tier,resolution_deg,geometric_visits,geometric_cells,science_enabled_visits,acquisition_segments,preferred_readings_per_visit,exposure_s,records,bytes,mean_bytes_per_elapsed_day,max_calendar_day_bytes,max_one_second_records,peak_records_per_release_timestamp,status
+MMSC,5.0,2191,92,19,41,1,342.0,41,11972,239.4388914866135,11972,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+MMSC,5.0,2191,92,19,41,2,342.0,46,13432,268.63875630205416,13432,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+MMSC,5.0,2191,92,19,41,3,342.0,57,16644,332.87845889602363,16644,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+MSC,1.0,9822,2015,58,58,1,342.0,58,16936,338.7184318591118,16936,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+MSC,1.0,9822,2015,58,58,2,342.0,116,33872,677.4368637182235,33872,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+MSC,1.0,9822,2015,58,58,3,342.0,174,50808,1016.1552955773353,50808,2,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+EMSC,0.5,18951,7095,77,77,1,342.0,77,22484,449.67791815778634,22484,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+EMSC,0.5,18951,7095,77,77,2,342.0,154,44968,899.3558363155727,44968,1,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records
+EMSC,0.5,18951,7095,77,77,3,342.0,231,67452,1349.033754473359,67452,2,1,legacy-gate/sample-cell ideal partition; interrupted exposure imposes fragmentation floor; not verified science records

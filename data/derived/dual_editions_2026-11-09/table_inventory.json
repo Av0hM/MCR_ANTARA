@@ -1,0 +1,1170 @@
+[
+  {
+    "source": "appendices/A_operational_logic_visual.tex",
+    "ordinal": 1,
+    "line": 5,
+    "labels": [
+      "tab:op-mode-summary"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "6bd7d82c2801d3fa5b2e9fc8da51fb3c62a6188fb7c4c13547590b58b60ed5b3"
+  },
+  {
+    "source": "appendices/A_operational_logic_visual.tex",
+    "ordinal": 2,
+    "line": 93,
+    "labels": [
+      "tab:op-sequence-assumptions"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical baseline, risk, assumption or closure condition; useful engineering evidence rather than redundant compliance scoring.",
+    "sha256": "d924e2f1aaed51c6c0b91bcb79b168930f0430b447ffaa7ba78ca5deeb6be04e"
+  },
+  {
+    "source": "appendices/A_operational_logic_visual.tex",
+    "ordinal": 3,
+    "line": 107,
+    "labels": [
+      "tab:op-transition-matrix"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "664bcb459c60db07d9cde36f08957b122b92d280276e4961f7f32183d0377854"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 1,
+    "line": 7,
+    "labels": [
+      "tab:fpdu-design-summary"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "021c06a7ccb1423dadc2a6bc67440d1d75a3bc430a0706b2275373f6e465dbbc"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 2,
+    "line": 89,
+    "labels": [
+      "tab:fpdu-timing"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "8c47030f52a7b047629d26da1db1715bedb52febf9f999dc6472fbcc13d99c05"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 3,
+    "line": 112,
+    "labels": [
+      "tab:fpdu-rates"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "ee32d1a5ee2d25f6772629580682bcf4825b34eda03a4b6b06ec3d6a3ab2906d"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 4,
+    "line": 128,
+    "labels": [
+      "tab:fpdu-telemetry"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "cd9fd2b55996f4209257edbd82b23e4eeb2587b74526fba1aa3aabff951cf942"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 5,
+    "line": 145,
+    "labels": [
+      "tab:status-v3"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "4a7549e254004cc8901de66b93654dd8b58c95dbc5359ff4361947f61b2fc7e2"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 6,
+    "line": 179,
+    "labels": [
+      "tab:required-g"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "61d742bd255bc9274bdfecfa92650bc1534ef8bab842a0ad4e96aba761c48a6e"
+  },
+  {
+    "source": "appendices/B_payload_detail_visual.tex",
+    "ordinal": 7,
+    "line": 204,
+    "labels": [
+      "tab:fpdu-response-matrix"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical baseline, risk, assumption or closure condition; useful engineering evidence rather than redundant compliance scoring.",
+    "sha256": "1c0db38dde443d10b87e36dac6db5cceacf0ce8890c8cbc9a18918c7ec73330f"
+  },
+  {
+    "source": "appendices/C_simulation_provenance.tex",
+    "ordinal": 1,
+    "line": 8,
+    "labels": [
+      "tab:simulation-source-inventory"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "e67fc37c46f16b8515fa882aac7c919f60f95fb079cd0cd595c6d4e3e487e84f"
+  },
+  {
+    "source": "appendices/C_simulation_provenance.tex",
+    "ordinal": 2,
+    "line": 33,
+    "labels": [
+      "tab:science-model-defaults"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "1da09a82bfb940c431140d149fb8d46129d7b6ae11c550b17de237f00e5fa61e"
+  },
+  {
+    "source": "appendices/C_simulation_provenance.tex",
+    "ordinal": 3,
+    "line": 75,
+    "labels": [
+      "tab:science-scenario-presets"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "fd84a3b3a02c730e2e7a6eade9554bdc90dc3c6f516f72d1648a0387130062eb"
+  },
+  {
+    "source": "appendices/C_simulation_provenance.tex",
+    "ordinal": 4,
+    "line": 130,
+    "labels": [
+      "tab:evidence-record-template"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "af57fc43c826453535210b57683e924ab95bdc3f92e398c7f6d13e8f50239c75"
+  },
+  {
+    "source": "appendices/C_simulation_provenance.tex",
+    "ordinal": 5,
+    "line": 148,
+    "labels": [
+      "tab:new-run-completeness"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "97e0f39453639f1e847eb37ffe33449d27630aa55d66a3e13ca4c8f3c7f07b1a"
+  },
+  {
+    "source": "appendices/D_thermal_structural_details.tex",
+    "ordinal": 1,
+    "line": 6,
+    "labels": [
+      "tab:thermal-config"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "386cbadf7da39761471631a7c3f82a133fe951c4671889823d5e8d2496008217"
+  },
+  {
+    "source": "appendices/D_thermal_structural_details.tex",
+    "ordinal": 2,
+    "line": 28,
+    "labels": [
+      "tab:thermal-observed"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "29cbb7735cbf3886344e07f9422226f37c736c3cafd480b83791df1a54f89d11"
+  },
+  {
+    "source": "appendices/E_budgets_and_bom_details.tex",
+    "ordinal": 1,
+    "line": 25,
+    "labels": [
+      "tab:grid-v3-volume"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "b3533d68c3943bd97ebefa335f8667bc6b89e40009c10b12c2ef7ee8756f7b5b"
+  },
+  {
+    "source": "appendices/F_orbit_rf_support.tex",
+    "ordinal": 1,
+    "line": 6,
+    "labels": [
+      "tab:orbit-study-comparison"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "6329df6982d4d145d566e93bbc2b3c2689d2b8a0db9fa271365410b786df1261"
+  },
+  {
+    "source": "appendices/G_source_detail.tex",
+    "ordinal": 1,
+    "line": 5,
+    "labels": [],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical baseline, risk, assumption or closure condition; useful engineering evidence rather than redundant compliance scoring.",
+    "sha256": "dea98bc839c9113494df5858724be50423e0ac17b9223b974979bae3d2fba070"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 1,
+    "line": 40,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "901c3d433adb3df2bb80065fbf6b88028152c06337244baccce5bc159f3ce25d"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 2,
+    "line": 64,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "b26f1a3d03133bd3a426824dcc1fb2b2b51783a430fdc6fea57dbcccbfe81f0d"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 3,
+    "line": 83,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "b8971236beeec4441ebceae83b3aa6309092d985126801c2b558e23abcc4ec69"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 4,
+    "line": 121,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "d845bc6e5ed9b12c88e1a327fafad204ae569244cf81f57648b1eaa587967b9b"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 5,
+    "line": 205,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "ebe2a10931ed0cccb02fa59daee3a2fb94bff65ffece929876115c3f523cd900"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 6,
+    "line": 237,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "19c88db6a100200181eaf22915e3d4606ab4b109fbba111497d4bcc0ef798094"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 7,
+    "line": 265,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "77d6946a6f4cdfb6b5fb85b55599f8b3265303ccb1f42cc8f2aedc3131ce14f3"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 8,
+    "line": 326,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "14238ddba3cb407f2577d2e79462ff44cba0154e67cacd8c5e406d832181b537"
+  },
+  {
+    "source": "appendices/H_source_detail.tex",
+    "ordinal": 9,
+    "line": 398,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "2f6e73bd40e96925a136496378b665b8aba8e59eee617563ce277af95f7905c2"
+  },
+  {
+    "source": "appendices/I_source_detail.tex",
+    "ordinal": 1,
+    "line": 103,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "6abfd39b1fba4801a303f6af81f11fc9e41258e69a9f6c0eaeb8c530fc4f5dbb"
+  },
+  {
+    "source": "appendices/I_source_detail.tex",
+    "ordinal": 2,
+    "line": 192,
+    "labels": [],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "cec7f57ac634940b376582cbfcfcb9f64bd177ec316e1c77d8cc42fab31ececa"
+  },
+  {
+    "source": "appendices/J_source_detail.tex",
+    "ordinal": 1,
+    "line": 5,
+    "labels": [],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical baseline, risk, assumption or closure condition; useful engineering evidence rather than redundant compliance scoring.",
+    "sha256": "b16a2463cc8fa0f0332d5f6096c6860d309f50bd6cda1af07710a4d8ecdf9846"
+  },
+  {
+    "source": "appendices/L_new_evidence.tex",
+    "ordinal": 1,
+    "line": 7,
+    "labels": [
+      "tab:new-sci-grids"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "0a14bbdae2a8b227e79a7c8505ffe4c2f71b532897959a4084883894dbbc532e"
+  },
+  {
+    "source": "appendices/L_new_evidence.tex",
+    "ordinal": 2,
+    "line": 39,
+    "labels": [
+      "tab:new-open"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical baseline, risk, assumption or closure condition; useful engineering evidence rather than redundant compliance scoring.",
+    "sha256": "886f8ae6690be7e0b60a823296495bb5a796192e4a6c4b86835381b5b09344e9"
+  },
+  {
+    "source": "appendices/L_new_evidence.tex",
+    "ordinal": 3,
+    "line": 56,
+    "labels": [
+      "tab:bom-upload"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "adcac80cf923c214b9f38b8278dbba6b2b469f9aede40a4ae3a627c3ebc9a4dd"
+  },
+  {
+    "source": "appendices/M_updated_raan_drag_study.tex",
+    "ordinal": 1,
+    "line": 5,
+    "labels": [
+      "tab:raan-updated"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "a53637b9c09363773f99976b343244a2b98e5ee802c3440c7274a553806dfd22"
+  },
+  {
+    "source": "appendices/M_updated_raan_drag_study.tex",
+    "ordinal": 2,
+    "line": 23,
+    "labels": [
+      "tab:drag-updated"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "f8792170059f47c9ffea2af944e70cca196726314fda86421282f15621a63195"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 1,
+    "line": 138,
+    "labels": [
+      "tab:01-mission-context-1"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "8681278acc84b9d85fa25811df70c66ccd53be29145f8eb84e6892ede0904a4d"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 2,
+    "line": 154,
+    "labels": [
+      "tab:01-mission-context-2"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "b9e78fdfb61189ea4d4c49571d0c6851b8b71886b6b2d9428b23c68619e948df"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 3,
+    "line": 170,
+    "labels": [
+      "tab:01-mission-context-3"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "7fc900f9346084edd66b43c170511ae2ded388c2bb495710d9cf918fab16beb4"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 4,
+    "line": 216,
+    "labels": [
+      "tab:01-mission-context-4"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "8659055f2dd7bf7395b677861615067d6553f04a4a040a0ad70e5151247946f2"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 5,
+    "line": 232,
+    "labels": [
+      "tab:01-mission-context-5"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "a141744bcfaab77543c976627c45ea28b5d2613bc76198fcb37e3098f7095ee0"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 6,
+    "line": 247,
+    "labels": [
+      "tab:01-mission-context-6"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "7a6828b0b699b8d8116e51a04d3711c1ed037c45aba6f45a42c96c6107fcdbbf"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 7,
+    "line": 289,
+    "labels": [
+      "tab:01-mission-context-7"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "52a6ace4969148d45e4abb862954757340a2758175d10842648dc818287e0e72"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 8,
+    "line": 305,
+    "labels": [
+      "tab:01-mission-context-8"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "42ef711fc2cca72ef2f8c05d632bc114e4318d471f3c510c6d3774c5e1e942e0"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 9,
+    "line": 320,
+    "labels": [
+      "tab:01-mission-context-9"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "a07f623f999ef00e11c201a2cd9e9c0afdb951ab53b2315d45140de94553dee0"
+  },
+  {
+    "source": "sections/01_mission_context.tex",
+    "ordinal": 10,
+    "line": 344,
+    "labels": [
+      "tab:01-mission-context-10"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Binding scientific success definition, duration/spatial target or exact tier comparison; explicitly retained.",
+    "sha256": "356945a058b87a1d4caa846f8359f8d238b13046ff41dc62cdd2feb5c3247b3b"
+  },
+  {
+    "source": "sections/01_mission_context_additions.tex",
+    "ordinal": 1,
+    "line": 7,
+    "labels": [],
+    "active": false,
+    "classification": "B",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "29c36bbc6558d51fbf1649187670c65ec91f078e72b10f4b0efb973ac8ab58ce"
+  },
+  {
+    "source": "sections/02_mission_overview.tex",
+    "ordinal": 1,
+    "line": 12,
+    "labels": [
+      "tab:orbit-baseline"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "ea8d2b4edec89a6a62f9c1add8577c4b852d368ca62baeeefae585f71e698386"
+  },
+  {
+    "source": "sections/02_mission_overview_additions.tex",
+    "ordinal": 1,
+    "line": 7,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "95c0a812f7e26b82992a7885b4e0be6c7d0664200ea122ed6cce5208da4a59a2"
+  },
+  {
+    "source": "sections/02_mission_overview_additions.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "fc0f1437fa85ff6bb4b30277987e15a72ae4317d6ee38ceaaaf793df4fe0ba69"
+  },
+  {
+    "source": "sections/02_mission_overview_additions.tex",
+    "ordinal": 3,
+    "line": 36,
+    "labels": [],
+    "active": false,
+    "classification": "B",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "cc4763015ecf091097ebf7ba19a5a771c163adb03337baa21bb206579c2856a3"
+  },
+  {
+    "source": "sections/03_spacecraft_architecture_additions.tex",
+    "ordinal": 1,
+    "line": 5,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "1d6d12d4b149ed53271763ca89c2dda590f663673cc1be5241a20de1cb202402"
+  },
+  {
+    "source": "sections/03_spacecraft_architecture_additions.tex",
+    "ordinal": 2,
+    "line": 31,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "1e227240ab130136cb028e9a9759933f045dc3c2401610b2fe69b7c9142ff2fd"
+  },
+  {
+    "source": "sections/04_simulations_additions.tex",
+    "ordinal": 1,
+    "line": 44,
+    "labels": [],
+    "active": false,
+    "classification": "B",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "9194da37e8247732a5b3916f529bc6ca095147cfadea8cfdaa7dd8f85eeab498"
+  },
+  {
+    "source": "sections/05_feasibility_and_budgets_additions.tex",
+    "ordinal": 1,
+    "line": 6,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "d209135920cb7c819dbfaeea49658392203169f64e1e6a60977c081ac907201f"
+  },
+  {
+    "source": "sections/05_feasibility_and_budgets_additions.tex",
+    "ordinal": 2,
+    "line": 22,
+    "labels": [],
+    "active": false,
+    "classification": "B",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "b5aa9506aa194b915afc56688558af5cb4a4ab89b7b66651b8273b56c9b3d8b8"
+  },
+  {
+    "source": "sections/05_feasibility_and_budgets_additions.tex",
+    "ordinal": 3,
+    "line": 32,
+    "labels": [],
+    "active": false,
+    "classification": "C",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "8a6633bd8eff6985f234dc30357527000f7e4a89eeddd6c18d942cf0de8e0ca7"
+  },
+  {
+    "source": "sections/05_feasibility_and_budgets_additions.tex",
+    "ordinal": 4,
+    "line": 44,
+    "labels": [],
+    "active": false,
+    "classification": "B",
+    "requirements": "Not included (unchanged)",
+    "narrative": "Not included (unchanged)",
+    "rationale": "Unused draft template; not reachable from current main.tex; do not reactivate.",
+    "sha256": "dd4a955fb147420b3b11f5ad62e4408abeee673b9d61c68bb97c90ff13231c6c"
+  },
+  {
+    "source": "sections/corrected_ditl/budget.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:tier-v3"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "167b7ffc1e507c87cb9503c6649233954df0dffbd19fc3b5e34911f116cd13a3"
+  },
+  {
+    "source": "sections/corrected_ditl/budget.tex",
+    "ordinal": 2,
+    "line": 11,
+    "labels": [
+      "tab:corrected-outage"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "dc7b9bc3c2469f4b377bfe7d892857f8cb9b650765ea1bbcc012f4713434f754"
+  },
+  {
+    "source": "sections/corrected_ditl/contacts.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:gs-v3-capacity"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "b1cae45edd873905db6917894282b5b3fe5f02aa8df9b6f085466c2a0525c113"
+  },
+  {
+    "source": "sections/corrected_ditl/detail.tex",
+    "ordinal": 1,
+    "line": 6,
+    "labels": [
+      "tab:annual-overlap"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "19af1f50b79e97bd08538dbc1e3a5535db5d8fb681fd6e62f8dbf9a2550ee119"
+  },
+  {
+    "source": "sections/corrected_ditl/operations.tex",
+    "ordinal": 1,
+    "line": 8,
+    "labels": [
+      "tab:annual-ditl"
+    ],
+    "active": true,
+    "classification": "A",
+    "requirements": "Retain unchanged",
+    "narrative": "Retain unchanged",
+    "rationale": "Technical parameters, calculations, observations or historical evidence; preserve current qualification.",
+    "sha256": "ab1056ae3be83b23ae9b89c57aab1ca4545328edcd3738461ad73e14842f7ae6"
+  },
+  {
+    "source": "sections/requirements/adcs.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-adcs",
+      "req:ANT-ADCS-FR-001",
+      "req:ANT-ADCS-FR-002",
+      "req:ANT-ADCS-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "d726feddab025d008e803f061dbd76af49aa45ba1788409e3c490c8f21f367e4"
+  },
+  {
+    "source": "sections/requirements/adcs.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-ADCS-FR-004",
+      "req:ANT-ADCS-FR-005",
+      "req:ANT-ADCS-FR-006"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "1d2c18089b38c700696c521cfcce4f85bd79765c818bb968b2d807612f5bda8b"
+  },
+  {
+    "source": "sections/requirements/com.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-com",
+      "req:ANT-COM-FR-001",
+      "req:ANT-COM-FR-002",
+      "req:ANT-COM-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "3600a4d86aa32cd9e011f29cd11cab51f89c5d6d0ca18af8b63ca9ba208a7b38"
+  },
+  {
+    "source": "sections/requirements/com.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-COM-FR-004",
+      "req:ANT-COM-FR-005"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "b822288a91d188715599405cfdfd01008bb64cce1aebc15a499150481c2e2e71"
+  },
+  {
+    "source": "sections/requirements/eps.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-eps",
+      "req:ANT-EPS-FR-001",
+      "req:ANT-EPS-FR-002",
+      "req:ANT-EPS-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "deda455c3584aa74048cd7958f080560a38239e6a22664f5b6a68ac11f3347cf"
+  },
+  {
+    "source": "sections/requirements/eps.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-EPS-FR-004",
+      "req:ANT-EPS-FR-005",
+      "req:ANT-EPS-FR-006"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "bc39e90bbd61e66063c9f806672d8dd52cdcc12ff20f980fa14254efcd9302f7"
+  },
+  {
+    "source": "sections/requirements/gso.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-gso",
+      "req:ANT-GSO-FR-001",
+      "req:ANT-GSO-FR-002",
+      "req:ANT-GSO-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "d60f6b539bd5d53c87e293eb09814a3d8d5535d9c63b2e0004bd79ebd22793d6"
+  },
+  {
+    "source": "sections/requirements/gso.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-GSO-FR-004"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "b0aabd3085829105f5f14c97a43d9cb4b6ec75adb13756cf09151d924cb13ae4"
+  },
+  {
+    "source": "sections/requirements/int.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-int",
+      "req:ANT-INT-FR-001",
+      "req:ANT-INT-FR-002",
+      "req:ANT-INT-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "1089aff768c8c2e3dae1df6b9cc5f3a49c5b252e0e6ae7e7e08cc7ce02498249"
+  },
+  {
+    "source": "sections/requirements/obc.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-obc",
+      "req:ANT-OBC-FR-001",
+      "req:ANT-OBC-FR-002",
+      "req:ANT-OBC-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "c1547fee6d65a5480de5ea372d2bdbfc2335dabeafdb43faef44e633b81df7c4"
+  },
+  {
+    "source": "sections/requirements/obc.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-OBC-FR-004",
+      "req:ANT-OBC-FR-005",
+      "req:ANT-OBC-FR-006"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "7bbc7e854c7789ba772101246b4844945248e7c984d281bc83bbbe6047b6e046"
+  },
+  {
+    "source": "sections/requirements/obc.tex",
+    "ordinal": 3,
+    "line": 41,
+    "labels": [
+      "req:ANT-OBC-FR-007"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "2d8800b9f949f69e23fdf6b695be49ae1e98a256bd95ba21618366ddbc85eba3"
+  },
+  {
+    "source": "sections/requirements/pld.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-pld",
+      "req:ANT-PLD-FR-001",
+      "req:ANT-PLD-FR-002",
+      "req:ANT-PLD-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "3981d3fc70d352e9f3938755d426bcf1f1167800b3eef9a5f9cfc4964038c0bc"
+  },
+  {
+    "source": "sections/requirements/pld.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-PLD-FR-004",
+      "req:ANT-PLD-FR-005",
+      "req:ANT-PLD-FR-006"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "7d6c3bfd27a3e1190d3990b2bdf8c1389250f3703e56cdeea1cdda3506c9ec98"
+  },
+  {
+    "source": "sections/requirements/pld.tex",
+    "ordinal": 3,
+    "line": 41,
+    "labels": [
+      "req:ANT-PLD-FR-007",
+      "req:ANT-PLD-FR-008",
+      "req:ANT-PLD-FR-009"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "f4c517db3d80ddd3b3148fd9bfe55e2fb3046aebaaf1b1eff1cd90946602089c"
+  },
+  {
+    "source": "sections/requirements/pld.tex",
+    "ordinal": 4,
+    "line": 61,
+    "labels": [
+      "req:ANT-PLD-FR-010",
+      "req:ANT-PLD-FR-011"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "4e52773f9c2192acc08541caacc3829ffea019ddf5d78dd921620c0dd4f7e159"
+  },
+  {
+    "source": "sections/requirements/sys.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-sys",
+      "req:ANT-SYS-FR-001"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "0cf1e88cbbb15a9a8eacc3aadac704838cccde738d3259d53aa75138a443353c"
+  },
+  {
+    "source": "sections/requirements/thermal_structural.tex",
+    "ordinal": 1,
+    "line": 2,
+    "labels": [
+      "tab:fr-thermal_structural",
+      "req:ANT-THM-FR-001",
+      "req:ANT-THM-FR-002",
+      "req:ANT-THM-FR-003"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "fde6cbbee6998afea05eb5b777d48374929b954abd1212124ea59b19a1bbe7c4"
+  },
+  {
+    "source": "sections/requirements/thermal_structural.tex",
+    "ordinal": 2,
+    "line": 21,
+    "labels": [
+      "req:ANT-THM-FR-004",
+      "req:ANT-STR-FR-001",
+      "req:ANT-STR-FR-002"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "3bbd8c03062eada285e9193e5dd335cd308be3c2404305912f0932b949e60de1"
+  },
+  {
+    "source": "sections/requirements/thermal_structural.tex",
+    "ordinal": 3,
+    "line": 41,
+    "labels": [
+      "req:ANT-STR-FR-003",
+      "req:ANT-STR-FR-004"
+    ],
+    "active": true,
+    "classification": "C",
+    "requirements": "Retain unchanged",
+    "narrative": "Omit matrix; generated prose plus assessment",
+    "rationale": "Formal ID/status presentation contains substantive constraints and evidence; prose preserves every requirement/evidence field.",
+    "sha256": "2ef3e5f546ec03252e034c50ae20e7f3f46721fb255ac9695edd89543b201ca9"
+  }
+]

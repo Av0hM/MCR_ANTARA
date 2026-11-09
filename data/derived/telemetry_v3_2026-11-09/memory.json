@@ -1,0 +1,15 @@
+{
+  "record_bytes": 292,
+  "uint16_record_bytes": 164,
+  "ram_bytes": 262144,
+  "ram_record_slots": 897,
+  "ram_remainder_bytes": 220,
+  "flash_bytes": 134217728,
+  "flash_record_slots": 459649,
+  "archival_usable_bytes": 16000000000,
+  "archival_record_slots": 54794520,
+  "assembly_buffer_bytes": 292,
+  "ping_pong_histograms_bytes": 512,
+  "combined_fixture_working_bytes": 804,
+  "caveat": "804 bytes excludes stack/DMA/queue pointers/RTOS/ECC/filesystem/metadata and other subsystems; not total OBC RAM."
+}

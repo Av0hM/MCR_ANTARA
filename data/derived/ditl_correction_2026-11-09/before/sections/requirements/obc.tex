@@ -1,0 +1,58 @@
+% Generated from config/requirements/section3_feasibility_v1.json.
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Mission Feasibility Requirements: On-Board Computer (OBC)}\label{tab:fr-obc}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-OBC-FR-001}\mbox{ANT-OBC-}\newline\mbox{FR-001} & The OBC shall allocate record assembly separately from the science queue: 292 bytes per packed reference record and explicitly budgeted acquisition banks, stack and DMA; a two-bank histogram fixture adds 512 bytes. & Assembly RAM & 804-byte illustrative payload working set; not total RAM or selected architecture. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-OBC-FR-002}\mbox{ANT-OBC-}\newline\mbox{FR-002} & The OBC reference queue shall retain the 67452-byte preferred EMSC workload of the documented bounded fixture without loss; the sustained mission queue shall be sized independently from verified production/outage traces. & Queue RAM & 256 KiB candidate holds 897 records; bounded queue tests pass. \emph{Verify:} Analysis + software test. & S\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-OBC-FR-003}\mbox{ANT-OBC-}\newline\mbox{FR-003} & The OBC persistent science store shall retain all unacknowledged records through the accepted contact-outage/retention envelope, including metadata/reserves; that envelope remains an OPEN DERIVED REQUIREMENT. & Persistent storage & 128 MiB cannot archive 187498164-byte grid sensitivity without delivery;16 GB is optional. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\ContinuedFloat\captionsetup{list=no}
+\caption{Mission Feasibility Requirements: On-Board Computer (OBC) (continued)}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-OBC-FR-004}\mbox{ANT-OBC-}\newline\mbox{FR-004} & The OBC shall provision total FSW/system memory and execution capacity separately from record assembly, queue and persistent storage, covering control, reconstruction, commands and fault handling. Limits remain OPEN DERIVED REQUIREMENTS. & System RAM / compute & No integrated worst-case memory/execution budget. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-OBC-FR-005}\mbox{ANT-OBC-}\newline\mbox{FR-005} & The OBC shall maintain record integrity and sequence continuity across interrupted writes, reset and Relay interruption, recovering only complete records and retaining unacknowledged data. & Data persistence & Reference CRC passes; atomic media writes and acknowledgements not implemented. \emph{Verify:} Analysis + test. & NE\\
+\addlinespace[3pt]
+\phantomsection\label{req:ANT-OBC-FR-006}\mbox{ANT-OBC-}\newline\mbox{FR-006} & The OBC shall execute approved state-machine guards, validate commands, report faults and enter a defined safe state without uncommanded detector/Relay operation. & Control / fault management & Mode logic documented; flight integration and command integrity unqualified. \emph{Verify:} Analysis + test. & C\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
+\ContinuedFloat\captionsetup{list=no}
+\caption{Mission Feasibility Requirements: On-Board Computer (OBC) (continued)}
+\begin{tabular}{@{}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+@{}}
+\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
+\phantomsection\label{req:ANT-OBC-FR-007}\mbox{ANT-OBC-}\newline\mbox{FR-007} & The OBC shall preserve payload timestamps, cell/configuration identity and linked livetime/background/quality metadata through storage and ground reconstruction, without treating unknown health as nominal. & Metadata / time & v3 has linked-session metadata; size/cadence and clock performance open. \emph{Verify:} Analysis + test. & O\\
+\addlinespace[3pt]
+\bottomrule
+\end{tabular}
+\end{table}
+\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
+\paragraph{Feasibility assessment.} The reference format makes the assembly and queue workloads concrete. A 256 KiB dedicated queue contains the small bounded fixture; this is not a total OBC RAM requirement. The 128 MiB candidate store fails the separate 187498164-byte no-downlink grid-retention sensitivity, but that unmatched sensitivity is not an approved retention mission case. Sustained workload, outage policy and total system memory must be allocated before unconditional feasibility; media and reset tests follow at PDR.

@@ -1,0 +1,67 @@
+[
+  {
+    "path": "evidence/science_ditl/raw/leop_1yr_ANTARA_Science_gs_contacts.csv",
+    "sha256": "83603a40e7626c6572a3c9a02aee78b731d7c73fb3b44fd7623000b7f89d688a",
+    "bytes": 100382
+  },
+  {
+    "path": "evidence/science_ditl/raw/leop_1yr_ANTARA_Science_mode_transitions.csv",
+    "sha256": "dcf3cd00b1e32f90b11a191ebd28d1008fc1f007355ccd28ce41545d70bdf7e7",
+    "bytes": 1228659
+  },
+  {
+    "path": "evidence/science_ditl/raw/leop_1yr_ANTARA_Science_telemetry.csv",
+    "sha256": "f28818ba7f9d6a2954397d3524774bf1baadf8243bd8b25c293df7ffa3867a71",
+    "bytes": 1460396799
+  },
+  {
+    "path": "evidence/geometric_factor_2026-11-05/cell_pass_counts.csv",
+    "sha256": "e379d5bb77f39d8f5ec72f11cc056ea02fbcf837ff2181b5481a9811f434db4b",
+    "bytes": 305077
+  },
+  {
+    "path": "evidence/geometric_factor_2026-11-05/cell_proton_rates.csv",
+    "sha256": "a91820e5a3e356ae4252dc191b20faadb6e2ef2af9aef41f41b87d040bafc530",
+    "bytes": 25173294
+  },
+  {
+    "path": "evidence/science_ditl/raw/leop_24h_ANTARA_Science_gs_contacts.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1
+  },
+  {
+    "path": "evidence/science_ditl/raw/no_leop_24h_ANTARA_Science_gs_contacts.csv",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "bytes": 1
+  },
+  {
+    "path": "config/science/science_record_v3.json",
+    "sha256": "042706f56b6adcbd3f0d3becf9b205673458487465e8e65ba89f60adc12b628b",
+    "bytes": 4148
+  },
+  {
+    "path": "config/science/science_record_v3.schema.json",
+    "sha256": "fefc2b21daa22b72873ea9fc546167c6abc6de41105b20e3e77e368de54ef3ea",
+    "bytes": 1304
+  },
+  {
+    "path": "scripts/science_record_v3.py",
+    "sha256": "8732ba5bec1200dedeee63f3b0164ce38afd156ff61568b25cd9aedc0372f823",
+    "bytes": 7503
+  },
+  {
+    "path": "scripts/validate_telemetry_budget.py",
+    "sha256": "b44bc29edcc4a4d333df479eda13c6880df2fccd3d99e5585146bc282ea54cb6",
+    "bytes": 13441
+  },
+  {
+    "path": "scripts/complete_telemetry_budget.py",
+    "sha256": "d4614ee0325a820b52e198ef53ab76fb226cdbffb8fbfdd1aef914c5c45f64bc",
+    "bytes": 1880
+  },
+  {
+    "path": "scripts/plot_telemetry_budget.py",
+    "sha256": "c551c5bba710022fe10a5c0c5914c06ddd67e9c6927f8e7496829a8aeba71f28",
+    "bytes": 1953
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Science record v3 codec inputs; relational timestamp/status constraints also checked by codec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entry_us",
+    "exit_us",
+    "lat_e7",
+    "lon_e7",
+    "alt_mm",
+    "histogram",
+    "sequence",
+    "status"
+  ],
+  "properties": {
+    "entry_us": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "exit_us": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "lat_e7": {
+      "type": "integer",
+      "minimum": -900000000,
+      "maximum": 900000000
+    },
+    "lon_e7": {
+      "type": "integer",
+      "minimum": -1800000000,
+      "maximum": 1799999999
+    },
+    "alt_mm": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "histogram": {
+      "type": "array",
+      "minItems": 64,
+      "maxItems": 64,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4294967295
+      }
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "status": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+    }
+  }
+}

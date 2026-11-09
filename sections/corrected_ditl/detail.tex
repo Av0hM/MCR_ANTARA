@@ -1,0 +1,36 @@
+% Generated corrected-evidence block; see registry and audit.
+\subsection{Corrected Run Identities and Accounting}\label{app:ditl-evidence}
+The authoritative registry binds all 24 files to SHA-256 identities. The corrected daily telemetry contains 7696 and 6553 rows; annual telemetry contains 1434872 rows. All begin at elapsed zero and include the named endpoint. The annual span is exactly 365 days, from 2000-03-01 to 2001-03-01 UTC; the leap day precedes the start. This establishes timestamp coverage, not the missing runtime configuration or hardware validity. The former 50-day truncation finding applies only to superseded inputs.
+
+No duplicate or nonmonotonic telemetry timestamps were found. Day-run timestamp differences are 2/20 s. Annual differences are 2/60 s with one 50 s interval, distinct from the current source default. Annual telemetry has 15161 mode changes versus 16283 transition records and 425 sampled Safe entries. Exact event checks are retained in the JSON audit. The expected adaptive schedule is unknown, so elapsed coverage alone cannot certify that every intended sample was exported. The last sample contributes no additional duration; its native increment fields remain included in cumulative data checks.
+\begin{table}[H]\centering\small
+\caption{Transition-log versus left-held telemetry mode duration (annual, seconds)}\label{tab:annual-overlap}
+\begin{tabularx}{\linewidth}{@{}Xrr@{}}\toprule
+Mode & Telemetry & Transitions\\\midrule
+COLD\_AND\_DARK & 122 & 120\\
+DETECTION & 894,054 & 889,226\\
+DETUMBLE & 2,460 & 2,460\\
+RELAY & 269,876 & 266,776\\
+SAFE & 332,882 & 331,350\\
+SLEWING & 375,688 & 620,804\\
+SUN\_POINTING & 29,660,918 & 29,425,264\\
+\bottomrule\end{tabularx}\end{table}
+Transition mode sequence matches: False; timestamp offset range is undefined because the sequences differ. Slew events total 512,586 s across 7928 rows, distinct from 375,688 s Slewing occupancy. These differences require the generating logger/control semantics, not fabricated interval adjustments.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_day_modes.png}
+\caption{Corrected 24-hour mode timelines. Display-sampled points do not define the integration weights.}\label{fig:corrected-day-modes}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_day_exposure_contacts.png}
+\caption{Exposure gates, eligible contact time and native transfer credits for the corrected day runs. Credits are not confirmed ground receipt.}\label{fig:corrected-day-exposure}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_startup.png}
+\caption{Startup and Slewing duration from transition logs, shown separately from telemetry occupancy.}\label{fig:corrected-startup}\end{figure}
+\subsection{Annual Exposure, Energy and Native Data}
+There are 2346 SAA event records and 2346 sampled SAA windows. Independent science passages additionally require the approved eligibility and quality contract. The acquisition gate totals 247,258 s. Per-pass array sums and telemetry gate-array sums are 3.10842e+09 and 3.10842e+09; these are legacy model expectations, not reconstructed current-instrument events. Bin-wise rate-times-duration comparisons can differ after merging; effective channel metadata and dimensional calibration remain open.
+
+Recorded battery spans 15.097556--25.000000 Wh, ending at 24.019245 Wh. No negative battery row was found. The solar/load integrals are 50288.809/30866.103 Wh under the stated interval convention. Charge efficiency, curtailment and post-step battery semantics prevent treating their difference as stored-energy margin or EOL feasibility.
+
+Native store begins at 10, peaks at 10.005966187, and ends at 10 source MB. Generation minus transfer closes against storage to 7.64e-14 source MB. Histogram-byte totals do not alone establish packet serialization completeness. Raw event packets, lost-event counters and ground-reception archives are absent.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_annual_exposure_battery_contacts.png}
+\caption{Corrected 365-day exposure, battery envelope and contact availability; epoch 2000-03-01. These are recorded model predictions under unresolved runtime configuration.}\label{fig:corrected-annual}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_annual_modes_cumulative.png}
+\caption{Annual telemetry mode occupancy and cumulative geographic versus acquisition-gate exposure. No mission-success classification is inferred.}\label{fig:corrected-annual-modes}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/corrected_20261109_annual_native_data.png}
+\caption{Daily native generation/transfer and maximum source-labelled store. The historical native packet format is not Science Record v3.}\label{fig:partial-storage}\end{figure}

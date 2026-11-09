@@ -1,0 +1,21 @@
+\section{Mission Baseline Register and Review Gates}\label{app:source-02}
+This register replaces unfilled draft tables. It records approved inputs and evidence boundaries without assigning unverified margins or project dates. Historical study configurations remain individually identified in Appendices~\ref{app:sim-provenance} and~\ref{app:updated-raan}.
+
+\subsection{Mission Design Baseline and Assumption Register}
+\begin{table}[H]\centering\small
+\begin{tabularx}{\linewidth}{@{}p{3.2cm}p{4cm}X@{}}\toprule
+Parameter & Current input & Qualification\\\midrule
+Spacecraft & 3U; maximum 3.0 kg & Mass budget not closed by component subtotal\\
+Reference orbit & 2029-01-01 UTC; 600 km; $97.6^\circ$; $e\sim0.001$ & Runtime/environment identity required for each result\\
+RAAN & Launch-dependent & Representative cases are sensitivity studies, not controllable insertion choices\\
+Battery & 25 Wh planning capacity & Distinct from manufacturer pack rating\\
+ADCS & Reaction wheels and magnetorquers & Supplier/interface selection remains open\\
+Science & Proton differential flux, 5--100 MeV & MMSC/MSC/EMSC thresholds retained; detector and coverage validation required\\
+Operational objective & Approximately five years & Separate from modeled 300 km cutoff and reentry\\\bottomrule
+\end{tabularx}\end{table}
+
+\subsection{Mission-Level Design Trades}
+The current payload configuration is controlled by Appendix~\ref{app:payload-detail}. Radiation input dates and RAAN evidence identities are controlled by Appendix~\ref{app:evidence-record}. EPS, antenna and station studies retain their own configuration assumptions; a common spacecraft feasibility claim requires consistent loads, geometry, exposure and data products. No component selection or physics model is changed merely to reconcile a table.
+
+\subsection{Development Gates}
+PDR requires controlled payload CAD/optics, acquisition and response-validation plans, science eligibility/independence rules and closed interface ownership. CDR requires implemented and verified hardware/software against those baselines. Environmental qualification and flight readiness require documented component/assembly tests and launch interfaces. Dates and named owners require team assignment; this report does not invent schedule commitments.

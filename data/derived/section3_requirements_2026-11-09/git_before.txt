@@ -1,0 +1,71 @@
+ M README.md
+ M appendices/A_operational_logic_visual.tex
+ M appendices/B_payload_detail_visual.tex
+ M appendices/C_simulation_provenance.tex
+ M appendices/D_thermal_structural_details.tex
+ M appendices/E_budgets_and_bom_details.tex
+ M appendices/F_orbit_rf_support.tex
+ M appendices/H_source_detail.tex
+ M appendices/I_source_detail.tex
+ M appendices/K_integrated_ditl_detail.tex
+ M appendices/L_new_evidence.tex
+ M config/payload/README.md
+ M docs/audit/CLAIM_TRACEABILITY.md
+ M docs/audit/IMPLEMENTATION_CHANGELOG.md
+ M docs/audit/REMAINING_OPEN_DECISIONS.md
+ M main.pdf
+ M sections/01_mission_context.tex
+ M sections/03_spacecraft_architecture.tex
+ M sections/04_simulations.tex
+ M sections/05_feasibility_and_budgets.tex
+?? config/science/README.md
+?? config/science/science_record_v3.json
+?? config/science/science_record_v3.schema.json
+?? data/derived/geometric_factor_2026-11-05_audit/
+?? data/derived/section3_requirements_2026-11-09/
+?? data/derived/telemetry_v3_2026-11-09/
+?? docs/audit/DETUMBLE_EVIDENCE_VALIDATION.md
+?? docs/audit/GEOMETRIC_FACTOR_MCR_CHANGELOG.md
+?? docs/audit/GEOMETRIC_FACTOR_NUMERICAL_VALIDATION.md
+?? docs/audit/GEOMETRIC_FACTOR_PHYSICAL_INTERPRETATION.md
+?? docs/audit/GEOMETRIC_FACTOR_SCIENCE_ELIGIBILITY.md
+?? docs/audit/GEOMETRIC_FACTOR_SOURCE_PROVENANCE.md
+?? docs/audit/GS_19K2_LINK_CLOSURE.md
+?? docs/audit/GS_PASS_CAPACITY_VALIDATION.md
+?? docs/audit/INTEGRATED_SUBSYSTEM_CONSISTENCY.md
+?? docs/audit/LEOP_VS_NO_LEOP_24H_VALIDATION.md
+?? docs/audit/OBC_RAM_FLASH_SIZING.md
+?? docs/audit/SCIENCE_DITL_EVIDENCE_VALIDATION.md
+?? docs/audit/SCIENCE_RECORD_V3.md
+?? docs/audit/SIMULATION_EVIDENCE_INGESTION.md
+?? docs/audit/SIMULATOR_ACCOUNTING_INTEGRATION.md
+?? docs/audit/SIMULATOR_ACCOUNTING_TEST_RESULTS.md
+?? docs/audit/STATUS_MARKER_CODEBOOK.md
+?? docs/audit/STORAGE_BACKLOG_VALIDATION.md
+?? docs/audit/TELEMETRY_MCR_CHANGELOG.md
+?? docs/audit/THERMAL_EVIDENCE_VALIDATION.md
+?? docs/audit/TIER_RECORD_GENERATION.md
+?? evidence/detumble/
+?? evidence/geometric_factor_2026-11-05/
+?? evidence/science-ditl/
+?? evidence/science_ditl/
+?? evidence/thermal/
+?? main.aux
+?? main.fdb_latexmk
+?? main.fls
+?? main.log
+?? media/geometric_factor_requirements.png
+?? output/pdf/ANTARA_MCR_GEOMETRIC_FACTOR_2026-11-06.pdf
+?? output/pdf/ANTARA_MCR_SIMULATION_EVIDENCE_2026-11-09.pdf
+?? output/pdf/ANTARA_MCR_TELEMETRY_V3_2026-11-09.pdf
+?? scripts/complete_telemetry_budget.py
+?? scripts/plot_geometric_factor_audit.py
+?? scripts/plot_simulation_evidence.py
+?? scripts/plot_telemetry_budget.py
+?? scripts/science_record_v3.py
+?? scripts/validate_geometric_factor.py
+?? scripts/validate_simulation_evidence.py
+?? scripts/validate_telemetry_budget.py
+?? tests/test_geometric_factor.py
+?? tests/test_science_record_v3.py
+?? tests/test_simulation_evidence.py

@@ -1,0 +1,11 @@
+{
+  "python": "3.10.21",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "scipy": "1.15.3",
+  "pytest": "9.1.1",
+  "shapely": "2.1.2",
+  "original_hashes_unchanged": 9,
+  "source_Al_CSDA_250um_threshold_MeV": 5.952391151927312,
+  "qualified_detector_response": false
+}

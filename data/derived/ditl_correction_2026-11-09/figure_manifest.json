@@ -1,0 +1,62 @@
+[
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_day_modes.png",
+    "runs": [
+      "corrected_leop_24h_8363c5901b",
+      "corrected_no_leop_24h_a652068558"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_day_occupancy_battery.png",
+    "runs": [
+      "corrected_leop_24h_8363c5901b",
+      "corrected_no_leop_24h_a652068558"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_day_exposure_contacts.png",
+    "runs": [
+      "corrected_leop_24h_8363c5901b",
+      "corrected_no_leop_24h_a652068558"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_startup.png",
+    "runs": [
+      "corrected_leop_24h_8363c5901b",
+      "corrected_no_leop_24h_a652068558"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_annual_exposure_battery_contacts.png",
+    "runs": [
+      "corrected_leop_1yr_015cfb89b1"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_annual_modes_cumulative.png",
+    "runs": [
+      "corrected_leop_1yr_015cfb89b1"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_annual_native_data.png",
+    "runs": [
+      "corrected_leop_1yr_015cfb89b1"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  },
+  {
+    "path": "evidence/science-ditl/figures/corrected_20261109_annual_v3_queue.png",
+    "runs": [
+      "corrected_leop_1yr_015cfb89b1"
+    ],
+    "source": "Registry-selected CSVs; scalar plots may be display-sampled; summaries use full data."
+  }
+]

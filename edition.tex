@@ -1,0 +1,18 @@
+% One technical report; wrappers select presentation before main.tex is read.
+\newif\ifrequirementsedition
+\requirementseditiontrue
+\ifdefined\ANTARANarrative\requirementseditionfalse\fi
+\ifrequirementsedition
+  \requirementseditiontrue
+\fi
+\ifrequirementsedition
+  \def\MCREditionName{Requirements Edition}
+\else
+  \def\MCREditionName{Narrative Edition}
+\fi
+\newcommand{\subsystempresentation}[1]{%
+  \ifrequirementsedition
+    \input{sections/requirements/#1}%
+  \else
+    \input{sections/narrative/#1}%
+  \fi}

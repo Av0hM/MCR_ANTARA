@@ -17,7 +17,22 @@ Safe & Survival, battery conservation and anomaly handling & Suspend nonessentia
 \end{tabularx}\end{table}
 
 \subsubsection{Nominal Startup and Science/Relay Sequence}\label{app:op-logic-diagram}
-\begin{figure}[htbp]\centering
+The sequence below extends the observed DITL behavior into a proposed operating procedure. It is an engineering interpretation for planning; the assumptions and their verification limits are stated after Section~\ref{app:op-logic-priority}.
+
+\paragraph{Initialization and attitude acquisition.}
+Following release, Cold \& Dark provides a protected initialization interval. The proposed sequence checks OBC boot status, time validity, EPS health and the availability of attitude sensors before enabling controlled acquisition. Deployment-related interlocks must be satisfied before an activity requiring deployed hardware is commanded; no additional deployment timing is assumed here. In the corrected LEOP event records, the startup delay is 120~s and detumbling occupies the following 2,460~s. Their sum, 2,580~s (43~min), is an event-defined reference for reaching the end of detumbling, not the time at which qualified science necessarily begins. The sampled Cold \& Dark occupancy is 122~s, so event endpoints and sampled mode durations must not be interchanged.
+
+Detumbling is assumed to terminate on acceptable measured body rates and a stable attitude solution, rather than on expiry of the observed 2,460~s. The spacecraft then acquires Sun pointing, with the +Z solar face directed toward the Sun, to establish a power-recovery state and assess readiness for scheduled tasks. A failed acquisition remains an ADCS/recovery problem; it does not authorize blind continuation to Science. Neither a worst-case startup duration nor a deployment-success probability follows from the supplied LEOP examples.
+
+\paragraph{Preparing and executing science.}
+From Sun Pointing, the scheduler checks an approaching SAA opportunity against predicted slew/settling time, available energy and payload readiness. The intended +X payload pointing is acquired before measurement exposure is credited. A short opportunity may therefore be skipped or used only for its remaining valid interval. Geometric SAA residence alone is insufficient: the acquisition gate also requires instrument availability, valid pointing and acceptable health.
+
+During acquisition, each histogram is attributed to one geographic cell and its own entry/exit timestamps. The preferred three readings per eligible visit use distinct intervals; two or one remain valid when timing or an interruption prevents three. No numerical minimum duration is imposed. A cell crossing, instrument shutdown or loss of acquisition validity closes the current interval. Valid zero-count records are retained, and partitioning a visit must conserve its counts and exposure. Multiple readings in one visit do not constitute independent orbital passages, and record validity does not imply that the cell/channel precision requirement is already satisfied.
+
+\paragraph{Relay and return to standby.}
+A scheduled BITS Goa opportunity permits a slew to the +Y antenna target only when the contact, attitude and resource guards are satisfied. Transfer is restricted to the intersection of visibility and Relay operation. The planning model offers the queued science data the full idealized 19.2~kbps during this intersection, without arbitrary derating; it does not demonstrate net hardware throughput. Contact termination or an override pauses delivery, preserving pending records for a later opportunity. The nominal sequence returns to Sun Pointing after a task, or transitions to another eligible task when its guards permit. In eclipse, retaining the previous attitude is a candidate low-activity fallback only while thermal, energy and attitude constraints allow it.
+
+\begin{figure}[H]\centering
 \resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[>=Latex,font=\sffamily\scriptsize,
  state/.style={draw=AntaraNavy,fill=AntaraPale,rounded corners=2pt,minimum width=2.6cm,minimum height=0.95cm,align=center},
@@ -30,21 +45,31 @@ Safe & Survival, battery conservation and anomaly handling & Suspend nonessentia
 \node[task] (science) at (13.95,1.05) {Science\\SAA / +X boresight};
 \node[task] (relay) at (13.95,-1.05) {Relay\\GS / +Y antenna};
 \node[state] (pass) at (7,-2.25) {Passive / Eclipse\\Hold last attitude};
-\draw[flow] (cold)--node[above]{boot timer}(det);
-\draw[flow] (det)--node[above]{rate stable}(sun);
-\draw[flow] (sun)--node[above]{eligible window}(slew);
+\draw[flow] (cold)--node[above=3mm]{boot timer}(det);
+\draw[flow] (det)--node[above=3mm]{rate stable}(sun);
+\draw[flow] (sun)--node[above=3mm]{eligible window}(slew);
 \draw[flow] (slew.east) -| (science.west);
 \draw[flow] (slew.east) -| (relay.west);
 \draw[flow] (science.north) -- ++(0,1) -| node[pos=.72,above]{task ends} (sun.north);
-\draw[flow] (relay.south) -- ++(0,-2) -| node[pos=.72,below]{contact ends} (sun.south);
+\draw[flow] (relay.south) -- (13.95,-3.8) -- node[below]{contact ends} (4.4,-3.8) -- (4.4,0) -- (sun.west);
 \draw[flow] (sun.south)--node[right]{eclipse}(pass.north);
-\draw[flow] (pass.west) -| node[pos=.25,below]{sunlit / eligible} ([xshift=-5mm]sun.west);
+\draw[flow] (pass.west) -- (5.2,-2.25) -- node[left,align=right]{sunlit /\\eligible} (5.2,-0.7) -- (5.2,0) -- (sun.west);
 \end{tikzpicture}}
 \caption{Information-bearing functional flow of the planned mission sequence. Windows and guards come from the mission scheduler. The schematic does not assert that every transition is immediate; slew and settling times are accounted for separately.}\label{fig:op-transition-diagram}
 \end{figure}
 
 \subsubsection{Supervisory Priority and Safety Overrides}\label{app:op-logic-priority}
-\begin{figure}[htbp]\centering
+The supervisor evaluates spacecraft survival before granting any scheduled activity. The proposed policy separates a task that is temporarily ineligible from a condition requiring Safe mode. For example, an unavailable contact or unsettled pointing defers Relay or Science; a critical battery, thermal or control-state violation preempts the active task. The corrected annual run contains Safe-mode occupancy, but this alone does not establish which physical fault caused each entry or qualify the recovery guards.
+
+\paragraph{Priority when opportunities overlap.}
+Survival and recovery take precedence over science and downlink. Among otherwise admissible tasks, this planning interpretation uses the predicted consequences of deferral: loss of a scarce science window, queue overflow before the next contact, and the energy needed to execute and recover from a slew. Relay is not assumed universally superior to Science, nor is simultaneous acquisition and downlink credited. A deterministic scheduler must record the selected task and reason for deferral. Numerical priorities, queue watermarks and energy reserves remain to be allocated; the corrected exposure and backlog results constrain that trade but do not identify an optimal flight scheduler.
+
+\paragraph{Interruption, safe state and recovery.}
+On a critical override, the proposed response closes the valid acquisition interval, marks any uncertain data, inhibits nonessential payload/transmitter loads and preserves recoverable queue and sequence state. Health monitoring and feasible attitude control continue within the surviving power budget. Safe mode is therefore a fault-dependent operating state, not a promise of uninterrupted Sun pointing: excessive rates may first require Detumble, while a sensor fault may prevent the nominal attitude solution.
+
+Recovery requires evidence that the initiating condition has cleared and that the intended next mode is admissible. Separate entry and recovery guards, with persistence checks where appropriate, are proposed to prevent repeated mode switching near a threshold. Their values are not inferred from sampling cadence. Recovery proceeds through Detumble if rate stabilization is needed, otherwise through Sun Pointing and readiness checks before science or relay resumes. Interrupted transfers require integrity and sequence reconciliation before records are retired from persistent storage; the final acknowledgement/retry protocol remains a PDR interface decision.
+
+\begin{figure}[H]\centering
 \resizebox{.94\linewidth}{!}{%
 \begin{tikzpicture}[>=Latex,font=\sffamily\scriptsize,
  node/.style={draw=AntaraNavy,rounded corners=2pt,fill=AntaraPale,minimum height=9mm,text width=3cm,align=center},
@@ -62,6 +87,21 @@ Safe & Survival, battery conservation and anomaly handling & Suspend nonessentia
 \end{tikzpicture}}
 \caption{Supervisory decision logic: survival constraints override scheduled science and downlink. Recovery transitions depend on the fault and attitude state; this is a mission-level policy, not an assertion of finalized flight code.}\label{fig:op-mode-priorities}
 \end{figure}
+
+\paragraph{Assumptions and extrapolation limits for A.1.2--A.1.3.}
+The following assumptions make the proposed sequence explicit. They are not additional measured results or approved numerical flight-software settings. The evidence basis is the corrected LEOP/no-LEOP exports and annual run in Appendix~\ref{app:startup-evidence}, together with the current telemetry and communications contracts. Those runs use a historical 2000 epoch, and unresolved telemetry/event timing differences prevent treating this narrative as a reconstruction of every executed transition.
+\begin{longtable}{@{}p{1.1cm}p{5.0cm}p{5.6cm}@{}}
+\caption{Planning assumptions used to extend the operational sequence}\label{tab:op-sequence-assumptions}\\\toprule
+ID & Assumed operating interpretation & Basis and required verification\\\midrule\endfirsthead
+\toprule ID & Assumed operating interpretation & Basis and required verification\\\midrule\endhead
+OP-A1 & Boot health/time checks and deployment interlocks precede dependent activities. & Necessary interface interpretation; individual checks are not demonstrated by the CSVs. Verify startup software, sensor readiness and deployment inhibits.\\
+OP-A2 & Rate/attitude guards release Detumble; Sun Pointing provides the nominal recovery path. & Observed LEOP sequence supports the concept. The 43~min event reference is not a fixed timer or reliability bound; qualify guards and initial-condition coverage.\\
+OP-A3 & Scheduling reserves time and energy for slew, settling and task recovery. & Logs contain slew and mode overhead, with differing timing semantics. Reconcile these and establish pointing, reserve and instrument-readiness allocations.\\
+OP-A4 & Science and Relay compete for scheduled operation; deferral considers science opportunity and backlog. & Exclusive modeled modes and corrected queue studies motivate the trade. Verify arbitration, outage handling and any future concurrent-operation claim.\\
+OP-A5 & Overrides preserve valid interval boundaries and recoverable record state. & Required by nonoverlapping v3 records and integrity objectives; power-loss atomicity and interrupted-transfer recovery are not demonstrated.\\
+OP-A6 & Recovery uses fault clearance, persistence and distinct entry/exit guards. & Proposed protection against unstable switching. Set thresholds from component limits and control behavior, then exercise fault injection and repeated recovery.\\\bottomrule
+\end{longtable}
+These assumptions support a preliminary operational concept, not a quantitative guarantee of science yield, safe-mode endurance or communications reliability. Essential pointing, battery-reserve, thermal and readiness limits must be allocated before the sequence can demonstrate feasibility across the required operating cases; hardware tests and detailed implementation verification then close the PDR evidence.
 
 \subsubsection{Transition and Guard Matrix}\label{app:op-logic-matrix}
 \begin{longtable}{@{}p{2.25cm}p{2.55cm}p{6.9cm}@{}}
@@ -88,3 +128,6 @@ The integrated logs distinguish transitions, slews, SAA passages, accepted proto
 
 \subsubsection{Implementation Boundary}\label{app:op-logic-note}
 The mode architecture, fault-preemption policy, Sun-pointing fallback and science/relay sequencing are MCR-level decisions. Exact battery-voltage thresholds, rate limits, thermal recovery timers, attitude-control gains, antenna acquisition tolerances and software task deadlines belong to the controlled ADCS/OBC configuration and must be verified at PDR. This section intentionally describes the complete concept and its verification boundary without claiming an untested flight implementation.
+
+\subsubsection{Observed Startup Evidence}\label{app:startup-evidence}
+The corrected exports include one 2460 s detumble event in each LEOP scenario, with initial rates $(6,-5.5,4.5)$ deg/s and accelerations $(0.12,-0.015,0.08)$ deg/s$^2$. No-LEOP has no detumble-event schema. This is not a verified deployment distribution. Corrected telemetry spans the complete named horizons, but transition timing and slew occupancy differ from event definitions; mode guards and recovery are not thereby qualified. All three corrected scenarios now participate in the evidence review; the prior exclusion of incomplete day exports is superseded.

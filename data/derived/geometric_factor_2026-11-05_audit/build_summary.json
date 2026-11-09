@@ -1,0 +1,11 @@
+{
+  "command": "latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=/tmp/antara-gfactor-audit/latex main.tex",
+  "exit_code": 0,
+  "pages": 66,
+  "overfull_boxes": 0,
+  "undefined_reference_warning": false,
+  "multiply_defined_labels": false,
+  "font_substitution_warning": true,
+  "underfull_boxes": 120,
+  "pdf_sha256": "f993da96002dce32e6b687e2d396df0d4f2288f6d32f7f0b630c445faee57c18"
+}

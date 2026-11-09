@@ -1,0 +1,9 @@
+{
+  "role": "read-only candidate implementation, NOT identified generating source",
+  "repository": "/home/sammo/Desktop/Projects/ANTARA_CODES-main",
+  "commit": "51933bb902288de095f362546c73b006fe702882",
+  "files": {
+    "src/simulations/ditl/ANTARA_Science_Sim.py": "92baa85028d79c9ebb347e5a8a5c17325c814b7ef42ad3dbefbefc3076724413",
+    "src/simulations/helper/antara_models.py": "3c10b328a48b7a9705e61d17d4e445a67266567ed7a5dd25fc20b13c9a209ed5"
+  }
+}

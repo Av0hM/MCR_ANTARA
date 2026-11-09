@@ -1,0 +1,54 @@
+\section{Integrated Mission Feasibility}\label{sec:simulation-results}
+The ANTARA simulation work combines orbit motion, power generation and consumption, attitude control, mode transitions, SAA operations, and ground-station contacts. This section gives the main results supported by the supplied historical study files. The detailed simulation descriptions, tables, and plots are retained in Appendices~\ref{app:source-04} and~\ref{app:sim-provenance}.
+
+\subsection{Day-in-the-Life Operations}\label{sec:sim-leop}
+The operational evidence adopted here is the supplied \texttt{leop\_1yr} artifact group. The short 24h-named exports are excluded from the comparison at the team's direction. The annual-labelled telemetry contains 1\,861\,462 continuous records accounting for 4\,320\,020~s (50 days plus 20~s), with no terminal snapshot. Its separate event exports extend nearly 365 days but disagree with telemetry even over their shared window. Neither artifact establishes a reconciled, completed annual simulation.
+
+\begin{table}[H]\centering\small
+\caption{Recorded contents of the incomplete \texttt{leop\_1yr} telemetry; model diagnostics, not accepted annual performance.}\label{tab:annual-ditl}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}\toprule
+Metric & Recorded value\\\midrule
+Accounted interval duration (s) & 4320020\\
+Detumble-labelled duration (s) & 2460\\
+Sun Pointing / Slewing (s) & 666440 / 3616666\\
+Detection / Relay / Safe (s) & 1296 / 33022 / 14\\
+Geographic SAA dwell (s) & 130664\\
+Detection-labelled SAA / acquisition-gate time (s) & 1246 / 342\\
+Contact visibility / active link time (s) & 36754 / 4\\
+Minimum / final recorded battery (Wh) & 15.21520 / 25.00000\\
+Serialized science / transfer (source MB) & 0.00492859 / 0.00492859\\\bottomrule
+\end{tabularx}\end{table}
+
+\begin{figure}[H]\centering\includegraphics[width=\linewidth]{evidence/science-ditl/figures/partial_annual_mode_exposure.png}
+\caption{Incomplete annual-labelled telemetry: selected mode durations and distinct SAA exposure gates. The logarithmic exposure axis makes the small acquisition interval visible; it is not qualified detector exposure. Event exports are excluded from these totals.}\label{fig:annual-mode-exposure}\end{figure}
+
+The large Slewing occupancy and very limited acquisition in this telemetry must not be replaced by the more favorable event-log totals. They require source/run reconciliation. The event exports record one 2460~s startup detumble, but a single modeled acquisition does not establish ADCS reliability. Geometric SAA dwell, mode eligibility, acquisition gates, accepted physical detector exposure and reconstructed/downlinked records remain distinct. Appendix~\ref{app:ditl-detail} gives the conflicting event totals and storage diagnostics. The earlier historical one-day example and its detection-conditional 62.7\% statistic are not results of this annual-labelled artifact.
+
+The new v3 scheduler diagnostic reuses only the 342~s sampled acquisition gate, retaining valid zero-count opportunities in its policy. Preferred three-reading partitions give 57/174/231 record slots at 5$^\circ$/1$^\circ$/0.5$^\circ$, or 16\,644/50\,808/67\,452 bytes. These are ideal partition sensitivities on legacy gates, not emitted packets or current-FPDU measurements. Exact cell crossings, actual timing boundaries and detector response remain unverified; the low partial-run average must not be extrapolated to nominal science operations.
+
+\subsection{Ground Station and Data Return}\label{sec:sim-coverage}
+The historical annual-labelled contact export contains 820 intervals totaling 244\,016~s. Over its explicit 365-day accounting window, mean daily visibility is 668.536986~s, minimum 514~s and maximum intercontact gap 48\,458~s (13.461~h). Absolute event times identify 2000-03-01 UTC; these are not validated 2029 contact opportunities. The runtime elevation mask is unknown; no second mask penalty is applied.
+
+At the approved full 19.2~kbps, visibility alone gives 585\,638\,400 bytes. Intersecting contacts with the associated event-log Relay mode gives 178\,682~s and \textbf{428\,836\,800 bytes} ideal science-transfer opportunity. Minimum daily Relay overlap is 312~s, or 748\,800 bytes. This schedule-based upper opportunity is distinct from the original 3.514084 source-labelled MB transfer credit. Framing, losses and net-throughput qualification are deferred to PDR; no arbitrary throughput derating is applied at MCR.
+
+The incomplete telemetry is a separate evidence group: 32\,772~s of visibility intersect Relay gives 78\,652\,800 ideal bytes, but its recorded link-active flag totals only 4~s and transfer credit is 0.00492859 source MB. Event exports disagree with telemetry within the shared horizon, so they are not pooled. Source MB/MiB semantics and missing received-packet evidence remain unresolved. Appendix~\ref{app:science-data-budget} gives v3 production/storage sensitivity; Appendix~\ref{app:orbit-rf} gives contact provenance and PDR link closure.
+
+\subsection{Updated RAAN Trade and Long-Duration Study}\label{sec:sim-annual}
+The latest supplied RAAN campaign evaluates seven insertion cases from $0^\circ$ to $180^\circ$ in $30^\circ$ increments, with two runs per case. Average generated power varies from approximately 9.02~W ($120^\circ$) to 11.17~W ($180^\circ$), and tabulated mean of run-minimum battery SOC varies from approximately 54.4\% to 74.7\%. These are \emph{study-case outputs}, not a statement that the spacecraft can choose its insertion RAAN. Orbit classification totals are pooled across the two long-duration runs; they must not be mistaken for a one-year orbit tally. The full results, raw-count interpretation and drag-study limitations appear in Appendix~\ref{app:updated-raan}.
+
+The drag CSV gives modeled termination times of roughly 8.2--10.0~years, generally near 300~km altitude. One case ends at 334.93~km, and none models final atmospheric reentry. The five-year \emph{science/operational objective} is therefore distinct from the provisional passive-decay estimate. The campaign configuration and epoch remain to be reconciled with the approved 1 January 2029, 3~kg mission baseline.
+
+\subsection{Limitations of Current Evidence}\label{sec:sim-consolidated}
+The results in this section are simulation predictions, not hardware qualification results. The source model uses an approximate proton-flux baseline through an AP9-named interface; it does not establish a live AP9 calculation or absolute detector calibration. Thermal, structural, payload-response, and full-year integrated outputs require validation with the corresponding source settings and result files before final acceptance.
+
+The newly ingested annual telemetry has no terminal snapshot and cannot establish a completed year, despite event exports reaching nearly 365 days. Those events imply a 2000-03-01 epoch; the thermal run epoch remains unknown. Legacy detector efficiencies, five-layer topology and dead-time settings cannot qualify the current six-scintillator FPDU. Thermal extrema and detumble success fractions are separate model predictions with unclosed runtime identities, not a common spacecraft margin.
+
+\subsection{Science Coverage Studies}\label{sec:new-coverage}
+Separate grid-based studies supplied with the MCR inputs examine 4--6 month, 12--14 month, and extended-duration science-map cases. Their cell-disposition files cover the approved polygon, but geometric membership does not establish a qualified science-eligibility denominator; the resulting fractions therefore cannot directly establish the MMSC, MSC or EMSC global coverage thresholds. The evaluated cell counts and their status are tabulated in Appendix~\ref{app:new-evidence}. The detector count rate and background assumptions remain preliminary.
+
+The newly supplied geometric-factor study is independently reproduced in Appendix~\ref{app:required-g}. For its supplied dwell and unit efficiency, broad-band acceptance requirements at 10\% counting-only precision are approximately 0.36--0.50~cm$^2$~sr for 95\% of each separately selected cell set. The executed exposure duration and radiation run identity are not established, and actual FPDU acceptance remains unqualified. This result defines a conditional design requirement; it does not close a mission-success tier.
+
+\subsection{Outstanding MCR Evidence}
+\paragraph{Evidence qualification.} Latest supplied simulation outputs are the provisional MCR reference. Each cited case must be tagged by its original epoch, spacecraft configuration and model assumptions; a 2029 rerun will supersede the historical-epoch studies. Available event logs support analysis of startup, contact opportunities and detector activity, but final science-enabled time and RF volume depend on the revised payload response.
+
+The team accepts the RAAN campaign as a preliminary 2029 planning reference. Its exact generating epoch remains unverified against the local runtime source; approval does not change historical input timestamps.

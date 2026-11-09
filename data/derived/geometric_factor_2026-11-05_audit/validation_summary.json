@@ -1,0 +1,25 @@
+{
+  "cells": 7940,
+  "energy_thresholds": 65,
+  "dwell_sum_s": 1453556.0,
+  "dwell_min_s": 98.0,
+  "dwell_max_s": 294.0,
+  "pass_min": 15,
+  "pass_max": 40,
+  "unit_max_abs_error": 5.684341886080802e-14,
+  "headline_peak_hz": 370.6584703683378,
+  "comparisons": {
+    "coarse_channels": {
+      "rows": 4,
+      "max_abs_error": 1.9895196601282805e-13
+    },
+    "fine_bins": {
+      "rows": 63,
+      "max_abs_error": 8.171241461241152e-14
+    }
+  },
+  "fine_G95_10pct_range": [
+    3.928400430844695,
+    10.33009282100887
+  ]
+}
