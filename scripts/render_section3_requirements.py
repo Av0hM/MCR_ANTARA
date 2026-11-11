@@ -3,18 +3,12 @@ import json,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 REG=ROOT/'config/requirements/section3_feasibility_v1.json'
-GROUPS=[('eps',['EPS'],'Electrical Power System (EPS)'),('com',['COM'],'Communications System (COMMS)'),('pld',['PLD'],'Scientific Payload'),('adcs',['ADCS'],'Attitude Determination and Control System (ADCS)'),('obc',['OBC'],'On-Board Computer (OBC)'),('int',['INT'],'Spacecraft Coordinate System'),('thermal_structural',['THM','STR'],'Thermal and Structural Configuration'),('gso',['GSO'],'Ground Segment and Mission Operations'),('sys',['SYS'],'Outstanding MCR Evidence')]
+GROUPS=[('eps',['EPS'],'Electrical Power System (EPS)'),('com',['COM'],'Communications System (COMMS)'),('pld',['PLD'],'Scientific Payload'),('adcs',['ADCS'],'Attitude Determination and Control System (ADCS)'),('obc',['OBC'],'On-Board Computer (OBC)'),('int',['INT'],'Spacecraft Coordinate System'),('thermal_structural',['THM','STR'],'Thermal and Structural Configuration'),('gso',['GSO'],'Ground Segment and Mission Operations'),('sys',['SYS'],'System Integration')]
 STATUS={'SUPPORTED':'S','CONDITIONAL':'C','OPEN':'O','NOT MET':'NM','NOT EVALUATED':'NE'}
-ASSESS={
-'eps':'The array/battery architecture provides an analysis basis, not a closed margin. The 25 Wh planning value is not an allowed depth-of-discharge limit. Allocate startup reserve, bus peaks and worst-RAAN/EOL depletion at concept review; verify component aging and transients at PDR.',
-'com':'Histogram-based return and scheduled Relay are consistent with the current architecture. Full-rate capacity arithmetic is model-supported; sustained generation, matched contact identity and the outage envelope remain prerequisites to concept-level data balance. Physical link margin, protocol behavior and net throughput require PDR verification.',
-'pld':'The longitudinal scintillators and distributed SiPM readout define an inspectable payload concept; the record codec has bounded software evidence. Neither the stopping response nor effective geometric acceptance is calibrated. Material/optical interfaces, mixed-species trigger demand and qualified channels are concept-level feasibility gaps, not details that can be waived until qualification. The tier rows flow down Section 1 without replacing its criteria: MMSC uses at least two channels; MSC retains all operational channels and the comparison table\'s at-least-four statement pending reconciliation; EMSC retains its primary-map ≤15% rule, minimum three channels and two 9–10 month sub-period maps. The counting examples N≈4 and N≥16 do not replace full uncertainty or create a new confidence level.',
-'adcs':'Reaction wheels plus magnetorquers address controlled pointing and momentum unloading without reviving the CMG selection. The single startup event and incompatible Monte Carlo summary do not establish a detumble reliability. Initial-condition, pointing, torque and timing allocations must be justified at concept level; representative closed-loop and hardware-in-loop validation then belongs to PDR.',
-'obc':'The reference format makes the assembly and queue workloads concrete. A 256 KiB dedicated queue contains the corrected nominal sampled-gate workload; this is not a total OBC RAM requirement. The 128 MiB candidate store fails the separate 187498164-byte no-downlink grid-retention sensitivity, but that unmatched sensitivity is not an approved retention mission case. Sustained workload, outage policy and total system memory must be allocated before unconditional feasibility; media and reset tests follow at PDR.',
-'int':'The common frame aligns payload, antenna and array interfaces and is supported as a documented convention only. Alignment tolerance, time/position accuracy and electrical/command ICD ownership remain open derived allocations. These interfaces must be defined before integrated margins can be combined; calibration and installation surveys verify them later.',
- 'thermal_structural':'The lumped thermal model and 3U packaging are useful concept representations. They do not establish component thermal compliance or launch structural integrity. Missing selected-component limits, coupled hot/cold cases, complete mass and provider load/interface limits prevent an unconditional concept-feasibility finding. SDM/deployables remain here under the existing combined heading. Correlated thermal-vacuum, modal, vibration and deployment qualification are PDR verification tasks after those allocations exist.',
-'gso':'BITS Goa and the current mode sequence provide the planned operational path from exposure to received science. Historical contacts support opportunity calculations, not 2029 availability. Corrected annual timestamp coverage and contact/native data totals reconcile; transition and slew semantics remain unresolved. Observation eligibility, qualified independent passes and sustained station/outage assumptions must be closed at concept level; end-to-end exercises then verify the ground chain.',
-'sys':'The design-maturity statement above is conditional: missing essential allocations cannot all be deferred as detailed PDR work. Requirements marked S support only their stated reference/model scope; Corrected DITL evidence supersedes the prior annual truncation finding; logger/configuration closure remains conditional. The centralized register separates concept blockers from later qualification and records exact parents, interfaces and closure methods.'}
+try:
+    from .feasibility_editorial import ASSESS, assessment, evidence
+except ImportError:
+    from feasibility_editorial import ASSESS, assessment, evidence
 
 def tex(s):
     s=s.replace('\\','\\textbackslash{}')
@@ -45,16 +39,15 @@ def render():
             out+='\\caption{Mission Feasibility Requirements: '+tex(title)+continuation+'}'
             if not chunk_index:out+='\\label{tab:fr-'+slug+'}'
             out+='\n'+r"\begin{tabular}{@{}"+'\n'
-            for fraction in [13,42,13,23,9]:
-                out+=r'>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*'+str(fraction)+r'/100\relax}'+'\n'
-            out+='@{}}\n'+r'\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule'+'\n'
+            for fraction in [44,32,24]:
+                out+=r'>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*'+str(fraction)+r'/100\relax}'+'\n'
+            out+='@{}}\n'+r'\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule'+'\n'
             for r in chunk:
                 prefix,num=r['id'].rsplit('-FR-',1)
                 ident=r'\mbox{'+prefix+r'-}\newline\mbox{FR-'+num+'}'
-                evidence=tex(r['evidence'])+r' \emph{Verify:} '+tex(r['verification_method'])+'.'
-                out+=r'\phantomsection\label{req:'+r['id']+'}'+ident+' & '+tex(r['requirement'])+' & '+tex(r['mission_driver'])+' & '+evidence+' & '+STATUS[r['status']]+r'\\'+'\n\\addlinespace[3pt]\n'
+                result=tex(evidence(r))
+                out+=r'\phantomsection\label{req:'+r['id']+'}'+ident+r'\par '+tex(r['requirement'])+' & '+result+' & '+tex(assessment(r)).replace('CONDITIONALLY SUPPORTED', r'CONDITIONALLY\newline SUPPORTED').replace('SUPPORTED BY SIMULATION', r'SUPPORTED BY\newline SIMULATION')+r'\\'+'\n\\addlinespace[3pt]\n'
             out+='\\bottomrule\n\\end{tabular}\n\\end{table}\n'
-        out+=r'\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}'+'\n'
         out+=r'\paragraph{Feasibility assessment.} '+tex(ASSESS[slug])+'\n'
         write_if_changed(ROOT/f'sections/requirements/{slug}.tex', out)
     # Structured central traceability, kept outside main narrative to avoid duplication.

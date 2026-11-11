@@ -2,18 +2,16 @@
 \begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
 \caption{Mission Feasibility Requirements: Attitude Determination and Control System (ADCS)}\label{tab:fr-adcs}
 \begin{tabular}{@{}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*44/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*32/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*24/100\relax}
 @{}}
-\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
-\phantomsection\label{req:ANT-ADCS-FR-001}\mbox{ANT-ADCS-}\newline\mbox{FR-001} & The ADCS shall detumble and acquire a safe Sun-Pointing state from the accepted deployment attitude/rate envelope within the EPS startup allocation; envelope, deadline and reliability target remain OPEN DERIVED REQUIREMENTS. & Startup acquisition & One 2460 s event; historical 16133/50000 successes are source-incompatible. \emph{Verify:} Analysis + test. & O\\
+\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule
+\phantomsection\label{req:ANT-ADCS-FR-001}\mbox{ANT-ADCS-}\newline\mbox{FR-001}\par The ADCS shall detumble and acquire a safe Sun-Pointing state from the accepted deployment attitude/rate envelope within the EPS startup allocation; envelope, deadline and reliability target remain OPEN DERIVED REQUIREMENTS. & One 2460 s event; historical 16133/50000 successes are source-incompatible. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-ADCS-FR-002}\mbox{ANT-ADCS-}\newline\mbox{FR-002} & The ADCS shall maintain payload +X science and +Y Relay boresights within allocated acceptance/link pointing-error envelopes during valid acquisition/transfer. Numeric error and jitter allocations remain OPEN DERIVED REQUIREMENTS. & Science / Relay pointing & No geometry-matched acceptance or selected-antenna error allocation. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-ADCS-FR-002}\mbox{ANT-ADCS-}\newline\mbox{FR-002}\par The ADCS shall maintain payload +X science and +Y Relay boresights within allocated acceptance/link pointing-error envelopes during valid acquisition/transfer. Numeric error and jitter allocations remain OPEN DERIVED REQUIREMENTS. & No geometry-matched acceptance or selected-antenna error allocation. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-ADCS-FR-003}\mbox{ANT-ADCS-}\newline\mbox{FR-003} & The ADCS shall hold Sun Pointing and perform recovery/Safe Mode attitudes within the EPS generation and thermal allocations. Numeric attitude limits remain OPEN DERIVED REQUIREMENTS. & Survival pointing & Mode concept defined; common pointing-energy/thermal limits not closed. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-ADCS-FR-003}\mbox{ANT-ADCS-}\newline\mbox{FR-003}\par The ADCS shall hold Sun Pointing and perform recovery/Safe Mode attitudes within the EPS generation and thermal allocations. Numeric attitude limits remain OPEN DERIVED REQUIREMENTS. & Mode concept defined; common pointing-energy/thermal limits not closed. & NOT YET ASSESSED\\
 \addlinespace[3pt]
 \bottomrule
 \end{tabular}
@@ -22,21 +20,18 @@
 \ContinuedFloat\captionsetup{list=no}
 \caption{Mission Feasibility Requirements: Attitude Determination and Control System (ADCS) (continued)}
 \begin{tabular}{@{}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*44/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*32/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*24/100\relax}
 @{}}
-\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
-\phantomsection\label{req:ANT-ADCS-FR-004}\mbox{ANT-ADCS-}\newline\mbox{FR-004} & The ADCS shall complete and settle science/Relay slews before their qualified windows and keep transition overhead within the mission exposure/data-return allocation. Deadline and settling limits remain OPEN DERIVED REQUIREMENTS. & Slew timing & Complete day/year timestamp spans; telemetry/transition/slew duration definitions disagree. \emph{Verify:} Analysis + test. & O\\
+\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule
+\phantomsection\label{req:ANT-ADCS-FR-004}\mbox{ANT-ADCS-}\newline\mbox{FR-004}\par The ADCS shall complete and settle science/Relay slews before their qualified windows and keep transition overhead within the mission exposure/data-return allocation. Deadline and settling limits remain OPEN DERIVED REQUIREMENTS. & Complete day/year timestamp spans; telemetry/transition/slew duration definitions disagree. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-ADCS-FR-005}\mbox{ANT-ADCS-}\newline\mbox{FR-005} & The ADCS shall keep wheel momentum and torque within selected actuator limits and unload using magnetorquers against the declared disturbance envelope. Numerical authority/margin allocations remain OPEN DERIVED REQUIREMENTS. & Actuator authority & Hardware/field coupling unqualified; zero archived wheel momentum is not proof. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-ADCS-FR-005}\mbox{ANT-ADCS-}\newline\mbox{FR-005}\par The ADCS shall keep wheel momentum and torque within selected actuator limits and unload using magnetorquers against the declared disturbance envelope. Numerical authority/margin allocations remain OPEN DERIVED REQUIREMENTS. & Selected actuator/field coupling is undetermined; archived zero wheel momentum does not establish unloading capability. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-ADCS-FR-006}\mbox{ANT-ADCS-}\newline\mbox{FR-006} & The ADCS shall report acquisition, saturation and pointing faults to the mode controller and enforce safe guards before declaring science/Relay readiness. & Mode reliability & FSM exists; historical boundary/SAFE timing discrepancies remain. \emph{Verify:} Simulation + hardware-in-loop. & C\\
+\phantomsection\label{req:ANT-ADCS-FR-006}\mbox{ANT-ADCS-}\newline\mbox{FR-006}\par The ADCS shall report acquisition, saturation and pointing faults to the mode controller and enforce safe guards before declaring science/Relay readiness. & FSM exists; historical boundary/SAFE timing discrepancies remain. & CONDITIONALLY\newline SUPPORTED\\
 \addlinespace[3pt]
 \bottomrule
 \end{tabular}
 \end{table}
-\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
-\paragraph{Feasibility assessment.} Reaction wheels plus magnetorquers address controlled pointing and momentum unloading without reviving the CMG selection. The single startup event and incompatible Monte Carlo summary do not establish a detumble reliability. Initial-condition, pointing, torque and timing allocations must be justified at concept level; representative closed-loop and hardware-in-loop validation then belongs to PDR.
+\paragraph{Feasibility assessment.} The integrated scenario demonstrates a startup-to-operations sequence with time allocated to attitude transitions, science and Relay. Applicability to the intended reaction-wheel/magnetorquer system remains conditional on actuator authority, deployment conditions and pointing allocations. The incompatible Monte Carlo campaign cannot establish startup reliability.

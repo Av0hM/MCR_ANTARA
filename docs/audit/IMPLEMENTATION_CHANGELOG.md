@@ -269,3 +269,7 @@ The annual command is CSV postprocessing only; no spacecraft simulation is launc
 ## 2026-11-09 — A.1.2/A.1.3 operational interpretation
 
 Expanded nominal startup/science/relay sequencing and supervisory fault/recovery prose at the user's request. Six explicitly proposed assumptions follow A.1.3, with evidence limits and verification needs. The 120 + 2460 = 2580 s startup reference is event-defined and not a flight deadline. Existing headings/diagrams are retained, with label-placement fixes. No raw data, simulator, mission threshold or hardware configuration changed. See `OPERATIONAL_SEQUENCE_ASSUMPTIONS.md` for exact file scope and verification. New reviewed PDF: `output/pdf/ANTARA_MCR_OPERATIONAL_ASSUMPTIONS_2026-11-09.pdf`; previous PDFs preserved.
+
+## 2026-11-10 — Feasibility-focused dual-edition editorial revision
+
+Rewrote Sections 2–5 around the existing analysis-supported feasibility findings and revised Section 1 presentation without changing approved science tables or requirements. Replaced subsystem verification matrices with three-column evidence/assessment tables, retained all 51 IDs, centralized PDR scope, and applied the annotated final-draft corrections. The corrected DITL source epoch is stated explicitly; detector, thermal, actuator, RF, mass and disposal constraints remain substantive. Both editions compile with XeLaTeX. See [full editorial change and validation record](FEASIBILITY_EDITORIAL_CHANGELOG_2026-11-10.md) for deliverables, deletion summary, unresolved issues and preservation checks.

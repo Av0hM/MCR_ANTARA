@@ -135,6 +135,7 @@ the SAA environment, and produced scientifically interpretable,
 calibrated flux data at coarse spatial resolution.
 
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3349}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6651}}@{}}
@@ -150,7 +151,11 @@ Minimum SAA passes for MMSC science & ≥ 150 passes with payload operational an
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MMSC mission duration targets.} Mission duration: 4-6 Months minimum. Orbital count: 1750 orbits (4 months) to 2650 orbits (6 months). SAA transit count: 700 to 1050 SAA transits across the mission duration. Minimum SAA passes for MMSC science: ≥ 150 passes with payload operational and telemetry received.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
@@ -166,7 +171,11 @@ Cell dwell time per pass & \textasciitilde74 seconds per 5° latitude band at 7.
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MMSC spatial mapping requirements.} Grid resolution: 5° × 5° in geographic latitude and longitude. SAA region: Approved count-rate polygon; vertices in the coverage contract. Geometric polygon-overlap cells: 92; science eligibility requires validation. Cell dwell time per pass: \textasciitilde74 seconds per 5° latitude band at 7.5 km/s.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2350}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7650}}@{}}
@@ -191,6 +200,17 @@ independently. \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MMSC science requirements.} The mission shall produce a calibrated 5°×5° flux map covering at least
+70\% of grid cells within the approved SAA polygon with valid measurements
+(≥3 independent SAA passes per cell). Coverage shall include the SAA flux core (centred approximately on
+310°E, 30°S) to ≥90\% even if peripheral cells fall below the 70\%
+global threshold. Each populated spatial cell shall report a calibrated differential
+proton flux value in units of particles/cm²/s/sr/MeV for each
+operational energy channel. σ\_F/F ≤ 50\% per cell per channel. Requires approximately N ≥ 4 counts
+per cell per channel. Flux maps shall be produced for a minimum of 2 energy channels
+independently.
+\fi
 
 
 \textbf{MMSC Scientific Deliverables}
@@ -213,7 +233,8 @@ independently. \\
   documented
 \end{itemize}
 
-\subsubsection{Mission Success Criteria (MSC)}\label{mission-success-criteria-msc}\begin{longtable}{@{}
+\subsubsection{Mission Success Criteria (MSC)}\label{mission-success-criteria-msc}\ifrequirementsedition
+\begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
 \caption{MSC mission duration targets}\label{tab:01-mission-context-4}\\
@@ -228,7 +249,11 @@ Minimum SAA passes for MSC science & ≥ 900 passes with payload operational \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MSC mission duration targets.} Required duration: 12 months - 14 months minimum. Orbital count: 5400 orbits (12 months) to 6300 orbits (14 months). SAA transit count: 2150 to 2500 SAA transits. Minimum SAA passes for MSC science: ≥ 900 passes with payload operational.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
@@ -243,7 +268,11 @@ Cell dwell time per pass & 15 seconds per 1° latitude band at 7.5 km/s \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MSC spatial mapping requirements.} Grid resolution: 1° × 1° in geographic latitude and longitude. Geometric polygon-overlap cells: 2,020; science eligibility requires validation. Cell dwell time per pass: 15 seconds per 1° latitude band at 7.5 km/s.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2350}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7650}}@{}}
@@ -266,6 +295,15 @@ variation exceeding 3σ in any cell shall be flagged. \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{MSC science requirements.} The mission shall produce a calibrated 1°×1° flux map covering at least
+90\% of approved SAA polygon cells that contain detectable flux. Each populated 1°×1° cell shall achieve σ\_F/F ≤ 25\% in at least the
+two lowest-energy operational channels. Requires N ≥ 16 counts per cell
+per channel. Independent flux maps for all operational energy channels, co-registered
+on the same 1°×1° grid, released as a unified multi-band atlas. Minimum of 5 independent SAA passes per populated cell for inclusion in
+primary science map. Monthly-averaged sub-maps produced and compared. Month-to-month
+variation exceeding 3σ in any cell shall be flagged.
+\fi
 
 \textbf{MSC Scientific Deliverables}
 
@@ -286,7 +324,8 @@ variation exceeding 3σ in any cell shall be flagged. \\
   and uncertainty estimates
 \end{itemize}
 
-\subsubsection{Extended Mission Success Criteria (EMSC)}\label{extended-mission-success-criteria-emsc}\begin{longtable}{@{}
+\subsubsection{Extended Mission Success Criteria (EMSC)}\label{extended-mission-success-criteria-emsc}\ifrequirementsedition
+\begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
 \caption{EMSC mission duration targets}\label{tab:01-mission-context-7}\\
@@ -301,7 +340,11 @@ Minimum SAA passes for EMSC science & ≥ 2400 passes with payload operational \
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{EMSC mission duration targets.} Required duration: 18 months minimum - 20 months nominal. Orbital count: 8100 orbits (18 months) to 9000 orbits (20 months). SAA transit count: 3200 to 3600 SAA transits. Minimum SAA passes for EMSC science: ≥ 2400 passes with payload operational.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
@@ -316,7 +359,11 @@ Cell dwell time per pass & \textasciitilde7 seconds per 0.5° latitude band at o
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{EMSC spatial mapping requirements.} Grid resolution: 0.5° × 0.5° in geographic latitude and longitude. Geometric polygon-overlap cells: 7,940; science eligibility requires validation. Cell dwell time per pass: \textasciitilde7 seconds per 0.5° latitude band at orbital velocity.
+\fi
 
+\ifrequirementsedition
 \begin{longtable}{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2350}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7650}}@{}}
@@ -339,6 +386,14 @@ EMSC window, plus two 9--10 month sub-period maps. \\
 \bottomrule\noalign{}
 \endlastfoot
 \end{longtable}
+\else
+\paragraph{EMSC science requirements.} The mission shall produce a calibrated 0.5°×0.5° flux map. Primary
+science map includes all cells where σ\_F/F ≤ 15\%. ≥95\% coverage of cells where AP9 predicts flux exceeding 1\% of the
+mission peak flux. σ\_F/F ≤ 10\% in at least one energy channel per cell, and ≤ 15\% in all
+other operational channels. Minimum of 5 independent SAA passes per primary-map cell. 0.5° map produced for each operational energy channel independently;
+minimum 3 channels. Final 0.5° science map produced as a time-integrated product over full
+EMSC window, plus two 9--10 month sub-period maps.
+\fi
 
 
 \begin{longtable}{@{}
@@ -366,7 +421,7 @@ AP9 Comparison & Basic ratio check & Full residual map (1°) & Sub-map residuals
 
 
 
-\subsection{Outstanding MCR Evidence}
-\paragraph{Science verification path.} MMSC, MSC and EMSC are retained as committed requirements. Grid-cell occupancy, detector acceptance, energy migration and systematic uncertainty must be coupled with the chosen payload response before compliance can be claimed.
+\subsection{Scientific Interpretation of Feasibility Evidence}
+\paragraph{Science assessment.} MMSC, MSC and EMSC are retained as committed requirements. Grid-cell occupancy, detector acceptance, energy migration and systematic uncertainty must be coupled with the chosen payload response before compliance can be claimed.
 
 \paragraph{Coverage acceptance contract.} The polygon is the supplied count-rate domain, using east-positive longitude in $[-180,180)$ and positive-area cell overlap. Its geometric counts are not automatic science-success denominators. The coverage, pass, channel, precision and temporal requirements above remain committed. Eligible flux/core definitions and independent observation rules require acceptance before calculating compliance. Repeated samples in one visit are not independent passes. Counts require science-enabled exposure, qualified response/background and usable stored/downlinked products; pure Poisson thresholds alone do not establish calibrated flux precision.

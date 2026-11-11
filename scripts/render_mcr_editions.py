@@ -7,9 +7,9 @@ IDs, status columns, repeated captions or verification-method columns.
 import json
 from pathlib import Path
 try:
-    from .render_section3_requirements import ROOT, REG, GROUPS, ASSESS, tex, render, write_if_changed
+    from .render_section3_requirements import ROOT, REG, GROUPS, ASSESS, evidence, tex, render, write_if_changed
 except ImportError:  # direct CLI invocation
-    from render_section3_requirements import ROOT, REG, GROUPS, ASSESS, tex, render, write_if_changed
+    from render_section3_requirements import ROOT, REG, GROUPS, ASSESS, evidence, tex, render, write_if_changed
 
 
 def narrative_requirement(s):
@@ -27,7 +27,7 @@ def render_narrative():
         text += r'\paragraph{Operating constraints and evidence.} ' + '\n'
         for i, r in enumerate(selected):
             text += '% Shared source: ' + r['id'] + '\n'
-            text += tex(narrative_requirement(r['requirement'])) + ' ' + tex(r['evidence']) + '\n'
+            text += tex(narrative_requirement(r['requirement'])) + ' ' + tex(evidence(r)) + '\n'
             if i % 2 == 1 or i == len(selected)-1:
                 text += '\n'
         assessment = ASSESS[slug]

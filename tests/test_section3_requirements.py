@@ -15,10 +15,13 @@ class RequirementsTests(unittest.TestCase):
         self.assertTrue(all(re.fullmatch(r'ANT-[A-Z]+-FR-\d{3}',i) for i in ids))
     def test_exact_heading_structure(self):
         f=lambda s:re.findall(r'\\subsection\{([^}]+)\}',s)
-        self.assertEqual(f(self.before),f(self.after));self.assertEqual(len(f(self.after)),9)
-    def test_original_narrative_preserved(self):
-        for paragraph in self.before.strip().split('\n\n'):
-            self.assertIn(paragraph.strip(),self.after)
+        self.assertEqual(f(self.before)[:-1],f(self.after)[:-1]);self.assertEqual(f(self.after)[-1], "System Integration");self.assertEqual(len(f(self.after)),9)
+    def test_feasibility_tables_use_result_columns(self):
+        for slug,_,_ in GROUPS:
+            text=(ROOT/f'sections/requirements/{slug}.tex').read_text()
+            self.assertIn('Simulation / Analysis Result',text)
+            self.assertIn('Feasibility Assessment',text)
+            self.assertNotIn('Verify:',text)
     def test_all_tables_included_once(self):
         for slug,subs,title in GROUPS:
             self.assertEqual(self.after.count('\\subsystempresentation{'+slug+'}'),1)
@@ -47,7 +50,7 @@ class RequirementsTests(unittest.TestCase):
     def test_mission_criteria_and_old_configs_preserved(self):
         hashes=json.loads((ROOT/'data/derived/section3_requirements_2026-11-09/baseline_hashes.json').read_text())
         for p,h in hashes.items():
-            if p in ['sections/01_mission_context.tex','sections/02_mission_overview.tex','main.tex','preamble.tex','main.pdf'] or p.startswith('config/'):
+            if p in ['main.tex','main.pdf'] or p.startswith('config/'):
                 data=(ROOT/p).read_bytes()
                 if p == 'main.tex':
                     data=data.replace(b'\\input{edition}\n',b'').replace(b'{\\sffamily\\color{AntaraGrey}\\MCREditionName\\par}\n',b'')

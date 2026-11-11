@@ -1,6 +1,6 @@
 # ANTARA Mission Concept Review
 
-Build the active report with `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`. The reviewed PDF is `output/pdf/ANTARA_MCR_OPERATIONAL_ASSUMPTIONS_2026-11-09.pdf`; older PDFs remain historical.
+Build the active report with `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`. Latest reviewed editions: `output/pdf/ANTARA_MCR_REQUIREMENTS_FEASIBILITY_2026-11-10.pdf` and `output/pdf/ANTARA_MCR_NARRATIVE_FEASIBILITY_2026-11-10.pdf`. Build their wrappers with `latexmk -xelatex main_requirements.tex` or `latexmk -xelatex main_narrative.tex`. Older PDFs remain historical. See [editorial revision record](docs/audit/FEASIBILITY_EDITORIAL_CHANGELOG_2026-11-10.md).
 
 Sections 1–5 contain the decision-first MCR. Appendix A preserves six technical-support groups A.1–A.6, including current payload A.2. Later source-detail appendices explicitly distinguish historical designs from current decisions. External archives referenced by the audits are not claimed to be a local `source_archive/` folder.
 

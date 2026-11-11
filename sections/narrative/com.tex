@@ -6,11 +6,11 @@ The communications planning budget must use 19200 bit/s (2400 bytes/s), 100\% sc
 The communications schedule must return the generated science workload within the accepted retention/outage envelope, with bounded backlog and no unaccounted science loss. The sustained workload/envelope remain open allocations. Corrected annual EMSC slot sensitivity:46637364 bytes; nominal peak75336 bytes; response/timing open.
 
 % Shared source: ANT-COM-FR-003
-The communications interface must support BITS Goa with a traceable station, frequency/modem and elevation-mask configuration; capacity must use the producing mask exactly once. Historical station label GS1\_India; actual mask/RAAN unverified.
+The communications interface must support BITS Goa with a traceable station, frequency/modem and elevation-mask configuration; capacity must use the producing mask exactly once. Contact study identifies GS1\_India; elevation-mask and RAAN inputs are unspecified.
 % Shared source: ANT-COM-FR-004
 The communications protocol must detect corrupted or missing records and resume interrupted transfers with identifiable sequence, acknowledgement and duplicate handling. v3 CRC/sequence tested; packet reception and retry protocol absent.
 
 % Shared source: ANT-COM-FR-005
-The communications design must close RF link and net science-throughput budgets for the selected hardware and operational geometry before claiming physical data-return compliance. No qualified link margin or application throughput.
+The communications design must close RF link and net science-throughput budgets for the selected hardware and operational geometry before claiming physical data-return compliance. RF margin and net application throughput have not been calculated for the selected link.
 
-\paragraph{Feasibility assessment.} Histogram-based return and scheduled Relay are consistent with the current architecture. Full-rate capacity arithmetic is model-supported; sustained generation, matched contact identity and the outage envelope remain prerequisites to concept-level data balance. Physical link margin, protocol behavior and net throughput require PDR verification.
+\paragraph{Feasibility assessment.} The eligible Relay capacity accommodates the sampled annual histogram workload at the modeled gross rate. Communications feasibility is conditional on the selected RF link delivering the required service and on the accepted outage envelope.

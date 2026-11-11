@@ -1,0 +1,183 @@
+\contentsline {section}{\numberline {1}Mission Context, Objectives, and Success Criteria}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Executive Summary}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Mission Need}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Educational Motive}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Scientific Motive}{2}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}National Motive}{2}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}Mission Significance}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Primary Flight Objective}{3}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Secondary Mission Objectives}{3}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Mission Success Criteria}{3}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Minimum Mission Success Criteria (MMSC)}{3}{subsubsection.1.4.1}%
+\contentsline {paragraph}{MMSC mission duration targets.}{3}{paragraph*.2}%
+\contentsline {paragraph}{MMSC spatial mapping requirements.}{3}{paragraph*.3}%
+\contentsline {paragraph}{MMSC science requirements.}{3}{paragraph*.4}%
+\contentsline {subsubsection}{\numberline {1.4.2}Mission Success Criteria (MSC)}{4}{subsubsection.1.4.2}%
+\contentsline {paragraph}{MSC mission duration targets.}{4}{paragraph*.5}%
+\contentsline {paragraph}{MSC spatial mapping requirements.}{4}{paragraph*.6}%
+\contentsline {paragraph}{MSC science requirements.}{4}{paragraph*.7}%
+\contentsline {subsubsection}{\numberline {1.4.3}Extended Mission Success Criteria (EMSC)}{4}{subsubsection.1.4.3}%
+\contentsline {paragraph}{EMSC mission duration targets.}{4}{paragraph*.8}%
+\contentsline {paragraph}{EMSC spatial mapping requirements.}{5}{paragraph*.9}%
+\contentsline {paragraph}{EMSC science requirements.}{5}{paragraph*.10}%
+\contentsline {subsection}{\numberline {1.5}Scientific Interpretation of Feasibility Evidence}{5}{subsection.1.5}%
+\contentsline {paragraph}{Science assessment.}{5}{paragraph*.11}%
+\contentsline {paragraph}{Coverage acceptance contract.}{5}{paragraph*.12}%
+\contentsline {section}{\numberline {2}Mission Overview and Orbit Design}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Spacecraft Overview}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Orbit Selection}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Mission Lifecycle}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Spacecraft Architecture and Ground Segment}{7}{section.3}%
+\contentsline {paragraph}{Feasibility assessment convention.}{7}{paragraph*.14}%
+\contentsline {subsection}{\numberline {3.1}Electrical Power System (EPS)}{7}{subsection.3.1}%
+\contentsline {paragraph}{Operating constraints and evidence.}{7}{paragraph*.15}%
+\contentsline {paragraph}{Feasibility assessment.}{8}{paragraph*.16}%
+\contentsline {subsection}{\numberline {3.2}Communications System (COMMS)}{8}{subsection.3.2}%
+\contentsline {paragraph}{Operating constraints and evidence.}{8}{paragraph*.17}%
+\contentsline {paragraph}{Feasibility assessment.}{8}{paragraph*.18}%
+\contentsline {subsection}{\numberline {3.3}Scientific Payload}{8}{subsection.3.3}%
+\contentsline {paragraph}{Operating constraints and evidence.}{9}{paragraph*.19}%
+\contentsline {paragraph}{Feasibility assessment.}{10}{paragraph*.20}%
+\contentsline {subsection}{\numberline {3.4}Attitude Determination and Control System (ADCS)}{10}{subsection.3.4}%
+\contentsline {paragraph}{Operating constraints and evidence.}{11}{paragraph*.21}%
+\contentsline {paragraph}{Feasibility assessment.}{11}{paragraph*.22}%
+\contentsline {subsection}{\numberline {3.5}On-Board Computer (OBC)}{11}{subsection.3.5}%
+\contentsline {paragraph}{Operating constraints and evidence.}{11}{paragraph*.23}%
+\contentsline {paragraph}{Feasibility assessment.}{12}{paragraph*.24}%
+\contentsline {subsection}{\numberline {3.6}Spacecraft Coordinate System}{12}{subsection.3.6}%
+\contentsline {paragraph}{Operating constraints and evidence.}{12}{paragraph*.25}%
+\contentsline {paragraph}{Feasibility assessment.}{12}{paragraph*.26}%
+\contentsline {subsection}{\numberline {3.7}Thermal and Structural Configuration}{13}{subsection.3.7}%
+\contentsline {paragraph}{Operating constraints and evidence.}{13}{paragraph*.27}%
+\contentsline {paragraph}{Feasibility assessment.}{13}{paragraph*.28}%
+\contentsline {subsection}{\numberline {3.8}Ground Segment and Mission Operations}{13}{subsection.3.8}%
+\contentsline {paragraph}{Operating constraints and evidence.}{14}{paragraph*.29}%
+\contentsline {paragraph}{Feasibility assessment.}{14}{paragraph*.30}%
+\contentsline {subsection}{\numberline {3.9}System Integration}{14}{subsection.3.9}%
+\contentsline {paragraph}{Operating constraints and evidence.}{14}{paragraph*.31}%
+\contentsline {paragraph}{Feasibility assessment.}{14}{paragraph*.32}%
+\contentsline {section}{\numberline {4}Integrated Mission Feasibility}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Day-in-the-Life Operations}{15}{subsection.4.1}%
+\contentsline {paragraph}{Simulation context and assumptions.}{15}{paragraph*.33}%
+\contentsline {paragraph}{Startup and science acquisition.}{16}{paragraph*.36}%
+\contentsline {paragraph}{Annual operational continuity.}{16}{paragraph*.37}%
+\contentsline {paragraph}{Power behavior.}{16}{paragraph*.38}%
+\contentsline {subsection}{\numberline {4.2}Ground Station and Data Return}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Updated RAAN Trade and Long-Duration Study}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Operational Feasibility Finding}{17}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Feasibility, Risk and Engineering Budgets}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Mission Feasibility}{18}{subsection.5.1}%
+\contentsline {paragraph}{Scientific feasibility --- CONDITIONALLY SUPPORTED.}{18}{paragraph*.39}%
+\contentsline {paragraph}{Orbital feasibility --- CONDITIONALLY SUPPORTED.}{18}{paragraph*.40}%
+\contentsline {paragraph}{EPS feasibility --- CONDITIONALLY SUPPORTED.}{18}{paragraph*.41}%
+\contentsline {paragraph}{ADCS feasibility --- CONDITIONALLY SUPPORTED.}{18}{paragraph*.42}%
+\contentsline {paragraph}{Thermal feasibility --- NOT YET ASSESSED against component limits.}{18}{paragraph*.43}%
+\contentsline {paragraph}{Communications feasibility --- CONDITIONALLY SUPPORTED.}{19}{paragraph*.44}%
+\contentsline {paragraph}{OBC and data-handling feasibility --- CONDITIONALLY SUPPORTED.}{19}{paragraph*.45}%
+\contentsline {paragraph}{Mission operations feasibility --- SUPPORTED BY SIMULATION for the evaluated schedule.}{19}{paragraph*.46}%
+\contentsline {paragraph}{Mechanical and mass feasibility --- NOT YET ASSESSED for the complete spacecraft.}{19}{paragraph*.47}%
+\contentsline {subsection}{\numberline {5.2}Measures of Performance and Effectiveness}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Engineering Budgets}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Operational and Engineering Risks}{20}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}End-of-Life and Debris Mitigation}{20}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Remaining Concept-Level Questions}{20}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Further Design Development and PDR Scope}{20}{subsection.5.7}%
+\contentsline {section}{\numberline {A}Detailed Technical Supporting Analysis}{21}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Detailed Operational Mode Transition Logic}{21}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}Operational Modes and Attitude Targets}{21}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.2}Nominal Startup and Science/Relay Sequence}{21}{subsubsection.A.1.2}%
+\contentsline {paragraph}{Initialization and attitude acquisition.}{21}{paragraph*.49}%
+\contentsline {paragraph}{Preparing and executing science.}{22}{paragraph*.50}%
+\contentsline {paragraph}{Relay and return to standby.}{22}{paragraph*.51}%
+\contentsline {subsubsection}{\numberline {A.1.3}Supervisory Priority and Safety Overrides}{23}{subsubsection.A.1.3}%
+\contentsline {paragraph}{Priority when opportunities overlap.}{23}{paragraph*.53}%
+\contentsline {paragraph}{Interruption, safe state and recovery.}{23}{paragraph*.54}%
+\contentsline {paragraph}{Assumptions and extrapolation limits for A.1.2--A.1.3.}{24}{paragraph*.56}%
+\contentsline {subsubsection}{\numberline {A.1.4}Transition and Guard Matrix}{25}{subsubsection.A.1.4}%
+\contentsline {subsubsection}{\numberline {A.1.5}Timing, Power and Science Opportunity Accounting}{25}{subsubsection.A.1.5}%
+\contentsline {subsubsection}{\numberline {A.1.6}Implementation Boundary}{26}{subsubsection.A.1.6}%
+\contentsline {subsubsection}{\numberline {A.1.7}Observed Startup Evidence}{26}{subsubsection.A.1.7}%
+\contentsline {subsection}{\numberline {A.2}Detailed Scientific Payload: Approved FPDU Concept}{27}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}Geometry, Axes and Optical Interfaces}{27}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2}Signal Chain and Timing Trade}{28}{subsubsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.3}Radiation Inputs and Conditional Rate Estimates}{29}{subsubsection.A.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.4}Reconstruction, Histogram and Telemetry Contract}{30}{subsubsection.A.2.4}%
+\contentsline {paragraph}{Reading validity and accumulation.}{31}{paragraph*.65}%
+\contentsline {subsubsection}{\numberline {A.2.5}Geometric-Factor Requirement from Cell Counts}{31}{subsubsection.A.2.5}%
+\contentsline {paragraph}{Required versus achievable acceptance.}{33}{paragraph*.68}%
+\contentsline {paragraph}{Cutoff, exposure and PDR conditions.}{33}{paragraph*.69}%
+\contentsline {subsubsection}{\numberline {A.2.6}Conditions for PDR Closure}{33}{subsubsection.A.2.6}%
+\contentsline {subsection}{\numberline {A.3}Simulation Configuration and Provenance}{34}{subsection.A.3}%
+\contentsline {subsubsection}{\numberline {A.3.1}Simulation Inventory}{34}{subsubsection.A.3.1}%
+\contentsline {subsubsection}{\numberline {A.3.2}Integrated Simulation Baseline}{34}{subsubsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.3}Integrated DITL Scenarios}{35}{subsubsection.A.3.3}%
+\contentsline {subsubsection}{\numberline {A.3.4}Numerical and Physics Models}{35}{subsubsection.A.3.4}%
+\contentsline {subsubsection}{\numberline {A.3.5}Time Accounting and Data Outputs}{36}{subsubsection.A.3.5}%
+\contentsline {subsubsection}{\numberline {A.3.6}Supporting Study Differences}{36}{subsubsection.A.3.6}%
+\contentsline {subsubsection}{\numberline {A.3.7}Verification Status and Known Limits}{37}{subsubsection.A.3.7}%
+\contentsline {subsubsection}{\numberline {A.3.8}Simulation Evidence Record}{37}{subsubsection.A.3.8}%
+\contentsline {paragraph}{Payload and software reconciliation.}{38}{paragraph*.73}%
+\contentsline {subsubsection}{\numberline {A.3.9}New Operational, Thermal and Detumble Evidence}{38}{subsubsection.A.3.9}%
+\contentsline {paragraph}{Science-record and communications revision.}{38}{paragraph*.75}%
+\contentsline {subsection}{\numberline {A.4}Thermal and Structural Supporting Analysis}{39}{subsection.A.4}%
+\contentsline {subsubsection}{\numberline {A.4.1}Thermal Model and Spacecraft Geometry}{39}{subsubsection.A.4.1}%
+\contentsline {subsubsection}{\numberline {A.4.2}Thermal Balance and Numerical Method}{39}{subsubsection.A.4.2}%
+\contentsline {subsubsection}{\numberline {A.4.3}Nominal, Hot and Cold Cases}{39}{subsubsection.A.4.3}%
+\contentsline {subsubsection}{\numberline {A.4.4}Temperature Outputs and Required Comparison}{40}{subsubsection.A.4.4}%
+\contentsline {subsubsection}{\numberline {A.4.5}Structural Configuration and Verification}{42}{subsubsection.A.4.5}%
+\contentsline {subsection}{\numberline {A.5}Detailed Engineering Budgets and Bill of Materials}{43}{subsection.A.5}%
+\contentsline {subsubsection}{\numberline {A.5.1}Component Baseline and Mass Budget}{43}{subsubsection.A.5.1}%
+\contentsline {subsubsection}{\numberline {A.5.2}Solar Generation and EPS Budget}{43}{subsubsection.A.5.2}%
+\contentsline {subsubsection}{\numberline {A.5.3}Battery Sizing and Depth of Discharge}{43}{subsubsection.A.5.3}%
+\contentsline {subsubsection}{\numberline {A.5.4}Mode-Resolved Electrical Loads}{44}{subsubsection.A.5.4}%
+\contentsline {subsubsection}{\numberline {A.5.5}Science Data, Storage and Downlink}{44}{subsubsection.A.5.5}%
+\contentsline {subsubsection}{\numberline {A.5.6}Recorded Energy and Budget Boundary}{46}{subsubsection.A.5.6}%
+\contentsline {subsection}{\numberline {A.6}Orbit, Coverage and Communications Supporting Analysis}{47}{subsection.A.6}%
+\contentsline {subsubsection}{\numberline {A.6.1}Orbit Propagation and Orbital Lifetime}{47}{subsubsection.A.6.1}%
+\contentsline {subsubsection}{\numberline {A.6.2}SAA Boundaries and Science Coverage}{47}{subsubsection.A.6.2}%
+\contentsline {subsubsection}{\numberline {A.6.3}Ground Station Visibility and Pointing}{48}{subsubsection.A.6.3}%
+\contentsline {subsubsection}{\numberline {A.6.4}Communications Link and Verification}{48}{subsubsection.A.6.4}%
+\contentsline {section}{\numberline {B}Mission Baseline Register and Review Gates}{49}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Mission Design Baseline and Assumption Register}{49}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Mission-Level Design Trades}{49}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Development Gates}{49}{subsection.B.3}%
+\contentsline {section}{\numberline {C}Source Subsystem Detail and Tables}{50}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}System Architecture Overview}{50}{subsection.C.1}%
+\contentsline {subsubsection}{\numberline {C.1.1}Electrical Power System (EPS)}{50}{subsubsection.C.1.1}%
+\contentsline {subsubsection}{\numberline {C.1.2}Communications System (COMMS)}{51}{subsubsection.C.1.2}%
+\contentsline {subsubsection}{\numberline {C.1.3}Historical Payload Subsystem}{52}{subsubsection.C.1.3}%
+\contentsline {subsubsection}{\numberline {C.1.4}Historical Attitude Determination and Control System (ADCS)}{53}{subsubsection.C.1.4}%
+\contentsline {subsubsection}{\numberline {C.1.5}On-Board Computer (OBC)}{55}{subsubsection.C.1.5}%
+\contentsline {subsection}{\numberline {C.2}Spacecraft Coordinate System}{55}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Ground Segment \& Mission Operations}{56}{subsection.C.3}%
+\contentsline {section}{\numberline {D}Superseded Source Integrated Simulation Detail}{57}{appendix.D}%
+\contentsline {section}{\numberline {E}Engineering Closure and PDR Entry Conditions}{61}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}Budget Evidence and Limits}{61}{subsection.E.1}%
+\contentsline {subsection}{\numberline {E.2}Verification and Maturation}{61}{subsection.E.2}%
+\contentsline {subsection}{\numberline {E.3}Open Decisions and Review Gates}{61}{subsection.E.3}%
+\contentsline {subsection}{\numberline {E.4}MCR Exit and PDR Entry}{61}{subsection.E.4}%
+\contentsline {section}{\numberline {F}Integrated Mission Simulation and DITL Supporting Analysis}{62}{appendix.F}%
+\contentsline {subsection}{\numberline {F.1}Purpose and Source}{62}{subsection.F.1}%
+\contentsline {subsection}{\numberline {F.2}Defined Mission Scenarios}{62}{subsection.F.2}%
+\contentsline {subsection}{\numberline {F.3}Mode Execution, Time and Energy}{62}{subsection.F.3}%
+\contentsline {subsection}{\numberline {F.4}Science Data, Detector Statistics and Model Limits}{62}{subsection.F.4}%
+\contentsline {subsection}{\numberline {F.5}Corrected Run Identities and Accounting}{62}{subsection.F.5}%
+\contentsline {subsection}{\numberline {F.6}Annual Exposure, Energy and Native Data}{64}{subsection.F.6}%
+\contentsline {subsection}{\numberline {F.7}Historical Detumble Summary}{66}{subsection.F.7}%
+\contentsline {subsection}{\numberline {F.8}Science Record v3 Queue Diagnostic}{67}{subsection.F.8}%
+\contentsline {section}{\numberline {G}Additional MCR Study Evidence and Open Decisions}{68}{appendix.G}%
+\contentsline {subsection}{\numberline {G.1}Science grid and mission-tier studies}{68}{subsection.G.1}%
+\contentsline {subsection}{\numberline {G.2}Radiation and detector science model}{68}{subsection.G.2}%
+\contentsline {subsection}{\numberline {G.3}Ground-station and DITL source files}{70}{subsection.G.3}%
+\contentsline {subsection}{\numberline {G.4}Preliminary procurement and mass allocation}{70}{subsection.G.4}%
+\contentsline {subsection}{\numberline {G.5}Manufacturer documentation and CAD inputs}{70}{subsection.G.5}%
+\contentsline {subsection}{\numberline {G.6}Remaining verification conditions}{71}{subsection.G.6}%
+\contentsline {subsection}{\numberline {G.7}Bill of materials, as supplied}{71}{subsection.G.7}%
+\contentsline {subsection}{\numberline {G.8}Datasheet alignment checks}{72}{subsection.G.8}%
+\contentsline {subsection}{\numberline {G.9}Approved 2029 Planning Baseline}{72}{subsection.G.9}%
+\contentsline {section}{\numberline {H}Updated RAAN Trade and Orbital Decay Evidence}{73}{appendix.H}%
+\contentsline {subsection}{\numberline {H.1}RAAN trade-study summary}{73}{subsection.H.1}%
+\contentsline {subsection}{\numberline {H.2}Orbit-classification bookkeeping}{73}{subsection.H.2}%
+\contentsline {subsection}{\numberline {H.3}Lifetime to the modeled 300 km cutoff}{73}{subsection.H.3}%
+\contentsline {subsection}{\numberline {H.4}Monte Carlo statistics: scope and interpretation}{74}{subsection.H.4}%
+\contentsline {subsection}{\numberline {H.5}Design implication for the MCR}{74}{subsection.H.5}%

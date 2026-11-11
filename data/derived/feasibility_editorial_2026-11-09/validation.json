@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "requirements_clean_build": true,
+    "narrative_clean_build": true,
+    "section_4_identical": true,
+    "section_5_identical": true,
+    "no_requirement_matrices_in_narrative": true,
+    "no_subsystem_ids_in_narrative": true,
+    "all_51_requirements_and_ids_unchanged": true,
+    "all_10_science_tables_verbatim": true,
+    "all_config_evidence_and_media_unchanged": true,
+    "existing_ditl_result_rows_verbatim": true,
+    "leop_24h_mode_accounting_complete": true,
+    "no_leop_24h_mode_accounting_complete": true,
+    "leop_1yr_mode_accounting_complete": true,
+    "requirements_all_obligations_and_results": true,
+    "narrative_all_obligations_and_results": true
+  },
+  "protected_file_count": 162,
+  "changed_protected_files": [],
+  "build_issues": {
+    "requirements": [],
+    "narrative": []
+  }
+}

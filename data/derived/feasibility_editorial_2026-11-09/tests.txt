@@ -1,0 +1,174 @@
+test_active_report_no_superseded_figure_or_raw_paths (test_corrected_ditl.CorrectedTests.test_active_report_no_superseded_figure_or_raw_paths) ... ok
+test_ambiguous_rejected (test_corrected_ditl.CorrectedTests.test_ambiguous_rejected) ... ok
+test_bad_timestamps (test_corrected_ditl.CorrectedTests.test_bad_timestamps) ... ok
+test_corrected_horizons_and_units (test_corrected_ditl.CorrectedTests.test_corrected_horizons_and_units) ... ok
+test_daily_split (test_corrected_ditl.CorrectedTests.test_daily_split) ... ok
+test_ditl_requirements_cite_current_summary (test_corrected_ditl.CorrectedTests.test_ditl_requirements_cite_current_summary) ... ok
+test_hash_mismatch (test_corrected_ditl.CorrectedTests.test_hash_mismatch) ... ok
+test_legacy_analysis_refuses (test_corrected_ditl.CorrectedTests.test_legacy_analysis_refuses) ... ok
+test_no_derating (test_corrected_ditl.CorrectedTests.test_no_derating) ... ok
+test_nonuniform_intervals (test_corrected_ditl.CorrectedTests.test_nonuniform_intervals) ... ok
+test_overflow (test_corrected_ditl.CorrectedTests.test_overflow) ... ok
+test_queue_and_outage (test_corrected_ditl.CorrectedTests.test_queue_and_outage) ... ok
+test_sha (test_corrected_ditl.CorrectedTests.test_sha) ... ok
+test_short_zero_and_conservation (test_corrected_ditl.CorrectedTests.test_short_zero_and_conservation) ... ok
+test_superseded_rejected (test_corrected_ditl.CorrectedTests.test_superseded_rejected) ... ok
+test_tier_exposure_queue_conservation (test_corrected_ditl.CorrectedTests.test_tier_exposure_queue_conservation) ... ok
+test_truncated_horizon (test_corrected_ditl.CorrectedTests.test_truncated_horizon) ... ok
+test_unique_selection (test_corrected_ditl.CorrectedTests.test_unique_selection) ... ok
+test_visibility_relay_only (test_corrected_ditl.CorrectedTests.test_visibility_relay_only) ... ok
+test_complete_archived_evidence_reproduction (test_count_rate_evidence.CountRateTests.test_complete_archived_evidence_reproduction) ... ok
+test_duplicate_coordinates_rejected (test_count_rate_evidence.CountRateTests.test_duplicate_coordinates_rejected) ... ok
+test_epoch_altitude_and_coordinate_mismatch (test_count_rate_evidence.CountRateTests.test_epoch_altitude_and_coordinate_mismatch) ... ok
+test_exact_thresholds (test_count_rate_evidence.CountRateTests.test_exact_thresholds) ... ok
+test_extra_cell_rejected (test_count_rate_evidence.CountRateTests.test_extra_cell_rejected) ... ok
+test_extreme_finite_flux (test_count_rate_evidence.CountRateTests.test_extreme_finite_flux) ... ok
+test_integral_monotonicity (test_count_rate_evidence.CountRateTests.test_integral_monotonicity) ... ok
+test_invalid_energy_grids (test_count_rate_evidence.CountRateTests.test_invalid_energy_grids) ... ok
+test_invalid_flux_rejected (test_count_rate_evidence.CountRateTests.test_invalid_flux_rejected) ... ok
+test_invalid_geometric_factor_and_overflow (test_count_rate_evidence.CountRateTests.test_invalid_geometric_factor_and_overflow) ... ok
+test_missing_cells_rejected_even_if_both_inputs_missing (test_count_rate_evidence.CountRateTests.test_missing_cells_rejected_even_if_both_inputs_missing) ... ok
+test_near_threshold_not_snapped (test_count_rate_evidence.CountRateTests.test_near_threshold_not_snapped) ... ok
+test_one_zero_log_energy_linear_flux_fallback (test_count_rate_evidence.CountRateTests.test_one_zero_log_energy_linear_flux_fallback) ... ok
+test_outside_threshold_rejected (test_count_rate_evidence.CountRateTests.test_outside_threshold_rejected) ... ok
+test_power_law_interpolation (test_count_rate_evidence.CountRateTests.test_power_law_interpolation) ... ok
+test_raw_metadata_units_rejected (test_count_rate_evidence.CountRateTests.test_raw_metadata_units_rejected) ... ok
+test_reordering_joins_by_full_key (test_count_rate_evidence.CountRateTests.test_reordering_joins_by_full_key) ... ok
+test_units_and_four_pi_conversion (test_count_rate_evidence.CountRateTests.test_units_and_four_pi_conversion) ... ok
+test_zero_flux (test_count_rate_evidence.CountRateTests.test_zero_flux) ... ok
+test_background_and_zero (test_fpdu_contracts.AccountingTests.test_background_and_zero) ... ok
+test_battery_curtailment (test_fpdu_contracts.AccountingTests.test_battery_curtailment) ... ok
+test_battery_depletion (test_fpdu_contracts.AccountingTests.test_battery_depletion) ... ok
+test_effective_merged_width (test_fpdu_contracts.AccountingTests.test_effective_merged_width) ... ok
+test_flat_spectrum_dimensions (test_fpdu_contracts.AccountingTests.test_flat_spectrum_dimensions) ... ok
+test_histogram_conservation (test_fpdu_contracts.AccountingTests.test_histogram_conservation) ... ok
+test_missing_and_invalid_channels (test_fpdu_contracts.AccountingTests.test_missing_and_invalid_channels) ... ok
+test_shared_deadtime_bin_invariance (test_fpdu_contracts.AccountingTests.test_shared_deadtime_bin_invariance) ... ok
+test_soc_run_identity (test_fpdu_contracts.AccountingTests.test_soc_run_identity) ... ok
+test_time_and_bin_invariance (test_fpdu_contracts.AccountingTests.test_time_and_bin_invariance) ... ok
+test_unknown_deadtime_rejected (test_fpdu_contracts.AccountingTests.test_unknown_deadtime_rejected) ... ok
+test_zero_deadtime (test_fpdu_contracts.AccountingTests.test_zero_deadtime) ... ok
+test_checkpoint_change_and_shapes (test_fpdu_contracts.CoverageTests.test_checkpoint_change_and_shapes) ... ok
+test_complete_and_incomplete (test_fpdu_contracts.CoverageTests.test_complete_and_incomplete) ... ok
+test_continuous_visit (test_fpdu_contracts.CoverageTests.test_continuous_visit) ... ok
+test_leave_reenter_same_pass (test_fpdu_contracts.CoverageTests.test_leave_reenter_same_pass) ... ok
+test_missing_interval (test_fpdu_contracts.CoverageTests.test_missing_interval) ... ok
+test_polygon_counts_and_exact_raw_domain (test_fpdu_contracts.CoverageTests.test_polygon_counts_and_exact_raw_domain) ... ok
+test_timestep_convergence (test_fpdu_contracts.CoverageTests.test_timestep_convergence) ... ok
+test_touching_boundary_excluded (test_fpdu_contracts.CoverageTests.test_touching_boundary_excluded) ... ok
+test_wrapping_and_coarsening (test_fpdu_contracts.CoverageTests.test_wrapping_and_coarsening) ... ok
+test_faces_and_coating (test_fpdu_contracts.GeometryTests.test_faces_and_coating) ... ok
+test_geometry (test_fpdu_contracts.GeometryTests.test_geometry) ... ok
+test_no_legacy_response (test_fpdu_contracts.GeometryTests.test_no_legacy_response) ... ok
+test_schema_and_edges (test_fpdu_contracts.GeometryTests.test_schema_and_edges) ... ok
+test_sensors_and_unknown_optics (test_fpdu_contracts.GeometryTests.test_sensors_and_unknown_optics) ... ok
+test_shield_and_environment (test_fpdu_contracts.GeometryTests.test_shield_and_environment) ... ok
+test_timing (test_fpdu_contracts.GeometryTests.test_timing) ... ok
+test_burst_overflow (test_fpdu_contracts.TimingTests.test_burst_overflow) ... ok
+test_configurable_capacity_and_margin (test_fpdu_contracts.TimingTests.test_configurable_capacity_and_margin) ... ok
+test_no_artificial_zero_service_loss (test_fpdu_contracts.TimingTests.test_no_artificial_zero_service_loss) ... ok
+test_unknown_capacity (test_fpdu_contracts.TimingTests.test_unknown_capacity) ... ok
+test_unsorted_and_extreme (test_fpdu_contracts.TimingTests.test_unsorted_and_extreme) ... ok
+test_zero_flux (test_fpdu_contracts.TimingTests.test_zero_flux) ... ok
+test_bad_identity (test_fpdu_record.RecordTests.test_bad_identity) ... ok
+test_coordinate_and_timestamp (test_fpdu_record.RecordTests.test_coordinate_and_timestamp) ... ok
+test_expected_vs_observed (test_fpdu_record.RecordTests.test_expected_vs_observed) ... ok
+test_livetime_duration (test_fpdu_record.RecordTests.test_livetime_duration) ... ok
+test_missing_channel (test_fpdu_record.RecordTests.test_missing_channel) ... ok
+test_no_nonfinite_or_negative (test_fpdu_record.RecordTests.test_no_nonfinite_or_negative) ... ok
+test_public_validator_defaults_current (test_fpdu_record.RecordTests.test_public_validator_defaults_current) ... ok
+test_report_current_timing_and_faces (test_fpdu_record.RecordTests.test_report_current_timing_and_faces) ... ok
+test_valid_unqualified_logical_record (test_fpdu_record.RecordTests.test_valid_unqualified_logical_record) ... ok
+test_all_constraints_and_evidence_preserved (test_mcr_editions.EditionsTests.test_all_constraints_and_evidence_preserved) ... ok
+test_approved_scientific_tables_preserved (test_mcr_editions.EditionsTests.test_approved_scientific_tables_preserved) ... ok
+test_generator_idempotence (test_mcr_editions.EditionsTests.test_generator_idempotence) ... ok
+test_inventory_covers_every_baseline_table (test_mcr_editions.EditionsTests.test_inventory_covers_every_baseline_table) ... ok
+test_no_matrices_or_status_legends_in_narrative (test_mcr_editions.EditionsTests.test_no_matrices_or_status_legends_in_narrative) ... ok
+test_raw_assets_and_old_pdf_preserved (test_mcr_editions.EditionsTests.test_raw_assets_and_old_pdf_preserved) ... ok
+test_requirement_register_and_evidence_assets_preserved (test_mcr_editions.EditionsTests.test_requirement_register_and_evidence_assets_preserved) ... ok
+test_same_shared_entrypoint (test_mcr_editions.EditionsTests.test_same_shared_entrypoint) ... ok
+test_coincidence_is_not_qualified_deadtime (test_payload_config.PayloadInputTests.test_coincidence_is_not_qualified_deadtime) ... ok
+test_conditional_rate_contract (test_payload_config.PayloadInputTests.test_conditional_rate_contract) ... ok
+test_historical_snapshot_contract (test_payload_config.PayloadInputTests.test_historical_snapshot_contract) ... ok
+test_material_volumes_and_cm_conversion (test_payload_config.PayloadInputTests.test_material_volumes_and_cm_conversion) ... ok
+test_no_invented_optics_or_channel_topology (test_payload_config.PayloadInputTests.test_no_invented_optics_or_channel_topology) ... ok
+test_reject_area_only_or_unconditional_rate (test_payload_config.PayloadInputTests.test_reject_area_only_or_unconditional_rate) ... ok
+test_reject_legacy_and_unqualified_rev21_response (test_payload_config.PayloadInputTests.test_reject_legacy_and_unqualified_rev21_response) ... ok
+test_report_estimate_keeps_assumptions_together (test_payload_config.PayloadInputTests.test_report_estimate_keeps_assumptions_together) ... ok
+test_shielding_conversion (test_payload_config.PayloadInputTests.test_shielding_conversion) ... ok
+test_exposure_scaling (test_payload_legacy_accounting.LegacyAccountingTests.test_exposure_scaling) ... skipped 'Set ANTARA_LEGACY_SRC to isolated legacy source copy'
+test_merge_conserves_histogram_and_pending_counts (test_payload_legacy_accounting.LegacyAccountingTests.test_merge_conserves_histogram_and_pending_counts) ... skipped 'Set ANTARA_LEGACY_SRC to isolated legacy source copy'
+test_zero_deadtime_preserves_expected_counts (test_payload_legacy_accounting.LegacyAccountingTests.test_zero_deadtime_preserves_expected_counts) ... skipped 'Set ANTARA_LEGACY_SRC to isolated legacy source copy'
+test_daily_interval_split (test_science_record_v3.EvidenceBudgetTests.test_daily_interval_split) ... ok
+test_historical_epoch_not_relabelled (test_science_record_v3.EvidenceBudgetTests.test_historical_epoch_not_relabelled) ... ok
+test_no_empty_record_on_shutdown (test_science_record_v3.EvidenceBudgetTests.test_no_empty_record_on_shutdown) ... ok
+test_ordered_windows_reject_invalid_duration (test_science_record_v3.EvidenceBudgetTests.test_ordered_windows_reject_invalid_duration) ... ok
+test_record_config_schema_agrees (test_science_record_v3.EvidenceBudgetTests.test_record_config_schema_agrees) ... ok
+test_no_hardware_minimum_from_encoding_quantum (test_science_record_v3.FragmentBudgetTests.test_no_hardware_minimum_from_encoding_quantum) ... ok
+test_source_segments_preserve_exposure_and_cell_visit_policy (test_science_record_v3.FragmentBudgetTests.test_source_segments_preserve_exposure_and_cell_visit_policy) ... /home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:123: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/MMSC_acquisition_segments.csv' mode='r' encoding='UTF-8'>
+  seg=list(csv.DictReader((d/f'{tier}_acquisition_segments.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:127: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/MMSC_3_releases.csv' mode='r' encoding='UTF-8'>
+  releases=list(csv.DictReader((d/f'{tier}_3_releases.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:123: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/MSC_acquisition_segments.csv' mode='r' encoding='UTF-8'>
+  seg=list(csv.DictReader((d/f'{tier}_acquisition_segments.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:127: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/MSC_3_releases.csv' mode='r' encoding='UTF-8'>
+  releases=list(csv.DictReader((d/f'{tier}_3_releases.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:123: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/EMSC_acquisition_segments.csv' mode='r' encoding='UTF-8'>
+  seg=list(csv.DictReader((d/f'{tier}_acquisition_segments.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/sammo/Desktop/Projects/MCR_ANTARA/tests/test_science_record_v3.py:127: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/sammo/Desktop/Projects/MCR_ANTARA/data/derived/telemetry_v3_2026-11-09/EMSC_3_releases.csv' mode='r' encoding='UTF-8'>
+  releases=list(csv.DictReader((d/f'{tier}_3_releases.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_aggregated_poisson (test_science_record_v3.RecordTests.test_aggregated_poisson) ... ok
+test_aos_los_relay_intersection (test_science_record_v3.RecordTests.test_aos_los_relay_intersection) ... ok
+test_cell_boundaries_and_wrapping (test_science_record_v3.RecordTests.test_cell_boundaries_and_wrapping) ... ok
+test_corrupt_crc (test_science_record_v3.RecordTests.test_corrupt_crc) ... ok
+test_count_conservation (test_science_record_v3.RecordTests.test_count_conservation) ... ok
+test_crc_reference (test_science_record_v3.RecordTests.test_crc_reference) ... ok
+test_duplicate_windows (test_science_record_v3.RecordTests.test_duplicate_windows) ... ok
+test_float_expected_counts_rejected (test_science_record_v3.RecordTests.test_float_expected_counts_rejected) ... ok
+test_gap_no_event_duplication (test_science_record_v3.RecordTests.test_gap_no_event_duplication) ... ok
+test_generation_during_contact (test_science_record_v3.RecordTests.test_generation_during_contact) ... ok
+test_missed_contact (test_science_record_v3.RecordTests.test_missed_contact) ... ok
+test_no_contact (test_science_record_v3.RecordTests.test_no_contact) ... ok
+test_no_exposure (test_science_record_v3.RecordTests.test_no_exposure) ... ok
+test_no_mask_penalty (test_science_record_v3.RecordTests.test_no_mask_penalty) ... ok
+test_one_two_three_boundaries (test_science_record_v3.RecordTests.test_one_two_three_boundaries) ... ok
+test_order (test_science_record_v3.RecordTests.test_order) ... ok
+test_position_range (test_science_record_v3.RecordTests.test_position_range) ... ok
+test_queue_conservation (test_science_record_v3.RecordTests.test_queue_conservation) ... ok
+test_record_conservation_decode (test_science_record_v3.RecordTests.test_record_conservation_decode) ... ok
+test_relay_only (test_science_record_v3.RecordTests.test_relay_only) ... ok
+test_reserved_mode (test_science_record_v3.RecordTests.test_reserved_mode) ... ok
+test_short_zero_count_valid (test_science_record_v3.RecordTests.test_short_zero_count_valid) ... ok
+test_size_roundtrip_zero_counts (test_science_record_v3.RecordTests.test_size_roundtrip_zero_counts) ... ok
+test_status_codes (test_science_record_v3.RecordTests.test_status_codes) ... ok
+test_storage_overflow (test_science_record_v3.RecordTests.test_storage_overflow) ... ok
+test_uint16_overflow (test_science_record_v3.RecordTests.test_uint16_overflow) ... ok
+test_uint32_overflow (test_science_record_v3.RecordTests.test_uint32_overflow) ... ok
+test_units (test_science_record_v3.RecordTests.test_units) ... ok
+test_unknown_health_not_nominal (test_science_record_v3.RecordTests.test_unknown_health_not_nominal) ... ok
+test_unknown_timing (test_science_record_v3.RecordTests.test_unknown_timing) ... ok
+test_all_tables_included_once (test_section3_requirements.RequirementsTests.test_all_tables_included_once) ... ok
+test_channel_ambiguity_explicit (test_section3_requirements.RequirementsTests.test_channel_ambiguity_explicit) ... ok
+test_complete_traceability (test_section3_requirements.RequirementsTests.test_complete_traceability) ... ok
+test_exact_heading_structure (test_section3_requirements.RequirementsTests.test_exact_heading_structure) ... ok
+test_exact_text_and_unique_labels (test_section3_requirements.RequirementsTests.test_exact_text_and_unique_labels) ... ok
+test_feasibility_tables_use_result_columns (test_section3_requirements.RequirementsTests.test_feasibility_tables_use_result_columns) ... ok
+test_mission_criteria_and_old_configs_preserved (test_section3_requirements.RequirementsTests.test_mission_criteria_and_old_configs_preserved) ... ok
+test_no_arbitrary_science_or_link_threshold (test_section3_requirements.RequirementsTests.test_no_arbitrary_science_or_link_threshold) ... ok
+test_no_duplicate_requirement_text (test_section3_requirements.RequirementsTests.test_no_duplicate_requirement_text) ... ok
+test_status_vocabulary_and_scope (test_section3_requirements.RequirementsTests.test_status_vocabulary_and_scope) ... ok
+test_supported_not_whole_subsystem (test_section3_requirements.RequirementsTests.test_supported_not_whole_subsystem) ... ok
+test_unique_stable_ids (test_section3_requirements.RequirementsTests.test_unique_stable_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 150 tests in 7.629s
+
+OK (skipped=3)
+PASS: 22 files; 7940 aligned unique cells; four exact flux conversions; two reproduced rate tables; ODS match

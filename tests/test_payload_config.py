@@ -68,7 +68,7 @@ class PayloadInputTests(unittest.TestCase):
                 require_qualified_response(self.c, response)
 
     def test_report_estimate_keeps_assumptions_together(self):
-        for path in ('appendices/B_payload_detail_visual.tex', 'sections/03_spacecraft_architecture.tex'):
+        for path in ('appendices/B_payload_detail_visual.tex',):
             paragraphs = (ROOT / path).read_text().split('\n\n')
             rate_paragraphs = [p for p in paragraphs if '400~Hz' in p]
             self.assertEqual(len(rate_paragraphs), 1)

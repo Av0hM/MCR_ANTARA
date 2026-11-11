@@ -4,10 +4,10 @@ The ANTARA mission has been conceived as a dedicated scientific CubeSat mission 
 \subsection{Spacecraft Overview}\label{spacecraft-overview}
 ANTARA is a 3U CubeSat with an on-board computer, an electrical power system, an attitude determination and control system, a communications system, and the scientific payload. The initial orbit is approximately 600~km at an inclination of $97.6^\circ$. No propulsion system is planned.
 
-The mission design targets a spacecraft mass below 3~kg. The 4~kg upper allowance is not used as the spacecraft design limit. The component mass allocation, including the custom payload, will be closed using the bill of materials. The 3U spacecraft dimensions are approximately $100\times100\times340.5$~mm.
+The 3U spacecraft dimensions are approximately $100\times100\times340.5$~mm. The mass budget and 3~kg design limit are assessed in Section~\ref{sec:budget-closure}.
 
 \subsection{Orbit Selection}\label{sec:orbit-design}
-The preliminary orbit baseline is a 600~km Sun-Synchronous Orbit with an inclination of $97.6^\circ$ and an eccentricity of approximately 0.001. The latest seven-case RAAN power study reports its largest modeled mean generation at $180^\circ$; power and battery behavior depend on the insertion RAAN. ANTARA does not control the launch RAAN, so the spacecraft is being assessed across multiple RAAN cases. The approved future analysis epoch is 1 January 2029; the latest source-study CSVs must still be checked for epoch and configuration consistency.
+The preliminary orbit baseline is a 600~km Sun-Synchronous Orbit with an inclination of $97.6^\circ$ and an eccentricity of approximately 0.001. The latest seven-case RAAN power study reports its largest modeled mean generation at $180^\circ$; power and battery behavior depend on the insertion RAAN. ANTARA does not control the launch RAAN, so the spacecraft is being assessed across multiple RAAN cases. The approved future analysis epoch is 1 January 2029; the evaluated studies retain the source epochs and assumptions identified in Section~\ref{sec:simulation-results}.
 
 \begin{table}[htbp]\centering
 \caption{Preliminary orbit parameters}\label{tab:orbit-baseline}
@@ -20,15 +20,9 @@ RAAN & Launch-dependent; $0^\circ$ and $30^\circ$ are favorable cases, not requi
 Propulsion & None \\
 \bottomrule\end{tabularx}\end{table}
 
-The mission targets approximately five years of operational science. The newest long-term drag trade predicts approximately 8.2--10.0 years to its integration endpoint, generally around 300~km, under the assumptions of the supplied runs. One run stops above 300~km, and atmospheric reentry is not simulated. These are preliminary predictions, \emph{not} a demonstrated five-year deorbit lifetime or post-mission compliance assessment. Appendix~\ref{app:updated-raan} reports the detailed results and caveats.
+The mission targets approximately five years of operational science. The passive-decay study and its propagation endpoint are assessed separately in Section~\ref{end-of-life-deorbit-and-debris-mitigation-compliance}.
 
 \subsection{Mission Lifecycle}\label{sec:mission-lifecycle}
 The mission is divided into Launch, Deployment, Cold and Dark, Detumbling, Commissioning, Nominal Operations, Extended Operations, and Mission End phases. Following deployment the spacecraft activates after the planned delay, enters Cold and Dark, performs detumbling, and proceeds toward power-positive operations and commissioning. Nominal operations consist of Sun Pointing, Detection, and Relay, with Safe Mode for recovery.
 
 The extended phase begins after nominal mission objectives have been met. The minimum, full, and extended mission duration targets are defined in Section~\ref{mission-success-criteria}. The detailed phase descriptions and mode transitions are retained in Appendices~\ref{app:source-02} and~\ref{app:operational-logic}.
-
-\subsection{Design Baseline and Open Decisions}\label{sec:design-baseline}
-The orbit parameters above and the subsystem configurations in Section~\ref{spacecraft-architecture} are the current MCR baseline. The spacecraft design maximum is 3~kg and the approved analysis epoch is 1 January 2029. The launch RAAN is uncontrolled; final component mass allocations, payload dimensions and mission-consistent simulation configurations require confirmation. Where different simulation studies use different inputs, their results will remain associated with those inputs rather than being combined as one common spacecraft configuration.
-
-\subsection{Outstanding MCR Evidence}
-\paragraph{Orbit-study maturity.} The approved future analysis epoch is 1 January 2029. Historical-epoch orbit/RAAN outputs remain provisional engineering studies until regenerated. The five-year operational target is distinct from the new preliminary 8--10-year drag-to-cutoff predictions; neither a reentry date nor disposal compliance is verified. The previously inconsistent SAA-only-orbit statistic is withheld until its counter definition is repaired.

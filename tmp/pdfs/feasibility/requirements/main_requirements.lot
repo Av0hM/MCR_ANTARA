@@ -1,0 +1,60 @@
+\contentsline {table}{\numberline {1}{\ignorespaces MMSC mission duration targets}}{3}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces MMSC spatial mapping requirements}}{4}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces MMSC science requirements}}{4}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces MSC mission duration targets}}{4}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces MSC spatial mapping requirements}}{5}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces MSC science requirements}}{5}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces EMSC mission duration targets}}{5}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces EMSC spatial mapping requirements}}{5}{table.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces EMSC science requirements}}{6}{table.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Comparison of success tiers}}{6}{table.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Preliminary orbit parameters}}{7}{table.caption.4}%
+\contentsline {table}{\numberline {12}{\ignorespaces Mission Feasibility Requirements: Electrical Power System (EPS)}}{9}{table.caption.6}%
+\contentsline {table}{\numberline {13}{\ignorespaces Mission Feasibility Requirements: Communications System (COMMS)}}{11}{table.caption.15}%
+\contentsline {table}{\numberline {14}{\ignorespaces Mission Feasibility Requirements: Scientific Payload}}{13}{table.caption.23}%
+\contentsline {table}{\numberline {15}{\ignorespaces Mission Feasibility Requirements: Attitude Determination and Control System (ADCS)}}{17}{table.caption.39}%
+\contentsline {table}{\numberline {16}{\ignorespaces Mission Feasibility Requirements: On-Board Computer (OBC)}}{19}{table.caption.48}%
+\contentsline {table}{\numberline {17}{\ignorespaces Mission Feasibility Requirements: Spacecraft Coordinate System}}{21}{table.caption.59}%
+\contentsline {table}{\numberline {18}{\ignorespaces Mission Feasibility Requirements: Thermal and Structural Configuration}}{22}{table.caption.64}%
+\contentsline {table}{\numberline {19}{\ignorespaces Mission Feasibility Requirements: Ground Segment and Mission Operations}}{24}{table.caption.76}%
+\contentsline {table}{\numberline {20}{\ignorespaces Mission Feasibility Requirements: System Integration}}{25}{table.caption.83}%
+\contentsline {table}{\numberline {21}{\ignorespaces Integrated DITL results using left-held telemetry intervals}}{26}{table.caption.87}%
+\contentsline {table}{\numberline {22}{\ignorespaces Mode functions and commanding intent}}{32}{table.caption.101}%
+\contentsline {table}{\numberline {23}{\ignorespaces Planning assumptions used to extend the operational sequence}}{35}{table.23}%
+\contentsline {table}{\numberline {24}{\ignorespaces Required operational transitions and relevant checks}}{36}{table.24}%
+\contentsline {table}{\numberline {25}{\ignorespaces Confirmed FPDU mechanical inputs; dimensions exclude packaging}}{38}{table.caption.110}%
+\contentsline {table}{\numberline {26}{\ignorespaces Separate timing references and missing qualification inputs}}{40}{table.caption.114}%
+\contentsline {table}{\numberline {27}{\ignorespaces Reproduced MODEL PREDICTIONS: idealized incident-rate proxy maxima (Hz)}}{40}{table.caption.115}%
+\contentsline {table}{\numberline {28}{\ignorespaces Science Record v3: 292-byte uncompressed reference, excluding radio framing}}{41}{table.caption.116}%
+\contentsline {table}{\numberline {29}{\ignorespaces Combined 16-bit mode and health codebook}}{42}{table.caption.117}%
+\contentsline {table}{\numberline {30}{\ignorespaces Reproduced required $G_{95}$ for each separately selected cell population; $\mitepsilon =1$, cutoff 5.4~MeV, supplied dwell. All $G$ values are cm$^2$~sr.}}{43}{table.caption.119}%
+\contentsline {table}{\numberline {31}{\ignorespaces Remaining verification conditions}}{44}{table.caption.123}%
+\contentsline {table}{\numberline {32}{\ignorespaces Simulation source files and principal applications.}}{45}{table.32}%
+\contentsline {table}{\numberline {33}{\ignorespaces Selected integrated simulation configuration defaults.}}{45}{table.33}%
+\contentsline {table}{\numberline {34}{\ignorespaces Integrated Science simulator presets.}}{46}{table.caption.124}%
+\contentsline {table}{\numberline {35}{\ignorespaces Current evidence identities and limits}}{48}{table.caption.125}%
+\contentsline {table}{\numberline {36}{\ignorespaces Observed evidence completeness; no expensive simulation rerun}}{49}{table.caption.127}%
+\contentsline {table}{\numberline {37}{\ignorespaces Selected thermal simulation inputs (\texttt {ThermalMissionConfig} defaults).}}{50}{table.caption.129}%
+\contentsline {table}{\numberline {38}{\ignorespaces Single-history node statistics; degrees Celsius. No component compliance margin is established.}}{51}{table.caption.130}%
+\contentsline {table}{\numberline {39}{\ignorespaces Geometric-visit volume sensitivity; study horizon and science gating unknown}}{55}{table.caption.133}%
+\contentsline {table}{\numberline {40}{\ignorespaces Corrected annual sampled-gate workload, preferred three readings per visit}}{55}{table.caption.134}%
+\contentsline {table}{\numberline {41}{\ignorespaces Corrected annual preferred EMSC queue outage sensitivity}}{56}{table.caption.135}%
+\contentsline {table}{\numberline {42}{\ignorespaces Principal standalone orbital-study differences.}}{58}{table.caption.137}%
+\contentsline {table}{\numberline {43}{\ignorespaces Corrected source contacts and telemetry-Relay overlap at full ideal 19.2 kbps}}{59}{table.caption.138}%
+\contentsline {table}{\numberline {44}{\ignorespaces ICEPS2 Type A parameters}}{61}{table.44}%
+\contentsline {table}{\numberline {45}{\ignorespaces Spacecraft operating-mode power estimates}}{62}{table.45}%
+\contentsline {table}{\numberline {46}{\ignorespaces Preliminary subsystem electrical power budget}}{62}{table.46}%
+\contentsline {table}{\numberline {47}{\ignorespaces Goa ground station assumptions}}{62}{table.47}%
+\contentsline {table}{\numberline {48}{\ignorespaces FPDU telescope physical-stack dimensions}}{64}{table.48}%
+\contentsline {table}{\numberline {49}{\ignorespaces FPDU dead-time and livetime assumptions}}{64}{table.49}%
+\contentsline {table}{\numberline {50}{\ignorespaces TensorTech ADCS-10m-D preliminary characteristics}}{65}{table.50}%
+\contentsline {table}{\numberline {51}{\ignorespaces ADCS simulation performance summary}}{65}{table.51}%
+\contentsline {table}{\numberline {52}{\ignorespaces Spacecraft body-frame configuration}}{66}{table.52}%
+\contentsline {table}{\numberline {53}{\ignorespaces Superseded historical source: 24-hour operational-mode distribution}}{70}{table.53}%
+\contentsline {table}{\numberline {54}{\ignorespaces Superseded historical source: Historical standalone campaign statistics; not verified annual integrated Science output}}{71}{table.54}%
+\contentsline {table}{\numberline {55}{\ignorespaces Transition-log versus left-held telemetry mode duration (annual, seconds)}}{74}{table.caption.142}%
+\contentsline {table}{\numberline {56}{\ignorespaces Science-map cell dispositions in the supplied studies}}{79}{table.caption.150}%
+\contentsline {table}{\numberline {57}{\ignorespaces Open evidence required for MCR closure}}{82}{table.57}%
+\contentsline {table}{\numberline {58}{\ignorespaces Candidate component mass entries from supplied bill of materials}}{82}{table.58}%
+\contentsline {table}{\numberline {59}{\ignorespaces Latest RAAN trade matrix, as provided. SOC is expressed as a percentage of capacity; the minimum column averages run minima, not the worst sample; orbit counts are sums across the study runs, not annual values.}}{84}{table.caption.155}%
+\contentsline {table}{\numberline {60}{\ignorespaces Two drag-study records per RAAN. Time is to termination of the supplied integration; the listed endpoint is not atmospheric reentry.}}{85}{table.caption.156}%

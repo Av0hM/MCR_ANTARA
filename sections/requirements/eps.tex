@@ -2,18 +2,16 @@
 \begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
 \caption{Mission Feasibility Requirements: Electrical Power System (EPS)}\label{tab:fr-eps}
 \begin{tabular}{@{}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*44/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*32/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*24/100\relax}
 @{}}
-\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
-\phantomsection\label{req:ANT-EPS-FR-001}\mbox{ANT-EPS-}\newline\mbox{FR-001} & The EPS shall sustain the scheduled mission loads with the 25 Wh planning battery across representative launch-dependent RAAN and eclipse cases, without an accumulating energy deficit. & Energy / life & Corrected annual solar/load integrals are 50288.809/30866.103 Wh; runtime and EOL identity unresolved. \emph{Verify:} Analysis + test. & C\\
+\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule
+\phantomsection\label{req:ANT-EPS-FR-001}\mbox{ANT-EPS-}\newline\mbox{FR-001}\par The EPS shall sustain the scheduled mission loads with the 25 Wh planning battery across representative launch-dependent RAAN and eclipse cases, without an accumulating energy deficit. & Annual solar/load integrals: 50288.809/30866.103 Wh. Generation exceeds modeled demand; application to the selected EOL configuration is conditional. & CONDITIONALLY\newline SUPPORTED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-EPS-FR-002}\mbox{ANT-EPS-}\newline\mbox{FR-002} & The EPS shall keep battery energy within selected-cell operating and depth-of-discharge limits during startup, science, Relay and Safe Mode. Numerical SOC/DoD limits remain OPEN DERIVED REQUIREMENTS. & Battery safety & Corrected annual minimum 15.097556 Wh; actual capacity and supplier limits unknown. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-EPS-FR-002}\mbox{ANT-EPS-}\newline\mbox{FR-002}\par The EPS shall keep battery energy within selected-cell operating and depth-of-discharge limits during startup, science, Relay and Safe Mode. Numerical SOC/DoD limits remain OPEN DERIVED REQUIREMENTS. & Corrected annual minimum 15.097556 Wh; actual capacity and supplier limits unknown. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-EPS-FR-003}\mbox{ANT-EPS-}\newline\mbox{FR-003} & The EPS shall supply simultaneous and transient load demand within bus voltage, current and ripple allocations, including payload acquisition, radio transmit and actuator peaks. These limits remain OPEN DERIVED REQUIREMENTS. & Power interfaces & Mode loads exist; qualified peaks and bus limits absent. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-EPS-FR-003}\mbox{ANT-EPS-}\newline\mbox{FR-003}\par The EPS shall supply simultaneous and transient load demand within bus voltage, current and ripple allocations, including payload acquisition, radio transmit and actuator peaks. These limits remain OPEN DERIVED REQUIREMENTS. & Mode loads are represented; peak current and bus voltage/ripple allocations have not been assessed. & NOT YET ASSESSED\\
 \addlinespace[3pt]
 \bottomrule
 \end{tabular}
@@ -22,21 +20,18 @@
 \ContinuedFloat\captionsetup{list=no}
 \caption{Mission Feasibility Requirements: Electrical Power System (EPS) (continued)}
 \begin{tabular}{@{}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*44/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*32/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*24/100\relax}
 @{}}
-\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
-\phantomsection\label{req:ANT-EPS-FR-004}\mbox{ANT-EPS-}\newline\mbox{FR-004} & The EPS shall generate the allocated Sun-Pointing energy using the fixed +Z panel and two deployed panels, with illumination, pointing and conversion losses explicitly accounted for. & Array / ADCS & Configuration defined; generating and deployed-area identities differ. \emph{Verify:} Analysis + test. & C\\
+\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule
+\phantomsection\label{req:ANT-EPS-FR-004}\mbox{ANT-EPS-}\newline\mbox{FR-004}\par The EPS shall generate the allocated Sun-Pointing energy using the fixed +Z panel and two deployed panels, with illumination, pointing and conversion losses explicitly accounted for. & Configuration defined; generating and deployed-area identities differ. & CONDITIONALLY\newline SUPPORTED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-EPS-FR-005}\mbox{ANT-EPS-}\newline\mbox{FR-005} & The EPS shall reserve energy for detumble, safe-state survival and recovery until the next usable generation opportunity; maximum recovery duration and energy reserve remain OPEN DERIVED REQUIREMENTS. & Startup / safety & One 2460 s detumble event; left-held load integral 1.528000 Wh; reserve not allocated. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-EPS-FR-005}\mbox{ANT-EPS-}\newline\mbox{FR-005}\par The EPS shall reserve energy for detumble, safe-state survival and recovery until the next usable generation opportunity; maximum recovery duration and energy reserve remain OPEN DERIVED REQUIREMENTS. & One 2460 s detumble event; left-held load integral 1.528000 Wh; reserve not allocated. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-EPS-FR-006}\mbox{ANT-EPS-}\newline\mbox{FR-006} & The EPS shall maintain the mission energy allocation through the approximately five-year operations objective using traceable EOL degradation and cycling assumptions. & EOL / lifetime & EOL study inputs exist; average generation is not an EOL margin. \emph{Verify:} Analysis + test. & C\\
+\phantomsection\label{req:ANT-EPS-FR-006}\mbox{ANT-EPS-}\newline\mbox{FR-006}\par The EPS shall maintain the mission energy allocation through the approximately five-year operations objective using traceable EOL degradation and cycling assumptions. & EOL study inputs exist; average generation is not an EOL margin. & CONDITIONALLY\newline SUPPORTED\\
 \addlinespace[3pt]
 \bottomrule
 \end{tabular}
 \end{table}
-\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
-\paragraph{Feasibility assessment.} The array/battery architecture provides an analysis basis, not a closed margin. The 25 Wh planning value is not an allowed depth-of-discharge limit. Allocate startup reserve, bus peaks and worst-RAAN/EOL depletion at concept review; verify component aging and transients at PDR.
+\paragraph{Feasibility assessment.} The corrected annual scenario sustains the modeled load schedule with positive recorded battery energy throughout. This supports operational energy feasibility for that scenario. Applying the result to the selected array and battery remains conditional on common load, degradation, reserve and cell-limit assumptions.

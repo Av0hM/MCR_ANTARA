@@ -5,7 +5,7 @@ import re
 import unittest
 from pathlib import Path
 from scripts.render_mcr_editions import narrative_requirement, render_narrative
-from scripts.render_section3_requirements import GROUPS, tex
+from scripts.render_section3_requirements import GROUPS, tex, evidence
 
 ROOT=Path(__file__).resolve().parents[1]
 AUDIT=ROOT/'data/derived/dual_editions_2026-11-09'
@@ -14,21 +14,22 @@ class EditionsTests(unittest.TestCase):
     def setUpClass(cls):
         cls.baseline=json.loads((AUDIT/'baseline_manifest.json').read_text())
         cls.rows=json.loads((ROOT/'config/requirements/section3_feasibility_v1.json').read_text())['requirements']
-    def test_full_matrices_unchanged(self):
-        for p,h in self.baseline['source_hashes'].items():
-            if p.startswith('sections/requirements/'):
-                self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),h,p)
-    def test_all_shared_technical_sources_unchanged(self):
-        changed={'main.tex','.latexmkrc','README.md','sections/03_spacecraft_architecture.tex','scripts/render_section3_requirements.py'}
-        for p,h in self.baseline['source_hashes'].items():
-            if p not in changed:self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),h,p)
+    def test_requirement_register_and_evidence_assets_preserved(self):
+        manifest=json.loads((ROOT/'data/derived/feasibility_editorial_2026-11-09/protected_manifest.json').read_text())
+        for p,h in manifest.items():
+            self.assertEqual(hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),h,p)
+    def test_approved_scientific_tables_preserved(self):
+        before=(ROOT/'data/derived/feasibility_editorial_2026-11-09/before/sections/01_mission_context.tex').read_text()
+        after=(ROOT/'sections/01_mission_context.tex').read_text()
+        pattern=r'\\begin\{longtable\}.*?\\end\{longtable\}'
+        self.assertEqual(re.findall(pattern,before,re.S),re.findall(pattern,after,re.S))
     def test_all_constraints_and_evidence_preserved(self):
         for slug,subs,_ in GROUPS:
             text=(ROOT/f'sections/narrative/{slug}.tex').read_text()
             for r in self.rows:
                 if r['subsystem'] in subs:
                     self.assertIn(tex(narrative_requirement(r['requirement'])),text,r['id'])
-                    self.assertIn(tex(r['evidence']),text,r['id'])
+                    self.assertIn(tex(evidence(r)),text,r['id'])
     def test_no_matrices_or_status_legends_in_narrative(self):
         for p in (ROOT/'sections/narrative').glob('*.tex'):
             s=p.read_text()

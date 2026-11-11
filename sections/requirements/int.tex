@@ -2,21 +2,18 @@
 \begin{table}[H]\centering\small\setlength{\tabcolsep}{3pt}
 \caption{Mission Feasibility Requirements: Spacecraft Coordinate System}\label{tab:fr-int}
 \begin{tabular}{@{}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*42/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*13/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*23/100\relax}
->{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*9/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*44/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*32/100\relax}
+>{\RaggedRight\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*24/100\relax}
 @{}}
-\toprule ID & Requirement / acceptance condition & Mission driver & Evidence / verification & Status\\\midrule
-\phantomsection\label{req:ANT-INT-FR-001}\mbox{ANT-INT-}\newline\mbox{FR-001} & The subsystem interface definitions shall preserve +X payload entrance with inward −X particle travel, ±Y main SiPMs, ±Z reflector faces, +Y relay boresight and +Z fixed-array orientation. & Body-frame ICD & Current config/diagrams agree; installation must be inspected. \emph{Verify:} Inspection + software test. & S\\
+\toprule Requirement & Simulation / Analysis Result & Feasibility Assessment\\\midrule
+\phantomsection\label{req:ANT-INT-FR-001}\mbox{ANT-INT-}\newline\mbox{FR-001}\par The subsystem interface definitions shall preserve +X payload entrance with inward −X particle travel, ±Y main SiPMs, ±Z reflector faces, +Y relay boresight and +Z fixed-array orientation. & Body-frame configuration and diagrams agree, providing a consistent geometric interface. & CONDITIONALLY\newline SUPPORTED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-INT-FR-002}\mbox{ANT-INT-}\newline\mbox{FR-002} & The navigation/time interface shall bound clock and position errors so each science interval is unambiguously assigned to its cell/exposure window. Numerical errors and synchronization allocations remain OPEN DERIVED REQUIREMENTS. & Spatial / temporal tags & Integer scaling and POSIX convention defined; actual accuracy unknown. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-INT-FR-002}\mbox{ANT-INT-}\newline\mbox{FR-002}\par The navigation/time interface shall bound clock and position errors so each science interval is unambiguously assigned to its cell/exposure window. Numerical errors and synchronization allocations remain OPEN DERIVED REQUIREMENTS. & Integer scaling and POSIX convention defined; actual accuracy unknown. & NOT YET ASSESSED\\
 \addlinespace[3pt]
-\phantomsection\label{req:ANT-INT-FR-003}\mbox{ANT-INT-}\newline\mbox{FR-003} & The integration ICD shall allocate power, harness/connector, data, thermal and safe-state interfaces with explicit ownership and compatible command/status semantics. & Subsystem interoperability & No closed common hardware/ICD baseline. \emph{Verify:} Analysis + test. & O\\
+\phantomsection\label{req:ANT-INT-FR-003}\mbox{ANT-INT-}\newline\mbox{FR-003}\par The integration ICD shall allocate power, harness/connector, data, thermal and safe-state interfaces with explicit ownership and compatible command/status semantics. & No closed common hardware/ICD baseline. & NOT YET ASSESSED\\
 \addlinespace[3pt]
 \bottomrule
 \end{tabular}
 \end{table}
-\textit{Status: S supported within stated scope; C conditional; O open; NM not met; NE not evaluated.}
-\paragraph{Feasibility assessment.} The common frame aligns payload, antenna and array interfaces and is supported as a documented convention only. Alignment tolerance, time/position accuracy and electrical/command ICD ownership remain open derived allocations. These interfaces must be defined before integrated margins can be combined; calibration and installation surveys verify them later.
+\paragraph{Feasibility assessment.} The common body frame gives a consistent geometric interface for payload, antenna and array. Integrated performance remains conditional on alignment, time/position accuracy and compatible electrical and command interfaces.
